@@ -1,1 +1,1527 @@
-{"updated":"1970-01-01T00:00:00+00:00","notes":[],"matches":[],"demo":false,"slips":{}}
+{
+ "updated": "2026-11-04T02:40:15.811518+00:00",
+ "notes": [],
+ "matches": [
+  {
+   "id": 560634,
+   "comp": "Premier League",
+   "kickoff": "2026-11-06T20:00:00+00:00",
+   "home": "Everton",
+   "away": "Coventry City",
+   "xg": [
+    1.44,
+    0.83
+   ],
+   "p1x2": {
+    "1": 0.5134,
+    "X": 0.2689,
+    "2": 0.2178
+   },
+   "over25": 0.3974,
+   "score": "1-0",
+   "htft": [
+    [
+     "1/1",
+     0.2944
+    ],
+    [
+     "X/1",
+     0.1965
+    ],
+    [
+     "X/X",
+     0.1823
+    ]
+   ],
+   "picks": [
+    {
+     "match": "Everton vs Coventry City",
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.5133604864018246,
+     "why": "Expected goals: Everton 1.44, Coventry City 0.83. Venue-adjusted attack/defence (home 1.32 scored/1.12 conceded; away 0.87 scored/1.63 conceded) plus recent form (1.4 vs 1.8 pts/game last 5). Simulated chances: 51% / 27% / 22%."
+    },
+    {
+     "match": "Everton vs Coventry City",
+     "mk": "OU",
+     "key": "U",
+     "pick": "Under 2.5",
+     "p": 0.602641837703354,
+     "why": "Combined expected goals 2.28. Probability of 3+ goals is 40%, so Under 2.5 is the likelier side."
+    },
+    {
+     "match": "Everton vs Coventry City",
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.2944196517771201,
+     "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier."
+    }
+   ]
+  },
+  {
+   "id": 560632,
+   "comp": "Premier League",
+   "kickoff": "2026-11-07T12:30:00+00:00",
+   "home": "Leeds United",
+   "away": "Tottenham",
+   "xg": [
+    1.13,
+    0.85
+   ],
+   "p1x2": {
+    "1": 0.4204,
+    "X": 0.306,
+    "2": 0.2736
+   },
+   "over25": 0.3182,
+   "score": "1-0",
+   "htft": [
+    [
+     "1/1",
+     0.2289
+    ],
+    [
+     "X/X",
+     0.2195
+    ],
+    [
+     "X/1",
+     0.1748
+    ]
+   ],
+   "picks": [
+    {
+     "match": "Leeds United vs Tottenham",
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.4204203048754165,
+     "why": "Expected goals: Leeds United 1.13, Tottenham 0.85. Venue-adjusted attack/defence (home 1.48 scored/0.96 conceded; away 1.02 scored/1.18 conceded) plus recent form (0.6 vs 2.0 pts/game last 5). Simulated chances: 42% / 31% / 27%."
+    },
+    {
+     "match": "Leeds United vs Tottenham",
+     "mk": "OU",
+     "key": "U",
+     "pick": "Under 2.5",
+     "p": 0.6817944486207465,
+     "why": "Combined expected goals 1.98. Probability of 3+ goals is 32%, so Under 2.5 is the likelier side."
+    },
+    {
+     "match": "Leeds United vs Tottenham",
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.2288884489044237,
+     "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier."
+    }
+   ]
+  },
+  {
+   "id": 560640,
+   "comp": "Premier League",
+   "kickoff": "2026-11-07T15:00:00+00:00",
+   "home": "Arsenal",
+   "away": "Hull City",
+   "xg": [
+    1.78,
+    0.72
+   ],
+   "p1x2": {
+    "1": 0.6271,
+    "X": 0.2264,
+    "2": 0.1465
+   },
+   "over25": 0.4556,
+   "score": "1-0",
+   "htft": [
+    [
+     "1/1",
+     0.38
+    ],
+    [
+     "X/1",
+     0.2211
+    ],
+    [
+     "X/X",
+     0.1511
+    ]
+   ],
+   "picks": [
+    {
+     "match": "Arsenal vs Hull City",
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.6270938914500538,
+     "why": "Expected goals: Arsenal 1.78, Hull City 0.72. Venue-adjusted attack/defence (home 1.85 scored/0.83 conceded; away 1.06 scored/1.37 conceded) plus recent form (2.4 vs 0.6 pts/game last 5). Simulated chances: 63% / 23% / 15%."
+    },
+    {
+     "match": "Arsenal vs Hull City",
+     "mk": "OU",
+     "key": "U",
+     "pick": "Under 2.5",
+     "p": 0.544410777230316,
+     "why": "Combined expected goals 2.50. Probability of 3+ goals is 46%, so Under 2.5 is the likelier side."
+    },
+    {
+     "match": "Arsenal vs Hull City",
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.38001676540768814,
+     "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier."
+    }
+   ]
+  },
+  {
+   "id": 560633,
+   "comp": "Premier League",
+   "kickoff": "2026-11-07T15:00:00+00:00",
+   "home": "Fulham",
+   "away": "Newcastle",
+   "xg": [
+    1.74,
+    1.57
+   ],
+   "p1x2": {
+    "1": 0.4211,
+    "X": 0.2293,
+    "2": 0.3496
+   },
+   "over25": 0.641,
+   "score": "1-1",
+   "htft": [
+    [
+     "1/1",
+     0.2461
+    ],
+    [
+     "2/2",
+     0.1992
+    ],
+    [
+     "X/1",
+     0.1428
+    ]
+   ],
+   "picks": [
+    {
+     "match": "Fulham vs Newcastle",
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.4210999179599093,
+     "why": "Expected goals: Fulham 1.74, Newcastle 1.57. Venue-adjusted attack/defence (home 1.47 scored/1.39 conceded; away 1.35 scored/1.75 conceded) plus recent form (1.6 vs 1.2 pts/game last 5). Simulated chances: 42% / 23% / 35%."
+    },
+    {
+     "match": "Fulham vs Newcastle",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.6410449323852737,
+     "why": "Combined expected goals 3.30. Probability of 3+ goals is 64%, so Over 2.5 is the likelier side."
+    },
+    {
+     "match": "Fulham vs Newcastle",
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.24610408525890662,
+     "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier."
+    }
+   ]
+  },
+  {
+   "id": 560641,
+   "comp": "Premier League",
+   "kickoff": "2026-11-07T17:30:00+00:00",
+   "home": "Nottingham",
+   "away": "Man City",
+   "xg": [
+    0.53,
+    1.41
+   ],
+   "p1x2": {
+    "1": 0.1396,
+    "X": 0.2729,
+    "2": 0.5875
+   },
+   "over25": 0.3078,
+   "score": "0-1",
+   "htft": [
+    [
+     "2/2",
+     0.3383
+    ],
+    [
+     "X/2",
+     0.2319
+    ],
+    [
+     "X/X",
+     0.207
+    ]
+   ],
+   "picks": [
+    {
+     "match": "Nottingham vs Man City",
+     "mk": "1X2",
+     "key": "2",
+     "pick": "Away win (2)",
+     "p": 0.5874739530864364,
+     "why": "Expected goals: Nottingham 0.53, Man City 1.41. Venue-adjusted attack/defence (home 0.74 scored/0.97 conceded; away 1.69 scored/1.13 conceded) plus recent form (0.2 vs 1.8 pts/game last 5). Simulated chances: 14% / 27% / 59%."
+    },
+    {
+     "match": "Nottingham vs Man City",
+     "mk": "OU",
+     "key": "U",
+     "pick": "Under 2.5",
+     "p": 0.6922354341125517,
+     "why": "Combined expected goals 1.94. Probability of 3+ goals is 31%, so Under 2.5 is the likelier side."
+    },
+    {
+     "match": "Nottingham vs Man City",
+     "mk": "HTFT",
+     "key": "2/2",
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.3383332624815978,
+     "why": "Each half is simulated separately using the league's real first-half goal share. 2/2 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier."
+    }
+   ]
+  },
+  {
+   "id": 564740,
+   "comp": "La Liga",
+   "kickoff": "2026-11-06T20:00:00+00:00",
+   "home": "Sevilla FC",
+   "away": "Alav\u00e9s",
+   "xg": [
+    1.87,
+    0.98
+   ],
+   "p1x2": {
+    "1": 0.5826,
+    "X": 0.2231,
+    "2": 0.1942
+   },
+   "over25": 0.544,
+   "score": "1-0",
+   "htft": [
+    [
+     "1/1",
+     0.3664
+    ],
+    [
+     "X/1",
+     0.1859
+    ],
+    [
+     "X/X",
+     0.1331
+    ]
+   ],
+   "picks": [
+    {
+     "match": "Sevilla FC vs Alav\u00e9s",
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.5826206771615438,
+     "why": "Expected goals: Sevilla FC 1.87, Alav\u00e9s 0.98. Venue-adjusted attack/defence (home 1.55 scored/1.31 conceded; away 1.02 scored/2.13 conceded) plus recent form (0.8 vs 0.4 pts/game last 5). Simulated chances: 58% / 22% / 19%."
+    },
+    {
+     "match": "Sevilla FC vs Alav\u00e9s",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.5440202954753474,
+     "why": "Combined expected goals 2.86. Probability of 3+ goals is 54%, so Over 2.5 is the likelier side."
+    },
+    {
+     "match": "Sevilla FC vs Alav\u00e9s",
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.3664095055325722,
+     "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier."
+    }
+   ]
+  },
+  {
+   "id": 564744,
+   "comp": "La Liga",
+   "kickoff": "2026-11-07T13:00:00+00:00",
+   "home": "M\u00e1laga",
+   "away": "Santander",
+   "xg": [
+    2.07,
+    1.33
+   ],
+   "p1x2": {
+    "1": 0.5453,
+    "X": 0.2112,
+    "2": 0.2434
+   },
+   "over25": 0.6618,
+   "score": "2-1",
+   "htft": [
+    [
+     "1/1",
+     0.3453
+    ],
+    [
+     "X/1",
+     0.1632
+    ],
+    [
+     "2/2",
+     0.1387
+    ]
+   ],
+   "picks": [
+    {
+     "match": "M\u00e1laga vs Santander",
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.5453314495144408,
+     "why": "Expected goals: M\u00e1laga 2.07, Santander 1.33. Venue-adjusted attack/defence (home 1.34 scored/1.78 conceded; away 1.00 scored/2.77 conceded) plus recent form (0.4 vs 0.8 pts/game last 5). Simulated chances: 55% / 21% / 24%."
+    },
+    {
+     "match": "M\u00e1laga vs Santander",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.661835834160944,
+     "why": "Combined expected goals 3.41. Probability of 3+ goals is 66%, so Over 2.5 is the likelier side."
+    },
+    {
+     "match": "M\u00e1laga vs Santander",
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.3453069010912603,
+     "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier."
+    }
+   ]
+  },
+  {
+   "id": 564745,
+   "comp": "La Liga",
+   "kickoff": "2026-11-07T15:15:00+00:00",
+   "home": "Espanyol",
+   "away": "Deportivo",
+   "xg": [
+    1.3,
+    1.36
+   ],
+   "p1x2": {
+    "1": 0.3543,
+    "X": 0.2602,
+    "2": 0.3856
+   },
+   "over25": 0.4969,
+   "score": "1-1",
+   "htft": [
+    [
+     "2/2",
+     0.2244
+    ],
+    [
+     "1/1",
+     0.2039
+    ],
+    [
+     "X/X",
+     0.157
+    ]
+   ],
+   "picks": [
+    {
+     "match": "Espanyol vs Deportivo",
+     "mk": "1X2",
+     "key": "2",
+     "pick": "Away win (2)",
+     "p": 0.3855559489587983,
+     "why": "Expected goals: Espanyol 1.30, Deportivo 1.36. Venue-adjusted attack/defence (home 1.37 scored/1.37 conceded; away 1.32 scored/1.66 conceded) plus recent form (0.8 vs 1.0 pts/game last 5). Simulated chances: 35% / 26% / 39%."
+    },
+    {
+     "match": "Espanyol vs Deportivo",
+     "mk": "OU",
+     "key": "U",
+     "pick": "Under 2.5",
+     "p": 0.5031093683696855,
+     "why": "Combined expected goals 2.66. Probability of 3+ goals is 50%, so Under 2.5 is the likelier side."
+    },
+    {
+     "match": "Espanyol vs Deportivo",
+     "mk": "HTFT",
+     "key": "2/2",
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.22436772710146904,
+     "why": "Each half is simulated separately using the league's real first-half goal share. 2/2 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier."
+    }
+   ]
+  },
+  {
+   "id": 564739,
+   "comp": "La Liga",
+   "kickoff": "2026-11-07T17:30:00+00:00",
+   "home": "Osasuna",
+   "away": "Athletic",
+   "xg": [
+    1.06,
+    0.7
+   ],
+   "p1x2": {
+    "1": 0.4347,
+    "X": 0.3253,
+    "2": 0.24
+   },
+   "over25": 0.2594,
+   "score": "1-0",
+   "htft": [
+    [
+     "X/X",
+     0.2461
+    ],
+    [
+     "1/1",
+     0.2447
+    ],
+    [
+     "X/1",
+     0.1764
+    ]
+   ],
+   "picks": [
+    {
+     "match": "Osasuna vs Athletic",
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.43470474282801463,
+     "why": "Expected goals: Osasuna 1.06, Athletic 0.70. Venue-adjusted attack/defence (home 1.24 scored/0.91 conceded; away 1.00 scored/1.49 conceded) plus recent form (0.8 vs 1.6 pts/game last 5). Simulated chances: 43% / 33% / 24%."
+    },
+    {
+     "match": "Osasuna vs Athletic",
+     "mk": "OU",
+     "key": "U",
+     "pick": "Under 2.5",
+     "p": 0.7406283656539856,
+     "why": "Combined expected goals 1.76. Probability of 3+ goals is 26%, so Under 2.5 is the likelier side."
+    },
+    {
+     "match": "Osasuna vs Athletic",
+     "mk": "HTFT",
+     "key": "X/X",
+     "pick": "HT Draw / FT Draw (X/X)",
+     "p": 0.24606130874991863,
+     "why": "Each half is simulated separately using the league's real first-half goal share. X/X is the most likely half-time/full-time pair; combos need two things to land, so they are riskier."
+    }
+   ]
+  },
+  {
+   "id": 564741,
+   "comp": "La Liga",
+   "kickoff": "2026-11-07T20:00:00+00:00",
+   "home": "Valencia",
+   "away": "Real Madrid",
+   "xg": [
+    0.77,
+    2.15
+   ],
+   "p1x2": {
+    "1": 0.1205,
+    "X": 0.1876,
+    "2": 0.692
+   },
+   "over25": 0.5578,
+   "score": "0-2",
+   "htft": [
+    [
+     "2/2",
+     0.4552
+    ],
+    [
+     "X/2",
+     0.2068
+    ],
+    [
+     "X/X",
+     0.1158
+    ]
+   ],
+   "picks": [
+    {
+     "match": "Valencia vs Real Madrid",
+     "mk": "1X2",
+     "key": "2",
+     "pick": "Away win (2)",
+     "p": 0.691970119937683,
+     "why": "Expected goals: Valencia 0.77, Real Madrid 2.15. Venue-adjusted attack/defence (home 1.00 scored/1.61 conceded; away 1.68 scored/1.34 conceded) plus recent form (1.0 vs 2.4 pts/game last 5). Simulated chances: 12% / 19% / 69%."
+    },
+    {
+     "match": "Valencia vs Real Madrid",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.5578276853238214,
+     "why": "Combined expected goals 2.92. Probability of 3+ goals is 56%, so Over 2.5 is the likelier side."
+    },
+    {
+     "match": "Valencia vs Real Madrid",
+     "mk": "HTFT",
+     "key": "2/2",
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.4551997306019483,
+     "why": "Each half is simulated separately using the league's real first-half goal share. 2/2 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier."
+    }
+   ]
+  },
+  {
+   "id": 558537,
+   "comp": "Serie A",
+   "kickoff": "2026-11-06T19:45:00+00:00",
+   "home": "Venezia FC",
+   "away": "Udinese",
+   "xg": [
+    1.14,
+    1.67
+   ],
+   "p1x2": {
+    "1": 0.2608,
+    "X": 0.2421,
+    "2": 0.4971
+   },
+   "over25": 0.5346,
+   "score": "1-1",
+   "htft": [
+    [
+     "2/2",
+     0.3057
+    ],
+    [
+     "X/2",
+     0.1634
+    ],
+    [
+     "1/1",
+     0.1476
+    ]
+   ],
+   "picks": [
+    {
+     "match": "Venezia FC vs Udinese",
+     "mk": "1X2",
+     "key": "2",
+     "pick": "Away win (2)",
+     "p": 0.49709438616364143,
+     "why": "Expected goals: Venezia FC 1.14, Udinese 1.67. Venue-adjusted attack/defence (home 1.04 scored/1.77 conceded; away 1.58 scored/1.88 conceded) plus recent form (0.6 vs 0.2 pts/game last 5). Simulated chances: 26% / 24% / 50%."
+    },
+    {
+     "match": "Venezia FC vs Udinese",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.534645041573766,
+     "why": "Combined expected goals 2.82. Probability of 3+ goals is 53%, so Over 2.5 is the likelier side."
+    },
+    {
+     "match": "Venezia FC vs Udinese",
+     "mk": "HTFT",
+     "key": "2/2",
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.3057392047167845,
+     "why": "Each half is simulated separately using the league's real first-half goal share. 2/2 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier."
+    }
+   ]
+  },
+  {
+   "id": 558532,
+   "comp": "Serie A",
+   "kickoff": "2026-11-07T14:00:00+00:00",
+   "home": "Torino",
+   "away": "Lecce",
+   "xg": [
+    1.74,
+    1.55
+   ],
+   "p1x2": {
+    "1": 0.425,
+    "X": 0.2293,
+    "2": 0.3457
+   },
+   "over25": 0.6402,
+   "score": "1-1",
+   "htft": [
+    [
+     "1/1",
+     0.2596
+    ],
+    [
+     "2/2",
+     0.2056
+    ],
+    [
+     "X/1",
+     0.1348
+    ]
+   ],
+   "picks": [
+    {
+     "match": "Torino vs Lecce",
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.4249526326406303,
+     "why": "Expected goals: Torino 1.74, Lecce 1.55. Venue-adjusted attack/defence (home 1.55 scored/1.84 conceded; away 1.39 scored/1.83 conceded) plus recent form (1.8 vs 0.6 pts/game last 5). Simulated chances: 42% / 23% / 35%."
+    },
+    {
+     "match": "Torino vs Lecce",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.6401551270222414,
+     "why": "Combined expected goals 3.30. Probability of 3+ goals is 64%, so Over 2.5 is the likelier side."
+    },
+    {
+     "match": "Torino vs Lecce",
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.2595687907362643,
+     "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier."
+    }
+   ]
+  },
+  {
+   "id": 558534,
+   "comp": "Serie A",
+   "kickoff": "2026-11-07T14:00:00+00:00",
+   "home": "Cagliari",
+   "away": "Frosinone",
+   "xg": [
+    1.17,
+    1.54
+   ],
+   "p1x2": {
+    "1": 0.2895,
+    "X": 0.2522,
+    "2": 0.4583
+   },
+   "over25": 0.5107,
+   "score": "1-1",
+   "htft": [
+    [
+     "2/2",
+     0.277
+    ],
+    [
+     "1/1",
+     0.1649
+    ],
+    [
+     "X/2",
+     0.1556
+    ]
+   ],
+   "picks": [
+    {
+     "match": "Cagliari vs Frosinone",
+     "mk": "1X2",
+     "key": "2",
+     "pick": "Away win (2)",
+     "p": 0.45834793939372576,
+     "why": "Expected goals: Cagliari 1.17, Frosinone 1.54. Venue-adjusted attack/defence (home 1.05 scored/1.32 conceded; away 1.82 scored/1.94 conceded) plus recent form (0.2 vs 2.0 pts/game last 5). Simulated chances: 29% / 25% / 46%."
+    },
+    {
+     "match": "Cagliari vs Frosinone",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.5106526150868517,
+     "why": "Combined expected goals 2.72. Probability of 3+ goals is 51%, so Over 2.5 is the likelier side."
+    },
+    {
+     "match": "Cagliari vs Frosinone",
+     "mk": "HTFT",
+     "key": "2/2",
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.2770113924540935,
+     "why": "Each half is simulated separately using the league's real first-half goal share. 2/2 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier."
+    }
+   ]
+  },
+  {
+   "id": 558535,
+   "comp": "Serie A",
+   "kickoff": "2026-11-07T17:00:00+00:00",
+   "home": "Parma",
+   "away": "Bologna",
+   "xg": [
+    0.77,
+    1.53
+   ],
+   "p1x2": {
+    "1": 0.1886,
+    "X": 0.2584,
+    "2": 0.553
+   },
+   "over25": 0.4035,
+   "score": "0-1",
+   "htft": [
+    [
+     "2/2",
+     0.3385
+    ],
+    [
+     "X/2",
+     0.1926
+    ],
+    [
+     "X/X",
+     0.1749
+    ]
+   ],
+   "picks": [
+    {
+     "match": "Parma vs Bologna",
+     "mk": "1X2",
+     "key": "2",
+     "pick": "Away win (2)",
+     "p": 0.5529976557312979,
+     "why": "Expected goals: Parma 0.77, Bologna 1.53. Venue-adjusted attack/defence (home 1.03 scored/1.38 conceded; away 1.70 scored/1.27 conceded) plus recent form (0.8 vs 2.4 pts/game last 5). Simulated chances: 19% / 26% / 55%."
+    },
+    {
+     "match": "Parma vs Bologna",
+     "mk": "OU",
+     "key": "U",
+     "pick": "Under 2.5",
+     "p": 0.5964689654973415,
+     "why": "Combined expected goals 2.30. Probability of 3+ goals is 40%, so Under 2.5 is the likelier side."
+    },
+    {
+     "match": "Parma vs Bologna",
+     "mk": "HTFT",
+     "key": "2/2",
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.33853380494055785,
+     "why": "Each half is simulated separately using the league's real first-half goal share. 2/2 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier."
+    }
+   ]
+  },
+  {
+   "id": 558531,
+   "comp": "Serie A",
+   "kickoff": "2026-11-07T19:45:00+00:00",
+   "home": "Roma",
+   "away": "Sassuolo",
+   "xg": [
+    3.04,
+    1.03
+   ],
+   "p1x2": {
+    "1": 0.7745,
+    "X": 0.1303,
+    "2": 0.0952
+   },
+   "over25": 0.7712,
+   "score": "3-1",
+   "htft": [
+    [
+     "1/1",
+     0.5528
+    ],
+    [
+     "X/1",
+     0.1797
+    ],
+    [
+     "X/X",
+     0.0661
+    ]
+   ],
+   "picks": [
+    {
+     "match": "Roma vs Sassuolo",
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.7744928047800952,
+     "why": "Expected goals: Roma 3.04, Sassuolo 1.03. Venue-adjusted attack/defence (home 2.31 scored/1.28 conceded; away 1.35 scored/2.10 conceded) plus recent form (2.2 vs 0.2 pts/game last 5). Simulated chances: 77% / 13% / 10%."
+    },
+    {
+     "match": "Roma vs Sassuolo",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.7711977688330364,
+     "why": "Combined expected goals 4.07. Probability of 3+ goals is 77%, so Over 2.5 is the likelier side."
+    },
+    {
+     "match": "Roma vs Sassuolo",
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.5527712951771228,
+     "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier."
+    }
+   ]
+  },
+  {
+   "id": 565852,
+   "comp": "Bundesliga",
+   "kickoff": "2026-11-06T19:30:00+00:00",
+   "home": "HSV",
+   "away": "M'gladbach",
+   "xg": [
+    1.96,
+    1.39
+   ],
+   "p1x2": {
+    "1": 0.5087,
+    "X": 0.219,
+    "2": 0.2723
+   },
+   "over25": 0.6515,
+   "score": "1-1",
+   "htft": [
+    [
+     "1/1",
+     0.2979
+    ],
+    [
+     "X/1",
+     0.1728
+    ],
+    [
+     "2/2",
+     0.1465
+    ]
+   ],
+   "picks": [
+    {
+     "match": "HSV vs M'gladbach",
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.508699426650873,
+     "why": "Expected goals: HSV 1.96, M'gladbach 1.39. Venue-adjusted attack/defence (home 1.62 scored/1.56 conceded; away 1.25 scored/2.50 conceded) plus recent form (1.8 vs 0.8 pts/game last 5). Simulated chances: 51% / 22% / 27%."
+    },
+    {
+     "match": "HSV vs M'gladbach",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.6515191247367028,
+     "why": "Combined expected goals 3.36. Probability of 3+ goals is 65%, so Over 2.5 is the likelier side."
+    },
+    {
+     "match": "HSV vs M'gladbach",
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.29793855360870086,
+     "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier."
+    }
+   ]
+  },
+  {
+   "id": 565848,
+   "comp": "Bundesliga",
+   "kickoff": "2026-11-07T14:30:00+00:00",
+   "home": "RB Leipzig",
+   "away": "Augsburg",
+   "xg": [
+    3.91,
+    0.96
+   ],
+   "p1x2": {
+    "1": 0.8744,
+    "X": 0.0783,
+    "2": 0.0473
+   },
+   "over25": 0.8629,
+   "score": "3-0",
+   "htft": [
+    [
+     "1/1",
+     0.6379
+    ],
+    [
+     "X/1",
+     0.1896
+    ],
+    [
+     "2/1",
+     0.0427
+    ]
+   ],
+   "picks": [
+    {
+     "match": "RB Leipzig vs Augsburg",
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.874395919399926,
+     "why": "Expected goals: RB Leipzig 3.91, Augsburg 0.96. Venue-adjusted attack/defence (home 3.36 scored/0.66 conceded; away 2.08 scored/2.39 conceded) plus recent form (1.8 vs 0.4 pts/game last 5). Simulated chances: 87% / 8% / 5%."
+    },
+    {
+     "match": "RB Leipzig vs Augsburg",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.8629300985082947,
+     "why": "Combined expected goals 4.87. Probability of 3+ goals is 86%, so Over 2.5 is the likelier side."
+    },
+    {
+     "match": "RB Leipzig vs Augsburg",
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.6378830421637454,
+     "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier."
+    }
+   ]
+  },
+  {
+   "id": 565850,
+   "comp": "Bundesliga",
+   "kickoff": "2026-11-07T14:30:00+00:00",
+   "home": "Dortmund",
+   "away": "Elversberg",
+   "xg": [
+    2.02,
+    0.75
+   ],
+   "p1x2": {
+    "1": 0.6697,
+    "X": 0.2007,
+    "2": 0.1296
+   },
+   "over25": 0.5231,
+   "score": "2-0",
+   "htft": [
+    [
+     "1/1",
+     0.4054
+    ],
+    [
+     "X/1",
+     0.2336
+    ],
+    [
+     "X/X",
+     0.1288
+    ]
+   ],
+   "picks": [
+    {
+     "match": "Dortmund vs Elversberg",
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.6697118714105177,
+     "why": "Expected goals: Dortmund 2.02, Elversberg 0.75. Venue-adjusted attack/defence (home 2.01 scored/0.94 conceded; away 1.10 scored/2.07 conceded) plus recent form (1.8 vs 1.4 pts/game last 5). Simulated chances: 67% / 20% / 13%."
+    },
+    {
+     "match": "Dortmund vs Elversberg",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.5230591584785003,
+     "why": "Combined expected goals 2.77. Probability of 3+ goals is 52%, so Over 2.5 is the likelier side."
+    },
+    {
+     "match": "Dortmund vs Elversberg",
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.40537937542186786,
+     "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier."
+    }
+   ]
+  },
+  {
+   "id": 565851,
+   "comp": "Bundesliga",
+   "kickoff": "2026-11-07T14:30:00+00:00",
+   "home": "Mainz",
+   "away": "Bayern",
+   "xg": [
+    1.35,
+    2.47
+   ],
+   "p1x2": {
+    "1": 0.1965,
+    "X": 0.1839,
+    "2": 0.6196
+   },
+   "over25": 0.7352,
+   "score": "1-2",
+   "htft": [
+    [
+     "2/2",
+     0.385
+    ],
+    [
+     "X/2",
+     0.1876
+    ],
+    [
+     "1/1",
+     0.1047
+    ]
+   ],
+   "picks": [
+    {
+     "match": "Mainz vs Bayern",
+     "mk": "1X2",
+     "key": "2",
+     "pick": "Away win (2)",
+     "p": 0.6195628279593883,
+     "why": "Expected goals: Mainz 1.35, Bayern 2.47. Venue-adjusted attack/defence (home 1.85 scored/2.03 conceded; away 1.62 scored/1.55 conceded) plus recent form (1.2 vs 2.2 pts/game last 5). Simulated chances: 20% / 18% / 62%."
+    },
+    {
+     "match": "Mainz vs Bayern",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.7351506859609577,
+     "why": "Combined expected goals 3.83. Probability of 3+ goals is 74%, so Over 2.5 is the likelier side."
+    },
+    {
+     "match": "Mainz vs Bayern",
+     "mk": "HTFT",
+     "key": "2/2",
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.3850416194416767,
+     "why": "Each half is simulated separately using the league's real first-half goal share. 2/2 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier."
+    }
+   ]
+  },
+  {
+   "id": 565853,
+   "comp": "Bundesliga",
+   "kickoff": "2026-11-07T14:30:00+00:00",
+   "home": "SC Paderborn",
+   "away": "Frankfurt",
+   "xg": [
+    1.78,
+    1.13
+   ],
+   "p1x2": {
+    "1": 0.524,
+    "X": 0.2335,
+    "2": 0.2426
+   },
+   "over25": 0.5565,
+   "score": "1-1",
+   "htft": [
+    [
+     "1/1",
+     0.3022
+    ],
+    [
+     "X/1",
+     0.1892
+    ],
+    [
+     "X/X",
+     0.1378
+    ]
+   ],
+   "picks": [
+    {
+     "match": "SC Paderborn vs Frankfurt",
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.5239873179290776,
+     "why": "Expected goals: SC Paderborn 1.78, Frankfurt 1.13. Venue-adjusted attack/defence (home 1.51 scored/1.16 conceded; away 1.34 scored/2.44 conceded) plus recent form (1.6 vs 1.4 pts/game last 5). Simulated chances: 52% / 23% / 24%."
+    },
+    {
+     "match": "SC Paderborn vs Frankfurt",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.5565347536537013,
+     "why": "Combined expected goals 2.91. Probability of 3+ goals is 56%, so Over 2.5 is the likelier side."
+    },
+    {
+     "match": "SC Paderborn vs Frankfurt",
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.3021782088683026,
+     "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier."
+    }
+   ]
+  },
+  {
+   "id": 565849,
+   "comp": "Bundesliga",
+   "kickoff": "2026-11-07T17:30:00+00:00",
+   "home": "Stuttgart",
+   "away": "Bremen",
+   "xg": [
+    2.05,
+    1.89
+   ],
+   "p1x2": {
+    "1": 0.4278,
+    "X": 0.2081,
+    "2": 0.3641
+   },
+   "over25": 0.7531,
+   "score": "2-1",
+   "htft": [
+    [
+     "1/1",
+     0.2491
+    ],
+    [
+     "2/2",
+     0.2074
+    ],
+    [
+     "X/1",
+     0.1388
+    ]
+   ],
+   "picks": [
+    {
+     "match": "Stuttgart vs Bremen",
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.4278063564661181,
+     "why": "Expected goals: Stuttgart 2.05, Bremen 1.89. Venue-adjusted attack/defence (home 2.02 scored/1.55 conceded; away 1.62 scored/2.14 conceded) plus recent form (1.2 vs 2.2 pts/game last 5). Simulated chances: 43% / 21% / 36%."
+    },
+    {
+     "match": "Stuttgart vs Bremen",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.7530508191313341,
+     "why": "Combined expected goals 3.94. Probability of 3+ goals is 75%, so Over 2.5 is the likelier side."
+    },
+    {
+     "match": "Stuttgart vs Bremen",
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.24910251223746044,
+     "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier."
+    }
+   ]
+  },
+  {
+   "id": 559638,
+   "comp": "Ligue 1",
+   "kickoff": "2026-11-06T19:45:00+00:00",
+   "home": "Toulouse",
+   "away": "Strasbourg",
+   "xg": [
+    1.58,
+    1.28
+   ],
+   "p1x2": {
+    "1": 0.4447,
+    "X": 0.2465,
+    "2": 0.3088
+   },
+   "over25": 0.545,
+   "score": "1-1",
+   "htft": [
+    [
+     "1/1",
+     0.2552
+    ],
+    [
+     "2/2",
+     0.1687
+    ],
+    [
+     "X/1",
+     0.1609
+    ]
+   ],
+   "picks": [
+    {
+     "match": "Toulouse vs Strasbourg",
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.44467219178154316,
+     "why": "Expected goals: Toulouse 1.58, Strasbourg 1.28. Venue-adjusted attack/defence (home 1.24 scored/1.24 conceded; away 1.42 scored/2.21 conceded) plus recent form (1.6 vs 0.6 pts/game last 5). Simulated chances: 44% / 25% / 31%."
+    },
+    {
+     "match": "Toulouse vs Strasbourg",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.5449591448434646,
+     "why": "Combined expected goals 2.86. Probability of 3+ goals is 54%, so Over 2.5 is the likelier side."
+    },
+    {
+     "match": "Toulouse vs Strasbourg",
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.25515478049830925,
+     "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier."
+    }
+   ]
+  },
+  {
+   "id": 559637,
+   "comp": "Ligue 1",
+   "kickoff": "2026-11-07T16:15:00+00:00",
+   "home": "Auxerre",
+   "away": "Paris FC",
+   "xg": [
+    1.3,
+    1.1
+   ],
+   "p1x2": {
+    "1": 0.4102,
+    "X": 0.2752,
+    "2": 0.3146
+   },
+   "over25": 0.4293,
+   "score": "1-1",
+   "htft": [
+    [
+     "1/1",
+     0.2267
+    ],
+    [
+     "X/X",
+     0.1784
+    ],
+    [
+     "2/2",
+     0.1678
+    ]
+   ],
+   "picks": [
+    {
+     "match": "Auxerre vs Paris FC",
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.4102063263052056,
+     "why": "Expected goals: Auxerre 1.30, Paris FC 1.10. Venue-adjusted attack/defence (home 1.48 scored/1.26 conceded; away 1.15 scored/1.52 conceded) plus recent form (1.4 vs 1.8 pts/game last 5). Simulated chances: 41% / 28% / 31%."
+    },
+    {
+     "match": "Auxerre vs Paris FC",
+     "mk": "OU",
+     "key": "U",
+     "pick": "Under 2.5",
+     "p": 0.570730610624542,
+     "why": "Combined expected goals 2.40. Probability of 3+ goals is 43%, so Under 2.5 is the likelier side."
+    },
+    {
+     "match": "Auxerre vs Paris FC",
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.22668567447366292,
+     "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier."
+    }
+   ]
+  },
+  {
+   "id": 559635,
+   "comp": "Ligue 1",
+   "kickoff": "2026-11-07T19:45:00+00:00",
+   "home": "PSG",
+   "away": "Troyes",
+   "xg": [
+    1.67,
+    0.72
+   ],
+   "p1x2": {
+    "1": 0.6016,
+    "X": 0.2396,
+    "2": 0.1588
+   },
+   "over25": 0.4287,
+   "score": "1-0",
+   "htft": [
+    [
+     "1/1",
+     0.3561
+    ],
+    [
+     "X/1",
+     0.2207
+    ],
+    [
+     "X/X",
+     0.1625
+    ]
+   ],
+   "picks": [
+    {
+     "match": "PSG vs Troyes",
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.6015746396059083,
+     "why": "Expected goals: PSG 1.67, Troyes 0.72. Venue-adjusted attack/defence (home 1.88 scored/1.13 conceded; away 0.87 scored/1.45 conceded) plus recent form (3.0 vs 0.8 pts/game last 5). Simulated chances: 60% / 24% / 16%."
+    },
+    {
+     "match": "PSG vs Troyes",
+     "mk": "OU",
+     "key": "U",
+     "pick": "Under 2.5",
+     "p": 0.5713165790308931,
+     "why": "Combined expected goals 2.39. Probability of 3+ goals is 43%, so Under 2.5 is the likelier side."
+    },
+    {
+     "match": "PSG vs Troyes",
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.3561161291600389,
+     "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier."
+    }
+   ]
+  }
+ ],
+ "demo": false,
+ "slips": {
+  "small": {
+   "legs": [
+    {
+     "match": "RB Leipzig vs Augsburg",
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.874395919399926,
+     "why": "Expected goals: RB Leipzig 3.91, Augsburg 0.96. Venue-adjusted attack/defence (home 3.36 scored/0.66 conceded; away 2.08 scored/2.39 conceded) plus recent form (1.8 vs 0.4 pts/game last 5). Simulated chances: 87% / 8% / 5%.",
+     "odds": 1.14
+    },
+    {
+     "match": "Roma vs Sassuolo",
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.7744928047800952,
+     "why": "Expected goals: Roma 3.04, Sassuolo 1.03. Venue-adjusted attack/defence (home 2.31 scored/1.28 conceded; away 1.35 scored/2.10 conceded) plus recent form (2.2 vs 0.2 pts/game last 5). Simulated chances: 77% / 13% / 10%.",
+     "odds": 1.29
+    },
+    {
+     "match": "Stuttgart vs Bremen",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.7530508191313341,
+     "why": "Combined expected goals 3.94. Probability of 3+ goals is 75%, so Over 2.5 is the likelier side.",
+     "odds": 1.33
+    }
+   ],
+   "prob": 0.5099760665166305,
+   "odds": 1.96
+  },
+  "medium": {
+   "legs": [
+    {
+     "match": "Mainz vs Bayern",
+     "mk": "1X2",
+     "key": "2",
+     "pick": "Away win (2)",
+     "p": 0.6195628279593883,
+     "why": "Expected goals: Mainz 1.35, Bayern 2.47. Venue-adjusted attack/defence (home 1.85 scored/2.03 conceded; away 1.62 scored/1.55 conceded) plus recent form (1.2 vs 2.2 pts/game last 5). Simulated chances: 20% / 18% / 62%.",
+     "odds": 1.61
+    },
+    {
+     "match": "Everton vs Coventry City",
+     "mk": "OU",
+     "key": "U",
+     "pick": "Under 2.5",
+     "p": 0.602641837703354,
+     "why": "Combined expected goals 2.28. Probability of 3+ goals is 40%, so Under 2.5 is the likelier side.",
+     "odds": 1.66
+    },
+    {
+     "match": "PSG vs Troyes",
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.6015746396059083,
+     "why": "Expected goals: PSG 1.67, Troyes 0.72. Venue-adjusted attack/defence (home 1.88 scored/1.13 conceded; away 0.87 scored/1.45 conceded) plus recent form (3.0 vs 0.8 pts/game last 5). Simulated chances: 60% / 24% / 16%.",
+     "odds": 1.66
+    },
+    {
+     "match": "Parma vs Bologna",
+     "mk": "OU",
+     "key": "U",
+     "pick": "Under 2.5",
+     "p": 0.5964689654973415,
+     "why": "Combined expected goals 2.30. Probability of 3+ goals is 40%, so Under 2.5 is the likelier side.",
+     "odds": 1.68
+    }
+   ],
+   "prob": 0.13397445647732972,
+   "odds": 7.46
+  },
+  "big": {
+   "legs": [
+    {
+     "match": "Cagliari vs Frosinone",
+     "mk": "1X2",
+     "key": "2",
+     "pick": "Away win (2)",
+     "p": 0.45834793939372576,
+     "why": "Expected goals: Cagliari 1.17, Frosinone 1.54. Venue-adjusted attack/defence (home 1.05 scored/1.32 conceded; away 1.82 scored/1.94 conceded) plus recent form (0.2 vs 2.0 pts/game last 5). Simulated chances: 29% / 25% / 46%.",
+     "odds": 2.18
+    },
+    {
+     "match": "Valencia vs Real Madrid",
+     "mk": "HTFT",
+     "key": "2/2",
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.4551997306019483,
+     "why": "Each half is simulated separately using the league's real first-half goal share. 2/2 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
+     "odds": 2.2
+    },
+    {
+     "match": "Toulouse vs Strasbourg",
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.44467219178154316,
+     "why": "Expected goals: Toulouse 1.58, Strasbourg 1.28. Venue-adjusted attack/defence (home 1.24 scored/1.24 conceded; away 1.42 scored/2.21 conceded) plus recent form (1.6 vs 0.6 pts/game last 5). Simulated chances: 44% / 25% / 31%.",
+     "odds": 2.25
+    },
+    {
+     "match": "Osasuna vs Athletic",
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.43470474282801463,
+     "why": "Expected goals: Osasuna 1.06, Athletic 0.70. Venue-adjusted attack/defence (home 1.24 scored/0.91 conceded; away 1.00 scored/1.49 conceded) plus recent form (0.8 vs 1.6 pts/game last 5). Simulated chances: 43% / 33% / 24%.",
+     "odds": 2.3
+    },
+    {
+     "match": "Stuttgart vs Bremen",
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.4278063564661181,
+     "why": "Expected goals: Stuttgart 2.05, Bremen 1.89. Venue-adjusted attack/defence (home 2.02 scored/1.55 conceded; away 1.62 scored/2.14 conceded) plus recent form (1.2 vs 2.2 pts/game last 5). Simulated chances: 43% / 21% / 36%.",
+     "odds": 2.34
+    }
+   ],
+   "prob": 0.017253565716672838,
+   "odds": 57.96
+  }
+ }
+}
