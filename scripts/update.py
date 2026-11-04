@@ -11,7 +11,8 @@ COMPS = {"PL": "Premier League", "PD": "La Liga", "SA": "Serie A", "BL1": "Bunde
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "docs", "data")
 XI = 0.006          # time decay per day: recent games count more
 K = 3.0             # shrinkage: pulls small samples toward league average
-DAYS_AHEAD = 4      # predict matches kicking off within this many days
+TRACK_DAYS = 4      # lock track-record picks only this close to kickoff
+BETSLIP_DAYS = 7    # keep betslips focused on the next week
 MIN_MATCHES = 20    # skip a league until enough games were played
 NM = {"1": "Home win", "X": "Draw", "2": "Away win"}
 
@@ -160,7 +161,9 @@ def main():
         if not dm: time.sleep(7)  # free API limit: 10 requests/minute
         fin = [m for m in ms if m["status"] == "FINISHED" and m["ft"]]
         for m in fin: finished[m["id"]] = m
-        up = [m for m in ms if m["status"] in ("SCHEDULED", "TIMED") and now < m["date"] <= now + timedelta(days=DAYS_AHEAD)]
+        # The competition endpoint returns the active season's schedule. Show
+        # every future fixture, but only lock a track-record pick close to kickoff.
+        up = [m for m in ms if m["status"] in ("SCHEDULED", "TIMED") and now < m["date"]]
         if len(fin) < MIN_MATCHES:
             if up: notes.append(f"{name}: only {len(fin)} finished games so far, skipped"); continue
             continue
@@ -168,13 +171,14 @@ def main():
         for m in sorted(up, key=lambda x: x["date"]):
             r = predict(M, m["home"], m["away"])
             if not r: continue
-            cs = candidates(m, r); all_c += cs
+            cs = candidates(m, r)
+            if m["date"] <= now + timedelta(days=BETSLIP_DAYS): all_c += cs
             ent = dict(id=m["id"], comp=name, kickoff=m["date"].isoformat(), home=m["home"], away=m["away"],
                        xg=[round(r["lh"], 2), round(r["la"], 2)], p1x2={k: round(v, 4) for k, v in r["P"].items()},
                        over25=round(r["ov"], 4), score=r["score"],
                        htft=sorted(([k, round(v, 4)] for k, v in r["H"].items()), key=lambda z: -z[1])[:3], picks=cs)
             matches.append(ent)
-            if m["id"] not in known:  # lock the prediction before kickoff
+            if m["date"] <= now + timedelta(days=TRACK_DAYS) and m["id"] not in known:  # lock close to kickoff
                 hist["items"].append(dict(id=m["id"], comp=name, kickoff=ent["kickoff"], home=m["home"], away=m["away"], p1x2=ent["p1x2"],
                                           picks=[dict(mk=c["mk"], key=c["key"], pick=c["pick"], p=round(c["p"], 4)) for c in cs], result=None))
                 known.add(m["id"])
