@@ -1,0 +1,40 @@
+name: update-predictions
+on:
+  schedule:
+    - cron: "0 6 * * *"
+    - cron: "0 15 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch data, run model, update track record
+        run: python scripts/update.py
+        env:
+          FOOTBALL_DATA_KEY: ${{ secrets.FOOTBALL_DATA_KEY }}
+      - name: Commit new data
+        run: |
+          git config user.name "predictions-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add docs/data
+          git diff --cached --quiet || (git commit -m "Update predictions" && git push)
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload site files
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs
+      - name: Deploy updated site
+        id: deployment
+        uses: actions/deploy-pages@v4
