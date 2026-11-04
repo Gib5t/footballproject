@@ -791,6 +791,72 @@
     }
    ],
    "result": null
+  },
+  {
+   "id": 564738,
+   "comp": "La Liga",
+   "kickoff": "2026-11-08T13:00:00+00:00",
+   "home": "Elche",
+   "away": "Real Betis",
+   "p1x2": {
+    "1": 0.2266,
+    "X": 0.2435,
+    "2": 0.5299
+   },
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "2",
+     "pick": "Away win (2)",
+     "p": 0.5299
+    },
+    {
+     "mk": "OU",
+     "key": "U",
+     "pick": "Under 2.5",
+     "p": 0.5019
+    },
+    {
+     "mk": "HTFT",
+     "key": "2/2",
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.3243
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 558533,
+   "comp": "Serie A",
+   "kickoff": "2026-11-08T11:30:00+00:00",
+   "home": "Napoli",
+   "away": "Lazio",
+   "p1x2": {
+    "1": 0.1939,
+    "X": 0.1924,
+    "2": 0.6137
+   },
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "2",
+     "pick": "Away win (2)",
+     "p": 0.6137
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.6882
+    },
+    {
+     "mk": "HTFT",
+     "key": "2/2",
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.4036
+    }
+   ],
+   "result": null
   }
  ],
  "summary": {
@@ -798,5 +864,5 @@
   "matches": 0,
   "brier": null
  },
- "updated": "2026-11-04T03:06:06.109161+00:00"
+ "updated": "2026-11-04T13:43:36.211038+00:00"
 }
