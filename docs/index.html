@@ -13,6 +13,7 @@ main{max-width:980px;margin:0 auto;padding:16px}h1{font-size:24px;margin:6px 0}h
 .slip{border-top:4px solid var(--c)}.leg{border-top:1px dashed var(--bd);padding:8px 0}.pill{display:inline-block;padding:1px 8px;border-radius:99px;background:var(--bd);font-size:12px;margin-right:4px}
 .bar{display:flex;height:10px;border-radius:6px;overflow:hidden;margin:6px 0;background:var(--bd)}.bar i{display:block}
 details{margin-top:6px}summary{cursor:pointer;color:var(--ac);font-size:13px}table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:6px;border-bottom:1px solid var(--bd);text-align:left}
+.date-tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.date-tools label{font-size:13px}.date-tools select{max-width:100%;font:inherit;color:var(--tx);background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:7px 9px}#match-count{margin-left:auto}.day-group{margin:18px 0}.day-heading{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin:16px 0 4px}.day-heading h3{font-size:16px}
 footer{margin:30px 0 10px;font-size:12px;color:var(--mu)}
 </style></head><body><main>
 <h1>⚽ Football Analyst</h1>
@@ -20,7 +21,14 @@ footer{margin:30px 0 10px;font-size:12px;color:var(--mu)}
 <div class="card warn mu"><b>18+ only.</b> Predictions are probabilities, not promises. Nobody can guarantee a result. Never bet money you can’t afford to lose. If gambling stops being fun, seek help from a local support service.</div>
 <div id="notes" class="mu"></div>
 <div id="slips"></div>
-<h2>Upcoming matches</h2><div id="matches"><p class="mu">Loading…</p></div>
+<h2>Upcoming matches</h2>
+<div class="card date-tools" aria-label="Match filters">
+ <label for="match-date"><b>Date</b></label><select id="match-date" aria-label="Filter matches by date"><option value="all">All upcoming dates</option></select>
+ <label for="match-comp"><b>Competition</b></label><select id="match-comp" aria-label="Filter matches by competition"><option value="all">All competitions</option></select>
+ <span id="match-count" class="mu" aria-live="polite"></span>
+</div>
+<p class="mu">Matches are grouped by date. Kickoff times are shown in your local time.</p>
+<div id="matches"><p class="mu">Loading…</p></div>
 <h2>Public track record</h2><div id="rec"></div>
 <!-- AD / PARTNER SLOT: place approved ad code or partner links here once you have traffic and have checked local law and platform rules. -->
 <footer>Educational statistics only. Not financial or betting advice. “Fair odds” = 1 ÷ model probability; they are not bookmaker odds.</footer>
@@ -29,15 +37,25 @@ const pc=x=>(x*100).toFixed(0)+"%",NM={"1":"Home win",X:"Draw","2":"Away win"};
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const get=u=>fetch(u+"?t="+Date.now()).then(r=>r.json());
 function slipHTML(t,c,s){const L=s.legs||[];return `<div class="card slip" style="--c:var(${c})"><h3>${t}</h3>`+(L.length?`<div class="mu">Combined probability ${pc(s.prob)} · model fair odds ${s.odds}</div>`+L.map(l=>`<div class="leg"><b>${esc(l.pick)}</b><br><span class="mu">${esc(l.match)}</span> <span class="pill">${esc(l.mk)}</span><span class="pill">${pc(l.p)} · odds ${l.odds}</span><details><summary>Why this pick</summary><div class="mu">${esc(l.why)}</div></details></div>`).join(""):`<div class="mu">Not enough matches right now.</div>`)+`</div>`}
+const dateSelect=document.getElementById("match-date"),compSelect=document.getElementById("match-comp"),matchCount=document.getElementById("match-count");
+let upcomingMatches=[];
+function dateKey(value){const d=new Date(value);if(Number.isNaN(d.getTime()))return "unknown";return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`}
+function dateFromKey(key){const [y,m,d]=key.split("-").map(Number);return new Date(y,m-1,d)}
+function dayLabel(key){return key==="unknown"?"Date unavailable":dateFromKey(key).toLocaleDateString(undefined,{weekday:"long",month:"long",day:"numeric",year:"numeric"})}
+function dateOptionLabel(key,n){const today=dateKey(new Date()),tomorrow=new Date();tomorrow.setDate(tomorrow.getDate()+1);const prefix=key==="unknown"?"Date unavailable":key===today?"Today":key===dateKey(tomorrow)?"Tomorrow":dateFromKey(key).toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"});return `${prefix} · ${n} ${n===1?"match":"matches"}`}
+function fillMatchFilters(matches){const dates=new Map(),comps=new Set();matches.forEach(m=>{const key=dateKey(m.kickoff);dates.set(key,(dates.get(key)||0)+1);if(m.comp)comps.add(m.comp)});dateSelect.innerHTML=`<option value="all">All upcoming dates (${matches.length})</option>`+[...dates].map(([key,n])=>`<option value="${key}">${esc(dateOptionLabel(key,n))}</option>`).join("");compSelect.innerHTML=`<option value="all">All competitions</option>`+[...comps].sort((a,b)=>a.localeCompare(b)).map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join("")}
+function matchCard(m){const time=new Date(m.kickoff).toLocaleTimeString(undefined,{hour:"numeric",minute:"2-digit"});return `<div class="card"><h3>${esc(m.home)} vs ${esc(m.away)}</h3><div class="mu">${esc(m.comp)} · ${esc(time)} local kickoff</div>
+ <div class="bar"><i style="width:${m.p1x2["1"]*100}%;background:var(--s)"></i><i style="width:${m.p1x2.X*100}%;background:var(--m)"></i><i style="width:${m.p1x2["2"]*100}%;background:var(--b)"></i></div>
+ <div class="mu">1: ${pc(m.p1x2["1"])} · X: ${pc(m.p1x2.X)} · 2: ${pc(m.p1x2["2"])} · Over 2.5: ${pc(m.over25)} · Under 2.5: ${pc(1-m.over25)}</div>
+ <div style="margin-top:4px">Likeliest score <b>${m.score}</b> · xG ${m.xg[0]} – ${m.xg[1]} · Best HT/FT: <b>${m.htft[0][0]}</b> (${pc(m.htft[0][1])})</div>
+ <details><summary>Why the bot picked these</summary>${m.picks.map(c=>`<p class="mu"><b>${esc(c.pick)}</b> (${pc(c.p)}): ${esc(c.why)}</p>`).join("")}</details></div>`}
+function renderMatches(){const day=dateSelect.value,comp=compSelect.value;const shown=upcomingMatches.filter(m=>(day==="all"||dateKey(m.kickoff)===day)&&(comp==="all"||m.comp===comp));matchCount.textContent=`${shown.length} of ${upcomingMatches.length} matches`;if(!shown.length){document.getElementById("matches").innerHTML=`<p class="mu">No matches for this selection. Try another date or competition.</p>`;return}const groups=new Map();shown.forEach(m=>{const key=dateKey(m.kickoff);if(!groups.has(key))groups.set(key,[]);groups.get(key).push(m)});document.getElementById("matches").innerHTML=[...groups].map(([key,list])=>`<section class="day-group"><div class="day-heading"><h3>${esc(dayLabel(key))}</h3><span class="mu">${list.length} ${list.length===1?"match":"matches"}</span></div>${list.map(matchCard).join("")}</section>`).join("")}
+dateSelect.addEventListener("change",renderMatches);compSelect.addEventListener("change",renderMatches);
 get("data/predictions.json").then(p=>{
  document.getElementById("upd").textContent="Updated "+new Date(p.updated).toLocaleString()+(p.demo?" (DEMO DATA)":"");
  document.getElementById("notes").textContent=(p.notes||[]).join(" · ");
  const s=p.slips||{};document.getElementById("slips").innerHTML=`<h2>Betslips</h2><div class="slips">`+slipHTML("🟦 Small bets (safest)","--s",s.small||{})+slipHTML("🟨 Medium bets","--m",s.medium||{})+slipHTML("🟥 Big bets (high risk)","--b",s.big||{})+`</div>`;
- const M=p.matches||[];document.getElementById("matches").innerHTML=M.length?M.map(m=>`<div class="card"><h3>${esc(m.home)} vs ${esc(m.away)}</h3><div class="mu">${esc(m.comp)} · ${new Date(m.kickoff).toLocaleString()}</div>
- <div class="bar"><i style="width:${m.p1x2["1"]*100}%;background:var(--s)"></i><i style="width:${m.p1x2.X*100}%;background:var(--m)"></i><i style="width:${m.p1x2["2"]*100}%;background:var(--b)"></i></div>
- <div class="mu">1: ${pc(m.p1x2["1"])} · X: ${pc(m.p1x2.X)} · 2: ${pc(m.p1x2["2"])} · Over 2.5: ${pc(m.over25)} · Under 2.5: ${pc(1-m.over25)}</div>
- <div style="margin-top:4px">Likeliest score <b>${m.score}</b> · xG ${m.xg[0]} – ${m.xg[1]} · Best HT/FT: <b>${m.htft[0][0]}</b> (${pc(m.htft[0][1])})</div>
- <details><summary>Why the bot picked these</summary>${m.picks.map(c=>`<p class="mu"><b>${esc(c.pick)}</b> (${pc(c.p)}): ${esc(c.why)}</p>`).join("")}</details></div>`).join(""):`<p class="mu">No matches in the next few days (or data not generated yet).</p>`;
+ upcomingMatches=(p.matches||[]).slice().sort((a,b)=>new Date(a.kickoff)-new Date(b.kickoff));fillMatchFilters(upcomingMatches);renderMatches();
 }).catch(()=>document.getElementById("matches").innerHTML='<p class="mu">No data yet. Run the “update-predictions” workflow once.</p>');
 get("data/history.json").then(h=>{const S=h.summary||{markets:[]},names={"1X2":"1X2",OU:"Over/Under 2.5",HTFT:"Half-time/Full-time"};
  document.getElementById("rec").innerHTML=S.matches?`<div class="card"><p class="mu">Every prediction is saved before kickoff and scored after the match. If “hit rate” is close to “average confidence”, the model is honest. ${S.matches} matches scored; Brier score ${S.brier.toFixed(3)} (lower is better; 0.667 = pure guessing on 1X2).</p><table><tr><th>Market</th><th>Picks</th><th>Hit rate</th><th>Avg confidence</th></tr>${S.markets.map(r=>`<tr><td>${names[r.market]||r.market}</td><td>${r.n}</td><td>${pc(r.hit_rate)}</td><td>${pc(r.avg_prob)}</td></tr>`).join("")}</table></div>`:`<p class="mu">The track record fills in automatically as predicted matches finish.</p>`;
