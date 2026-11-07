@@ -16,22 +16,34 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.5134
+     "p": 0.5134,
+     "hit": 1
     },
     {
      "mk": "OU",
      "key": "U",
      "pick": "Under 2.5",
-     "p": 0.6026
+     "p": 0.6026,
+     "hit": 0
     },
     {
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.2944
+     "p": 0.2944,
+     "hit": 0
     }
    ],
-   "result": null
+   "result": {
+    "ft": [
+     3,
+     1
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   }
   },
   {
    "id": 560632,
@@ -181,22 +193,34 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.5826
+     "p": 0.5826,
+     "hit": 0
     },
     {
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.544
+     "p": 0.544,
+     "hit": 0
     },
     {
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.3664
+     "p": 0.3664,
+     "hit": 0
     }
    ],
-   "result": null
+   "result": {
+    "ft": [
+     0,
+     0
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   }
   },
   {
    "id": 564744,
@@ -346,22 +370,34 @@
      "mk": "1X2",
      "key": "2",
      "pick": "Away win (2)",
-     "p": 0.4971
+     "p": 0.4971,
+     "hit": 0
     },
     {
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.5346
+     "p": 0.5346,
+     "hit": 1
     },
     {
      "mk": "HTFT",
      "key": "2/2",
      "pick": "HT Away win / FT Away win (2/2)",
-     "p": 0.3057
+     "p": 0.3057,
+     "hit": 0
     }
    ],
-   "result": null
+   "result": {
+    "ft": [
+     2,
+     1
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   }
   },
   {
    "id": 558532,
@@ -511,22 +547,34 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.5087
+     "p": 0.5087,
+     "hit": 1
     },
     {
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.6515
+     "p": 0.6515,
+     "hit": 1
     },
     {
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.2979
+     "p": 0.2979,
+     "hit": 0
     }
    ],
-   "result": null
+   "result": {
+    "ft": [
+     3,
+     1
+    ],
+    "ht": [
+     1,
+     1
+    ]
+   }
   },
   {
    "id": 565848,
@@ -709,22 +757,34 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.4447
+     "p": 0.4447,
+     "hit": 1
     },
     {
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.545
+     "p": 0.545,
+     "hit": 1
     },
     {
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.2552
+     "p": 0.2552,
+     "hit": 1
     }
    ],
-   "result": null
+   "result": {
+    "ft": [
+     3,
+     1
+    ],
+    "ht": [
+     1,
+     0
+    ]
+   }
   },
   {
    "id": 559637,
@@ -1586,9 +1646,28 @@
   }
  ],
  "summary": {
-  "markets": [],
-  "matches": 0,
-  "brier": null
+  "markets": [
+   {
+    "market": "1X2",
+    "n": 5,
+    "hit_rate": 0.6,
+    "avg_prob": 0.5093000000000001
+   },
+   {
+    "market": "OU",
+    "n": 5,
+    "hit_rate": 0.6,
+    "avg_prob": 0.5755399999999999
+   },
+   {
+    "market": "HTFT",
+    "n": 5,
+    "hit_rate": 0.2,
+    "avg_prob": 0.30392
+   }
+  ],
+  "matches": 5,
+  "brier": 0.6034665680000001
  },
- "updated": "2026-11-06T20:45:19.836418+00:00"
+ "updated": "2026-11-07T12:22:06.611460+00:00"
 }
