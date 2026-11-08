@@ -1,5 +1,11 @@
 name: update-predictions
 on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/update.yml"
+      - "docs/index.html"
+      - "scripts/update.py"
   schedule:
     - cron: "0 6 * * *"
     - cron: "0 15 * * *"
