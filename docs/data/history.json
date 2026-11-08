@@ -2014,8 +2014,57 @@
     "avg_prob": 0.3332352941176472
    }
   ],
+  "stats": [],
   "matches": 34,
   "brier": 0.5569606173529412
  },
- "updated": "2026-11-08T17:19:28.984322+00:00"
+ "updated": "2026-11-08T18:34:24.322943+00:00",
+ "daily_slips": [
+  {
+   "date": "2026-11-08",
+   "updated": "2026-11-08T18:34:24.322943+00:00",
+   "legs": [
+    {
+     "match": "Atleti vs Bar\u00e7a",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.7277128451901057,
+     "why": "Combined expected goals 3.78. Probability of 3+ goals is 73%, so Over 2.5 is the likelier side.",
+     "id": 564746,
+     "comp": "La Liga",
+     "kickoff": "2026-11-08T20:00:00+00:00",
+     "hit": null
+    },
+    {
+     "match": "RC Lens vs Marseille",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.6437599307024842,
+     "why": "Combined expected goals 3.32. Probability of 3+ goals is 64%, so Over 2.5 is the likelier side.",
+     "id": 559630,
+     "comp": "Ligue 1",
+     "kickoff": "2026-11-08T19:45:00+00:00",
+     "hit": null
+    },
+    {
+     "match": "Fiorentina vs Juventus",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.5142399521210341,
+     "why": "Combined expected goals 2.73. Probability of 3+ goals is 51%, so Over 2.5 is the likelier side.",
+     "id": 558529,
+     "comp": "Serie A",
+     "kickoff": "2026-11-08T19:45:00+00:00",
+     "hit": null
+    }
+   ],
+   "prob": 0.24090720952553465,
+   "odds": 4.15,
+   "note": "Each leg is a model estimate. Combined probability assumes separate match outcomes and is approximate.",
+   "hit": null
+  }
+ ]
 }
