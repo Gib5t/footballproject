@@ -7,6 +7,7 @@ import os, sys, json, math, time, random, re, unicodedata
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
 from urllib.request import Request, urlopen
+from urllib.error import HTTPError
 from urllib.parse import quote
 
 COMPS = {"PL": "Premier League", "PD": "La Liga", "SA": "Serie A", "BL1": "Bundesliga", "FL1": "Ligue 1"}
@@ -431,6 +432,8 @@ def main():
         try:
             pitch_data = fetch_pitch_data(now, pitch_key)
             notes.extend(pitch_data.get("notes", []))
+        except HTTPError as e:
+            notes.append(f"Player/corner/card feed unavailable (HTTP {e.code}); core predictions continue")
         except Exception as e:
             notes.append(f"Player/corner/card feed unavailable ({type(e).__name__}); core predictions continue")
     elif not dm:
