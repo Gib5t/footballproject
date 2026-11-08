@@ -3,9 +3,11 @@
 Usage:  python scripts/update.py          (needs env FOOTBALL_DATA_KEY)
         python scripts/update.py --demo   (synthetic data, to test offline)
 Uses only the Python standard library. No bookmaker odds or outside predictions are used."""
-import os, sys, json, math, time, random
+import os, sys, json, math, time, random, re, unicodedata
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
 from urllib.request import Request, urlopen
+from urllib.parse import quote
 
 COMPS = {"PL": "Premier League", "PD": "La Liga", "SA": "Serie A", "BL1": "Bundesliga", "FL1": "Ligue 1"}
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "docs", "data")
@@ -15,6 +17,9 @@ TRACK_DAYS = 4      # lock track-record picks only this close to kickoff
 BETSLIP_DAYS = 7    # keep betslips focused on the next week
 MIN_MATCHES = 20    # skip a league until enough games were played
 NM = {"1": "Home win", "X": "Draw", "2": "Away win"}
+PITCH_COMPS = {"Premier League", "La Liga", "Serie A", "Bundesliga", "Ligue 1"}
+PITCH_BASE = "https://api.pitchapi.dev/v1"
+STAT_MATCHES_PER_TEAM = 5
 
 def parse(s): return datetime.strptime(s, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
 def r3(a, b): return "1" if a > b else "X" if a == b else "2"
@@ -35,6 +40,219 @@ def norm(m):
     return dict(id=m["id"], date=parse(m["utcDate"]), status=m["status"], home=nm(m["homeTeam"]), away=nm(m["awayTeam"]),
                 ft=(ft["home"], ft["away"]) if ft.get("home") is not None else None,
                 ht=(ht["home"], ht["away"]) if ht.get("home") is not None else None)
+
+def pitch_json(path, key):
+    req = Request(PITCH_BASE + path, headers={"X-API-KEY": key, "Accept": "application/json"})
+    with urlopen(req, timeout=30) as response: return json.load(response)
+
+def team_key(name):
+    text = unicodedata.normalize("NFKD", str(name)).encode("ascii", "ignore").decode().lower()
+    text = re.sub(r"[^a-z0-9]+", " ", text).strip()
+    aliases = {"man utd": "manchester united", "man united": "manchester united", "man city": "manchester city",
+               "ath madrid": "atletico madrid", "atletico": "atletico madrid", "ath bilbao": "athletic club",
+               "inter": "internazionale", "ac milan": "milan", "paris sg": "paris saint germain", "psg": "paris saint germain",
+               "spurs": "tottenham hotspur", "wolves": "wolverhampton wanderers", "nott m forest": "nottingham forest"}
+    return aliases.get(text, text)
+
+def pitch_date(match):
+    value = match.get("time_utc") or match.get("date")
+    if not value: return None
+    try:
+        dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        if dt.tzinfo is None: dt = dt.replace(tzinfo=timezone.utc)
+        return dt.astimezone(timezone.utc)
+    except (TypeError, ValueError): return None
+
+def number(value):
+    if isinstance(value, dict): value = value.get("value")
+    if value is None: return None
+    found = re.search(r"-?\d+(?:\.\d+)?", str(value))
+    return float(found.group(0)) if found else None
+
+def player_fields(row):
+    fields = {}
+    for group in row.get("stats", []) or []:
+        for label, item in (group.get("stats", {}) or {}).items():
+            stat = item.get("stat", item) if isinstance(item, dict) else item
+            key = (item.get("key") if isinstance(item, dict) else None) or (stat.get("key") if isinstance(stat, dict) else None)
+            val = number(stat)
+            if key: fields[str(key).lower()] = val
+            fields[re.sub(r"[^a-z0-9]+", "_", str(label).lower()).strip("_")] = val
+    return dict(id=str((row.get("player") or {}).get("id", "")), name=(row.get("player") or {}).get("name", "Unknown player"),
+                minutes=fields.get("minutes_played", fields.get("minutes", 0)) or 0,
+                goals=fields.get("goals", 0) or 0, assists=fields.get("assists", 0) or 0,
+                xg=fields.get("expected_goals", fields.get("xg")), xa=fields.get("expected_assists", fields.get("xa")),
+                xg_xa=fields.get("xg_and_xa"))
+
+def match_stat_pairs(data):
+    periods = data.get("periods", []) if isinstance(data, dict) else []
+    all_period = next((p for p in periods if str(p.get("period", "")).lower() in ("all", "fulltime", "full_time")), None)
+    groups = (all_period or {}).get("groups", [])
+    if not groups:
+        groups = [g for p in periods for g in p.get("groups", [])]
+    pairs = []
+    for group in groups:
+        for item in group.get("items", []) or []:
+            label = " ".join(str(item.get(k, "")) for k in ("title", "key", "name")).lower()
+            home, away = number(item.get("home")), number(item.get("away"))
+            if home is not None and away is not None: pairs.append((label, home, away))
+    return pairs
+
+def extract_match_stats(data):
+    pairs = match_stat_pairs(data)
+    corner = next(((h, a) for label, h, a in pairs if "corner" in label and not any(x in label for x in ("first half", "second half", "1h", "2h"))), None)
+    yellow = next(((h, a) for label, h, a in pairs if "yellow" in label and "card" in label), None)
+    red = next(((h, a) for label, h, a in pairs if "red" in label and "card" in label), None)
+    total = next(((h, a) for label, h, a in pairs if "card" in label and "yellow" not in label and "red" not in label), None)
+    if yellow or red:
+        cards = ((yellow[0] if yellow else 0) + (red[0] if red else 0), (yellow[1] if yellow else 0) + (red[1] if red else 0))
+    else: cards = total
+    return corner, cards
+
+def fetch_pitch_data(now, key):
+    """Optional detailed feed for player and match-stat projections; failures never stop core predictions."""
+    raw = pitch_json("/leagues", key)
+    leagues = (raw.get("data") or {}).get("leagues", [])
+    start = now.year if now.month >= 7 else now.year - 1
+    season = f"{start}/{start + 1}"
+    by_name = {team_key(x.get("name", "")): x for x in leagues}
+    details, schedules, notes = {}, {}, []
+    for comp in sorted(PITCH_COMPS):
+        league = by_name.get(team_key(comp))
+        if not league:
+            notes.append(f"{comp}: no detailed-stat league match found"); continue
+        try:
+            answer = pitch_json(f"/leagues/{league['id']}/matches?season={quote(season)}&status=all", key)
+            rows = (answer.get("data") or {}).get("matches", [])
+            schedules[comp] = rows
+            played = [m for m in rows if str(m.get("status", "")).lower() in ("finished", "complete", "completed") and m.get("score_home") is not None and m.get("score_away") is not None]
+            # Recent matches from each team give current-season form without stale player transfers.
+            selected = {}
+            teams = {team_key((m.get(side) or {}).get("name", "")) for m in played for side in ("home_team", "away_team")}
+            for team in teams:
+                team_rows = [m for m in played if team in (team_key((m.get("home_team") or {}).get("name", "")), team_key((m.get("away_team") or {}).get("name", "")))]
+                for m in sorted(team_rows, key=lambda x: pitch_date(x) or datetime.min.replace(tzinfo=timezone.utc), reverse=True)[:STAT_MATCHES_PER_TEAM]:
+                    if m.get("id"): selected[m["id"]] = m
+            def details_for(match):
+                mid = quote(str(match["id"]), safe="")
+                players = pitch_json(f"/matches/{mid}/players", key).get("data", [])
+                stats = pitch_json(f"/matches/{mid}/stats", key).get("data", {})
+                corners, cards = extract_match_stats(stats)
+                p_rows = [player_fields(x) | {"team_id": x.get("team_id")} for x in players if (x.get("player") or {}).get("id")]
+                return match, dict(players=p_rows, corners=corners, cards=cards)
+            with ThreadPoolExecutor(max_workers=6) as pool:
+                futures = [pool.submit(details_for, m) for m in selected.values()]
+                for future in as_completed(futures):
+                    try:
+                        match, stats = future.result(); details[str(match["id"])] = (comp, match, stats)
+                    except Exception:
+                        # Individual stat records can be missing; keep the rest of the league usable.
+                        continue
+        except Exception as error:
+            notes.append(f"{comp}: detailed stats unavailable ({type(error).__name__})")
+    return dict(details=details, schedules=schedules, notes=notes)
+
+def pitch_match_for(match, comp, schedules):
+    home, away = team_key(match["home"]), team_key(match["away"])
+    choices = []
+    for candidate in schedules.get(comp, []):
+        ch = team_key((candidate.get("home_team") or {}).get("name", "")); ca = team_key((candidate.get("away_team") or {}).get("name", ""))
+        if home != ch or away != ca: continue
+        dt = pitch_date(candidate)
+        if not dt: continue
+        delta = abs((dt - match["date"]).total_seconds())
+        if delta <= 36 * 3600: choices.append((delta, candidate))
+    return min(choices, key=lambda x: x[0])[1] if choices else None
+
+def player_projections(team, team_id, expected_goals, details):
+    by_player = {}
+    for comp, match, detail in details.values():
+        dt = pitch_date(match)
+        if not dt: continue
+        home = (match.get("home_team") or {}); away = (match.get("away_team") or {})
+        for row in detail.get("players", []):
+            belongs = row.get("team_id") == team_id if team_id else team_key(home.get("name") if row.get("team_id") == home.get("id") else away.get("name", "")) == team_key(team)
+            if not belongs or row.get("minutes", 0) <= 0: continue
+            obj = by_player.setdefault(row["id"], dict(name=row["name"], minutes=[], goals=0.0, assists=0.0, xg=0.0, xa=0.0, has_xg=False, matches=0, latest=dt))
+            obj["minutes"].append((dt, float(row["minutes"])))
+            obj["goals"] += float(row.get("goals") or 0); obj["assists"] += float(row.get("assists") or 0); obj["matches"] += 1
+            if row.get("xg") is not None:
+                obj["xg"] += float(row["xg"]); obj["has_xg"] = True
+                if row.get("xg_xa") is not None: obj["xa"] += max(0.0, float(row["xg_xa"]) - float(row["xg"]))
+            elif row.get("xa") is not None: obj["xa"] += float(row["xa"])
+            if dt > obj["latest"]: obj["latest"] = dt
+    score, assist = [], []
+    for pid, p in by_player.items():
+        if p["matches"] < 2: continue
+        minutes_total = sum(v for _, v in p["minutes"])
+        if minutes_total < 90: continue
+        recent_minutes = [v for _, v in sorted(p["minutes"], reverse=True)[:5]]
+        projected_minutes = min(90.0, sum(recent_minutes) / len(recent_minutes))
+        min90 = minutes_total / 90.0
+        score_base = p["xg"] if p["has_xg"] else p["goals"]
+        score_rate = (score_base + .12) / (min90 + 1.5)
+        attack_factor = min(1.35, max(.7, expected_goals / 1.4))
+        score_p = 1 - math.exp(-score_rate * projected_minutes / 90 * attack_factor)
+        assist_base = p["assists"] + .55 * p["xa"]
+        assist_rate = (assist_base + .08) / (min90 + 1.5)
+        assist_p = 1 - math.exp(-assist_rate * projected_minutes / 90 * attack_factor)
+        common = dict(player=p["name"], player_id=pid, team=team, minutes=round(projected_minutes), appearances=p["matches"])
+        score.append(common | dict(p=round(score_p, 4), basis="recent xG/goals and minutes"))
+        assist.append(common | dict(p=round(assist_p, 4), basis="recent assists and xA/minutes"))
+    return sorted(score, key=lambda x: -x["p"])[:3], sorted(assist, key=lambda x: -x["p"])[:3]
+
+def team_recent_rates(records, team, venue, metric, role, baseline, prior=3):
+    vals = []
+    key = team_key(team)
+    for row in records:
+        side = "home" if row["home_key"] == key else "away" if row["away_key"] == key else None
+        if not side or (venue != "any" and side != venue): continue
+        pair = row.get(metric)
+        if not pair: continue
+        if role == "for": vals.append(pair[0] if side == "home" else pair[1])
+        else: vals.append(pair[1] if side == "home" else pair[0])
+    return ((sum(vals) + prior * baseline) / (len(vals) + prior), len(vals)) if baseline is not None else (None, len(vals))
+
+def fixture_features(match, comp, schedules, details):
+    pitch_match = pitch_match_for(match, comp, schedules)
+    if not pitch_match: return None, None
+    comp_rows = []
+    for _, pm, stats in details.values():
+        if _ != comp: continue
+        dt = pitch_date(pm)
+        if not dt or dt >= match["date"]: continue
+        home, away = pm.get("home_team") or {}, pm.get("away_team") or {}
+        comp_rows.append(dict(date=dt, home_key=team_key(home.get("name", "")), away_key=team_key(away.get("name", "")),
+                              corners=stats.get("corners"), cards=stats.get("cards")))
+    comp_rows.sort(key=lambda x: x["date"], reverse=True)
+    # League averages provide a conservative prior when only a few team records are available.
+    corner_home = [r["corners"][0] for r in comp_rows if r.get("corners")]
+    corner_away = [r["corners"][1] for r in comp_rows if r.get("corners")]
+    card_home = [r["cards"][0] for r in comp_rows if r.get("cards")]
+    card_away = [r["cards"][1] for r in comp_rows if r.get("cards")]
+    avg = lambda vals: sum(vals) / len(vals) if vals else None
+    c_home_base, c_away_base = avg(corner_home), avg(corner_away)
+    k_home_base, k_away_base = avg(card_home), avg(card_away)
+    home_team, away_team = pitch_match.get("home_team") or {}, pitch_match.get("away_team") or {}
+    features = {"stats_id": str(pitch_match.get("id", "")), "source": "PitchAPI", "source_updated": None}
+    if c_home_base is not None and c_away_base is not None:
+        hf, hn = team_recent_rates(comp_rows, match["home"], "home", "corners", "for", c_home_base)
+        ad, an = team_recent_rates(comp_rows, match["away"], "away", "corners", "against", c_home_base)
+        af, an2 = team_recent_rates(comp_rows, match["away"], "away", "corners", "for", c_away_base)
+        hd, hn2 = team_recent_rates(comp_rows, match["home"], "home", "corners", "against", c_away_base)
+        if None not in (hf, ad, af, hd):
+            ch, ca = max(0, (hf + ad) / 2), max(0, (af + hd) / 2)
+            features["corners"] = dict(home=round(ch, 1), away=round(ca, 1), total=round(ch + ca, 1), samples=min(hn, an, an2, hn2))
+    if k_home_base is not None and k_away_base is not None:
+        hc, hn = team_recent_rates(comp_rows, match["home"], "home", "cards", "for", k_home_base)
+        ac, an = team_recent_rates(comp_rows, match["away"], "away", "cards", "for", k_away_base)
+        if hc is not None and ac is not None:
+            features["cards"] = dict(home=round(hc, 1), away=round(ac, 1), total=round(hc + ac, 1), samples=min(hn, an))
+    hscore, hassist = player_projections(match["home"], home_team.get("id"), match.get("xg", [1.3, 1.1])[0], details)
+    ascore, aassist = player_projections(match["away"], away_team.get("id"), match.get("xg", [1.3, 1.1])[1], details)
+    if hscore or ascore: features["scorers"] = {"home": hscore, "away": ascore}
+    if hassist or aassist: features["assists"] = {"home": hassist, "away": aassist}
+    return features, pitch_match
 
 def poisson_sample(rnd, l):
     L, k, p = math.exp(-l), 0, 1.0
@@ -119,6 +337,19 @@ def candidates(m, r):
         f"combos need two things to land, so they are riskier.")))
     return c
 
+def player_candidates(m, features):
+    out = []
+    for market, field, label in (("SCORER", "scorers", "to score"), ("ASSIST", "assists", "to assist")):
+        for side in ("home", "away"):
+            rows = ((features or {}).get(field) or {}).get(side, [])
+            if not rows: continue
+            p = rows[0]
+            team = m["home"] if side == "home" else m["away"]
+            out.append(dict(match=f"{m['home']} vs {m['away']}", mk=market, key=p["player_id"], player_id=p["player_id"],
+                            player=p["player"], team=team, pick=f"{p['player']} ({team}) {label}", p=p["p"],
+                            why=f"Recent {p['basis']}; projected around {p['minutes']} minutes per appearance across {p['appearances']} recent appearances. Lineups and availability may change."))
+    return out
+
 def slip(all_c, lo, hi, n, mid):
     used, out = set(), []
     def take(arr):
@@ -131,15 +362,37 @@ def slip(all_c, lo, hi, n, mid):
     legs = [dict(c, odds=round(1 / c["p"], 2)) for c in out]
     return dict(legs=legs, prob=cp, odds=round(1 / cp, 2) if cp else None)
 
+def daily_slip(all_c, matches, now):
+    upcoming = [m for m in matches if m["date"] > now]
+    if not upcoming: return None
+    in_24h = [m for m in upcoming if m["date"] <= now + timedelta(hours=24)]
+    chosen = in_24h or [m for m in upcoming if m["date"].date() == min(x["date"] for x in upcoming).date()]
+    ids = {m["id"] for m in chosen}; per_match = {}
+    for c in all_c:
+        if c.get("id") not in ids or c.get("mk") not in ("1X2", "OU"): continue
+        old = per_match.get(c["id"])
+        if old is None or c["p"] > old["p"]: per_match[c["id"]] = c
+    picks = sorted(per_match.values(), key=lambda c: -c["p"])[:3]
+    if not picks: return None
+    prob = math.prod(c["p"] for c in picks)
+    return dict(date=min(m["date"] for m in chosen).date().isoformat(), updated=now.isoformat(), legs=picks,
+                prob=prob, odds=round(1 / prob, 2), note="Each leg is a model estimate. Combined probability assumes separate match outcomes and is approximate.")
+
 # ---------- track record ----------
 def evaluate(pk, res):
     ft, ht = res["ft"], res.get("ht")
     if pk["mk"] == "1X2": return int(pk["key"] == r3(*ft))
     if pk["mk"] == "OU": return int(pk["key"] == ("O" if sum(ft) > 2.5 else "U"))
     if pk["mk"] == "HTFT": return None if not ht else int(pk["key"] == r3(*ht) + "/" + r3(*ft))
+    if pk["mk"] in ("SCORER", "ASSIST"):
+        if "players" not in res: return None
+        player = (res.get("players") or {}).get(str(pk.get("player_id", pk.get("key"))))
+        if player is None: return 0
+        stat = "goals" if pk["mk"] == "SCORER" else "assists"
+        return int((player.get(stat) or 0) > 0)
 
 def summarize(items):
-    S, br, n = {}, 0.0, 0
+    S, br, n, errors = {}, 0.0, 0, {}
     for it in items:
         if not it.get("result"): continue
         for pk in it["picks"]:
@@ -147,7 +400,14 @@ def summarize(items):
             s = S.setdefault(pk["mk"], dict(market=pk["mk"], n=0, hits=0, psum=0.0)); s["n"] += 1; s["hits"] += pk["hit"]; s["psum"] += pk["p"]
         o = r3(*it["result"]["ft"]); br += sum((it["p1x2"][k] - (k == o)) ** 2 for k in "1X2"); n += 1
     rows = [dict(market=s["market"], n=s["n"], hit_rate=s["hits"] / s["n"], avg_prob=s["psum"] / s["n"]) for s in S.values()]
-    return dict(markets=rows, matches=n, brier=br / n if n else None)
+    for it in items:
+        forecast, result = it.get("stats_prediction") or {}, (it.get("result") or {}).get("stats") or {}
+        for market in ("corners", "cards"):
+            predicted = (forecast.get(market) or {}).get("total"); actual = (result.get(market) or {}).get("total")
+            if predicted is None or actual is None: continue
+            s = errors.setdefault(market, dict(market=market, n=0, absolute_error=0.0)); s["n"] += 1; s["absolute_error"] += abs(predicted - actual)
+    stats = [dict(market=s["market"], n=s["n"], mae=s["absolute_error"] / s["n"]) for s in errors.values()]
+    return dict(markets=rows, stats=stats, matches=n, brier=br / n if n else None)
 
 def main():
     dm = "--demo" in sys.argv; key = os.environ.get("FOOTBALL_DATA_KEY", "")
@@ -155,7 +415,18 @@ def main():
     now = datetime.now(timezone.utc); os.makedirs(OUT, exist_ok=True)
     hp = os.path.join(OUT, "history.json")
     hist = json.load(open(hp)) if os.path.exists(hp) else {"items": []}
+    hist.setdefault("items", []); hist.setdefault("daily_slips", [])
     known = {i["id"] for i in hist["items"]}; finished = {}; matches = []; all_c = []; notes = []
+    pitch_key = os.environ.get("PITCHAPI_KEY", "")
+    pitch_data = dict(details={}, schedules={}, notes=[])
+    if not dm and pitch_key:
+        try:
+            pitch_data = fetch_pitch_data(now, pitch_key)
+            notes.extend(pitch_data.get("notes", []))
+        except Exception as e:
+            notes.append(f"Player/corner/card feed unavailable ({type(e).__name__}); core predictions continue")
+    elif not dm:
+        notes.append("Add the free PITCHAPI_KEY repository secret to enable player, corner, and card projections.")
     for code, name in ({"DEMO": "Demo League"} if dm else COMPS).items():
         try:
             ms = demo(now) if dm else [norm(x) for x in fetch(code, key)]
@@ -175,25 +446,56 @@ def main():
             r = predict(M, m["home"], m["away"])
             if not r: continue
             cs = candidates(m, r)
-            if m["date"] <= now + timedelta(days=BETSLIP_DAYS): all_c += cs
+            model_match = m | {"xg": [r["lh"], r["la"]]}
+            extra, pitch_match = (None, None) if dm or not pitch_key else fixture_features(model_match, name, pitch_data["schedules"], pitch_data["details"])
+            if extra: cs.extend(player_candidates(m, extra))
+            for c in cs: c.update(id=m["id"], comp=name, kickoff=m["date"].isoformat())
+            if m["date"] <= now + timedelta(days=BETSLIP_DAYS): all_c += [c for c in cs if c["mk"] in ("1X2", "OU", "HTFT")]
             ent = dict(id=m["id"], comp=name, status=m["status"], kickoff=m["date"].isoformat(), home=m["home"], away=m["away"],
                        xg=[round(r["lh"], 2), round(r["la"], 2)], p1x2={k: round(v, 4) for k, v in r["P"].items()},
                        over25=round(r["ov"], 4), score=r["score"], recent=r["recent"],
-                       htft=sorted(([k, round(v, 4)] for k, v in r["H"].items()), key=lambda z: -z[1])[:3], picks=cs)
+                       htft=sorted(([k, round(v, 4)] for k, v in r["H"].items()), key=lambda z: -z[1])[:3], picks=cs, extra=extra)
             matches.append(ent)
             if m["date"] <= now + timedelta(days=TRACK_DAYS) and m["id"] not in known:  # lock close to kickoff
                 hist["items"].append(dict(id=m["id"], comp=name, kickoff=ent["kickoff"], home=m["home"], away=m["away"], p1x2=ent["p1x2"],
-                                          picks=[dict(mk=c["mk"], key=c["key"], pick=c["pick"], p=round(c["p"], 4)) for c in cs], result=None))
+                                          stats_id=(extra or {}).get("stats_id"),
+                                          stats_prediction={k: extra[k] for k in ("corners", "cards") if extra and extra.get(k)},
+                                          picks=[dict(mk=c["mk"], key=c["key"], player_id=c.get("player_id"), pick=c["pick"], p=round(c["p"], 4)) for c in cs], result=None))
                 known.add(m["id"])
     for it in hist["items"]:
         f = finished.get(it["id"])
-        if f and not it["result"]:
-            it["result"] = dict(ft=list(f["ft"]), ht=list(f["ht"]) if f["ht"] else None)
-            for pk in it["picks"]: pk["hit"] = evaluate(pk, it["result"])
+        if not f: continue
+        if not it.get("result"): it["result"] = dict(ft=list(f["ft"]), ht=list(f["ht"]) if f["ht"] else None)
+        stats_id = str(it.get("stats_id") or "")
+        detail = pitch_data.get("details", {}).get(stats_id)
+        if detail:
+            stat_row = detail[2]
+            player_map = {str(p["id"]): {"goals": p.get("goals", 0), "assists": p.get("assists", 0)} for p in stat_row.get("players", [])}
+            it["result"]["players"] = player_map
+            if stat_row.get("corners") is not None: it["result"]["stats"] = {**(it["result"].get("stats") or {}), "corners": dict(home=stat_row["corners"][0], away=stat_row["corners"][1], total=sum(stat_row["corners"]))}
+            if stat_row.get("cards") is not None: it["result"]["stats"] = {**(it["result"].get("stats") or {}), "cards": dict(home=stat_row["cards"][0], away=stat_row["cards"][1], total=sum(stat_row["cards"]))}
+        for pk in it["picks"]:
+            value = evaluate(pk, it["result"])
+            if value is not None: pk["hit"] = value
+    slip_now = None if dm else daily_slip(all_c, matches, now)
+    if slip_now:
+        old = next((x for x in hist["daily_slips"] if x.get("date") == slip_now["date"]), None)
+        if old is None:
+            locked = {**slip_now, "legs": [dict(c, hit=None) for c in slip_now["legs"]], "hit": None}
+            hist["daily_slips"].append(locked)
+            old = locked
+        slip_now = old
+    for daily in hist["daily_slips"]:
+        for leg in daily.get("legs", []):
+            f = finished.get(leg.get("id"))
+            if f and leg.get("hit") is None: leg["hit"] = evaluate(leg, {"ft": list(f["ft"]), "ht": list(f["ht"]) if f.get("ht") else None})
+        hits = [leg.get("hit") for leg in daily.get("legs", [])]
+        daily["hit"] = int(all(x == 1 for x in hits)) if hits and all(isinstance(x, int) for x in hits) else None
     hist["summary"] = summarize(hist["items"]); hist["updated"] = now.isoformat()
     json.dump(hist, open(hp, "w"), indent=1)
-    pred = dict(updated=now.isoformat(), notes=notes, matches=matches, demo=dm, slips=dict(
-        small=slip(all_c, .62, 1.01, 3, .7), medium=slip(all_c, .48, .62, 4, .55), big=slip(all_c, .2, .48, 5, .38)))
+    pred = dict(updated=now.isoformat(), notes=notes, matches=matches, demo=dm, slip_of_day=slip_now,
+                extra_status="demo" if dm else "ready" if pitch_key and pitch_data.get("details") else "needs_key" if not pitch_key else "partial",
+                slips=dict(small=slip(all_c, .62, 1.01, 3, .7), medium=slip(all_c, .48, .62, 4, .55), big=slip(all_c, .2, .48, 5, .38)))
     json.dump(pred, open(os.path.join(OUT, "predictions.json"), "w"), indent=1, default=str)
     print(f"{len(matches)} matches predicted; {hist['summary']['matches']} resolved in track record; notes: {notes}")
 
