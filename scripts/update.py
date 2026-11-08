@@ -7,7 +7,6 @@ import os, sys, json, math, time, random, re, unicodedata
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
 from urllib.request import Request, urlopen
-from urllib.error import HTTPError
 from urllib.parse import quote
 
 COMPS = {"PL": "Premier League", "PD": "La Liga", "SA": "Serie A", "BL1": "Bundesliga", "FL1": "Ligue 1"}
@@ -426,24 +425,9 @@ def main():
     hist = json.load(open(hp)) if os.path.exists(hp) else {"items": []}
     hist.setdefault("items", []); hist.setdefault("daily_slips", [])
     known = {i["id"] for i in hist["items"]}; finished = {}; matches = []; all_c = []; notes = []
-    pitch_key = os.environ.get("PITCHAPI_KEY", "")
+    # Optional player and match-stat predictions are disabled until provider access works.
+    pitch_key = ""
     pitch_data = dict(details={}, schedules={}, notes=[])
-    if not dm and pitch_key:
-        try:
-            pitch_data = fetch_pitch_data(now, pitch_key)
-            notes.extend(pitch_data.get("notes", []))
-        except HTTPError as e:
-            api_code = ""
-            try:
-                api_code = str((json.load(e).get("error") or {}).get("code") or "")
-            except Exception:
-                pass
-            suffix = f" {api_code}" if api_code else ""
-            notes.append(f"Player/corner/card feed unavailable (HTTP {e.code}{suffix}); core predictions continue")
-        except Exception as e:
-            notes.append(f"Player/corner/card feed unavailable ({type(e).__name__}); core predictions continue")
-    elif not dm:
-        notes.append("Add the free PITCHAPI_KEY repository secret to enable player, corner, and card projections.")
     for code, name in ({"DEMO": "Demo League"} if dm else COMPS).items():
         try:
             ms = demo(now) if dm else [norm(x) for x in fetch(code, key)]
@@ -511,7 +495,6 @@ def main():
     hist["summary"] = summarize(hist["items"]); hist["updated"] = now.isoformat()
     json.dump(hist, open(hp, "w"), indent=1)
     pred = dict(updated=now.isoformat(), notes=notes, matches=matches, demo=dm, slip_of_day=slip_now,
-                extra_status="demo" if dm else "ready" if pitch_key and pitch_data.get("details") else "needs_key" if not pitch_key else "partial",
                 slips=dict(small=slip(all_c, .62, 1.01, 3, .7), medium=slip(all_c, .48, .62, 4, .55), big=slip(all_c, .2, .48, 5, .38)))
     json.dump(pred, open(os.path.join(OUT, "predictions.json"), "w"), indent=1, default=str)
     print(f"{len(matches)} matches predicted; {hist['summary']['matches']} resolved in track record; notes: {notes}")
