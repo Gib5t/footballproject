@@ -363,10 +363,18 @@ def slip(all_c, lo, hi, n, mid):
     return dict(legs=legs, prob=cp, odds=round(1 / cp, 2) if cp else None)
 
 def daily_slip(all_c, matches, now):
-    upcoming = [m for m in matches if m["date"] > now]
+    # `matches` contains rendered prediction records, whose kickoff is stored as
+    # an ISO string. Accept normalized source records too for local/demo use.
+    def kickoff(match):
+        value = match.get("kickoff") or match.get("date")
+        if isinstance(value, datetime): return value
+        return datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(timezone.utc)
+
+    upcoming = [m for m in matches if kickoff(m) > now]
     if not upcoming: return None
-    in_24h = [m for m in upcoming if m["date"] <= now + timedelta(hours=24)]
-    chosen = in_24h or [m for m in upcoming if m["date"].date() == min(x["date"] for x in upcoming).date()]
+    in_24h = [m for m in upcoming if kickoff(m) <= now + timedelta(hours=24)]
+    first_day = min(kickoff(m) for m in upcoming).date()
+    chosen = in_24h or [m for m in upcoming if kickoff(m).date() == first_day]
     ids = {m["id"] for m in chosen}; per_match = {}
     for c in all_c:
         if c.get("id") not in ids or c.get("mk") not in ("1X2", "OU"): continue
@@ -375,7 +383,7 @@ def daily_slip(all_c, matches, now):
     picks = sorted(per_match.values(), key=lambda c: -c["p"])[:3]
     if not picks: return None
     prob = math.prod(c["p"] for c in picks)
-    return dict(date=min(m["date"] for m in chosen).date().isoformat(), updated=now.isoformat(), legs=picks,
+    return dict(date=min(kickoff(m) for m in chosen).date().isoformat(), updated=now.isoformat(), legs=picks,
                 prob=prob, odds=round(1 / prob, 2), note="Each leg is a model estimate. Combined probability assumes separate match outcomes and is approximate.")
 
 # ---------- track record ----------
