@@ -60,7 +60,7 @@ def demo(now):
 # ---------- model ----------
 def fit(fin, now):
     sw = sh = sa = h1 = tg = 0.0; T = {}
-    t = lambda n: T.setdefault(n, dict(hw=0, hf=0, ha=0, aw=0, af=0, aa=0, res=[]))
+    t = lambda n: T.setdefault(n, dict(hw=0, hf=0, ha=0, aw=0, af=0, aa=0, res=[], recent=[]))
     for m in sorted(fin, key=lambda x: x["date"]):
         hg, ag = m["ft"]; w = math.exp(-XI * max(0, (now - m["date"]).days))
         sw += w; sh += w * hg; sa += w * ag
@@ -70,6 +70,8 @@ def fit(fin, now):
         b["aw"] += w; b["af"] += w * ag; b["aa"] += w * hg
         a["res"].append(3 if hg > ag else 1 if hg == ag else 0)
         b["res"].append(3 if ag > hg else 1 if hg == ag else 0)
+        a["recent"].append(dict(date=m["date"].date().isoformat(), opponent=m["away"], score=f"{hg}-{ag}", result="W" if hg > ag else "D" if hg == ag else "L"))
+        b["recent"].append(dict(date=m["date"].date().isoformat(), opponent=m["home"], score=f"{ag}-{hg}", result="W" if ag > hg else "D" if ag == hg else "L"))
     share = min(.5, max(.38, h1 / tg)) if tg >= 50 else .45
     return dict(T=T, LH=sh / sw, LA=sa / sw, share=share)
 
@@ -97,7 +99,8 @@ def predict(M, home, away):
                 for d in range(6):
                     p = a1[x] * b1[y] * a2[c] * b2[d]; k = r3(x, y) + "/" + r3(x + c, y + d); H[k] = H.get(k, 0) + p; ht += p
     H = {k: v / ht for k, v in H.items()}
-    return dict(lh=lh, la=la, P=P, ov=ov, H=H, score=f"{best[0]}-{best[1]}", form=(ppg(h), ppg(a)),
+    recent = (h["recent"][-5:][::-1], a["recent"][-5:][::-1])
+    return dict(lh=lh, la=la, P=P, ov=ov, H=H, score=f"{best[0]}-{best[1]}", form=(ppg(h), ppg(a)), recent=recent,
                 att=(hatt, aatt), dfn=(hdef, adef))
 
 def candidates(m, r):
@@ -173,9 +176,9 @@ def main():
             if not r: continue
             cs = candidates(m, r)
             if m["date"] <= now + timedelta(days=BETSLIP_DAYS): all_c += cs
-            ent = dict(id=m["id"], comp=name, kickoff=m["date"].isoformat(), home=m["home"], away=m["away"],
+            ent = dict(id=m["id"], comp=name, status=m["status"], kickoff=m["date"].isoformat(), home=m["home"], away=m["away"],
                        xg=[round(r["lh"], 2), round(r["la"], 2)], p1x2={k: round(v, 4) for k, v in r["P"].items()},
-                       over25=round(r["ov"], 4), score=r["score"],
+                       over25=round(r["ov"], 4), score=r["score"], recent=r["recent"],
                        htft=sorted(([k, round(v, 4)] for k, v in r["H"].items()), key=lambda z: -z[1])[:3], picks=cs)
             matches.append(ent)
             if m["date"] <= now + timedelta(days=TRACK_DAYS) and m["id"] not in known:  # lock close to kickoff
