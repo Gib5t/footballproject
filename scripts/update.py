@@ -433,7 +433,13 @@ def main():
             pitch_data = fetch_pitch_data(now, pitch_key)
             notes.extend(pitch_data.get("notes", []))
         except HTTPError as e:
-            notes.append(f"Player/corner/card feed unavailable (HTTP {e.code}); core predictions continue")
+            api_code = ""
+            try:
+                api_code = str((json.load(e).get("error") or {}).get("code") or "")
+            except Exception:
+                pass
+            suffix = f" {api_code}" if api_code else ""
+            notes.append(f"Player/corner/card feed unavailable (HTTP {e.code}{suffix}); core predictions continue")
         except Exception as e:
             notes.append(f"Player/corner/card feed unavailable ({type(e).__name__}); core predictions continue")
     elif not dm:
