@@ -9,7 +9,7 @@ from datetime import datetime, timedelta, timezone
 from urllib.request import Request, urlopen
 from urllib.parse import quote
 
-COMPS = {"PL": "Premier League", "PD": "La Liga", "SA": "Serie A", "BL1": "Bundesliga", "FL1": "Ligue 1"}
+COMPS = {"PL": "Premier League", "PD": "La Liga", "SA": "Serie A", "BL1": "Bundesliga", "FL1": "Ligue 1", "ELC": "Championship", "DED": "Eredivisie", "PPL": "Primeira Liga", "BSA": "Brazil Serie A", "CL": "Champions League", "EC": "European Championship", "WC": "World Cup"}
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "docs", "data")
 XI = 0.006          # time decay per day: recent games count more
 K = 3.0             # shrinkage: pulls small samples toward league average
