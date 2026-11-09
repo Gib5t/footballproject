@@ -3,20 +3,23 @@
 Every day a free GitHub robot downloads the latest results, re-fits the model, writes new predictions (1X2, Over/Under 2.5, HT/FT, small/medium/big betslips with explanations) and updates a **public track record** that scores every past pick. Cost: 0.
 
 ## Set up (about 20 minutes, no card needed)
-1. Get a free API key at https://www.football-data.org/client/register (fixtures and results for the five major European leagues).
-2. For player, corner, and card projections, also get a free key at https://pitchapi.dev/get-api-key. This is optional; core predictions and the daily slip still work without it.
-3. Create a free GitHub account and a **new public repository**. Upload everything in this folder (keep the `.github` folder).
-4. Repo → Settings → Secrets and variables → Actions → **New repository secret**. Add `FOOTBALL_DATA_KEY` with your football-data.org key, and optionally `PITCHAPI_KEY` with your PitchAPI key. Never put either key in a public file or the webpage.
-5. Repo → Settings → Pages → Source: **GitHub Actions**.
-6. Repo → Actions → "update-predictions" → **Run workflow**. Wait for the green check mark.
-7. Open the site URL shown by the workflow, or use Settings → Pages → **Visit site**. It appears at `https://YOURNAME.github.io/REPO/`.
+1. Get a free API key at https://www.football-data.org/client/register. The free tier supports 12 competitions.
+2. Create a free GitHub account and a **new public repository**. Upload everything in this folder (keep the `.github` folder).
+3. Repo → Settings → Secrets and variables → Actions → **New repository secret**. Add `FOOTBALL_DATA_KEY` with your football-data.org key. Never put the key in a public file or on the webpage.
+4. Repo → Settings → Pages → Source: **GitHub Actions**.
+5. Repo → Actions → "update-predictions" → **Run workflow**. Wait for the green check mark.
+6. Open the site URL shown by the workflow, or use Settings → Pages → **Visit site**. It appears at `https://YOURNAME.github.io/REPO/`.
 
 It then refreshes by itself twice a day. Test offline anytime with `python scripts/update.py --demo`.
+
+Configured free competitions:
+Premier League, La Liga, Serie A (Italy), Bundesliga, Ligue 1, Championship, Eredivisie, Primeira Liga, Brazil Serie A, Champions League, European Championship, and World Cup.
+
+Only competitions with scheduled fixtures appear on the site.
 
 ## How it predicts (no bookmaker odds, no outside tips)
 Time-weighted Poisson model: home/away attack and defence strengths (shrunk toward league averages), small recent-form adjustment, a Poisson score grid for 1X2 and Over/Under, and a two-half simulation for HT/FT using the league's real first-half goal share. Each pick has a plain-English reason. The daily slip uses a maximum of three picks from different matches and publishes its result in the track record. Combined probabilities are approximate.
 
-When `PITCHAPI_KEY` is configured, the updater adds recent player scorer/assist estimates and team corner/card totals where match statistics are available. Player estimates use recent player xG/goals, assists, and minutes; lineups and availability can change. Missing data stays blank rather than being shown as zero. Numeric corner/card forecasts are tracked with mean absolute error.
 
 ## Making money, honestly
 - **The model won't print money.** Bookmaker markets are very efficient and take ~5% margin. Expect roughly market-level accuracy at best. Don't bet your own money on it, and never sell "guaranteed" tips.
