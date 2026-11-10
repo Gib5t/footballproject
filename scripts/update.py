@@ -328,9 +328,21 @@ def candidates(m, r):
         f"Expected goals: {m['home']} {r['lh']:.2f}, {m['away']} {r['la']:.2f}. Venue-adjusted attack/defence (home {r['att'][0]:.2f} scored/{r['dfn'][0]:.2f} conceded; "
         f"away {r['att'][1]:.2f} scored/{r['dfn'][1]:.2f} conceded) plus recent form ({r['form'][0]:.1f} vs {r['form'][1]:.1f} pts/game last 5). "
         f"Simulated chances: {pc(P['1'])} / {pc(P['X'])} / {pc(P['2'])}.")))
+    dc = {"1X": P["1"] + P["X"], "X2": P["X"] + P["2"], "12": P["1"] + P["2"]}
+    dc_names = {"1X": "Home or draw", "X2": "Draw or away", "12": "Home or away"}
+    dk = max(dc, key=dc.get)
+    c.append(dict(match=mt, mk="DC", key=dk, pick=f"Double chance: {dc_names[dk]} ({dk})", p=dc[dk], why=(
+        f"Double chance covers two 1X2 outcomes. Model probabilities are home {pc(P['1'])}, draw {pc(P['X'])}, away {pc(P['2'])}; "
+        f"{dc_names[dk]} has the highest combined probability at {pc(dc[dk])}.")))
     o = r["ov"] >= .5
     c.append(dict(match=mt, mk="OU", key="O" if o else "U", pick="Over 2.5" if o else "Under 2.5", p=r["ov"] if o else 1 - r["ov"], why=(
         f"Combined expected goals {r['lh'] + r['la']:.2f}. Probability of 3+ goals is {pc(r['ov'])}, so {'Over' if o else 'Under'} 2.5 is the likelier side.")))
+    btts_yes = (1 - math.exp(-r["lh"])) * (1 - math.exp(-r["la"]))
+    bk = "Y" if btts_yes >= .5 else "N"
+    btts_p = btts_yes if bk == "Y" else 1 - btts_yes
+    c.append(dict(match=mt, mk="BTTS", key=bk, pick=f"Both teams to score: {'Yes' if bk == 'Y' else 'No'}", p=btts_p, why=(
+        f"Estimated goal means are {m['home']} {r['lh']:.2f} and {m['away']} {r['la']:.2f}. Under independent Poisson scoring, "
+        f"both teams scoring has probability {pc(btts_yes)}; the selected side is {'Yes' if bk == 'Y' else 'No'}.")))
     h = max(r["H"], key=r["H"].get); x, y = h.split("/")
     c.append(dict(match=mt, mk="HTFT", key=h, pick=f"HT {NM[x]} / FT {NM[y]} ({h})", p=r["H"][h], why=(
         f"Each half is simulated separately using the league's real first-half goal share. {h} is the most likely half-time/full-time pair; "
@@ -377,7 +389,7 @@ def daily_slip(all_c, matches, now):
     chosen = in_24h or [m for m in upcoming if kickoff(m).date() == first_day]
     ids = {m["id"] for m in chosen}; per_match = {}
     for c in all_c:
-        if c.get("id") not in ids or c.get("mk") not in ("1X2", "OU"): continue
+        if c.get("id") not in ids or c.get("mk") not in ("1X2", "OU", "DC", "BTTS"): continue
         old = per_match.get(c["id"])
         if old is None or c["p"] > old["p"]: per_match[c["id"]] = c
     picks = sorted(per_match.values(), key=lambda c: -c["p"])[:3]
@@ -391,6 +403,10 @@ def evaluate(pk, res):
     ft, ht = res["ft"], res.get("ht")
     if pk["mk"] == "1X2": return int(pk["key"] == r3(*ft))
     if pk["mk"] == "OU": return int(pk["key"] == ("O" if sum(ft) > 2.5 else "U"))
+    if pk["mk"] == "DC":
+        result = r3(*ft); covered = {"1X": ("1", "X"), "X2": ("X", "2"), "12": ("1", "2")}
+        return int(result in covered.get(pk["key"], ()))
+    if pk["mk"] == "BTTS": return int(pk["key"] == ("Y" if ft[0] > 0 and ft[1] > 0 else "N"))
     if pk["mk"] == "HTFT": return None if not ht else int(pk["key"] == r3(*ht) + "/" + r3(*ft))
     if pk["mk"] in ("SCORER", "ASSIST"):
         if "players" not in res: return None
@@ -451,7 +467,7 @@ def main():
             extra, pitch_match = (None, None) if dm or not pitch_key else fixture_features(model_match, name, pitch_data["schedules"], pitch_data["details"])
             if extra: cs.extend(player_candidates(m, extra))
             for c in cs: c.update(id=m["id"], comp=name, kickoff=m["date"].isoformat())
-            if m["date"] <= now + timedelta(days=BETSLIP_DAYS): all_c += [c for c in cs if c["mk"] in ("1X2", "OU", "HTFT")]
+            if m["date"] <= now + timedelta(days=BETSLIP_DAYS): all_c += [c for c in cs if c["mk"] in ("1X2", "OU", "HTFT", "DC", "BTTS")]
             ent = dict(id=m["id"], comp=name, status=m["status"], kickoff=m["date"].isoformat(), home=m["home"], away=m["away"],
                        xg=[round(r["lh"], 2), round(r["la"], 2)], p1x2={k: round(v, 4) for k, v in r["P"].items()},
                        over25=round(r["ov"], 4), score=r["score"], recent=r["recent"],

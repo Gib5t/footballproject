@@ -91,9 +91,10 @@ function dayLabel(key){return key==="unknown"?"Date unavailable":dateFromKey(key
 function dateOptionLabel(key,n){const today=dateKey(new Date()),tomorrow=new Date();tomorrow.setDate(tomorrow.getDate()+1);const prefix=key==="unknown"?"Date unavailable":key===today?"Today":key===dateKey(tomorrow)?"Tomorrow":dateFromKey(key).toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"});return `${prefix} · ${n} ${n===1?"match":"matches"}`}
 function withinNextWeek(value){const d=new Date(value),today=new Date();today.setHours(0,0,0,0);const limit=new Date(today);limit.setDate(limit.getDate()+7);limit.setHours(23,59,59,999);return d>=today&&d<=limit}
 function fillMatchFilters(matches){const dates=new Map(),comps=new Set(),soon=matches.filter(m=>withinNextWeek(m.kickoff));matches.forEach(m=>{const key=dateKey(m.kickoff);dates.set(key,(dates.get(key)||0)+1);if(m.comp)comps.add(m.comp)});dateSelect.innerHTML=`<option value="next7">Next 7 days (${soon.length})</option><option value="all">All upcoming fixtures (${matches.length})</option>`+[...dates].map(([key,n])=>`<option value="${key}">${esc(dateOptionLabel(key,n))}</option>`).join("");if(!soon.length)dateSelect.value="all";compSelect.innerHTML=`<option value="all">All competitions</option>`+[...comps].sort((a,b)=>a.localeCompare(b)).map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join("")}
-function matchCard(m,favs){const time=new Date(m.kickoff).toLocaleTimeString(undefined,{hour:"numeric",minute:"2-digit"}),status=m.status==="TIMED"?"Kickoff time set":"Scheduled";return `<article class="card match-card"><h3>${esc(m.home)} vs ${esc(m.away)}</h3><div class="team-tools">${[m.home,m.away].map(team=>`<button class="follow-team" type="button" data-team="${esc(team)}" aria-pressed="${favs.has(team)}">${favs.has(team)?"★ Following ":"☆ Follow "}${esc(team)}</button>`).join("")}</div><div class="mu">${esc(m.comp)} · ${esc(time)} local kickoff <span class="status-tag">${status}</span></div>
+function matchCard(m,favs){const dc=(m.picks||[]).find(x=>x.mk==="DC"),btts=(m.picks||[]).find(x=>x.mk==="BTTS"),time=new Date(m.kickoff).toLocaleTimeString(undefined,{hour:"numeric",minute:"2-digit"}),status=m.status==="TIMED"?"Kickoff time set":"Scheduled";return `<article class="card match-card"><h3>${esc(m.home)} vs ${esc(m.away)}</h3><div class="team-tools">${[m.home,m.away].map(team=>`<button class="follow-team" type="button" data-team="${esc(team)}" aria-pressed="${favs.has(team)}">${favs.has(team)?"★ Following ":"☆ Follow "}${esc(team)}</button>`).join("")}</div><div class="mu">${esc(m.comp)} · ${esc(time)} local kickoff <span class="status-tag">${status}</span></div>
  <div class="bar"><i style="width:${m.p1x2["1"]*100}%;background:var(--s)"></i><i style="width:${m.p1x2.X*100}%;background:var(--m)"></i><i style="width:${m.p1x2["2"]*100}%;background:var(--b)"></i></div>
  <div class="mu">1: ${pc(m.p1x2["1"])} · X: ${pc(m.p1x2.X)} · 2: ${pc(m.p1x2["2"])} · Over 2.5: ${pc(m.over25)} · Under 2.5: ${pc(1-m.over25)}</div>
+ <div class="mu">${dc?esc(dc.pick)+" ("+pc(dc.p)+")":"Double chance: —"} · ${btts?esc(btts.pick)+" ("+pc(btts.p)+")":"BTTS: —"}</div>
  <div style="margin-top:4px">Likeliest score <b>${m.score}</b> · xG ${m.xg[0]} – ${m.xg[1]} · Best HT/FT: <b>${m.htft[0][0]}</b> (${pc(m.htft[0][1])})</div>
  <details><summary>Recent form</summary><div class="form-grid">${[[m.home,m.recent?.[0]||[]],[m.away,m.recent?.[1]||[]]].map(([team,rows])=>`<div><b>${esc(team)}</b><div class="form-row">${rows.length?rows.map(x=>`<span class="form-chip ${esc(x.result.toLowerCase())}" title="${esc(x.date)}">${esc(x.result)} ${esc(x.score)} vs ${esc(x.opponent)}</span>`).join(""):`<span class="mu">No recent results</span>`}</div></div>`).join("")}</div></details>
  <details><summary>Why the bot picked these</summary>${m.picks.map(c=>`<p class="mu"><b>${esc(c.pick)}</b> (${pc(c.p)}): ${esc(c.why)}</p>`).join("")}</details></article>`}
@@ -112,7 +113,7 @@ function journeyPoolForDate(date){
  return {rows:matches.flatMap(m=>m.picks||[]),locked:false};
 }
 function journeyPickForDate(date){
- const pool=journeyPoolForDate(date),rows=pool.rows.filter(x=>x.mk==="1X2"||x.mk==="OU").slice().sort((a,b)=>(Number(b.p)||0)-(Number(a.p)||0));
+ const pool=journeyPoolForDate(date),rows=pool.rows.filter(x=>["1X2","DC","OU","BTTS"].includes(x.mk)).slice().sort((a,b)=>(Number(b.p)||0)-(Number(a.p)||0));
  return {pool:pool,best:rows[0]||null,eligible:rows.find(x=>Number(x.p)>=JOURNEY_MIN_PROB)||null};
 }
 function journeyCard(date,number,kind){
@@ -124,7 +125,7 @@ function journeyCard(date,number,kind){
   const state=best.hit===1?"HIT":best.hit===0?"MISS":"PENDING";
   body='<div class="journey-slip-pick">'+esc(best.pick||"Model pick")+'</div><div class="journey-slip-prob">'+pc(Number(best.p))+' <span class="mu">model probability</span></div><div class="mu">'+esc(best.comp||"")+' · '+esc(best.match||"")+' · '+(pickData.pool.locked?state:"preview; may update before kickoff")+'</div>'+(best.why?'<details><summary>Why this pick</summary><p class="mu">'+esc(best.why)+'</p></details>':"");
  }else if(pickData.best){
-  body='<p><b>SKIP</b></p><p class="mu">No 1X2 or Over/Under pick on this slate reached the 62% display threshold.</p>';
+  body='<p><b>SKIP</b></p><p class="mu">No 1X2, Double Chance, Over/Under, or BTTS pick on this slate reached the 62% display threshold.</p>';
  }else{
   body='<p><b>REST DAY</b></p><p class="mu">No upcoming fixture is available for this date.</p>';
  }
@@ -193,7 +194,7 @@ let historyItems=[];
 let historyShownLimit=30;
 const HISTORY_PAGE_SIZE=30;
 const historySearch=document.getElementById("history-search"),historyDate=document.getElementById("history-date"),historyComp=document.getElementById("history-comp"),historyMarket=document.getElementById("history-market"),historyOutcome=document.getElementById("history-outcome"),historySummary=document.getElementById("history-summary"),historyCount=document.getElementById("history-count"),historyMore=document.getElementById("history-more");
-const HISTORY_MARKET_NAMES={"1X2":"1X2","OU":"Over/Under 2.5","HTFT":"Half-time/Full-time"};
+const HISTORY_MARKET_NAMES={"1X2":"1X2","DC":"Double chance","OU":"Over/Under 2.5","BTTS":"Both teams to score","HTFT":"Half-time/Full-time"};
 function historyPickStatus(pk){return pk.hit===1?"hit":pk.hit===0?"miss":"pending"}
 function fillHistoryFilters(items){
  const competitions=[...new Set(items.map(it=>it.comp).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
@@ -238,7 +239,7 @@ function resetHistoryPage(){historyShownLimit=HISTORY_PAGE_SIZE;renderHistory()}
 historySearch.addEventListener("input",resetHistoryPage);
 [historyDate,historyComp,historyMarket,historyOutcome].forEach(el=>el.addEventListener("change",resetHistoryPage));
 historyMore.addEventListener("click",()=>{historyShownLimit+=HISTORY_PAGE_SIZE;renderHistory()});
-get("data/history.json").then(h=>{const S=h.summary||{markets:[]},names={"1X2":"1X2",OU:"Over/Under 2.5",HTFT:"Half-time/Full-time"},items=h.items||[],markets=(S.markets||[]).filter(r=>["1X2","OU","HTFT"].includes(r.market));
+get("data/history.json").then(h=>{const S=h.summary||{markets:[]},names={"1X2":"1X2",DC:"Double chance",OU:"Over/Under 2.5",BTTS:"Both teams to score",HTFT:"Half-time/Full-time"},items=h.items||[],markets=(S.markets||[]).filter(r=>["1X2","DC","OU","BTTS","HTFT"].includes(r.market));
  historyItems=items;fillHistoryFilters(items);renderHistory();
  const daily=h.daily_slips||[];journeyDays=daily;journeyRender();const settled=daily.filter(x=>typeof x.hit==="number"),wins=settled.filter(x=>x.hit===1).length;document.getElementById("slip-record").innerHTML=daily.length?`<div class="card"><p class="mu">${wins} of ${settled.length} completed daily slips landed. Every slip is saved before kickoff; unfinished legs remain pending.</p>${daily.slice(-12).reverse().map(x=>`<div class="leg"><b>${esc(new Date(x.date+"T12:00:00Z").toLocaleDateString(undefined,{dateStyle:"medium"}))}</b> · ${x.hit==null?"Pending":x.hit?"All legs hit":"At least one leg missed"}<div class="mu">${(x.legs||[]).map(l=>`${esc(l.pick)} (${l.hit==null?"pending":l.hit?"hit":"miss"})`).join(" · ")}</div></div>`).join("")}</div>`:`<p class="mu">Daily slips are logged here as matches finish.</p>`;
  const scored=items.flatMap(it=>(it.picks||[]).filter(pk=>pk.mk==="1X2"&&Number.isInteger(pk.hit)));
