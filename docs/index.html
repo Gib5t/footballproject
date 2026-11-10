@@ -15,7 +15,7 @@ main{max-width:980px;margin:0 auto;padding:16px}h1{font-size:24px;margin:6px 0}h
 details{margin-top:6px}summary{cursor:pointer;color:var(--ac);font-size:13px}table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:6px;border-bottom:1px solid var(--bd);text-align:left}
 .date-tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.date-tools label{font-size:13px}.date-tools select{max-width:100%;font:inherit;color:var(--tx);background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:7px 9px}#match-count{margin-left:auto}.day-group{margin:18px 0}.day-heading{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin:16px 0 4px}.day-heading h3{font-size:16px}
 .date-tools input[type=search]{min-width:190px;flex:1;font:inherit;color:var(--tx);background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:7px 9px}.date-tools input[type=checkbox]{accent-color:var(--ac)}.follow-team{border:1px solid var(--bd);border-radius:99px;background:var(--card);color:var(--tx);padding:3px 9px;font:inherit;font-size:12px;cursor:pointer}.follow-team[aria-pressed=true]{border-color:var(--ac);color:var(--ac)}.team-tools{display:flex;flex-wrap:wrap;gap:6px;margin:5px 0}.day-group{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:0 12px;margin:10px 0}.day-heading{cursor:pointer;list-style:none;padding:12px 0}.day-heading::-webkit-details-marker{display:none}.day-title{font-size:16px;font-weight:700}.form-grid{display:grid;gap:8px;margin-top:8px}.form-row{display:flex;flex-wrap:wrap;gap:5px;align-items:center}.form-chip{display:inline-block;padding:1px 7px;border-radius:99px;background:var(--bd);font-size:12px}.form-chip.w{color:var(--ac)}.form-chip.l{color:var(--b)}.status-tag{display:inline-block;padding:1px 7px;border-radius:99px;background:var(--bd);font-size:11px}.result-score{font-size:18px;font-weight:700}.cal-row{display:grid;grid-template-columns:80px 1fr 62px 46px;gap:8px;align-items:center;margin:7px 0}.cal-track{height:10px;border-radius:6px;background:var(--bd);overflow:hidden}.cal-track i{display:block;height:100%;background:var(--ac)}
-.copy-button{border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--tx);font:inherit;padding:6px 10px;cursor:pointer}.slip-legs{padding-left:20px}.hit{color:var(--ac)}.miss{color:var(--b)}
+.copy-button{border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--tx);font:inherit;padding:6px 10px;cursor:pointer}.slip-legs{padding-left:20px}.hit{color:var(--ac)}.miss{color:var(--b)}.date-tools input[type=date]{font:inherit;color:var(--tx);background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:7px 9px}.history-picks{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}.history-pick{display:inline-block;padding:4px 8px;border:1px solid var(--bd);border-radius:8px;font-size:13px}.history-pick.hit{border-color:var(--ac);color:var(--ac)}.history-pick.miss{border-color:var(--b);color:var(--b)}.history-pick.pending{color:var(--mu)}.history-detail{margin-top:8px}.history-score{font-size:18px;font-weight:700;margin:5px 0}
 footer{margin:30px 0 10px;font-size:12px;color:var(--mu)}
 </style></head><body><main>
 <h1>⚽ Football Analyst</h1>
@@ -36,7 +36,19 @@ footer{margin:30px 0 10px;font-size:12px;color:var(--mu)}
 <div id="notes" class="mu"></div>
 <div id="slips"></div>
 <h2>Slip of the day</h2><div id="daily-slip"></div>
-<h2>Recent tracked results</h2><div id="results"></div>
+<h2>Previous predictions</h2>
+<p class="mu">Browse picks the bot saved before kickoff, then compare each prediction with the final score. The archive starts when picks began being logged; older matches are not backfilled. Unfinished or not-yet-scored picks show as pending.</p>
+<div class="card date-tools" aria-label="Previous prediction filters">
+ <label for="history-search"><b>Search</b></label><input id="history-search" type="search" placeholder="Team or competition">
+ <label for="history-date"><b>Date</b></label><input id="history-date" type="date">
+ <label for="history-comp"><b>Competition</b></label><select id="history-comp"><option value="all">All competitions</option></select>
+ <label for="history-market"><b>Market</b></label><select id="history-market"><option value="all">All markets</option></select>
+ <label for="history-outcome"><b>Status</b></label><select id="history-outcome"><option value="all">All outcomes</option><option value="hit">Hit</option><option value="miss">Miss</option><option value="pending">Pending</option></select>
+</div>
+<p id="history-summary" class="mu" aria-live="polite"></p>
+<p id="history-count" class="mu" aria-live="polite"></p>
+<div id="history-results"></div>
+<button id="history-more" class="copy-button" type="button" hidden>Load more matches</button>
 <h2>Slip of the day · public record</h2><div id="slip-record"></div>
 <h2>Confidence check · 1X2</h2><div id="calibration"></div>
 <h2>Upcoming matches</h2>
@@ -85,9 +97,57 @@ get("data/predictions.json").then(p=>{
  document.getElementById("daily-slip").innerHTML=dailySlipHTML(p.slip_of_day);const copy=document.getElementById("copy-slip");if(copy)copy.addEventListener("click",async()=>{const lines=(p.slip_of_day.legs||[]).map((l,i)=>`${i+1}. ${l.pick} — ${l.match} (${pc(l.p)})`).join("\n");try{await navigator.clipboard.writeText(`Slip of the day · ${p.slip_of_day.date}\n${lines}\nApprox. combined model probability: ${pc(p.slip_of_day.prob)} (assumes separate match outcomes)`);document.getElementById("copy-status").textContent="Copied"}catch{document.getElementById("copy-status").textContent="Copy is unavailable in this browser"}});
  upcomingMatches=(p.matches||[]).slice().sort((a,b)=>new Date(a.kickoff)-new Date(b.kickoff));fillMatchFilters(upcomingMatches);renderMatches();
 }).catch(()=>document.getElementById("matches").innerHTML='<p class="mu">No data yet. Run the “update-predictions” workflow once.</p>');
+let historyItems=[];
+let historyShownLimit=30;
+const HISTORY_PAGE_SIZE=30;
+const historySearch=document.getElementById("history-search"),historyDate=document.getElementById("history-date"),historyComp=document.getElementById("history-comp"),historyMarket=document.getElementById("history-market"),historyOutcome=document.getElementById("history-outcome"),historySummary=document.getElementById("history-summary"),historyCount=document.getElementById("history-count"),historyMore=document.getElementById("history-more");
+const HISTORY_MARKET_NAMES={"1X2":"1X2","OU":"Over/Under 2.5","HTFT":"Half-time/Full-time"};
+function historyPickStatus(pk){return pk.hit===1?"hit":pk.hit===0?"miss":"pending"}
+function fillHistoryFilters(items){
+ const competitions=[...new Set(items.map(it=>it.comp).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
+ const markets=[...new Set(items.flatMap(it=>(it.picks||[]).map(pk=>pk.mk).filter(Boolean)))].sort((a,b)=>a.localeCompare(b));
+ historyComp.innerHTML='<option value="all">All competitions</option>'+competitions.map(c=>'<option value="'+esc(c)+'">'+esc(c)+'</option>').join("");
+ historyMarket.innerHTML='<option value="all">All markets</option>'+markets.map(m=>'<option value="'+esc(m)+'">'+esc(HISTORY_MARKET_NAMES[m]||m)+'</option>').join("");
+}
+function historyPickBadge(pk){
+ const state=historyPickStatus(pk),label=state==="hit"?"HIT":state==="miss"?"MISS":"PENDING",market=HISTORY_MARKET_NAMES[pk.mk]||pk.mk||"Prediction";
+ const probability=typeof pk.p==="number"?" · "+pc(pk.p):"";
+ return '<span class="history-pick '+state+'"><b>'+esc(market)+':</b> '+esc(pk.pick||"Pick saved")+probability+' · <b>'+label+'</b></span>';
+}
+function historyCard(it,picks){
+ const when=new Date(it.kickoff),dateText=Number.isNaN(when.getTime())?"Date unavailable":when.toLocaleString(undefined,{dateStyle:"medium",timeStyle:"short"});
+ const ft=it.result&&Array.isArray(it.result.ft)?it.result.ft:null,ht=it.result&&Array.isArray(it.result.ht)?it.result.ht:null;
+ const p=it.p1x2||{},prob=value=>typeof value==="number"?pc(value):"—";
+ const resultText=ft&&ft.length>=2?'<div class="history-score">Final: '+ft[0]+'–'+ft[1]+'</div>':'<div class="mu">Final result pending</div>';
+ const halftimeText=ht&&ht.length>=2?'<div class="mu">Half-time: '+ht[0]+'–'+ht[1]+'</div>':"";
+ const primary=(it.picks||[]).find(pk=>pk.mk==="1X2");
+ const primaryText=primary?'<p><b>Pre-match 1X2 pick:</b> '+esc(primary.pick||"Pick saved")+' · <b>'+historyPickStatus(primary).toUpperCase()+'</b></p>':'';
+ const picksText=picks.length?picks.map(historyPickBadge).join(""):'<span class="mu">No saved picks for this filter.</span>';
+ return '<article class="card"><div class="mu">'+esc(it.comp||"Competition")+' · '+esc(dateText)+'</div><h3>'+esc(it.home||"Home team")+' vs '+esc(it.away||"Away team")+'</h3>'+resultText+halftimeText+primaryText+'<details class="history-detail"><summary>Pre-match probabilities and pick results</summary><p class="mu">1X2 probabilities before kickoff · Home '+prob(p["1"])+' · Draw '+prob(p.X)+' · Away '+prob(p["2"])+'</p><div class="history-picks">'+picksText+'</div></details></article>';
+}
+function renderHistory(){
+ const query=historySearch.value.trim().toLocaleLowerCase(),day=historyDate.value,competition=historyComp.value,market=historyMarket.value,outcome=historyOutcome.value;
+ const filtered=historyItems.filter(it=>{
+  const kickoff=new Date(it.kickoff),matchDay=Number.isNaN(kickoff.getTime())?"":dateKey(it.kickoff);
+  const matchingPicks=(it.picks||[]).filter(pk=>(market==="all"||pk.mk===market)&&(outcome==="all"||historyPickStatus(pk)===outcome));
+  return (!query||[it.home,it.away,it.comp,it.kickoff].join(" ").toLocaleLowerCase().includes(query))&&(!day||matchDay===day)&&(competition==="all"||it.comp===competition)&&matchingPicks.length>0;
+ }).sort((a,b)=>new Date(b.kickoff)-new Date(a.kickoff));
+ const allPicks=historyItems.flatMap(it=>it.picks||[]),scored=allPicks.filter(pk=>pk.hit===0||pk.hit===1),hits=scored.filter(pk=>pk.hit===1).length,misses=scored.length-hits,pending=allPicks.length-scored.length;
+ historySummary.textContent="Archive total: "+historyItems.length+" matches · "+scored.length+" scored picks ("+hits+" hit, "+misses+" missed) · "+pending+" pending.";
+ const visible=filtered.slice(0,historyShownLimit);
+ historyCount.textContent="Showing "+visible.length+" of "+filtered.length+" matches for these filters.";
+ document.getElementById("history-results").innerHTML=visible.length?visible.map(it=>{
+  const picks=(it.picks||[]).filter(pk=>(market==="all"||pk.mk===market)&&(outcome==="all"||historyPickStatus(pk)===outcome));
+  return historyCard(it,picks);
+ }).join(""):'<p class="mu">No saved predictions match these filters.</p>';
+ historyMore.hidden=visible.length>=filtered.length;
+}
+function resetHistoryPage(){historyShownLimit=HISTORY_PAGE_SIZE;renderHistory()}
+historySearch.addEventListener("input",resetHistoryPage);
+[historyDate,historyComp,historyMarket,historyOutcome].forEach(el=>el.addEventListener("change",resetHistoryPage));
+historyMore.addEventListener("click",()=>{historyShownLimit+=HISTORY_PAGE_SIZE;renderHistory()});
 get("data/history.json").then(h=>{const S=h.summary||{markets:[]},names={"1X2":"1X2",OU:"Over/Under 2.5",HTFT:"Half-time/Full-time"},items=h.items||[],markets=(S.markets||[]).filter(r=>["1X2","OU","HTFT"].includes(r.market));
- const completed=items.filter(it=>it.result&&it.result.ft).sort((a,b)=>new Date(b.kickoff)-new Date(a.kickoff));
- document.getElementById("results").innerHTML=completed.length?completed.slice(0,12).map(it=>{const [hg,ag]=it.result.ft,when=new Date(it.kickoff).toLocaleString(undefined,{dateStyle:"medium",timeStyle:"short"});return `<article class="card"><div class="mu">${esc(it.comp)} · ${esc(when)}</div><div class="result-score">${esc(it.home)} ${hg}–${ag} ${esc(it.away)}</div><div class="form-row">${(it.picks||[]).filter(pk=>["1X2","OU","HTFT"].includes(pk.mk)).map(pk=>`<span class="pill">${esc(pk.pick||names[pk.mk]||pk.mk)} · ${pk.hit==null?"Pending":pk.hit?"Hit":"Miss"}</span>`).join("")}</div></article>`}).join(""):`<p class="mu">Scored predictions will appear here after matches finish.</p>`;
+ historyItems=items;fillHistoryFilters(items);renderHistory();
  const daily=h.daily_slips||[],settled=daily.filter(x=>typeof x.hit==="number"),wins=settled.filter(x=>x.hit===1).length;document.getElementById("slip-record").innerHTML=daily.length?`<div class="card"><p class="mu">${wins} of ${settled.length} completed daily slips landed. Every slip is saved before kickoff; unfinished legs remain pending.</p>${daily.slice(-12).reverse().map(x=>`<div class="leg"><b>${esc(new Date(x.date+"T12:00:00Z").toLocaleDateString(undefined,{dateStyle:"medium"}))}</b> · ${x.hit==null?"Pending":x.hit?"All legs hit":"At least one leg missed"}<div class="mu">${(x.legs||[]).map(l=>`${esc(l.pick)} (${l.hit==null?"pending":l.hit?"hit":"miss"})`).join(" · ")}</div></div>`).join("")}</div>`:`<p class="mu">Daily slips are logged here as matches finish.</p>`;
  const scored=items.flatMap(it=>(it.picks||[]).filter(pk=>pk.mk==="1X2"&&Number.isInteger(pk.hit)));
  const groups=[{label:"Under 40%",lo:0,hi:.4},{label:"40–49%",lo:.4,hi:.5},{label:"50–59%",lo:.5,hi:.6},{label:"60–69%",lo:.6,hi:.7},{label:"70%+",lo:.7,hi:1.01}].map(b=>({...b,rows:scored.filter(pk=>pk.p>=b.lo&&pk.p<b.hi)})).filter(b=>b.rows.length);
