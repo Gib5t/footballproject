@@ -9,7 +9,7 @@
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
 main{max-width:980px;margin:0 auto;padding:16px}h1{font-size:24px;margin:6px 0}h2{font-size:18px;margin:26px 0 8px}h3{margin:0;font-size:15px}
 .mu{color:var(--mu);font-size:13px}.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px;margin:10px 0}
-.warn{border-left:4px solid var(--m)}.journey-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:8px;margin:10px 0}.journey-stat{padding:10px;border:1px solid var(--bd);border-radius:9px}.journey-stat strong{display:block;font-size:18px}.journey-label{font-size:11px;color:var(--mu);text-transform:uppercase;letter-spacing:.04em}.slips{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.warn{border-left:4px solid var(--m)}.journey-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:8px;margin:10px 0}.journey-stat{padding:10px;border:1px solid var(--bd);border-radius:9px}.journey-stat strong{display:block;font-size:18px}.journey-label{font-size:11px;color:var(--mu);text-transform:uppercase;letter-spacing:.04em}.journey-guide{border:1px solid var(--bd);border-radius:10px;padding:12px;margin-top:12px}.journey-entry{padding:9px 0;border-top:1px dashed var(--bd)}.journey-entry:first-child{border-top:0}.journey-state{font-weight:700}.slips{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
 .slip{border-top:4px solid var(--c)}.leg{border-top:1px dashed var(--bd);padding:8px 0}.pill{display:inline-block;padding:1px 8px;border-radius:99px;background:var(--bd);font-size:12px;margin-right:4px}
 .bar{display:flex;height:10px;border-radius:6px;overflow:hidden;margin:6px 0;background:var(--bd)}.bar i{display:block}
 details{margin-top:6px}summary{cursor:pointer;color:var(--ac);font-size:13px}table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:6px;border-bottom:1px solid var(--bd);text-align:left}
@@ -31,7 +31,15 @@ footer{margin:30px 0 10px;font-size:12px;color:var(--mu)}
  <div class="journey-stat"><span class="journey-label">Time limit</span><strong>30 days</strong></div>
  <div class="journey-stat"><span class="journey-label">Math required</span><strong>+25.9% daily</strong></div>
 </div>
-<p class="mu">That daily figure is the compounded growth required to multiply 100 DH by 1,000 in 30 days. It is an extreme mathematical scenario, not a forecast, realistic expectation, or betting strategy. The bot does not place bets, recommend stakes, or track a real-money balance. Predictions can lose, and no result is guaranteed.</p>
+<p class="mu">The 25.9% figure is only the mathematical growth a 1,000× target would require; it is not a forecast or a realistic promise. The model has no bookmaker odds, so it cannot calculate DH returns or responsibly direct real-money stakes. This guide tracks model picks on paper only. A 62% probability can still lose, and missed picks are never a reason to chase.</p>
+<div class="journey-guide">
+ <p id="journey-status" class="mu" aria-live="polite">Start the paper guide to begin a 30-day prediction log. Your start date stays in this browser.</p>
+ <button id="journey-start" class="copy-button" type="button">Start 30-day paper guide</button>
+ <h3>Strongest eligible pick or skip</h3>
+ <p class="mu">The guide checks the locked daily selection and shows its highest-probability 1X2 or Over/Under pick only when it reaches 62%. Otherwise it recommends a paper skip.</p>
+ <div id="journey-pick"><p class="mu">Loading the latest model selection…</p></div>
+ <details><summary>Journey prediction log</summary><p class="mu">One top pick per logged match date. Dates without a qualifying pick are skipped; no money or stakes are tracked.</p><div id="journey-log" class="form-grid"><p class="mu">Loading…</p></div></details>
+</div>
 </div>
 <div id="notes" class="mu"></div>
 <div id="slips"></div>
@@ -90,7 +98,48 @@ function matchCard(m,favs){const time=new Date(m.kickoff).toLocaleTimeString(und
  <details><summary>Why the bot picked these</summary>${m.picks.map(c=>`<p class="mu"><b>${esc(c.pick)}</b> (${pc(c.p)}): ${esc(c.why)}</p>`).join("")}</details></article>`}
 function renderMatches(){const day=dateSelect.value,comp=compSelect.value,q=searchInput.value.trim().toLocaleLowerCase(),favs=getFollowedTeams(),onlyFavs=favoritesOnly.checked;const shown=upcomingMatches.filter(m=>(day==="all"||(day==="next7"&&withinNextWeek(m.kickoff))||dateKey(m.kickoff)===day)&&(comp==="all"||m.comp===comp)&&(!q||`${m.home} ${m.away} ${m.comp}`.toLocaleLowerCase().includes(q))&&(!onlyFavs||(favs.has(m.home)||favs.has(m.away))));matchCount.textContent=`${shown.length} of ${upcomingMatches.length} matches`;if(!shown.length){document.getElementById("matches").innerHTML=`<p class="mu">${onlyFavs&&!favs.size?"Follow a team below to see its matches here.":"No matches for this selection. Try another search, date, or competition."}</p>`;return}const groups=new Map();shown.forEach(m=>{const key=dateKey(m.kickoff);if(!groups.has(key))groups.set(key,[]);groups.get(key).push(m)});document.getElementById("matches").innerHTML=[...groups].map(([key,list],i)=>`<details class="day-group" ${i===0?"open":""}><summary class="day-heading"><span class="day-title">${esc(dayLabel(key))}</span><span class="mu">${list.length} ${list.length===1?"match":"matches"}</span></summary>${list.map(m=>matchCard(m,favs)).join("")}</details>`).join("");document.querySelectorAll(".follow-team").forEach(btn=>btn.addEventListener("click",()=>{const teams=getFollowedTeams(),team=btn.dataset.team;teams.has(team)?teams.delete(team):teams.add(team);saveFollowedTeams(teams);renderMatches()}))}
 dateSelect.addEventListener("change",renderMatches);compSelect.addEventListener("change",renderMatches);searchInput.addEventListener("input",renderMatches);favoritesOnly.addEventListener("change",renderMatches);
+let journeyPrediction=null,journeyDays=[];
+const JOURNEY_STORAGE_KEY="football-analyst-paper-journey-start",JOURNEY_MIN_PROB=.62;
+const journeyStatus=document.getElementById("journey-status"),journeyStartButton=document.getElementById("journey-start"),journeyPick=document.getElementById("journey-pick"),journeyLog=document.getElementById("journey-log");
+function journeyDayIndex(start,current){const a=start.split("-").map(Number),b=current.split("-").map(Number);return Math.floor((Date.UTC(b[0],b[1]-1,b[2])-Date.UTC(a[0],a[1]-1,a[2]))/86400000)+1}
+function journeyKeyAtDayNumber(n){return new Date(n*86400000).toISOString().slice(0,10)}
+function journeyTopPick(day){
+ const legs=day&&Array.isArray(day.legs)?day.legs.slice():[];
+ legs.sort((a,b)=>(Number(b.p)||0)-(Number(a.p)||0));
+ return legs.find(x=>x.mk==="1X2"||x.mk==="OU")||null;
+}
+function journeyRender(){
+ let start=null;try{start=localStorage.getItem(JOURNEY_STORAGE_KEY)}catch{}
+ if(start&&!/^\d{4}-\d{2}-\d{2}$/.test(start))start=null;
+ const today=dateKey(new Date()),dayNo=start?journeyDayIndex(start,today):0,startDay=start?journeyDayIndex("1970-01-01",start):0,endKey=start?journeyKeyAtDayNumber(startDay+29):"";
+ journeyStartButton.hidden=Boolean(start);
+ if(!start)journeyStatus.textContent="Not started. Start the 30-day paper guide; the date is saved only in this browser.";
+ else if(dayNo<1)journeyStatus.textContent="Your paper guide starts on "+start+".";
+ else if(dayNo<=30)journeyStatus.textContent="Paper guide · Day "+dayNo+" of 30 · Started "+start+". No real-money balance is tracked.";
+ else journeyStatus.textContent="The 30-day paper guide has ended. Review its logged picks below; no money or returns were simulated.";
+ const slip=journeyPrediction&&journeyPrediction.slip_of_day,top=journeyTopPick(slip);
+ const withinChallenge=!start||(slip&&slip.date>=start&&slip.date<=endKey);
+ if(start&&dayNo>30)journeyPick.innerHTML='<p class="mu">The 30-day guide is complete. No more picks are included in this journey.</p>';
+ else if(!journeyPrediction)journeyPick.innerHTML='<p class="mu">Loading the latest model selection…</p>';
+ else if(top&&Number(top.p)>=JOURNEY_MIN_PROB&&withinChallenge){
+  const label=top.hit===1?"HIT":top.hit===0?"MISS":"PENDING",market=top.mk==="OU"?"Over/Under 2.5":"1X2";
+  const date=slip.date?new Date(slip.date+"T12:00:00").toLocaleDateString(undefined,{weekday:"long",month:"short",day:"numeric"}):"Next logged match date";
+  journeyPick.innerHTML='<div class="journey-entry"><div class="mu">'+esc(date)+' · paper-only selection</div><p><b>'+esc(top.pick||market)+'</b> · '+pc(Number(top.p))+' model probability · <b>'+label+'</b></p><div class="mu">'+esc(top.match||"")+'</div><details><summary>Why the model selected it</summary><p class="mu">'+esc(top.why||"No explanation was saved.")+'</p></details></div>';
+ }else{
+  const hasCandidates=Boolean(slip&&(slip.legs||[]).length),date=slip&&slip.date?new Date(slip.date+"T12:00:00").toLocaleDateString(undefined,{weekday:"long",month:"short",day:"numeric"}):"";
+  journeyPick.innerHTML='<div class="journey-entry"><b>SKIP</b><p class="mu">'+(hasCandidates?'No pick in the locked daily selection reached the 62% display threshold.':'No suitable daily selection is available yet.')+(date?' Next logged date: '+esc(date)+'.':'')+' A skip is part of the guide.</p></div>';
+ }
+ if(!start){journeyLog.innerHTML='<p class="mu">Start the guide to begin your local 30-day log.</p>';return}
+ const records=journeyDays.filter(x=>x.date&&x.date>=start&&x.date<=endKey).slice().sort((a,b)=>b.date.localeCompare(a.date));
+ journeyLog.innerHTML=records.length?records.map(d=>{
+  const pick=journeyTopPick(d),label=pick&&pick.hit===1?"HIT":pick&&pick.hit===0?"MISS":"PENDING",date=new Date(d.date+"T12:00:00").toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"});
+  if(!pick||Number(pick.p)<JOURNEY_MIN_PROB)return '<div class="journey-entry"><b>'+esc(date)+'</b> · <span class="journey-state">SKIP</span><div class="mu">No saved pick reached the 62% display threshold.</div></div>';
+  return '<div class="journey-entry"><b>'+esc(date)+'</b> · <span class="journey-state">'+label+'</span><div>'+esc(pick.pick||"Pick saved")+' · '+pc(Number(pick.p))+' model probability</div><div class="mu">'+esc(pick.match||"")+'</div></div>';
+ }).join(""):'<p class="mu">No daily selections have been logged within this challenge yet. Dates without a qualifying pick remain skips.</p>';
+}
+journeyStartButton.addEventListener("click",()=>{try{localStorage.setItem(JOURNEY_STORAGE_KEY,dateKey(new Date()));journeyRender()}catch{journeyStatus.textContent="This browser could not save the paper-guide start date."}});
 get("data/predictions.json").then(p=>{
+ journeyPrediction=p;journeyRender();
  document.getElementById("upd").textContent=`Last refreshed ${new Date(p.updated).toLocaleString()} · ${(p.matches||[]).length} upcoming fixtures`+(p.demo?" (DEMO DATA)":"");
  document.getElementById("notes").textContent=(p.notes||[]).filter(n=>!/PitchAPI|Player\/corner\/card feed|PITCHAPI_KEY/i.test(n)).join(" · ");
  const s=p.slips||{};document.getElementById("slips").innerHTML=`<h2>Model betslips</h2><p class="mu">These confidence bands describe model probabilities; they do not mean a slip is safe.</p><div class="slips">`+slipHTML("🟦 Higher-confidence model picks","--s",s.small||{})+slipHTML("🟨 Mid-confidence model picks","--m",s.medium||{})+slipHTML("🟥 Lower-confidence / higher-variance picks","--b",s.big||{})+`</div>`;
@@ -148,7 +197,7 @@ historySearch.addEventListener("input",resetHistoryPage);
 historyMore.addEventListener("click",()=>{historyShownLimit+=HISTORY_PAGE_SIZE;renderHistory()});
 get("data/history.json").then(h=>{const S=h.summary||{markets:[]},names={"1X2":"1X2",OU:"Over/Under 2.5",HTFT:"Half-time/Full-time"},items=h.items||[],markets=(S.markets||[]).filter(r=>["1X2","OU","HTFT"].includes(r.market));
  historyItems=items;fillHistoryFilters(items);renderHistory();
- const daily=h.daily_slips||[],settled=daily.filter(x=>typeof x.hit==="number"),wins=settled.filter(x=>x.hit===1).length;document.getElementById("slip-record").innerHTML=daily.length?`<div class="card"><p class="mu">${wins} of ${settled.length} completed daily slips landed. Every slip is saved before kickoff; unfinished legs remain pending.</p>${daily.slice(-12).reverse().map(x=>`<div class="leg"><b>${esc(new Date(x.date+"T12:00:00Z").toLocaleDateString(undefined,{dateStyle:"medium"}))}</b> · ${x.hit==null?"Pending":x.hit?"All legs hit":"At least one leg missed"}<div class="mu">${(x.legs||[]).map(l=>`${esc(l.pick)} (${l.hit==null?"pending":l.hit?"hit":"miss"})`).join(" · ")}</div></div>`).join("")}</div>`:`<p class="mu">Daily slips are logged here as matches finish.</p>`;
+ const daily=h.daily_slips||[];journeyDays=daily;journeyRender();const settled=daily.filter(x=>typeof x.hit==="number"),wins=settled.filter(x=>x.hit===1).length;document.getElementById("slip-record").innerHTML=daily.length?`<div class="card"><p class="mu">${wins} of ${settled.length} completed daily slips landed. Every slip is saved before kickoff; unfinished legs remain pending.</p>${daily.slice(-12).reverse().map(x=>`<div class="leg"><b>${esc(new Date(x.date+"T12:00:00Z").toLocaleDateString(undefined,{dateStyle:"medium"}))}</b> · ${x.hit==null?"Pending":x.hit?"All legs hit":"At least one leg missed"}<div class="mu">${(x.legs||[]).map(l=>`${esc(l.pick)} (${l.hit==null?"pending":l.hit?"hit":"miss"})`).join(" · ")}</div></div>`).join("")}</div>`:`<p class="mu">Daily slips are logged here as matches finish.</p>`;
  const scored=items.flatMap(it=>(it.picks||[]).filter(pk=>pk.mk==="1X2"&&Number.isInteger(pk.hit)));
  const groups=[{label:"Under 40%",lo:0,hi:.4},{label:"40–49%",lo:.4,hi:.5},{label:"50–59%",lo:.5,hi:.6},{label:"60–69%",lo:.6,hi:.7},{label:"70%+",lo:.7,hi:1.01}].map(b=>({...b,rows:scored.filter(pk=>pk.p>=b.lo&&pk.p<b.hi)})).filter(b=>b.rows.length);
  document.getElementById("calibration").innerHTML=groups.length?`<div class="card"><p class="mu">For scored 1X2 picks, bars show observed hit rate. Small samples can vary a lot.</p><table><tr><th>Confidence band</th><th>Average confidence</th><th>Observed hit rate</th><th>Scored picks</th></tr>${groups.map(b=>{const avg=b.rows.reduce((s,x)=>s+x.p,0)/b.rows.length,rate=b.rows.reduce((s,x)=>s+x.hit,0)/b.rows.length;return `<tr><td>${b.label}</td><td>${pc(avg)}</td><td><div class="cal-track" aria-label="${pc(rate)} hit rate"><i style="width:${rate*100}%"></i></div>${pc(rate)}</td><td>${b.rows.length}</td></tr>`}).join("")}</table></div>`:`<p class="mu">The confidence chart will fill in as 1X2 picks are scored.</p>`;
