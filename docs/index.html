@@ -118,7 +118,7 @@ function journeyPickForDate(date){
 function journeyCard(date,number,kind){
  const pickData=journeyPickForDate(date),best=pickData.eligible,dayDate=new Date(date+"T12:00:00").toLocaleDateString(undefined,{weekday:"long",month:"short",day:"numeric"});
  const klass=kind==="featured"?"journey-day-card featured":kind==="incoming"?"journey-day-card incoming":"journey-day-card";
- const tag=pickData.pool.locked?(best&&best.hit===1?"HIT":best&&best.hit===0?"MISS":"LOCKED"):kind==="incoming"?"INCOMING":"PREVIEW";
+ const tag=kind==="incoming"?"INCOMING":pickData.pool.locked?(best&&best.hit===1?"HIT":best&&best.hit===0?"MISS":"LOCKED"):"PREVIEW";
  let body="";
  if(best){
   const state=best.hit===1?"HIT":best.hit===0?"MISS":"PENDING";
@@ -171,7 +171,7 @@ function journeyRender(){
  if(!start){journeyLog.innerHTML='<p class="mu">Start the guide to save a 30-day window and follow its logged results.</p>';return}
  const records=journeyDays.filter(x=>x.date&&x.date>=anchor&&x.date<=end).slice().sort((a,b)=>b.date.localeCompare(a.date));
  journeyLog.innerHTML=records.length?records.map(d=>{
-  const number=Math.max(1,dates.indexOf(d.date)+1),pick=journeyTopPick(d),label=pick&&pick.hit===1?"HIT":pick&&pick.hit===0?"MISS":"PENDING",date=new Date(d.date+"T12:00:00").toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"});
+  const number=Math.max(1,dates.indexOf(d.date)+1),pick=journeyPickForDate(d.date).best,label=pick&&pick.hit===1?"HIT":pick&&pick.hit===0?"MISS":"PENDING",date=new Date(d.date+"T12:00:00").toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"});
   if(!pick||Number(pick.p)<JOURNEY_MIN_PROB)return '<div class="journey-entry"><b>DAY '+number+' · '+esc(date)+'</b> · <span class="journey-state">SKIP</span><div class="mu">No saved pick reached the 62% display threshold.</div></div>';
   return '<div class="journey-entry"><b>DAY '+number+' · '+esc(date)+'</b> · <span class="journey-state">'+label+'</span><div>'+esc(pick.pick||"Pick saved")+' · '+pc(Number(pick.p))+' model probability</div><div class="mu">'+esc(pick.match||"")+'</div></div>';
  }).join(""):'<p class="mu">No daily selections have been logged within this window yet. Dates without a qualifying pick remain skips.</p>';
