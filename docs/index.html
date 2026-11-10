@@ -9,7 +9,7 @@
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
 main{max-width:980px;margin:0 auto;padding:16px}h1{font-size:24px;margin:6px 0}h2{font-size:18px;margin:26px 0 8px}h3{margin:0;font-size:15px}
 .mu{color:var(--mu);font-size:13px}.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px;margin:10px 0}
-.warn{border-left:4px solid var(--m)}.journey-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:8px;margin:10px 0}.journey-stat{padding:10px;border:1px solid var(--bd);border-radius:9px}.journey-stat strong{display:block;font-size:18px}.journey-label{font-size:11px;color:var(--mu);text-transform:uppercase;letter-spacing:.04em}.journey-guide{border:1px solid var(--bd);border-radius:10px;padding:12px;margin-top:12px}.journey-entry{padding:9px 0;border-top:1px dashed var(--bd)}.journey-entry:first-child{border-top:0}.journey-state{font-weight:700}.slips{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.warn{border-left:4px solid var(--m)}.journey-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:8px;margin:10px 0}.journey-stat{padding:10px;border:1px solid var(--bd);border-radius:9px}.journey-stat strong{display:block;font-size:18px}.journey-label{font-size:11px;color:var(--mu);text-transform:uppercase;letter-spacing:.04em}.journey-guide{border:1px solid var(--bd);border-radius:10px;padding:12px;margin-top:12px}.journey-entry{padding:9px 0;border-top:1px dashed var(--bd)}.journey-entry:first-child{border-top:0}.journey-state{font-weight:700}.journey-timeline{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.journey-step{border:1px solid var(--bd);border-radius:99px;padding:4px 9px;font-size:12px;background:var(--card)}.journey-step.featured{border-color:var(--ac);color:var(--ac);font-weight:700}.journey-step.incoming{border-color:var(--s);background:var(--s);color:#fff;font-weight:700}.journey-step.done{color:var(--mu)}.journey-plan{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin:10px 0}.journey-day-card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:13px}.journey-day-card.featured{border:3px solid var(--ac);box-shadow:0 4px 14px rgba(15,157,88,.13)}.journey-day-card.incoming{border:3px solid var(--s);background:rgba(26,115,232,.045)}.journey-day-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}.journey-day-number{font-size:17px;font-weight:850;letter-spacing:.03em}.journey-day-card.featured .journey-day-number{font-size:21px}.journey-day-tag{border-radius:99px;background:var(--bd);padding:2px 8px;font-size:11px;font-weight:700}.journey-day-card.incoming .journey-day-tag{background:var(--s);color:#fff}.journey-slip-pick{font-size:18px;font-weight:750;margin:8px 0 3px}.journey-slip-prob{font-size:25px;font-weight:800;color:var(--ac)}.journey-future-days{display:grid;gap:6px;margin:10px 0}.journey-future-item{padding:9px 11px;border:1px solid var(--bd);border-radius:9px;background:var(--card)}.slips{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
 .slip{border-top:4px solid var(--c)}.leg{border-top:1px dashed var(--bd);padding:8px 0}.pill{display:inline-block;padding:1px 8px;border-radius:99px;background:var(--bd);font-size:12px;margin-right:4px}
 .bar{display:flex;height:10px;border-radius:6px;overflow:hidden;margin:6px 0;background:var(--bd)}.bar i{display:block}
 details{margin-top:6px}summary{cursor:pointer;color:var(--ac);font-size:13px}table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:6px;border-bottom:1px solid var(--bd);text-align:left}
@@ -35,10 +35,11 @@ footer{margin:30px 0 10px;font-size:12px;color:var(--mu)}
 <div class="journey-guide">
  <p id="journey-status" class="mu" aria-live="polite">Start the paper guide to begin a 30-day prediction log. Your start date stays in this browser.</p>
  <button id="journey-start" class="copy-button" type="button">Start 30-day paper guide</button>
- <h3>Strongest eligible pick or skip</h3>
- <p class="mu">The guide checks the locked daily selection and shows its highest-probability 1X2 or Over/Under pick only when it reaches 62%. Otherwise it recommends a paper skip.</p>
- <div id="journey-pick"><p class="mu">Loading the latest model selection…</p></div>
- <details><summary>Journey prediction log</summary><p class="mu">One top pick per logged match date. Dates without a qualifying pick are skipped; no money or stakes are tracked.</p><div id="journey-log" class="form-grid"><p class="mu">Loading…</p></div></details>
+ <p class="mu">Journey numbers follow scheduled match dates inside the 30-day window. Day 1 is the first date with a fixture. Day 2 is highlighted as incoming; low-confidence slates are marked SKIP.</p>
+ <div id="journey-timeline" class="journey-timeline" aria-label="Numbered Journey days"></div>
+ <div id="journey-pick" class="journey-plan"><p class="mu">Loading the latest model selection…</p></div>
+ <details><summary id="journey-future-label">Day 3 onward</summary><div id="journey-future-days" class="journey-future-days"><p class="mu">Loading…</p></div></details>
+ <details><summary>Journey result log</summary><p class="mu">The log follows the saved daily paper picks. Picks below 62% are skips; no money or stakes are tracked.</p><div id="journey-log" class="form-grid"><p class="mu">Loading…</p></div></details>
 </div>
 </div>
 <div id="notes" class="mu"></div>
@@ -99,45 +100,87 @@ function matchCard(m,favs){const time=new Date(m.kickoff).toLocaleTimeString(und
 function renderMatches(){const day=dateSelect.value,comp=compSelect.value,q=searchInput.value.trim().toLocaleLowerCase(),favs=getFollowedTeams(),onlyFavs=favoritesOnly.checked;const shown=upcomingMatches.filter(m=>(day==="all"||(day==="next7"&&withinNextWeek(m.kickoff))||dateKey(m.kickoff)===day)&&(comp==="all"||m.comp===comp)&&(!q||`${m.home} ${m.away} ${m.comp}`.toLocaleLowerCase().includes(q))&&(!onlyFavs||(favs.has(m.home)||favs.has(m.away))));matchCount.textContent=`${shown.length} of ${upcomingMatches.length} matches`;if(!shown.length){document.getElementById("matches").innerHTML=`<p class="mu">${onlyFavs&&!favs.size?"Follow a team below to see its matches here.":"No matches for this selection. Try another search, date, or competition."}</p>`;return}const groups=new Map();shown.forEach(m=>{const key=dateKey(m.kickoff);if(!groups.has(key))groups.set(key,[]);groups.get(key).push(m)});document.getElementById("matches").innerHTML=[...groups].map(([key,list],i)=>`<details class="day-group" ${i===0?"open":""}><summary class="day-heading"><span class="day-title">${esc(dayLabel(key))}</span><span class="mu">${list.length} ${list.length===1?"match":"matches"}</span></summary>${list.map(m=>matchCard(m,favs)).join("")}</details>`).join("");document.querySelectorAll(".follow-team").forEach(btn=>btn.addEventListener("click",()=>{const teams=getFollowedTeams(),team=btn.dataset.team;teams.has(team)?teams.delete(team):teams.add(team);saveFollowedTeams(teams);renderMatches()}))}
 dateSelect.addEventListener("change",renderMatches);compSelect.addEventListener("change",renderMatches);searchInput.addEventListener("input",renderMatches);favoritesOnly.addEventListener("change",renderMatches);
 let journeyPrediction=null,journeyDays=[];
-const JOURNEY_STORAGE_KEY="football-analyst-paper-journey-start",JOURNEY_MIN_PROB=.62;
-const journeyStatus=document.getElementById("journey-status"),journeyStartButton=document.getElementById("journey-start"),journeyPick=document.getElementById("journey-pick"),journeyLog=document.getElementById("journey-log");
-function journeyDayIndex(start,current){const a=start.split("-").map(Number),b=current.split("-").map(Number);return Math.floor((Date.UTC(b[0],b[1]-1,b[2])-Date.UTC(a[0],a[1]-1,a[2]))/86400000)+1}
+const JOURNEY_STORAGE_KEY="football-analyst-paper-journey-start",JOURNEY_FIRST_KEY="football-analyst-paper-journey-first-date",JOURNEY_MIN_PROB=.62;
+const journeyStatus=document.getElementById("journey-status"),journeyStartButton=document.getElementById("journey-start"),journeyPick=document.getElementById("journey-pick"),journeyTimeline=document.getElementById("journey-timeline"),journeyFutureLabel=document.getElementById("journey-future-label"),journeyFutureDays=document.getElementById("journey-future-days"),journeyLog=document.getElementById("journey-log");
+function journeyDayNumber(key){const a=key.split("-").map(Number);return Math.floor(Date.UTC(a[0],a[1]-1,a[2])/86400000)}
 function journeyKeyAtDayNumber(n){return new Date(n*86400000).toISOString().slice(0,10)}
-function journeyTopPick(day){
- const legs=day&&Array.isArray(day.legs)?day.legs.slice():[];
- legs.sort((a,b)=>(Number(b.p)||0)-(Number(a.p)||0));
- return legs.find(x=>x.mk==="1X2"||x.mk==="OU")||null;
+function journeyWindowEnd(start){return journeyKeyAtDayNumber(journeyDayNumber(start)+29)}
+function journeyPoolForDate(date){
+ const locked=journeyDays.find(d=>d.date===date)||(journeyPrediction&&journeyPrediction.slip_of_day&&journeyPrediction.slip_of_day.date===date?journeyPrediction.slip_of_day:null);
+ if(locked&&Array.isArray(locked.legs))return {rows:locked.legs.slice(),locked:true};
+ const matches=(journeyPrediction&&journeyPrediction.matches||[]).filter(m=>m.kickoff&&dateKey(m.kickoff)===date);
+ return {rows:matches.flatMap(m=>m.picks||[]),locked:false};
+}
+function journeyPickForDate(date){
+ const pool=journeyPoolForDate(date),rows=pool.rows.filter(x=>x.mk==="1X2"||x.mk==="OU").slice().sort((a,b)=>(Number(b.p)||0)-(Number(a.p)||0));
+ return {pool:pool,best:rows[0]||null,eligible:rows.find(x=>Number(x.p)>=JOURNEY_MIN_PROB)||null};
+}
+function journeyCard(date,number,kind){
+ const pickData=journeyPickForDate(date),best=pickData.eligible,dayDate=new Date(date+"T12:00:00").toLocaleDateString(undefined,{weekday:"long",month:"short",day:"numeric"});
+ const klass=kind==="featured"?"journey-day-card featured":kind==="incoming"?"journey-day-card incoming":"journey-day-card";
+ const tag=pickData.pool.locked?(best&&best.hit===1?"HIT":best&&best.hit===0?"MISS":"LOCKED"):kind==="incoming"?"INCOMING":"PREVIEW";
+ let body="";
+ if(best){
+  const state=best.hit===1?"HIT":best.hit===0?"MISS":"PENDING";
+  body='<div class="journey-slip-pick">'+esc(best.pick||"Model pick")+'</div><div class="journey-slip-prob">'+pc(Number(best.p))+' <span class="mu">model probability</span></div><div class="mu">'+esc(best.comp||"")+' · '+esc(best.match||"")+' · '+(pickData.pool.locked?state:"preview; may update before kickoff")+'</div>'+(best.why?'<details><summary>Why this pick</summary><p class="mu">'+esc(best.why)+'</p></details>':"");
+ }else if(pickData.best){
+  body='<p><b>SKIP</b></p><p class="mu">No 1X2 or Over/Under pick on this slate reached the 62% display threshold.</p>';
+ }else{
+  body='<p><b>REST DAY</b></p><p class="mu">No upcoming fixture is available for this date.</p>';
+ }
+ return '<article class="'+klass+'"><div class="journey-day-head"><span class="journey-day-number">DAY '+number+'</span><span class="journey-day-tag">'+tag+'</span></div><div class="mu">'+esc(dayDate)+'</div>'+body+'</article>';
+}
+function journeyDates(start,end,firstSaved){
+ const set=new Set();
+ (journeyPrediction&&journeyPrediction.matches||[]).forEach(m=>{if(m.kickoff){const d=dateKey(m.kickoff);if(d>=start&&d<=end)set.add(d)}});
+ journeyDays.forEach(d=>{if(d.date&&d.date>=start&&d.date<=end)set.add(d.date)});
+ const slip=journeyPrediction&&journeyPrediction.slip_of_day;
+ if(slip&&slip.date&&slip.date>=start&&slip.date<=end)set.add(slip.date);
+ if(firstSaved&&firstSaved>=start&&firstSaved<=end)set.add(firstSaved);
+ return [...set].sort().slice(0,30);
 }
 function journeyRender(){
- let start=null;try{start=localStorage.getItem(JOURNEY_STORAGE_KEY)}catch{}
+ let start=null,firstSaved=null;try{start=localStorage.getItem(JOURNEY_STORAGE_KEY);firstSaved=localStorage.getItem(JOURNEY_FIRST_KEY)}catch{}
  if(start&&!/^\d{4}-\d{2}-\d{2}$/.test(start))start=null;
- const today=dateKey(new Date()),dayNo=start?journeyDayIndex(start,today):0,startDay=start?journeyDayIndex("1970-01-01",start):0,endKey=start?journeyKeyAtDayNumber(startDay+29):"";
+ if(firstSaved&&!/^\d{4}-\d{2}-\d{2}$/.test(firstSaved))firstSaved=null;
+ const today=dateKey(new Date()),anchor=start||today,end=journeyWindowEnd(anchor),dates=journeyDates(anchor,end,firstSaved);
+ if(start&&!firstSaved&&dates.length){firstSaved=dates[0];try{localStorage.setItem(JOURNEY_FIRST_KEY,firstSaved)}catch{}}
  journeyStartButton.hidden=Boolean(start);
- if(!start)journeyStatus.textContent="Not started. Start the 30-day paper guide; the date is saved only in this browser.";
- else if(dayNo<1)journeyStatus.textContent="Your paper guide starts on "+start+".";
- else if(dayNo<=30)journeyStatus.textContent="Paper guide · Day "+dayNo+" of 30 · Started "+start+". No real-money balance is tracked.";
- else journeyStatus.textContent="The 30-day paper guide has ended. Review its logged picks below; no money or returns were simulated.";
- const slip=journeyPrediction&&journeyPrediction.slip_of_day,top=journeyTopPick(slip);
- const withinChallenge=!start||(slip&&slip.date>=start&&slip.date<=endKey);
- if(start&&dayNo>30)journeyPick.innerHTML='<p class="mu">The 30-day guide is complete. No more picks are included in this journey.</p>';
- else if(!journeyPrediction)journeyPick.innerHTML='<p class="mu">Loading the latest model selection…</p>';
- else if(top&&Number(top.p)>=JOURNEY_MIN_PROB&&withinChallenge){
-  const label=top.hit===1?"HIT":top.hit===0?"MISS":"PENDING",market=top.mk==="OU"?"Over/Under 2.5":"1X2";
-  const date=slip.date?new Date(slip.date+"T12:00:00").toLocaleDateString(undefined,{weekday:"long",month:"short",day:"numeric"}):"Next logged match date";
-  journeyPick.innerHTML='<div class="journey-entry"><div class="mu">'+esc(date)+' · paper-only selection</div><p><b>'+esc(top.pick||market)+'</b> · '+pc(Number(top.p))+' model probability · <b>'+label+'</b></p><div class="mu">'+esc(top.match||"")+'</div><details><summary>Why the model selected it</summary><p class="mu">'+esc(top.why||"No explanation was saved.")+'</p></details></div>';
- }else{
-  const hasCandidates=Boolean(slip&&(slip.legs||[]).length),date=slip&&slip.date?new Date(slip.date+"T12:00:00").toLocaleDateString(undefined,{weekday:"long",month:"short",day:"numeric"}):"";
-  journeyPick.innerHTML='<div class="journey-entry"><b>SKIP</b><p class="mu">'+(hasCandidates?'No pick in the locked daily selection reached the 62% display threshold.':'No suitable daily selection is available yet.')+(date?' Next logged date: '+esc(date)+'.':'')+' A skip is part of the guide.</p></div>';
+ if(!start)journeyStatus.textContent="Preview. Start the 30-day paper guide to save this window in your browser.";
+ else{
+  const elapsed=journeyDayNumber(today)-journeyDayNumber(start)+1;
+  journeyStatus.textContent=elapsed>30?"The 30-day paper window has ended. Review saved picks below; no money or returns were simulated.":"Started "+start+" · "+Math.max(1,elapsed)+" of 30 calendar days elapsed · day numbers below count scheduled match dates.";
  }
- if(!start){journeyLog.innerHTML='<p class="mu">Start the guide to begin your local 30-day log.</p>';return}
- const records=journeyDays.filter(x=>x.date&&x.date>=start&&x.date<=endKey).slice().sort((a,b)=>b.date.localeCompare(a.date));
+ if(!journeyPrediction){journeyPick.innerHTML='<p class="mu">Loading upcoming match dates…</p>';return}
+ if(!dates.length){
+  journeyTimeline.innerHTML="";
+  journeyPick.innerHTML='<article class="journey-day-card featured"><div class="journey-day-head"><span class="journey-day-number">DAY 1</span><span class="journey-day-tag">WAITING</span></div><p class="mu">No upcoming fixture dates are currently listed inside this 30-day window.</p></article><article class="journey-day-card incoming"><div class="journey-day-head"><span class="journey-day-number">DAY 2</span><span class="journey-day-tag">INCOMING</span></div><p class="mu">Waiting for the next scheduled slate.</p></article>';
+  journeyFutureDays.innerHTML='<p class="mu">Later days appear when fixtures enter the 30-day window.</p>';journeyFutureLabel.textContent="Day 3 onward";journeyLog.innerHTML='<p class="mu">No daily selections have been logged for this window yet.</p>';return;
+ }
+ const incomingIndex=dates.findIndex((d,i)=>i>0&&d>=today),shownIncoming=incomingIndex>=0?incomingIndex:(dates.length>1?1:-1);
+ journeyTimeline.innerHTML=dates.map((d,i)=>'<span class="journey-step '+(i===0?"featured":i===shownIncoming?"incoming":d<today?"done":"")+'">Day '+(i+1)+(i===shownIncoming?" · incoming":"")+'</span>').join("");
+ const firstKind=dates[0]<today?"featured":"featured";
+ journeyPick.innerHTML=journeyCard(dates[0],1,firstKind)+(shownIncoming>=0?journeyCard(dates[shownIncoming],shownIncoming+1,"incoming"):'<article class="journey-day-card incoming"><div class="journey-day-head"><span class="journey-day-number">DAY 2</span><span class="journey-day-tag">INCOMING</span></div><p class="mu">No second scheduled match date is listed inside this 30-day window yet.</p></article>');
+ const later=dates.map((d,i)=>({date:d,number:i+1})).filter(x=>x.number>=3&&x.number!==shownIncoming);
+ journeyFutureLabel.textContent=later.length?"Day 3 onward · "+later.length+" scheduled slates":"Day 3 onward · waiting for more fixtures";
+ journeyFutureDays.innerHTML=later.length?later.map(x=>{
+  const pickData=journeyPickForDate(x.date),best=pickData.eligible,dayDate=new Date(x.date+"T12:00:00").toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"});
+  const line=best?'<b>'+esc(best.pick||"Model pick")+'</b> · '+pc(Number(best.p))+' · '+(pickData.pool.locked?(best.hit===1?"HIT":best.hit===0?"MISS":"PENDING"):"preview"):(pickData.best?"SKIP · no pick reached 62%":"No listed fixtures");
+  return '<div class="journey-future-item"><b>DAY '+x.number+' · '+esc(dayDate)+'</b><div>'+line+'</div></div>';
+ }).join(""):'<p class="mu">Later match dates will appear here when they enter the 30-day window.</p>';
+ if(!start){journeyLog.innerHTML='<p class="mu">Start the guide to save a 30-day window and follow its logged results.</p>';return}
+ const records=journeyDays.filter(x=>x.date&&x.date>=anchor&&x.date<=end).slice().sort((a,b)=>b.date.localeCompare(a.date));
  journeyLog.innerHTML=records.length?records.map(d=>{
-  const pick=journeyTopPick(d),label=pick&&pick.hit===1?"HIT":pick&&pick.hit===0?"MISS":"PENDING",date=new Date(d.date+"T12:00:00").toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"});
-  if(!pick||Number(pick.p)<JOURNEY_MIN_PROB)return '<div class="journey-entry"><b>'+esc(date)+'</b> · <span class="journey-state">SKIP</span><div class="mu">No saved pick reached the 62% display threshold.</div></div>';
-  return '<div class="journey-entry"><b>'+esc(date)+'</b> · <span class="journey-state">'+label+'</span><div>'+esc(pick.pick||"Pick saved")+' · '+pc(Number(pick.p))+' model probability</div><div class="mu">'+esc(pick.match||"")+'</div></div>';
- }).join(""):'<p class="mu">No daily selections have been logged within this challenge yet. Dates without a qualifying pick remain skips.</p>';
+  const number=Math.max(1,dates.indexOf(d.date)+1),pick=journeyTopPick(d),label=pick&&pick.hit===1?"HIT":pick&&pick.hit===0?"MISS":"PENDING",date=new Date(d.date+"T12:00:00").toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"});
+  if(!pick||Number(pick.p)<JOURNEY_MIN_PROB)return '<div class="journey-entry"><b>DAY '+number+' · '+esc(date)+'</b> · <span class="journey-state">SKIP</span><div class="mu">No saved pick reached the 62% display threshold.</div></div>';
+  return '<div class="journey-entry"><b>DAY '+number+' · '+esc(date)+'</b> · <span class="journey-state">'+label+'</span><div>'+esc(pick.pick||"Pick saved")+' · '+pc(Number(pick.p))+' model probability</div><div class="mu">'+esc(pick.match||"")+'</div></div>';
+ }).join(""):'<p class="mu">No daily selections have been logged within this window yet. Dates without a qualifying pick remain skips.</p>';
 }
-journeyStartButton.addEventListener("click",()=>{try{localStorage.setItem(JOURNEY_STORAGE_KEY,dateKey(new Date()));journeyRender()}catch{journeyStatus.textContent="This browser could not save the paper-guide start date."}});
+journeyStartButton.addEventListener("click",()=>{
+ const start=dateKey(new Date()),end=journeyWindowEnd(start),currentDates=journeyDates(start,end,null),first=currentDates[0]||(journeyPrediction&&journeyPrediction.slip_of_day&&journeyPrediction.slip_of_day.date)||"";
+ try{localStorage.setItem(JOURNEY_STORAGE_KEY,start);if(first)localStorage.setItem(JOURNEY_FIRST_KEY,first);journeyRender()}
+ catch{journeyStatus.textContent="This browser could not save the paper-guide start date."}
+});
 get("data/predictions.json").then(p=>{
  journeyPrediction=p;journeyRender();
  document.getElementById("upd").textContent=`Last refreshed ${new Date(p.updated).toLocaleString()} · ${(p.matches||[]).length} upcoming fixtures`+(p.demo?" (DEMO DATA)":"");
