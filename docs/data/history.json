@@ -2159,6 +2159,110 @@
      1
     ]
    }
+  },
+  {
+   "id": 555085,
+   "comp": "Brazil Serie A",
+   "kickoff": "2026-11-14T21:30:00+00:00",
+   "home": "Mirassol",
+   "away": "Mineiro",
+   "p1x2": {
+    "1": 0.4332,
+    "X": 0.265,
+    "2": 0.3018
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.4332
+    },
+    {
+     "mk": "DC",
+     "key": "12",
+     "player_id": null,
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.735
+    },
+    {
+     "mk": "OU",
+     "key": "U",
+     "player_id": null,
+     "pick": "Under 2.5",
+     "p": 0.536
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.5098
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.2584
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 554942,
+   "comp": "Brazil Serie A",
+   "kickoff": "2026-11-14T23:30:00+00:00",
+   "home": "Chapecoense",
+   "away": "Vasco da Gama",
+   "p1x2": {
+    "1": 0.2463,
+    "X": 0.2195,
+    "2": 0.5342
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "2",
+     "player_id": null,
+     "pick": "Away win (2)",
+     "p": 0.5342
+    },
+    {
+     "mk": "DC",
+     "key": "12",
+     "player_id": null,
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.7805
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.6247
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.6166
+    },
+    {
+     "mk": "HTFT",
+     "key": "2/2",
+     "player_id": null,
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.339
+    }
+   ],
+   "result": null
   }
  ],
  "summary": {
@@ -2186,7 +2290,7 @@
   "matches": 48,
   "brier": 0.5532995566666667
  },
- "updated": "2026-11-10T21:14:51.001453+00:00",
+ "updated": "2026-11-11T13:28:45.229205+00:00",
  "daily_slips": [
   {
    "date": "2026-11-08",
