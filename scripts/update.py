@@ -6,6 +6,7 @@ Uses only the Python standard library. No bookmaker odds or outside predictions 
 import os, sys, json, math, time, random, re, unicodedata
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 from urllib.request import Request, urlopen
 from urllib.parse import quote
 
@@ -15,6 +16,10 @@ OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "docs", "da
 XI = 0.006          # time decay per day: recent games count more
 K = 3.0             # shrinkage: pulls small samples toward league average
 TRACK_DAYS = 4      # lock track-record picks only this close to kickoff
+JOURNEY_DAYS = 30
+JOURNEY_MIN_LEG_PROB = 0.70
+JOURNEY_MAX_SLIPS_PER_DAY = 3
+JOURNEY_TZ = ZoneInfo("Africa/Casablanca")
 BETSLIP_DAYS = 7    # keep betslips focused on the next week
 MIN_MATCHES = 20    # skip a league until enough games were played
 NM = {"1": "Home win", "X": "Draw", "2": "Away win"}
@@ -567,6 +572,56 @@ def summarize(items):
     stats = [dict(market=s["market"], n=s["n"], mae=s["absolute_error"] / s["n"]) for s in errors.values()]
     return dict(markets=rows, stats=stats, matches=n, brier=br / n if n else None)
 
+def journey_candidates(matches, now, existing=None):
+    """Build up to three non-overlapping two-leg paper slips per Casablanca date."""
+    today = now.astimezone(JOURNEY_TZ).date()
+    end_day = today + timedelta(days=JOURNEY_DAYS)
+    existing = existing or []
+    used_by_day, counts_by_day, max_num_by_day = {}, {}, {}
+    for row in existing:
+        day = row.get("date")
+        if not day or not row.get("legs"): continue
+        counts_by_day[day] = counts_by_day.get(day, 0) + 1
+        max_num_by_day[day] = max(max_num_by_day.get(day, 0), int(row.get("number", 0) or 0))
+        used_by_day.setdefault(day, set()).update(leg.get("id") for leg in row["legs"] if leg.get("id") is not None)
+
+    grouped = {}
+    for match in matches:
+        value = match.get("kickoff")
+        if not value or not match.get("id"): continue
+        when = datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(timezone.utc)
+        local_day = when.astimezone(JOURNEY_TZ).date()
+        if when <= now or not (today <= local_day < end_day): continue
+        day = local_day.isoformat()
+        if match["id"] in used_by_day.get(day, set()): continue
+        per_match = grouped.setdefault(day, {})
+        for source in match.get("picks", []):
+            if source.get("mk") not in ("1X2", "DC", "OU", "BTTS"): continue
+            try: probability = float(source.get("p"))
+            except (TypeError, ValueError): continue
+            if not JOURNEY_MIN_LEG_PROB <= probability <= 1: continue
+            pick = dict(source, id=match["id"], comp=match.get("comp"), kickoff=value,
+                        match=source.get("match") or f"{match.get('home', '')} vs {match.get('away', '')}")
+            prior = per_match.get(match["id"])
+            if prior is None or probability > float(prior.get("p", 0)): per_match[match["id"]] = pick
+
+    output = []
+    for day, per_match in sorted(grouped.items()):
+        already = counts_by_day.get(day, 0)
+        available = max(0, JOURNEY_MAX_SLIPS_PER_DAY - already)
+        if available == 0: continue
+        candidates = sorted(per_match.values(), key=lambda c: (-float(c["p"]), c["kickoff"], str(c["id"])))
+        number = max_num_by_day.get(day, 0) + 1
+        for offset in range(min(available, len(candidates) // 2)):
+            legs = candidates[offset * 2:offset * 2 + 2]
+            if len(legs) != 2: break
+            probability = math.prod(float(leg["p"]) for leg in legs)
+            output.append(dict(date=day, number=number + offset,
+                               legs=[dict(leg, odds=round(1 / float(leg["p"]), 2)) for leg in legs],
+                               prob=probability, odds=round(1 / probability, 2),
+                               note="Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."))
+    return output
+
 def write_top5_site(matches, all_c, hist, finished, notes, now, demo=False):
     # Keep the archived top-five site current, with its own filtered predictions
     # and history. It reuses the exact same fetched results without extra API calls.
@@ -575,6 +630,57 @@ def write_top5_site(matches, all_c, hist, finished, notes, now, demo=False):
     top_matches = [m for m in matches if m.get("comp") in names]
     top_candidates = [c for c in all_c if c.get("comp") in names]
     top_slip = daily_slip(top_candidates, top_matches, now)
+    out_dir = os.path.join(os.path.dirname(OUT), "top-five", "data")
+    os.makedirs(out_dir, exist_ok=True)
+    history_path = os.path.join(out_dir, "history.json")
+    saved = json.load(open(history_path)) if os.path.exists(history_path) else {"items": [], "daily_slips": []}
+    saved.setdefault("items", [])
+    saved.setdefault("daily_slips", [])
+    saved.setdefault("journey_slips", [])
+    saved["items"] = [it for it in saved["items"] if it.get("comp") in names]
+    saved["daily_slips"] = [day for day in saved["daily_slips"]
+                            if day.get("legs") and all(leg.get("comp") in names for leg in day["legs"])]
+    saved["journey_slips"] = [day for day in saved["journey_slips"]
+                              if day.get("legs") and len(day["legs"]) == 2
+                              and all(leg.get("comp") in names for leg in day["legs"])]
+
+    items_by_id = {it["id"]: it for it in saved["items"]}
+    items_by_id.update({it["id"]: it for it in hist.get("items", []) if it.get("comp") in names})
+    if top_slip:
+        existing = next((x for x in saved["daily_slips"] if x.get("date") == top_slip["date"]), None)
+        if existing is None:
+            existing = {**top_slip, "legs": [dict(c, hit=None) for c in top_slip["legs"]], "hit": None}
+            saved["daily_slips"].append(existing)
+
+    # Lock each eligible Journey slip before its first kickoff, then never rewrite it.
+    for candidate in journey_candidates(top_matches, now, saved["journey_slips"]):
+        kicks = [datetime.fromisoformat(leg["kickoff"].replace("Z", "+00:00")).astimezone(timezone.utc)
+                 for leg in candidate["legs"]]
+        if not kicks or min(kicks) > now + timedelta(days=TRACK_DAYS): continue
+        saved["journey_slips"].append({**candidate, "locked": True, "locked_at": now.isoformat(), "virtual_stake": 1.0,
+                                       "legs": [dict(leg, hit=None) for leg in candidate["legs"]], "hit": None})
+
+    for daily in saved["daily_slips"]:
+        for leg in daily.get("legs", []):
+            result = finished.get(leg.get("id"))
+            if result and leg.get("hit") is None:
+                leg["hit"] = evaluate(leg, {"ft": list(result["ft"]), "ht": list(result["ht"]) if result.get("ht") else None})
+        hits = [leg.get("hit") for leg in daily.get("legs", [])]
+        daily["hit"] = int(all(x == 1 for x in hits)) if hits and all(isinstance(x, int) for x in hits) else None
+
+    for journey in saved["journey_slips"]:
+        for leg in journey.get("legs", []):
+            result = finished.get(leg.get("id"))
+            if result and leg.get("hit") is None:
+                leg["hit"] = evaluate(leg, {"ft": list(result["ft"]), "ht": list(result["ht"]) if result.get("ht") else None})
+        hits = [leg.get("hit") for leg in journey.get("legs", [])]
+        journey["hit"] = 0 if 0 in hits else 1 if len(hits) == 2 and all(isinstance(x, int) for x in hits) else None
+
+    top_items = sorted(items_by_id.values(), key=lambda it: it.get("kickoff", ""))
+    top_hist = dict(items=top_items, summary=summarize(top_items), updated=now.isoformat(),
+                    daily_slips=saved["daily_slips"], journey_slips=saved["journey_slips"])
+    json.dump(top_hist, open(history_path, "w"), indent=1)
+
     top_pred = dict(
         updated=now.isoformat(),
         notes=[n for n in notes if any(n.startswith(name + ":") for name in names)],
@@ -583,37 +689,13 @@ def write_top5_site(matches, all_c, hist, finished, notes, now, demo=False):
         slip_of_day=top_slip,
         slips=dict(small=slip(top_candidates, .62, 1.01, 3, .7),
                    medium=slip(top_candidates, .48, .62, 4, .55),
-                   big=slip(top_candidates, .2, .48, 5, .38)))
-    out_dir = os.path.join(os.path.dirname(OUT), "top-five", "data")
-    os.makedirs(out_dir, exist_ok=True)
+                   big=slip(top_candidates, .2, .48, 5, .38)),
+        journey=dict(starting_dh=100, target_dh=100000, days=JOURNEY_DAYS,
+                     min_leg_probability=JOURNEY_MIN_LEG_PROB, max_slips_per_day=JOURNEY_MAX_SLIPS_PER_DAY,
+                     timezone="Africa/Casablanca",
+                     previews=journey_candidates(top_matches, now, saved["journey_slips"]),
+                     note="Paper-only guide. Model fair odds are not bookmaker odds and do not project DH returns."))
     json.dump(top_pred, open(os.path.join(out_dir, "predictions.json"), "w"), indent=1, default=str)
-
-    history_path = os.path.join(out_dir, "history.json")
-    saved = json.load(open(history_path)) if os.path.exists(history_path) else {"items": [], "daily_slips": []}
-    saved.setdefault("items", [])
-    saved.setdefault("daily_slips", [])
-    saved["items"] = [it for it in saved["items"] if it.get("comp") in names]
-    saved["daily_slips"] = [day for day in saved["daily_slips"]
-                            if day.get("legs") and all(leg.get("comp") in names for leg in day["legs"])]
-    items_by_id = {it["id"]: it for it in saved["items"]}
-    items_by_id.update({it["id"]: it for it in hist.get("items", []) if it.get("comp") in names})
-    if top_slip:
-        existing = next((x for x in saved["daily_slips"] if x.get("date") == top_slip["date"]), None)
-        if existing is None:
-            existing = {**top_slip, "legs": [dict(c, hit=None) for c in top_slip["legs"]], "hit": None}
-            saved["daily_slips"].append(existing)
-    for daily in saved["daily_slips"]:
-        for leg in daily.get("legs", []):
-            result = finished.get(leg.get("id"))
-            if result and leg.get("hit") is None:
-                leg["hit"] = evaluate(leg, {"ft": list(result["ft"]), "ht": list(result["ht"]) if result.get("ht") else None})
-        hits = [leg.get("hit") for leg in daily.get("legs", [])]
-        daily["hit"] = int(all(x == 1 for x in hits)) if hits and all(isinstance(x, int) for x in hits) else None
-    top_items = sorted(items_by_id.values(), key=lambda it: it.get("kickoff", ""))
-    top_hist = dict(items=top_items, summary=summarize(top_items), updated=now.isoformat(),
-                    daily_slips=saved["daily_slips"])
-    json.dump(top_hist, open(history_path, "w"), indent=1)
-
 def main():
     dm = "--demo" in sys.argv; key = os.environ.get("FOOTBALL_DATA_KEY", "")
     if not dm and not key: sys.exit("Set FOOTBALL_DATA_KEY (free key from football-data.org)")

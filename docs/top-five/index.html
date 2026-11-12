@@ -9,7 +9,7 @@
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
 main{max-width:980px;margin:0 auto;padding:16px}h1{font-size:24px;margin:6px 0}h2{font-size:18px;margin:26px 0 8px}h3{margin:0;font-size:15px}
 .mu{color:var(--mu);font-size:13px}.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px;margin:10px 0}
-.warn{border-left:4px solid var(--m)}.slips{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.warn{border-left:4px solid var(--m)}.journey-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:8px;margin:10px 0}.journey-stat{padding:10px;border:1px solid var(--bd);border-radius:9px}.journey-stat strong{display:block;font-size:18px}.journey-label{font-size:11px;color:var(--mu);text-transform:uppercase;letter-spacing:.04em}.journey-timeline{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}.journey-step{border:1px solid var(--bd);border-radius:99px;padding:4px 9px;font-size:12px}.journey-step.featured{border-color:var(--ac);color:var(--ac);font-weight:700}.journey-step.today{border-color:var(--ac);background:var(--ac);color:#fff;font-weight:700}.journey-step.incoming{border-color:var(--s);background:var(--s);color:#fff;font-weight:700}.journey-plan{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:10px;margin:10px 0}.journey-day-card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:13px}.journey-day-card.featured{border:3px solid var(--ac);box-shadow:0 4px 14px rgba(15,157,88,.13)}.journey-day-card.incoming{border:3px solid var(--s);background:rgba(26,115,232,.045)}.journey-day-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}.journey-day-number{font-size:19px;font-weight:850}.journey-day-tag{border-radius:99px;background:var(--bd);padding:2px 8px;font-size:11px;font-weight:700}.journey-day-card.incoming .journey-day-tag{background:var(--s);color:#fff}.journey-slip-card{border-top:1px dashed var(--bd);padding:9px 0}.journey-slip-prob{font-size:22px;font-weight:800;color:var(--ac)}.journey-future-days{display:grid;gap:7px;margin:10px 0}.journey-future-item{padding:9px 11px;border:1px solid var(--bd);border-radius:9px;background:var(--card)}.slips{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
 .slip{border-top:4px solid var(--c)}.leg{border-top:1px dashed var(--bd);padding:8px 0}.pill{display:inline-block;padding:1px 8px;border-radius:99px;background:var(--bd);font-size:12px;margin-right:4px}
 .bar{display:flex;height:10px;border-radius:6px;overflow:hidden;margin:6px 0;background:var(--bd)}.bar i{display:block}
 details{margin-top:6px}summary{cursor:pointer;color:var(--ac);font-size:13px}table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:6px;border-bottom:1px solid var(--bd);text-align:left}
@@ -18,10 +18,31 @@ details{margin-top:6px}summary{cursor:pointer;color:var(--ac);font-size:13px}tab
 .copy-button{border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--tx);font:inherit;padding:6px 10px;cursor:pointer}.slip-legs{padding-left:20px}.hit{color:var(--ac)}.miss{color:var(--b)}
 footer{margin:30px 0 10px;font-size:12px;color:var(--mu)}
 </style></head><body><main>
-<h1>⚽ Football Analyst</h1>
-<div class="card warn"><b>ORIGINAL TOP-FIVE SITE · SEPARATE TRACK RECORD</b><p class="mu">This version covers only the Premier League, La Liga, Serie A, Bundesliga, and Ligue 1. Its fixtures and predictions refresh with the regular update; its saved track record includes only these five leagues. <a href="../">Open the expanded site</a>.</p></div>
+<h1>⚽ Football Analyst <span class="pill">THE TOP 5</span></h1>
+<div class="card warn"><b>THE TOP 5 · SEPARATE TRACK RECORD</b><p class="mu">This version covers only the Premier League, La Liga, Serie A, Bundesliga, and Ligue 1. Its fixtures and predictions refresh with the regular update; its saved track record includes only these five leagues. <a href="../">Open THE BIG SITE</a>.</p></div>
 <p class="mu">Predictions come only from our own statistical model (time-weighted Poisson goal model with venue-adjusted attack/defence and recent form). We never copy bookmaker odds or other tipsters. <span id="upd"></span></p>
 <div class="card warn mu"><b>18+ only.</b> Predictions are probabilities, not promises. Nobody can guarantee a result. Never bet money you can’t afford to lose. If gambling stops being fun, seek help from a local support service.</div>
+<section class="card warn journey-card" aria-labelledby="journey-title">
+<h2 id="journey-title">THE JOURNEY · 30 DAYS</h2>
+<div class="pill">PAPER ONLY · NO REAL STAKES</div>
+<p>Start from <b>100 DH (virtual)</b>. The guide builds up to three two-leg slips per day from separate matches when <b>both picks are at least 70% model confidence</b>. If fewer than two matches qualify, it marks the day <b>SKIP</b>.</p>
+<div class="journey-grid">
+ <div class="journey-stat"><span class="journey-label">Virtual start</span><strong>100 DH</strong></div>
+ <div class="journey-stat"><span class="journey-label">Paper balance</span><strong id="journey-balance">100 DH</strong></div>
+ <div class="journey-stat"><span class="journey-label">Paper unit / slip</span><strong>1 DH</strong></div>
+ <div class="journey-stat"><span class="journey-label">Target math</span><strong>+25.9% daily*</strong></div>
+</div>
+<p class="mu">*Growing 100 DH to 100,000 DH means 1,000× in 30 days, or +25.9% every day compounded. That is only the arithmetic required, not a forecast or achievable plan. The balance is a paper simulation using a fixed 1 DH virtual unit per locked slip and model fair odds; these are not bookmaker prices, so the ledger is not a real-money return estimate. I cannot advise a real stake to chase that target; for real bets this page's recommendation is none (0 DH). Skips are part of the record.</p>
+<div class="journey-guide">
+ <p id="journey-status" class="mu" aria-live="polite">Loading the top-five paper log…</p>
+ <button id="journey-start" class="copy-button" type="button">Start my 30-day paper Journey</button>
+ <p class="mu">Day 1 stays featured, the next Journey day is highlighted as incoming, and locked slips are saved before kickoff and scored when results arrive; previews can change until the lock. Journey dates use the Casablanca calendar; kickoff times below use your browser’s local time.</p>
+ <div id="journey-timeline" class="journey-timeline" aria-label="Thirty numbered Journey days"></div>
+ <div id="journey-primary" class="journey-plan"><p class="mu">Loading…</p></div>
+ <details><summary id="journey-future-label">More Journey days</summary><div id="journey-future-days" class="journey-future-days"><p class="mu">Loading…</p></div></details>
+ <details><summary>Journey result log</summary><p class="mu">A landed slip means both legs hit. A missed slip means at least one leg missed. Unfinished slips remain pending; SKIP days are not counted as bets.</p><div id="journey-log" class="journey-future-days"><p class="mu">Loading…</p></div></details>
+</div>
+</section>
 <div id="notes" class="mu"></div>
 <div id="slips"></div>
 <h2>Slip of the day</h2><div id="daily-slip"></div>
@@ -54,6 +75,60 @@ function getFollowedTeams(){try{return new Set(JSON.parse(localStorage.getItem(F
 function saveFollowedTeams(teams){try{localStorage.setItem(FOLLOW_KEY,JSON.stringify([...teams]))}catch{}}
 function dateKey(value){const d=new Date(value);if(Number.isNaN(d.getTime()))return "unknown";return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`}
 function dateFromKey(key){const [y,m,d]=key.split("-").map(Number);return new Date(y,m-1,d)}
+const JOURNEY_KEY="football-analyst-top-five-journey-start-v1";
+let journeyPrediction=null,journeyHistory=null;
+function getJourneyStart(){try{const value=localStorage.getItem(JOURNEY_KEY);return /^\d{4}-\d{2}-\d{2}$/.test(value||"")?value:null}catch{return null}}
+function dayDiff(a,b){const ua=Date.UTC(a.getFullYear(),a.getMonth(),a.getDate()),ub=Date.UTC(b.getFullYear(),b.getMonth(),b.getDate());return Math.round((ua-ub)/86400000)}
+function journeySlipHTML(s){
+ const settled=s.hit===1?"LANDED":s.hit===0?"MISSED":s.locked?"LOCKED":"PREVIEW";
+ const odds=Number(s.odds);
+ return "<div class='journey-slip-card'><div><b>Slip "+esc(s.number)+" · "+settled+"</b></div>"+
+ "<div class='journey-slip-prob'>"+pc(Number(s.prob)||0)+" combined model probability</div>"+
+ "<div class='mu'>About "+(Number.isFinite(odds)?odds.toFixed(2):"—")+"× model fair odds · estimate assumes independent matches</div><ol class='slip-legs'>"+
+ (s.legs||[]).map(l=>"<li><b>"+esc(l.pick)+"</b> · "+pc(Number(l.p)||0)+"<br><span class='mu'>"+esc(l.comp)+" · "+esc(l.match)+" · "+esc(l.kickoff?new Date(l.kickoff).toLocaleTimeString(undefined,{hour:"numeric",minute:"2-digit"}):"")+" local kickoff</span>"+
+ (l.why?"<details><summary>Why this pick</summary><div class='mu'>"+esc(l.why)+"</div></details>":"")+"</li>").join("")+"</ol>"+
+ "<p class='mu'>"+esc(s.note||"")+"</p></div>"
+}
+function journeyDayHTML(day,index,tag,extraClass,byDate){
+ const key=dateKey(day),dateText=day.toLocaleDateString(undefined,{weekday:"long",month:"short",day:"numeric",year:"numeric"});
+ const slips=(byDate.get(key)||[]).slice().sort((a,b)=>(Number(a.number)||0)-(Number(b.number)||0));
+ const body=slips.length?slips.map(journeySlipHTML).join(""):"<p class='mu'><b>SKIP</b> · Fewer than two separate matches currently meet the 70% per-leg threshold. No slip is forced.</p>";
+ return "<article class='journey-day-card "+extraClass+"'><div class='journey-day-head'><span class='journey-day-number'>Day "+(index+1)+"</span><span class='journey-day-tag'>"+tag+"</span></div><div class='mu'>"+esc(dateText)+"</div>"+body+"</article>"
+}
+function renderJourney(){
+ if(!journeyPrediction||!journeyHistory)return;
+ const todayKey=dateKey(new Date()),startKey=getJourneyStart(),started=!!startKey,baseKey=startKey||todayKey;
+ const start=dateFromKey(baseKey),today=dateFromKey(todayKey),elapsed=started?dayDiff(today,start):0;
+ const current=Math.max(0,Math.min(29,elapsed)),complete=started&&elapsed>=30;
+ const dates=Array.from({length:30},(_,i)=>{const d=new Date(start);d.setDate(start.getDate()+i);return d});
+ const rows=[...(journeyPrediction.journey?.previews||[]),...(journeyHistory.journey_slips||[])],byId=new Map();
+ rows.forEach(s=>byId.set(String(s.date)+"-"+String(s.number),s));
+ const byDate=new Map();
+ [...byId.values()].forEach(s=>{if(!byDate.has(s.date))byDate.set(s.date,[]);byDate.get(s.date).push(s)});
+ const end=new Date(start);end.setDate(end.getDate()+30);const withinJourney=[...byId.values()].filter(s=>s.date>=baseKey&&s.date<dateKey(end));const lockedWindow=withinJourney.filter(s=>s.locked),settled=lockedWindow.filter(s=>s.hit===0||s.hit===1),wins=settled.filter(s=>s.hit===1).length,losses=settled.filter(s=>s.hit===0).length,pending=lockedWindow.filter(s=>s.hit==null).length;
+ const ledger=lockedWindow.sort((a,b)=>(a.date||"").localeCompare(b.date||"")||(Number(a.number)||0)-(Number(b.number)||0));let virtualBalance=100;ledger.forEach(s=>{if(s.hit===1)virtualBalance+=Math.max(0,Number(s.odds)-1);else virtualBalance-=1});document.getElementById("journey-balance").textContent=virtualBalance.toFixed(2)+" DH";
+ const status=document.getElementById("journey-status");
+ status.textContent=started?(complete?"Your 30-day paper Journey is complete · started "+start.toLocaleDateString()+" · "+wins+" landed, "+losses+" missed, "+pending+" pending slips.":"Day "+(current+1)+" of 30 · started "+start.toLocaleDateString()+" · "+wins+" landed, "+losses+" missed, "+pending+" pending slips."):"Preview only · press Start to save today as Day 1 and begin your 30-day local calendar. Your paper record is public and the start date is saved only in this browser.";
+ const button=document.getElementById("journey-start");button.textContent=started?"Journey started · Day "+Math.min(30,Math.max(1,elapsed+1)):"Start my 30-day paper Journey";button.disabled=started;
+ const timeline=document.getElementById("journey-timeline");
+ timeline.innerHTML=dates.map((d,i)=>{let cls=i===0?"featured":"";if(started&&i===current)cls+=" today";if(started&&i===current+1)cls+=" incoming";if(started&&i<current)cls+=" done";return "<span class='journey-step "+cls+"'>Day "+(i+1)+"</span>"}).join("");
+ const primaryIndices=[...new Set([0,current,Math.min(29,current+1)])];
+ document.getElementById("journey-primary").innerHTML=primaryIndices.map(i=>{
+  const tag=!started&&i===0?"PREVIEW":complete&&i===29?"COMPLETE":started&&i<current?"PAST":i===current?"TODAY":i===current+1?"INCOMING":"UPCOMING";
+  const cls=(i===0?"featured ":"")+(i===current&&started?"today ":"")+(i===current+1?"incoming ":"");
+  return journeyDayHTML(dates[i],i,tag,cls,byDate)
+ }).join("");
+ const excluded=new Set(primaryIndices),future=dates.map((d,i)=>({d,i})).filter(x=>!excluded.has(x.i));
+ document.getElementById("journey-future-label").textContent="Other Journey days · full 30-day calendar";
+ document.getElementById("journey-future-days").innerHTML=future.map(x=>{
+  const slips=(byDate.get(dateKey(x.d))||[]).slice().sort((a,b)=>(Number(a.number)||0)-(Number(b.number)||0));
+  return "<div class='journey-future-item'><b>Day "+(x.i+1)+" · "+esc(x.d.toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"}))+"</b>"+(slips.length?slips.map(journeySlipHTML).join(""):"<div class='mu'>SKIP · no two qualifying fixtures currently available.</div>")+"</div>"
+ }).join("");
+ const log=withinJourney.slice().sort((a,b)=>(b.date||"").localeCompare(a.date||"")||(Number(b.number)||0)-(Number(a.number)||0));
+ document.getElementById("journey-log").innerHTML=log.length?log.map(s=>"<div class='journey-future-item'><b>"+esc(new Date(s.date+"T12:00:00Z").toLocaleDateString(undefined,{dateStyle:"medium"}))+" · Day "+(dayDiff(dateFromKey(s.date),start)+1)+" · Slip "+esc(s.number)+"</b><div>"+(s.hit===1?"LANDED":s.hit===0?"MISSED":s.locked?"LOCKED":"PREVIEW")+" · "+pc(Number(s.prob)||0)+" combined model probability</div><div class='mu'>"+(s.legs||[]).map(l=>esc(l.pick)+" ("+(l.hit==null?"pending":l.hit?"hit":"miss")+")").join(" · ")+"</div></div>").join(""):"<p class='mu'>The public slip log starts once fixtures are close enough to lock.</p>";
+}
+document.getElementById("journey-start").addEventListener("click",()=>{try{if(!getJourneyStart())localStorage.setItem(JOURNEY_KEY,dateKey(new Date()))}catch{}renderJourney()});
+
 function dayLabel(key){return key==="unknown"?"Date unavailable":dateFromKey(key).toLocaleDateString(undefined,{weekday:"long",month:"long",day:"numeric",year:"numeric"})}
 function dateOptionLabel(key,n){const today=dateKey(new Date()),tomorrow=new Date();tomorrow.setDate(tomorrow.getDate()+1);const prefix=key==="unknown"?"Date unavailable":key===today?"Today":key===dateKey(tomorrow)?"Tomorrow":dateFromKey(key).toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"});return `${prefix} · ${n} ${n===1?"match":"matches"}`}
 function withinNextWeek(value){const d=new Date(value),today=new Date();today.setHours(0,0,0,0);const limit=new Date(today);limit.setDate(limit.getDate()+7);limit.setHours(23,59,59,999);return d>=today&&d<=limit}
@@ -71,9 +146,9 @@ get("data/predictions.json").then(p=>{
  document.getElementById("notes").textContent=(p.notes||[]).filter(n=>!/PitchAPI|Player\/corner\/card feed|PITCHAPI_KEY/i.test(n)).join(" · ");
  const s=p.slips||{};document.getElementById("slips").innerHTML=`<h2>Model betslips</h2><p class="mu">These confidence bands describe model probabilities; they do not mean a slip is safe.</p><div class="slips">`+slipHTML("🟦 Higher-confidence model picks","--s",s.small||{})+slipHTML("🟨 Mid-confidence model picks","--m",s.medium||{})+slipHTML("🟥 Lower-confidence / higher-variance picks","--b",s.big||{})+`</div>`;
  document.getElementById("daily-slip").innerHTML=dailySlipHTML(p.slip_of_day);const copy=document.getElementById("copy-slip");if(copy)copy.addEventListener("click",async()=>{const lines=(p.slip_of_day.legs||[]).map((l,i)=>`${i+1}. ${l.pick} — ${l.match} (${pc(l.p)})`).join("\n");try{await navigator.clipboard.writeText(`Slip of the day · ${p.slip_of_day.date}\n${lines}\nApprox. combined model probability: ${pc(p.slip_of_day.prob)} (assumes separate match outcomes)`);document.getElementById("copy-status").textContent="Copied"}catch{document.getElementById("copy-status").textContent="Copy is unavailable in this browser"}});
- upcomingMatches=(p.matches||[]).slice().sort((a,b)=>new Date(a.kickoff)-new Date(b.kickoff));fillMatchFilters(upcomingMatches);renderMatches();
+ upcomingMatches=(p.matches||[]).slice().sort((a,b)=>new Date(a.kickoff)-new Date(b.kickoff));fillMatchFilters(upcomingMatches);renderMatches();journeyPrediction=p;renderJourney();
 }).catch(()=>document.getElementById("matches").innerHTML='<p class="mu">No data yet. Run the “update-predictions” workflow once.</p>');
-get("data/history.json").then(h=>{const S=h.summary||{markets:[]},names={"1X2":"1X2",OU:"Over/Under 2.5",HTFT:"Half-time/Full-time"},items=h.items||[],markets=(S.markets||[]).filter(r=>["1X2","OU","HTFT"].includes(r.market));
+get("data/history.json").then(h=>{journeyHistory=h;renderJourney();const S=h.summary||{markets:[]},names={"1X2":"1X2",OU:"Over/Under 2.5",HTFT:"Half-time/Full-time"},items=h.items||[],markets=(S.markets||[]).filter(r=>["1X2","OU","HTFT"].includes(r.market));
  const completed=items.filter(it=>it.result&&it.result.ft).sort((a,b)=>new Date(b.kickoff)-new Date(a.kickoff));
  document.getElementById("results").innerHTML=completed.length?completed.slice(0,12).map(it=>{const [hg,ag]=it.result.ft,when=new Date(it.kickoff).toLocaleString(undefined,{dateStyle:"medium",timeStyle:"short"});return `<article class="card"><div class="mu">${esc(it.comp)} · ${esc(when)}</div><div class="result-score">${esc(it.home)} ${hg}–${ag} ${esc(it.away)}</div><div class="form-row">${(it.picks||[]).filter(pk=>["1X2","OU","HTFT"].includes(pk.mk)).map(pk=>`<span class="pill">${esc(pk.pick||names[pk.mk]||pk.mk)} · ${pk.hit==null?"Pending":pk.hit?"Hit":"Miss"}</span>`).join("")}</div></article>`}).join(""):`<p class="mu">Scored predictions will appear here after matches finish.</p>`;
  const daily=h.daily_slips||[],settled=daily.filter(x=>typeof x.hit==="number"),wins=settled.filter(x=>x.hit===1).length;document.getElementById("slip-record").innerHTML=daily.length?`<div class="card"><p class="mu">${wins} of ${settled.length} completed daily slips landed. Every slip is saved before kickoff; unfinished legs remain pending.</p>${daily.slice(-12).reverse().map(x=>`<div class="leg"><b>${esc(new Date(x.date+"T12:00:00Z").toLocaleDateString(undefined,{dateStyle:"medium"}))}</b> · ${x.hit==null?"Pending":x.hit?"All legs hit":"At least one leg missed"}<div class="mu">${(x.legs||[]).map(l=>`${esc(l.pick)} (${l.hit==null?"pending":l.hit?"hit":"miss"})`).join(" · ")}</div></div>`).join("")}</div>`:`<p class="mu">Daily slips are logged here as matches finish.</p>`;
