@@ -321,6 +321,139 @@ def predict(M, home, away):
     return dict(lh=lh, la=la, P=P, ov=ov, H=H, score=f"{best[0]}-{best[1]}", form=(ppg(h), ppg(a)), recent=recent,
                 att=(hatt, aatt), dfn=(hdef, adef))
 
+def _audit_bucket():
+    return dict(n=0, hits=0, top_probability=0.0, brier=0.0, log_loss=0.0,
+                baseline_brier=0.0, baseline_log_loss=0.0)
+
+def _audit_baseline(rows, keys, label):
+    counts = {k: 1.0 for k in keys}
+    for row in rows:
+        outcome = label(row)
+        if outcome in counts: counts[outcome] += 1
+    total = sum(counts.values())
+    return {k: v / total for k, v in counts.items()}
+
+def _audit_record(bucket, probs, actual, baseline):
+    if actual not in probs or not probs: return
+    total = sum(max(0.0, float(v)) for v in probs.values())
+    base_total = sum(max(0.0, float(v)) for v in baseline.values())
+    if total <= 0 or base_total <= 0: return
+    p = {k: max(0.0, float(v)) / total for k, v in probs.items()}
+    b = {k: max(0.0, float(baseline.get(k, 0.0))) / base_total for k in p}
+    keys = list(p)
+    bucket["n"] += 1
+    bucket["hits"] += int(max(p, key=p.get) == actual)
+    bucket["top_probability"] += max(p.values())
+    bucket["brier"] += sum((p[k] - (1.0 if k == actual else 0.0)) ** 2 for k in keys)
+    bucket["log_loss"] -= math.log(max(1e-12, p[actual]))
+    bucket["baseline_brier"] += sum((b[k] - (1.0 if k == actual else 0.0)) ** 2 for k in keys)
+    bucket["baseline_log_loss"] -= math.log(max(1e-12, b[actual]))
+
+def _audit_market_snapshot(bucket):
+    n = bucket["n"]
+    if not n: return None
+    brier = bucket["brier"] / n
+    baseline_brier = bucket["baseline_brier"] / n
+    return dict(n=n, top_pick_hit_rate=round(bucket["hits"] / n, 4),
+                avg_top_pick_probability=round(bucket["top_probability"] / n, 4),
+                brier=round(brier, 4), log_loss=round(bucket["log_loss"] / n, 4),
+                baseline_brier=round(baseline_brier, 4),
+                baseline_log_loss=round(bucket["baseline_log_loss"] / n, 4),
+                brier_skill=round(1 - brier / baseline_brier, 4) if baseline_brier else None)
+
+def _audit_score_bucket():
+    return dict(n=0, hits=0, modal_probability=0.0, log_loss=0.0, modes={})
+
+def _log_poisson(lam, goals):
+    return -lam + goals * math.log(lam) - math.lgamma(goals + 1)
+
+def _audit_score_record(bucket, prediction, actual):
+    predicted = tuple(int(x) for x in prediction["score"].split("-"))
+    home_goals, away_goals = actual
+    lp = _log_poisson(prediction["lh"], home_goals) + _log_poisson(prediction["la"], away_goals)
+    lm = _log_poisson(prediction["lh"], predicted[0]) + _log_poisson(prediction["la"], predicted[1])
+    bucket["n"] += 1
+    bucket["hits"] += int(predicted == tuple(actual))
+    bucket["modal_probability"] += math.exp(lm)
+    bucket["log_loss"] -= lp
+    label = f"{predicted[0]}-{predicted[1]}"
+    bucket["modes"][label] = bucket["modes"].get(label, 0) + 1
+
+def _audit_score_snapshot(bucket):
+    n = bucket["n"]
+    if not n: return None
+    mode, count = max(bucket["modes"].items(), key=lambda row: row[1])
+    return dict(n=n, top_score_hit_rate=round(bucket["hits"] / n, 4),
+                avg_modal_score_probability=round(bucket["modal_probability"] / n, 4),
+                exact_score_log_loss=round(bucket["log_loss"] / n, 4),
+                most_common_predicted_score=mode, most_common_predicted_score_count=count)
+
+def walk_forward_audit(fin_by_comp, now, demo=False):
+    overall_markets, overall_score = {}, _audit_score_bucket()
+    competition_rows, test_dates, total_test_matches = [], [], 0
+    market_keys = {
+        "1X2": ["1", "X", "2"],
+        "OU": ["O", "U"],
+        "BTTS": ["Y", "N"],
+    }
+    for comp, raw in sorted(fin_by_comp.items()):
+        finished = sorted((m for m in raw if m.get("ft") and m["date"] < now), key=lambda m: m["date"])
+        local_markets, local_score, local_tested, local_dates = {}, _audit_score_bucket(), 0, []
+        for match in finished:
+            day = match["date"].date()
+            # Exclude same-day results to keep the replay conservative and leak-free.
+            prior = [m for m in finished if m["date"].date() < day]
+            if len(prior) < MIN_MATCHES: continue
+            model = predict(fit(prior, match["date"]), match["home"], match["away"])
+            if not model: continue
+            local_tested += 1
+            local_dates.append(day.isoformat())
+            test_dates.append(day.isoformat())
+            actual_1x2 = r3(*match["ft"])
+            labels = {
+                "1X2": lambda row: r3(*row["ft"]),
+                "OU": lambda row: "O" if sum(row["ft"]) >= 3 else "U",
+                "BTTS": lambda row: "Y" if row["ft"][0] > 0 and row["ft"][1] > 0 else "N",
+            }
+            model_probs = {
+                "1X2": model["P"],
+                "OU": {"O": model["ov"], "U": 1 - model["ov"]},
+                "BTTS": {"Y": (1 - math.exp(-model["lh"])) * (1 - math.exp(-model["la"])),
+                         "N": 1 - (1 - math.exp(-model["lh"])) * (1 - math.exp(-model["la"]))},
+            }
+            for market, keys in market_keys.items():
+                base = _audit_baseline(prior, keys, labels[market])
+                actual = labels[market](match)
+                for target in (local_markets, overall_markets):
+                    _audit_record(target.setdefault(market, _audit_bucket()), model_probs[market], actual, base)
+            ht_prior = [row for row in prior if row.get("ht")]
+            if match.get("ht"):
+                ht_label = lambda row: r3(*row["ht"]) + "/" + r3(*row["ft"])
+                ht_keys = list(model["H"])
+                ht_base = _audit_baseline(ht_prior, ht_keys, ht_label)
+                ht_actual = ht_label(match)
+                for target in (local_markets, overall_markets):
+                    _audit_record(target.setdefault("HTFT", _audit_bucket()), model["H"], ht_actual, ht_base)
+            _audit_score_record(local_score, model, match["ft"])
+            _audit_score_record(overall_score, model, match["ft"])
+        total_test_matches += local_tested
+        if local_tested:
+            competition_rows.append(dict(
+                competition=comp, test_matches=local_tested,
+                period=dict(from_date=min(local_dates), to_date=max(local_dates)),
+                markets={k: value for k, bucket in local_markets.items()
+                         if (value := _audit_market_snapshot(bucket)) is not None},
+                scoreline=_audit_score_snapshot(local_score)))
+    all_market_rows = {k: value for k, bucket in overall_markets.items()
+                       if (value := _audit_market_snapshot(bucket)) is not None}
+    return dict(
+        updated=now.isoformat(), demo=demo, minimum_prior_matches=MIN_MATCHES,
+        method="Rolling-date backtest on active-season results. Each forecast uses only finished matches from earlier calendar days in the same competition; same-day results are excluded. Baseline is the competition's smoothed prior outcome rate, without team information.",
+        period=dict(from_date=min(test_dates), to_date=max(test_dates)) if test_dates else None,
+        test_matches=total_test_matches,
+        overall=dict(markets=all_market_rows, scoreline=_audit_score_snapshot(overall_score)),
+        competitions=competition_rows)
+
 def candidates(m, r):
     mt = f"{m['home']} vs {m['away']}"; P, c = r["P"], []
     k = max(P, key=P.get)
@@ -440,7 +573,7 @@ def main():
     hp = os.path.join(OUT, "history.json")
     hist = json.load(open(hp)) if os.path.exists(hp) else {"items": []}
     hist.setdefault("items", []); hist.setdefault("daily_slips", [])
-    known = {i["id"] for i in hist["items"]}; finished = {}; matches = []; all_c = []; notes = []
+    known = {i["id"] for i in hist["items"]}; finished = {}; matches = []; all_c = []; notes = []; audit_inputs = {}
     # Optional player and match-stat predictions are disabled until provider access works.
     pitch_key = ""
     pitch_data = dict(details={}, schedules={}, notes=[])
@@ -451,6 +584,7 @@ def main():
             notes.append(f"{name}: fetch failed ({e})"); continue
         if not dm: time.sleep(7)  # free API limit: 10 requests/minute
         fin = [m for m in ms if m["status"] == "FINISHED" and m["ft"]]
+        audit_inputs[name] = fin
         for m in fin: finished[m["id"]] = m
         # The competition endpoint returns the active season's schedule. Show
         # every future fixture, but only lock a track-record pick close to kickoff.
@@ -508,6 +642,8 @@ def main():
             if f and leg.get("hit") is None: leg["hit"] = evaluate(leg, {"ft": list(f["ft"]), "ht": list(f["ht"]) if f.get("ht") else None})
         hits = [leg.get("hit") for leg in daily.get("legs", [])]
         daily["hit"] = int(all(x == 1 for x in hits)) if hits and all(isinstance(x, int) for x in hits) else None
+    audit = walk_forward_audit(audit_inputs, now, dm)
+    json.dump(audit, open(os.path.join(OUT, "audit.json"), "w"), indent=1)
     hist["summary"] = summarize(hist["items"]); hist["updated"] = now.isoformat()
     json.dump(hist, open(hp, "w"), indent=1)
     pred = dict(updated=now.isoformat(), notes=notes, matches=matches, demo=dm, slip_of_day=slip_now,

@@ -60,6 +60,7 @@ footer{margin:30px 0 10px;font-size:12px;color:var(--mu)}
 <button id="history-more" class="copy-button" type="button" hidden>Load more matches</button>
 <h2>Slip of the day · public record</h2><div id="slip-record"></div>
 <h2>Confidence check · 1X2</h2><div id="calibration"></div>
+<h2>Walk-forward model audit</h2><p class="mu">This backtest replays completed matches using only results from earlier days in that competition. It compares model probabilities with a simple baseline based on earlier league results. Lower Brier and log loss are better; positive Brier skill means the model scored better than that baseline. Small samples can mislead.</p><div id="model-audit"><p class="mu">Loading audit…</p></div>
 <h2>Upcoming matches</h2>
 <div class="card date-tools" aria-label="Match filters">
  <label for="match-search"><b>Search</b></label><input id="match-search" type="search" placeholder="Team or competition" aria-label="Search matches by team or competition">
@@ -239,6 +240,22 @@ function resetHistoryPage(){historyShownLimit=HISTORY_PAGE_SIZE;renderHistory()}
 historySearch.addEventListener("input",resetHistoryPage);
 [historyDate,historyComp,historyMarket,historyOutcome].forEach(el=>el.addEventListener("change",resetHistoryPage));
 historyMore.addEventListener("click",()=>{historyShownLimit+=HISTORY_PAGE_SIZE;renderHistory()});
+function renderModelAudit(a){
+ const box=document.getElementById("model-audit");
+ if(!a||!a.overall){box.innerHTML='<p class="mu">The walk-forward audit will appear after the next successful data update.</p>';return}
+ const marketNames={"1X2":"1X2","OU":"Over/Under 2.5","BTTS":"Both teams to score","HTFT":"Half-time/Full-time"};
+ const fmt=x=>typeof x==="number"?Number(x).toFixed(3):"—";
+ const pct=x=>typeof x==="number"?pc(x):"—";
+ const rows=(markets,competition)=>Object.entries(markets||{}).map(([mk,r])=>`<tr><td>${esc(competition)}</td><td>${esc(marketNames[mk]||mk)}</td><td>${r.n}</td><td>${pct(r.top_pick_hit_rate)}</td><td>${pct(r.avg_top_pick_probability)}</td><td>${fmt(r.brier)} / ${fmt(r.baseline_brier)}</td><td>${fmt(r.log_loss)} / ${fmt(r.baseline_log_loss)}</td><td>${r.brier_skill==null?"—":(r.brier_skill>=0?"+":"")+fmt(r.brier_skill)}</td></tr>`).join("");
+ const table=body=>`<div style="overflow-x:auto"><table style="min-width:850px"><thead><tr><th>Scope</th><th>Market</th><th>Matches</th><th>Top-pick hit</th><th>Avg confidence</th><th>Brier model / baseline</th><th>Log loss model / baseline</th><th>Brier skill</th></tr></thead><tbody>${body||'<tr><td colspan="8">Not enough settled matches yet.</td></tr>'}</tbody></table></div>`;
+ const overall=table(rows(a.overall.markets,"All competitions"));
+ const comps=(a.competitions||[]).map(c=>`<details><summary>${esc(c.competition)} · ${c.test_matches} matches</summary><div class="card">${table(rows(c.markets,c.competition))}</div></details>`).join("");
+ const score=a.overall.scoreline;
+ const scoreText=score?`<p><b>Exact score:</b> ${pct(score.top_score_hit_rate)} modal-score hit rate across ${score.n} matches · average probability of the modal score ${pct(score.avg_modal_score_probability)} · exact-score log loss ${fmt(score.exact_score_log_loss)} · most often predicted ${esc(score.most_common_predicted_score)} (${score.most_common_predicted_score_count} times).</p>`:"";
+ const period=a.period?esc(a.period.from_date)+" to "+esc(a.period.to_date):"no test dates yet";
+ box.innerHTML=`<div class="card"><p class="mu">${a.test_matches||0} matches replayed · ${period} · minimum ${a.minimum_prior_matches||0} earlier results per competition · ${a.demo?"DEMO data":"current-season data"}.</p>${overall}${scoreText}<p class="mu">Brier skill compares the model's Brier score with the smoothed prior-results baseline: positive is better; negative is worse. This rolling backtest is separate from the site's locked live track record. It does not establish future performance.</p><details><summary>Competition breakdown</summary>${comps||'<p class="mu">No competitions have enough earlier results yet.</p>'}</details></div>`;
+}
+get("data/audit.json").then(renderModelAudit).catch(()=>{document.getElementById("model-audit").innerHTML='<p class="mu">The walk-forward audit will appear after the next successful data update.</p>'});
 get("data/history.json").then(h=>{const S=h.summary||{markets:[]},names={"1X2":"1X2",DC:"Double chance",OU:"Over/Under 2.5",BTTS:"Both teams to score",HTFT:"Half-time/Full-time"},items=h.items||[],markets=(S.markets||[]).filter(r=>["1X2","DC","OU","BTTS","HTFT"].includes(r.market));
  historyItems=items;fillHistoryFilters(items);renderHistory();
  const daily=h.daily_slips||[];journeyDays=daily;journeyRender();const settled=daily.filter(x=>typeof x.hit==="number"),wins=settled.filter(x=>x.hit===1).length;document.getElementById("slip-record").innerHTML=daily.length?`<div class="card"><p class="mu">${wins} of ${settled.length} completed daily slips landed. Every slip is saved before kickoff; unfinished legs remain pending.</p>${daily.slice(-12).reverse().map(x=>`<div class="leg"><b>${esc(new Date(x.date+"T12:00:00Z").toLocaleDateString(undefined,{dateStyle:"medium"}))}</b> · ${x.hit==null?"Pending":x.hit?"All legs hit":"At least one leg missed"}<div class="mu">${(x.legs||[]).map(l=>`${esc(l.pick)} (${l.hit==null?"pending":l.hit?"hit":"miss"})`).join(" · ")}</div></div>`).join("")}</div>`:`<p class="mu">Daily slips are logged here as matches finish.</p>`;
