@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T20:58:18.533366+00:00",
+ "updated": "2026-11-12T21:27:46.724792+00:00",
  "notes": [],
  "matches": [
   {
@@ -196428,5 +196428,973 @@
    "prob": 0,
    "odds": null
   }
+ },
+ "journey": {
+  "starting_dh": 100,
+  "target_dh": 100000,
+  "days": 30,
+  "min_leg_probability": 0.7,
+  "max_slips_per_day": 3,
+  "timezone": "Africa/Casablanca",
+  "previews": [
+   {
+    "date": "2026-11-20",
+    "number": 1,
+    "legs": [
+     {
+      "match": "Bayern vs 1. FC K\u00f6ln",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.9377629607741631,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 84%, draw 10%, away 6%; Home or draw has the highest combined probability at 94%.",
+      "id": 565859,
+      "comp": "Bundesliga",
+      "kickoff": "2026-11-20T19:30:00+00:00",
+      "odds": 1.07
+     },
+     {
+      "match": "Athletic vs Espanyol",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.7743202958317721,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 51%, draw 26%, away 23%; Home or draw has the highest combined probability at 77%.",
+      "id": 564748,
+      "comp": "La Liga",
+      "kickoff": "2026-11-20T20:00:00+00:00",
+      "odds": 1.29
+     }
+    ],
+    "prob": 0.7261288932067285,
+    "odds": 1.38,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-11-21",
+    "number": 1,
+    "legs": [
+     {
+      "match": "Real Madrid vs Celta",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.928761178026936,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 75%, draw 17%, away 7%; Home or draw has the highest combined probability at 93%.",
+      "id": 564754,
+      "comp": "La Liga",
+      "kickoff": "2026-11-21T20:00:00+00:00",
+      "odds": 1.08
+     },
+     {
+      "match": "Parma vs Roma",
+      "mk": "DC",
+      "key": "X2",
+      "pick": "Double chance: Draw or away (X2)",
+      "p": 0.8755277652934698,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 12%, draw 18%, away 69%; Draw or away has the highest combined probability at 88%.",
+      "id": 558526,
+      "comp": "Serie A",
+      "kickoff": "2026-11-21T17:00:00+00:00",
+      "odds": 1.14
+     }
+    ],
+    "prob": 0.8131561986892537,
+    "odds": 1.23,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-11-21",
+    "number": 2,
+    "legs": [
+     {
+      "match": "Como 1907 vs Cagliari",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.8538303044904135,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 62%, draw 24%, away 15%; Home or draw has the highest combined probability at 85%.",
+      "id": 558525,
+      "comp": "Serie A",
+      "kickoff": "2026-11-21T14:00:00+00:00",
+      "odds": 1.17
+     },
+     {
+      "match": "Lille vs Olympique Lyon",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.845852446949821,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 56%, draw 28%, away 15%; Home or draw has the highest combined probability at 85%.",
+      "id": 559624,
+      "comp": "Ligue 1",
+      "kickoff": "2026-11-21T19:45:00+00:00",
+      "odds": 1.18
+     }
+    ],
+    "prob": 0.722214452333127,
+    "odds": 1.38,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-11-21",
+    "number": 3,
+    "legs": [
+     {
+      "match": "Monaco vs Auxerre",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.8368614627600958,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 67%, draw 17%, away 16%; Home or draw has the highest combined probability at 84%.",
+      "id": 559621,
+      "comp": "Ligue 1",
+      "kickoff": "2026-11-21T19:45:00+00:00",
+      "odds": 1.19
+     },
+     {
+      "match": "Lazio vs Lecce",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.8155722548467945,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 61%, draw 21%, away 18%; Home or draw has the highest combined probability at 82%.",
+      "id": 558528,
+      "comp": "Serie A",
+      "kickoff": "2026-11-21T14:00:00+00:00",
+      "odds": 1.23
+     }
+    ],
+    "prob": 0.682520990177638,
+    "odds": 1.47,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-11-22",
+    "number": 1,
+    "legs": [
+     {
+      "match": "Paris FC vs Angers SCO",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.8762197082241132,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 71%, draw 17%, away 12%; Home or draw has the highest combined probability at 88%.",
+      "id": 559625,
+      "comp": "Ligue 1",
+      "kickoff": "2026-11-22T14:00:00+00:00",
+      "odds": 1.14
+     },
+     {
+      "match": "Bremen vs HSV",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.8703018943751661,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 71%, draw 16%, away 13%; Home or draw has the highest combined probability at 87%.",
+      "id": 565863,
+      "comp": "Bundesliga",
+      "kickoff": "2026-11-22T16:30:00+00:00",
+      "odds": 1.15
+     }
+    ],
+    "prob": 0.762575671956301,
+    "odds": 1.31,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-11-22",
+    "number": 2,
+    "legs": [
+     {
+      "match": "Marseille vs Le Mans",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.8458741439198695,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 68%, draw 17%, away 15%; Home or draw has the highest combined probability at 85%.",
+      "id": 559629,
+      "comp": "Ligue 1",
+      "kickoff": "2026-11-22T19:45:00+00:00",
+      "odds": 1.18
+     },
+     {
+      "match": "Bar\u00e7a vs Villarreal",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.8411907243991109,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 68%, draw 16%, away 16%; Home or draw has the highest combined probability at 84%.",
+      "id": 564749,
+      "comp": "La Liga",
+      "kickoff": "2026-11-22T13:00:00+00:00",
+      "odds": 1.19
+     }
+    ],
+    "prob": 0.7115414838744328,
+    "odds": 1.41,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-11-22",
+    "number": 3,
+    "legs": [
+     {
+      "match": "Juventus vs Venezia FC",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.8375867204262482,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 59%, draw 24%, away 16%; Home or draw has the highest combined probability at 84%.",
+      "id": 558521,
+      "comp": "Serie A",
+      "kickoff": "2026-11-22T11:30:00+00:00",
+      "odds": 1.19
+     },
+     {
+      "match": "Santander vs Real Sociedad",
+      "mk": "OU",
+      "key": "O",
+      "pick": "Over 2.5",
+      "p": 0.8254850512477292,
+      "why": "Combined expected goals 4.49. Probability of 3+ goals is 83%, so Over 2.5 is the likelier side.",
+      "id": 564750,
+      "comp": "La Liga",
+      "kickoff": "2026-11-22T15:15:00+00:00",
+      "odds": 1.21
+     }
+    ],
+    "prob": 0.6914153168354789,
+    "odds": 1.45,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-11-23",
+    "number": 1,
+    "legs": [
+     {
+      "match": "Brentford vs Everton",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.8095506496102648,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 53%, draw 28%, away 19%; Home or draw has the highest combined probability at 81%.",
+      "id": 560649,
+      "comp": "Premier League",
+      "kickoff": "2026-11-23T20:00:00+00:00",
+      "odds": 1.24
+     },
+     {
+      "match": "Levante vs Elche",
+      "mk": "DC",
+      "key": "12",
+      "pick": "Double chance: Home or away (12)",
+      "p": 0.7957915731034446,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 26%, draw 20%, away 53%; Home or away has the highest combined probability at 80%.",
+      "id": 564757,
+      "comp": "La Liga",
+      "kickoff": "2026-11-23T20:00:00+00:00",
+      "odds": 1.26
+     }
+    ],
+    "prob": 0.6442335849602682,
+    "odds": 1.55,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-11-27",
+    "number": 1,
+    "legs": [
+     {
+      "match": "Bremen vs M'gladbach",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.875248861337647,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 72%, draw 15%, away 12%; Home or draw has the highest combined probability at 88%.",
+      "id": 565869,
+      "comp": "Bundesliga",
+      "kickoff": "2026-11-27T19:30:00+00:00",
+      "odds": 1.14
+     },
+     {
+      "match": "Levante vs Santander",
+      "mk": "OU",
+      "key": "O",
+      "pick": "Over 2.5",
+      "p": 0.8598601103900171,
+      "why": "Combined expected goals 4.83. Probability of 3+ goals is 86%, so Over 2.5 is the likelier side.",
+      "id": 564765,
+      "comp": "La Liga",
+      "kickoff": "2026-11-27T20:00:00+00:00",
+      "odds": 1.16
+     }
+    ],
+    "prob": 0.7525915825285259,
+    "odds": 1.33,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-11-27",
+    "number": 2,
+    "legs": [
+     {
+      "match": "Venezia FC vs Bologna",
+      "mk": "DC",
+      "key": "X2",
+      "pick": "Double chance: Draw or away (X2)",
+      "p": 0.8344369490924448,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 17%, draw 22%, away 62%; Draw or away has the highest combined probability at 83%.",
+      "id": 558515,
+      "comp": "Serie A",
+      "kickoff": "2026-11-27T19:45:00+00:00",
+      "odds": 1.2
+     },
+     {
+      "match": "Brest vs Paris FC",
+      "mk": "DC",
+      "key": "12",
+      "pick": "Double chance: Home or away (12)",
+      "p": 0.7393780576167237,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 47%, draw 26%, away 27%; Home or away has the highest combined probability at 74%.",
+      "id": 559616,
+      "comp": "Ligue 1",
+      "kickoff": "2026-11-27T19:45:00+00:00",
+      "odds": 1.35
+     }
+    ],
+    "prob": 0.6169643706235968,
+    "odds": 1.62,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-11-28",
+    "number": 1,
+    "legs": [
+     {
+      "match": "Real Madrid vs Alav\u00e9s",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.9553928387615049,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 86%, draw 10%, away 4%; Home or draw has the highest combined probability at 96%.",
+      "id": 564762,
+      "comp": "La Liga",
+      "kickoff": "2026-11-28T20:00:00+00:00",
+      "odds": 1.05
+     },
+     {
+      "match": "Elche vs Atleti",
+      "mk": "DC",
+      "key": "X2",
+      "pick": "Double chance: Draw or away (X2)",
+      "p": 0.9151228772922888,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 8%, draw 16%, away 75%; Draw or away has the highest combined probability at 92%.",
+      "id": 564759,
+      "comp": "La Liga",
+      "kickoff": "2026-11-28T17:30:00+00:00",
+      "odds": 1.09
+     }
+    ],
+    "prob": 0.8743018435518761,
+    "odds": 1.14,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-11-28",
+    "number": 2,
+    "legs": [
+     {
+      "match": "Torino vs Lazio",
+      "mk": "DC",
+      "key": "X2",
+      "pick": "Double chance: Draw or away (X2)",
+      "p": 0.8782708738647036,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 12%, draw 16%, away 72%; Draw or away has the highest combined probability at 88%.",
+      "id": 558514,
+      "comp": "Serie A",
+      "kickoff": "2026-11-28T17:00:00+00:00",
+      "odds": 1.14
+     },
+     {
+      "match": "Frosinone vs Parma",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.8736401181173803,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 71%, draw 17%, away 13%; Home or draw has the highest combined probability at 87%.",
+      "id": 558513,
+      "comp": "Serie A",
+      "kickoff": "2026-11-28T14:00:00+00:00",
+      "odds": 1.14
+     }
+    ],
+    "prob": 0.7672926699822145,
+    "odds": 1.3,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-11-28",
+    "number": 3,
+    "legs": [
+     {
+      "match": "Inter vs Genoa",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.8732361100568939,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 70%, draw 17%, away 13%; Home or draw has the highest combined probability at 87%.",
+      "id": 558518,
+      "comp": "Serie A",
+      "kickoff": "2026-11-28T19:45:00+00:00",
+      "odds": 1.15
+     },
+     {
+      "match": "Leeds United vs Coventry City",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.8666718392206979,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 63%, draw 23%, away 13%; Home or draw has the highest combined probability at 87%.",
+      "id": 560652,
+      "comp": "Premier League",
+      "kickoff": "2026-11-28T15:00:00+00:00",
+      "odds": 1.15
+     }
+    ],
+    "prob": 0.756809145576936,
+    "odds": 1.32,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-11-29",
+    "number": 1,
+    "legs": [
+     {
+      "match": "Brighton Hove vs Newcastle",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.9317197392619345,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 80%, draw 13%, away 7%; Home or draw has the highest combined probability at 93%.",
+      "id": 560659,
+      "comp": "Premier League",
+      "kickoff": "2026-11-29T14:05:00+00:00",
+      "odds": 1.07
+     },
+     {
+      "match": "Roma vs Monza",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.9314865309893997,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 83%, draw 10%, away 7%; Home or draw has the highest combined probability at 93%.",
+      "id": 558512,
+      "comp": "Serie A",
+      "kickoff": "2026-11-29T17:00:00+00:00",
+      "odds": 1.07
+     }
+    ],
+    "prob": 0.8678843877794474,
+    "odds": 1.15,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-11-29",
+    "number": 2,
+    "legs": [
+     {
+      "match": "Freiburg vs RB Leipzig",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.8796877376386749,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 73%, draw 15%, away 12%; Home or draw has the highest combined probability at 88%.",
+      "id": 565873,
+      "comp": "Bundesliga",
+      "kickoff": "2026-11-29T14:30:00+00:00",
+      "odds": 1.14
+     },
+     {
+      "match": "Hoffenheim vs Augsburg",
+      "mk": "OU",
+      "key": "O",
+      "pick": "Over 2.5",
+      "p": 0.8766235312050172,
+      "why": "Combined expected goals 5.02. Probability of 3+ goals is 88%, so Over 2.5 is the likelier side.",
+      "id": 565871,
+      "comp": "Bundesliga",
+      "kickoff": "2026-11-29T16:30:00+00:00",
+      "odds": 1.14
+     }
+    ],
+    "prob": 0.7711549709265679,
+    "odds": 1.3,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-11-29",
+    "number": 3,
+    "legs": [
+     {
+      "match": "Deportivo vs Bar\u00e7a",
+      "mk": "DC",
+      "key": "X2",
+      "pick": "Double chance: Draw or away (X2)",
+      "p": 0.8535593006765846,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 15%, draw 17%, away 68%; Draw or away has the highest combined probability at 85%.",
+      "id": 564766,
+      "comp": "La Liga",
+      "kickoff": "2026-11-29T15:15:00+00:00",
+      "odds": 1.17
+     },
+     {
+      "match": "Olympique Lyon vs Monaco",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.8503688358362754,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 62%, draw 23%, away 15%; Home or draw has the highest combined probability at 85%.",
+      "id": 559615,
+      "comp": "Ligue 1",
+      "kickoff": "2026-11-29T19:45:00+00:00",
+      "odds": 1.18
+     }
+    ],
+    "prob": 0.7258402288335726,
+    "odds": 1.38,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-11-30",
+    "number": 1,
+    "legs": [
+     {
+      "match": "Espanyol vs Getafe",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.8893806564308875,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 63%, draw 26%, away 11%; Home or draw has the highest combined probability at 89%.",
+      "id": 564763,
+      "comp": "La Liga",
+      "kickoff": "2026-11-30T20:00:00+00:00",
+      "odds": 1.12
+     },
+     {
+      "match": "Cagliari vs Milan",
+      "mk": "DC",
+      "key": "X2",
+      "pick": "Double chance: Draw or away (X2)",
+      "p": 0.7717538183257823,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 23%, draw 30%, away 47%; Draw or away has the highest combined probability at 77%.",
+      "id": 558510,
+      "comp": "Serie A",
+      "kickoff": "2026-11-30T19:45:00+00:00",
+      "odds": 1.3
+     }
+    ],
+    "prob": 0.6863829175456281,
+    "odds": 1.46,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-12-02",
+    "number": 1,
+    "legs": [
+     {
+      "match": "Chelsea vs Crystal Palace",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.8995348789794442,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 75%, draw 15%, away 10%; Home or draw has the highest combined probability at 90%.",
+      "id": 560665,
+      "comp": "Premier League",
+      "kickoff": "2026-12-02T19:30:00+00:00",
+      "odds": 1.11
+     },
+     {
+      "match": "Bar\u00e7a vs Atleti",
+      "mk": "DC",
+      "key": "12",
+      "pick": "Double chance: Home or away (12)",
+      "p": 0.7921304102972795,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 51%, draw 21%, away 29%; Home or away has the highest combined probability at 79%.",
+      "id": 564857,
+      "comp": "La Liga",
+      "kickoff": "2026-12-02T20:30:00+00:00",
+      "odds": 1.26
+     }
+    ],
+    "prob": 0.7125489327627008,
+    "odds": 1.4,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-12-02",
+    "number": 2,
+    "legs": [
+     {
+      "match": "Man City vs Leeds United",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.7793988578383141,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 52%, draw 26%, away 22%; Home or draw has the highest combined probability at 78%.",
+      "id": 560669,
+      "comp": "Premier League",
+      "kickoff": "2026-12-02T19:30:00+00:00",
+      "odds": 1.28
+     },
+     {
+      "match": "Real Sociedad vs Real Madrid",
+      "mk": "DC",
+      "key": "12",
+      "pick": "Double chance: Home or away (12)",
+      "p": 0.7672982677571959,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 23%, draw 23%, away 53%; Home or away has the highest combined probability at 77%.",
+      "id": 564855,
+      "comp": "La Liga",
+      "kickoff": "2026-12-02T18:00:00+00:00",
+      "odds": 1.3
+     }
+    ],
+    "prob": 0.5980313935112754,
+    "odds": 1.67,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-12-02",
+    "number": 3,
+    "legs": [
+     {
+      "match": "Liverpool vs Sunderland",
+      "mk": "DC",
+      "key": "12",
+      "pick": "Double chance: Home or away (12)",
+      "p": 0.7482823595914314,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 47%, draw 25%, away 28%; Home or away has the highest combined probability at 75%.",
+      "id": 560663,
+      "comp": "Premier League",
+      "kickoff": "2026-12-02T19:30:00+00:00",
+      "odds": 1.34
+     },
+     {
+      "match": "Hull City vs Nottingham",
+      "mk": "DC",
+      "key": "12",
+      "pick": "Double chance: Home or away (12)",
+      "p": 0.7481093246087818,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 49%, draw 25%, away 26%; Home or away has the highest combined probability at 75%.",
+      "id": 560664,
+      "comp": "Premier League",
+      "kickoff": "2026-12-02T19:30:00+00:00",
+      "odds": 1.34
+     }
+    ],
+    "prob": 0.5597970106506114,
+    "odds": 1.79,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-12-04",
+    "number": 1,
+    "legs": [
+     {
+      "match": "Bayern vs SC Paderborn",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.9179823291798941,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 79%, draw 13%, away 8%; Home or draw has the highest combined probability at 92%.",
+      "id": 565882,
+      "comp": "Bundesliga",
+      "kickoff": "2026-12-04T19:30:00+00:00",
+      "odds": 1.09
+     },
+     {
+      "match": "Bologna vs Roma",
+      "mk": "DC",
+      "key": "X2",
+      "pick": "Double chance: Draw or away (X2)",
+      "p": 0.8267803821356889,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 17%, draw 18%, away 65%; Draw or away has the highest combined probability at 83%.",
+      "id": 558502,
+      "comp": "Serie A",
+      "kickoff": "2026-12-04T19:45:00+00:00",
+      "odds": 1.21
+     }
+    ],
+    "prob": 0.7589697809131626,
+    "odds": 1.32,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-12-05",
+    "number": 1,
+    "legs": [
+     {
+      "match": "RB Leipzig vs Mainz",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.9112490014016572,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 80%, draw 11%, away 9%; Home or draw has the highest combined probability at 91%.",
+      "id": 565879,
+      "comp": "Bundesliga",
+      "kickoff": "2026-12-05T14:30:00+00:00",
+      "odds": 1.1
+     },
+     {
+      "match": "Lille vs Auxerre",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.8771819422293445,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 71%, draw 17%, away 12%; Home or draw has the highest combined probability at 88%.",
+      "id": 559606,
+      "comp": "Ligue 1",
+      "kickoff": "2026-12-05T16:15:00+00:00",
+      "odds": 1.14
+     }
+    ],
+    "prob": 0.7993311689040564,
+    "odds": 1.25,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-12-05",
+    "number": 2,
+    "legs": [
+     {
+      "match": "Paris FC vs Le Mans",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.8680477019790306,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 69%, draw 17%, away 13%; Home or draw has the highest combined probability at 87%.",
+      "id": 559611,
+      "comp": "Ligue 1",
+      "kickoff": "2026-12-05T19:45:00+00:00",
+      "odds": 1.15
+     },
+     {
+      "match": "Leverkusen vs M'gladbach",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.8598077634731554,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 70%, draw 16%, away 14%; Home or draw has the highest combined probability at 86%.",
+      "id": 565877,
+      "comp": "Bundesliga",
+      "kickoff": "2026-12-05T14:30:00+00:00",
+      "odds": 1.16
+     }
+    ],
+    "prob": 0.7463541532266024,
+    "odds": 1.34,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-12-05",
+    "number": 3,
+    "legs": [
+     {
+      "match": "Freiburg vs Hoffenheim",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.8468477269428921,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 67%, draw 18%, away 15%; Home or draw has the highest combined probability at 85%.",
+      "id": 565881,
+      "comp": "Bundesliga",
+      "kickoff": "2026-12-05T14:30:00+00:00",
+      "odds": 1.18
+     },
+     {
+      "match": "Aston Villa vs Crystal Palace",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.8226391668860815,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 59%, draw 23%, away 18%; Home or draw has the highest combined probability at 82%.",
+      "id": 560679,
+      "comp": "Premier League",
+      "kickoff": "2026-12-05T15:00:00+00:00",
+      "odds": 1.22
+     }
+    ],
+    "prob": 0.6966501085716726,
+    "odds": 1.44,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-12-06",
+    "number": 1,
+    "legs": [
+     {
+      "match": "Bar\u00e7a vs Celta",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.922969182728614,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 77%, draw 15%, away 8%; Home or draw has the highest combined probability at 92%.",
+      "id": 564773,
+      "comp": "La Liga",
+      "kickoff": "2026-12-06T00:00:00+00:00",
+      "odds": 1.08
+     },
+     {
+      "match": "Milan vs Parma",
+      "mk": "DC",
+      "key": "12",
+      "pick": "Double chance: Home or away (12)",
+      "p": 0.81109227837083,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 62%, draw 19%, away 19%; Home or away has the highest combined probability at 81%.",
+      "id": 558505,
+      "comp": "Serie A",
+      "kickoff": "2026-12-06T19:45:00+00:00",
+      "odds": 1.23
+     }
+    ],
+    "prob": 0.7486131772854144,
+    "odds": 1.34,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-12-06",
+    "number": 2,
+    "legs": [
+     {
+      "match": "Elversberg vs Stuttgart",
+      "mk": "OU",
+      "key": "O",
+      "pick": "Over 2.5",
+      "p": 0.8095198765123135,
+      "why": "Combined expected goals 4.36. Probability of 3+ goals is 81%, so Over 2.5 is the likelier side.",
+      "id": 565880,
+      "comp": "Bundesliga",
+      "kickoff": "2026-12-06T16:30:00+00:00",
+      "odds": 1.24
+     },
+     {
+      "match": "Sevilla FC vs M\u00e1laga",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.8033910969090563,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 52%, draw 28%, away 20%; Home or draw has the highest combined probability at 80%.",
+      "id": 564769,
+      "comp": "La Liga",
+      "kickoff": "2026-12-06T00:00:00+00:00",
+      "odds": 1.24
+     }
+    ],
+    "prob": 0.6503610615609113,
+    "odds": 1.54,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-12-06",
+    "number": 3,
+    "legs": [
+     {
+      "match": "Lazio vs Atalanta",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.8031209092634561,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 59%, draw 21%, away 20%; Home or draw has the highest combined probability at 80%.",
+      "id": 558504,
+      "comp": "Serie A",
+      "kickoff": "2026-12-06T14:00:00+00:00",
+      "odds": 1.25
+     },
+     {
+      "match": "Rayo Vallecano vs Levante",
+      "mk": "DC",
+      "key": "1X",
+      "pick": "Double chance: Home or draw (1X)",
+      "p": 0.7953378198415977,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 52%, draw 27%, away 20%; Home or draw has the highest combined probability at 80%.",
+      "id": 564777,
+      "comp": "La Liga",
+      "kickoff": "2026-12-06T00:00:00+00:00",
+      "odds": 1.26
+     }
+    ],
+    "prob": 0.6387524330427988,
+    "odds": 1.57,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-12-07",
+    "number": 1,
+    "legs": [
+     {
+      "match": "Fiorentina vs Cagliari",
+      "mk": "DC",
+      "key": "12",
+      "pick": "Double chance: Home or away (12)",
+      "p": 0.7642448873611909,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 39%, draw 24%, away 38%; Home or away has the highest combined probability at 76%.",
+      "id": 558503,
+      "comp": "Serie A",
+      "kickoff": "2026-12-07T19:45:00+00:00",
+      "odds": 1.31
+     },
+     {
+      "match": "Venezia FC vs Sassuolo",
+      "mk": "DC",
+      "key": "12",
+      "pick": "Double chance: Home or away (12)",
+      "p": 0.7492183271423208,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 46%, draw 25%, away 29%; Home or away has the highest combined probability at 75%.",
+      "id": 558506,
+      "comp": "Serie A",
+      "kickoff": "2026-12-07T17:30:00+00:00",
+      "odds": 1.33
+     }
+    ],
+    "prob": 0.5725862760358229,
+    "odds": 1.75,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   },
+   {
+    "date": "2026-12-11",
+    "number": 1,
+    "legs": [
+     {
+      "match": "Udinese vs Frosinone",
+      "mk": "DC",
+      "key": "X2",
+      "pick": "Double chance: Draw or away (X2)",
+      "p": 0.8191007720377136,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 18%, draw 20%, away 62%; Draw or away has the highest combined probability at 82%.",
+      "id": 558491,
+      "comp": "Serie A",
+      "kickoff": "2026-12-11T19:45:00+00:00",
+      "odds": 1.22
+     },
+     {
+      "match": "HSV vs Schalke",
+      "mk": "DC",
+      "key": "12",
+      "pick": "Double chance: Home or away (12)",
+      "p": 0.7510969098049881,
+      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 47%, draw 25%, away 28%; Home or away has the highest combined probability at 75%.",
+      "id": 565888,
+      "comp": "Bundesliga",
+      "kickoff": "2026-12-11T19:30:00+00:00",
+      "odds": 1.33
+     }
+    ],
+    "prob": 0.6152240586964067,
+    "odds": 1.63,
+    "note": "Each leg is a model probability of at least 70%. Combined probability and fair odds are rough estimates that assume separate match outcomes; they are not bookmaker prices or a forecast of returns."
+   }
+  ],
+  "note": "Paper-only guide. Model fair odds are not bookmaker odds and do not project DH returns."
  }
 }

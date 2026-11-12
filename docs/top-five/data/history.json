@@ -2186,7 +2186,7 @@
   "matches": 48,
   "brier": 0.5532995566666667
  },
- "updated": "2026-11-12T20:58:18.533366+00:00",
+ "updated": "2026-11-12T21:27:46.724792+00:00",
  "daily_slips": [
   {
    "date": "2026-11-08",
@@ -2234,5 +2234,6 @@
    "note": "Each leg is a model estimate. Combined probability assumes separate match outcomes and is approximate.",
    "hit": 1
   }
- ]
+ ],
+ "journey_slips": []
 }
