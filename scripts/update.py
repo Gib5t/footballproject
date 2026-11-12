@@ -10,6 +10,7 @@ from urllib.request import Request, urlopen
 from urllib.parse import quote
 
 COMPS = {"PL": "Premier League", "PD": "La Liga", "SA": "Serie A", "BL1": "Bundesliga", "FL1": "Ligue 1", "ELC": "Championship", "DED": "Eredivisie", "PPL": "Primeira Liga", "BSA": "Brazil Serie A", "CL": "Champions League", "EC": "European Championship", "WC": "World Cup"}
+TOP5_NAMES = {"Premier League", "La Liga", "Serie A", "Bundesliga", "Ligue 1"}
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "docs", "data")
 XI = 0.006          # time decay per day: recent games count more
 K = 3.0             # shrinkage: pulls small samples toward league average
@@ -566,6 +567,53 @@ def summarize(items):
     stats = [dict(market=s["market"], n=s["n"], mae=s["absolute_error"] / s["n"]) for s in errors.values()]
     return dict(markets=rows, stats=stats, matches=n, brier=br / n if n else None)
 
+def write_top5_site(matches, all_c, hist, finished, notes, now, demo=False):
+    # Keep the archived top-five site current, with its own filtered predictions
+    # and history. It reuses the exact same fetched results without extra API calls.
+    if demo: return
+    names = TOP5_NAMES
+    top_matches = [m for m in matches if m.get("comp") in names]
+    top_candidates = [c for c in all_c if c.get("comp") in names]
+    top_slip = daily_slip(top_candidates, top_matches, now)
+    top_pred = dict(
+        updated=now.isoformat(),
+        notes=[n for n in notes if any(n.startswith(name + ":") for name in names)],
+        matches=top_matches,
+        demo=False,
+        slip_of_day=top_slip,
+        slips=dict(small=slip(top_candidates, .62, 1.01, 3, .7),
+                   medium=slip(top_candidates, .48, .62, 4, .55),
+                   big=slip(top_candidates, .2, .48, 5, .38)))
+    out_dir = os.path.join(os.path.dirname(OUT), "top-five", "data")
+    os.makedirs(out_dir, exist_ok=True)
+    json.dump(top_pred, open(os.path.join(out_dir, "predictions.json"), "w"), indent=1, default=str)
+
+    history_path = os.path.join(out_dir, "history.json")
+    saved = json.load(open(history_path)) if os.path.exists(history_path) else {"items": [], "daily_slips": []}
+    saved.setdefault("items", [])
+    saved.setdefault("daily_slips", [])
+    saved["items"] = [it for it in saved["items"] if it.get("comp") in names]
+    saved["daily_slips"] = [day for day in saved["daily_slips"]
+                            if day.get("legs") and all(leg.get("comp") in names for leg in day["legs"])]
+    items_by_id = {it["id"]: it for it in saved["items"]}
+    items_by_id.update({it["id"]: it for it in hist.get("items", []) if it.get("comp") in names})
+    if top_slip:
+        existing = next((x for x in saved["daily_slips"] if x.get("date") == top_slip["date"]), None)
+        if existing is None:
+            existing = {**top_slip, "legs": [dict(c, hit=None) for c in top_slip["legs"]], "hit": None}
+            saved["daily_slips"].append(existing)
+    for daily in saved["daily_slips"]:
+        for leg in daily.get("legs", []):
+            result = finished.get(leg.get("id"))
+            if result and leg.get("hit") is None:
+                leg["hit"] = evaluate(leg, {"ft": list(result["ft"]), "ht": list(result["ht"]) if result.get("ht") else None})
+        hits = [leg.get("hit") for leg in daily.get("legs", [])]
+        daily["hit"] = int(all(x == 1 for x in hits)) if hits and all(isinstance(x, int) for x in hits) else None
+    top_items = sorted(items_by_id.values(), key=lambda it: it.get("kickoff", ""))
+    top_hist = dict(items=top_items, summary=summarize(top_items), updated=now.isoformat(),
+                    daily_slips=saved["daily_slips"])
+    json.dump(top_hist, open(history_path, "w"), indent=1)
+
 def main():
     dm = "--demo" in sys.argv; key = os.environ.get("FOOTBALL_DATA_KEY", "")
     if not dm and not key: sys.exit("Set FOOTBALL_DATA_KEY (free key from football-data.org)")
@@ -649,6 +697,7 @@ def main():
     pred = dict(updated=now.isoformat(), notes=notes, matches=matches, demo=dm, slip_of_day=slip_now,
                 slips=dict(small=slip(all_c, .62, 1.01, 3, .7), medium=slip(all_c, .48, .62, 4, .55), big=slip(all_c, .2, .48, 5, .38)))
     json.dump(pred, open(os.path.join(OUT, "predictions.json"), "w"), indent=1, default=str)
+    write_top5_site(matches, all_c, hist, finished, notes, now, dm)
     print(f"{len(matches)} matches predicted; {hist['summary']['matches']} resolved in track record; notes: {notes}")
 
 if __name__ == "__main__":

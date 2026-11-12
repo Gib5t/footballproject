@@ -5,6 +5,7 @@ on:
     paths:
       - ".github/workflows/update.yml"
       - "docs/index.html"
+      - "docs/top-five/index.html"
       - "scripts/update.py"
   schedule:
     - cron: "0 6 * * *"
@@ -34,7 +35,7 @@ jobs:
         run: |
           git config user.name "predictions-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add docs/data
+          git add docs/data docs/top-five/data
           git diff --cached --quiet || (git commit -m "Update predictions" && git push)
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
