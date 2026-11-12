@@ -1,6 +1,141 @@
 {
  "items": [
   {
+   "id": 565852,
+   "comp": "Bundesliga",
+   "kickoff": "2026-11-06T19:30:00+00:00",
+   "home": "HSV",
+   "away": "M'gladbach",
+   "p1x2": {
+    "1": 0.5087,
+    "X": 0.219,
+    "2": 0.2723
+   },
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.5087,
+     "hit": 1
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.6515,
+     "hit": 1
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.2979,
+     "hit": 0
+    }
+   ],
+   "result": {
+    "ft": [
+     3,
+     1
+    ],
+    "ht": [
+     1,
+     1
+    ]
+   }
+  },
+  {
+   "id": 558537,
+   "comp": "Serie A",
+   "kickoff": "2026-11-06T19:45:00+00:00",
+   "home": "Venezia FC",
+   "away": "Udinese",
+   "p1x2": {
+    "1": 0.2608,
+    "X": 0.2421,
+    "2": 0.4971
+   },
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "2",
+     "pick": "Away win (2)",
+     "p": 0.4971,
+     "hit": 0
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.5346,
+     "hit": 1
+    },
+    {
+     "mk": "HTFT",
+     "key": "2/2",
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.3057,
+     "hit": 0
+    }
+   ],
+   "result": {
+    "ft": [
+     2,
+     1
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": 559638,
+   "comp": "Ligue 1",
+   "kickoff": "2026-11-06T19:45:00+00:00",
+   "home": "Toulouse",
+   "away": "Strasbourg",
+   "p1x2": {
+    "1": 0.4447,
+    "X": 0.2465,
+    "2": 0.3088
+   },
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.4447,
+     "hit": 1
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.545,
+     "hit": 1
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.2552,
+     "hit": 1
+    }
+   ],
+   "result": {
+    "ft": [
+     3,
+     1
+    ],
+    "ht": [
+     1,
+     0
+    ]
+   }
+  },
+  {
    "id": 560634,
    "comp": "Premier League",
    "kickoff": "2026-11-06T20:00:00+00:00",
@@ -38,6 +173,51 @@
     "ft": [
      3,
      1
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": 564740,
+   "comp": "La Liga",
+   "kickoff": "2026-11-06T20:00:00+00:00",
+   "home": "Sevilla FC",
+   "away": "Alav\u00e9s",
+   "p1x2": {
+    "1": 0.5826,
+    "X": 0.2231,
+    "2": 0.1942
+   },
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.5826,
+     "hit": 0
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.544,
+     "hit": 0
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.3664,
+     "hit": 0
+    }
+   ],
+   "result": {
+    "ft": [
+     0,
+     0
     ],
     "ht": [
      0,
@@ -91,186 +271,6 @@
    }
   },
   {
-   "id": 560640,
-   "comp": "Premier League",
-   "kickoff": "2026-11-07T15:00:00+00:00",
-   "home": "Arsenal",
-   "away": "Hull City",
-   "p1x2": {
-    "1": 0.6271,
-    "X": 0.2264,
-    "2": 0.1465
-   },
-   "picks": [
-    {
-     "mk": "1X2",
-     "key": "1",
-     "pick": "Home win (1)",
-     "p": 0.6271,
-     "hit": 1
-    },
-    {
-     "mk": "OU",
-     "key": "U",
-     "pick": "Under 2.5",
-     "p": 0.5444,
-     "hit": 1
-    },
-    {
-     "mk": "HTFT",
-     "key": "1/1",
-     "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.38,
-     "hit": 0
-    }
-   ],
-   "result": {
-    "ft": [
-     1,
-     0
-    ],
-    "ht": [
-     0,
-     0
-    ]
-   }
-  },
-  {
-   "id": 560633,
-   "comp": "Premier League",
-   "kickoff": "2026-11-07T15:00:00+00:00",
-   "home": "Fulham",
-   "away": "Newcastle",
-   "p1x2": {
-    "1": 0.4211,
-    "X": 0.2293,
-    "2": 0.3496
-   },
-   "picks": [
-    {
-     "mk": "1X2",
-     "key": "1",
-     "pick": "Home win (1)",
-     "p": 0.4211,
-     "hit": 0
-    },
-    {
-     "mk": "OU",
-     "key": "O",
-     "pick": "Over 2.5",
-     "p": 0.641,
-     "hit": 0
-    },
-    {
-     "mk": "HTFT",
-     "key": "1/1",
-     "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.2461,
-     "hit": 0
-    }
-   ],
-   "result": {
-    "ft": [
-     1,
-     1
-    ],
-    "ht": [
-     0,
-     0
-    ]
-   }
-  },
-  {
-   "id": 560641,
-   "comp": "Premier League",
-   "kickoff": "2026-11-07T17:30:00+00:00",
-   "home": "Nottingham",
-   "away": "Man City",
-   "p1x2": {
-    "1": 0.1396,
-    "X": 0.2729,
-    "2": 0.5875
-   },
-   "picks": [
-    {
-     "mk": "1X2",
-     "key": "2",
-     "pick": "Away win (2)",
-     "p": 0.5875,
-     "hit": 0
-    },
-    {
-     "mk": "OU",
-     "key": "U",
-     "pick": "Under 2.5",
-     "p": 0.6922,
-     "hit": 0
-    },
-    {
-     "mk": "HTFT",
-     "key": "2/2",
-     "pick": "HT Away win / FT Away win (2/2)",
-     "p": 0.3383,
-     "hit": 0
-    }
-   ],
-   "result": {
-    "ft": [
-     3,
-     1
-    ],
-    "ht": [
-     2,
-     0
-    ]
-   }
-  },
-  {
-   "id": 564740,
-   "comp": "La Liga",
-   "kickoff": "2026-11-06T20:00:00+00:00",
-   "home": "Sevilla FC",
-   "away": "Alav\u00e9s",
-   "p1x2": {
-    "1": 0.5826,
-    "X": 0.2231,
-    "2": 0.1942
-   },
-   "picks": [
-    {
-     "mk": "1X2",
-     "key": "1",
-     "pick": "Home win (1)",
-     "p": 0.5826,
-     "hit": 0
-    },
-    {
-     "mk": "OU",
-     "key": "O",
-     "pick": "Over 2.5",
-     "p": 0.544,
-     "hit": 0
-    },
-    {
-     "mk": "HTFT",
-     "key": "1/1",
-     "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.3664,
-     "hit": 0
-    }
-   ],
-   "result": {
-    "ft": [
-     0,
-     0
-    ],
-    "ht": [
-     0,
-     0
-    ]
-   }
-  },
-  {
    "id": 564744,
    "comp": "La Liga",
    "kickoff": "2026-11-07T13:00:00+00:00",
@@ -311,186 +311,6 @@
     ],
     "ht": [
      1,
-     0
-    ]
-   }
-  },
-  {
-   "id": 564745,
-   "comp": "La Liga",
-   "kickoff": "2026-11-07T15:15:00+00:00",
-   "home": "Espanyol",
-   "away": "Deportivo",
-   "p1x2": {
-    "1": 0.3543,
-    "X": 0.2602,
-    "2": 0.3856
-   },
-   "picks": [
-    {
-     "mk": "1X2",
-     "key": "2",
-     "pick": "Away win (2)",
-     "p": 0.3856,
-     "hit": 0
-    },
-    {
-     "mk": "OU",
-     "key": "U",
-     "pick": "Under 2.5",
-     "p": 0.5031,
-     "hit": 1
-    },
-    {
-     "mk": "HTFT",
-     "key": "2/2",
-     "pick": "HT Away win / FT Away win (2/2)",
-     "p": 0.2244,
-     "hit": 0
-    }
-   ],
-   "result": {
-    "ft": [
-     0,
-     0
-    ],
-    "ht": [
-     0,
-     0
-    ]
-   }
-  },
-  {
-   "id": 564739,
-   "comp": "La Liga",
-   "kickoff": "2026-11-07T17:30:00+00:00",
-   "home": "Osasuna",
-   "away": "Athletic",
-   "p1x2": {
-    "1": 0.4347,
-    "X": 0.3253,
-    "2": 0.24
-   },
-   "picks": [
-    {
-     "mk": "1X2",
-     "key": "1",
-     "pick": "Home win (1)",
-     "p": 0.4347,
-     "hit": 0
-    },
-    {
-     "mk": "OU",
-     "key": "U",
-     "pick": "Under 2.5",
-     "p": 0.7406,
-     "hit": 1
-    },
-    {
-     "mk": "HTFT",
-     "key": "X/X",
-     "pick": "HT Draw / FT Draw (X/X)",
-     "p": 0.2461,
-     "hit": 1
-    }
-   ],
-   "result": {
-    "ft": [
-     1,
-     1
-    ],
-    "ht": [
-     0,
-     0
-    ]
-   }
-  },
-  {
-   "id": 564741,
-   "comp": "La Liga",
-   "kickoff": "2026-11-07T20:00:00+00:00",
-   "home": "Valencia",
-   "away": "Real Madrid",
-   "p1x2": {
-    "1": 0.1205,
-    "X": 0.1876,
-    "2": 0.692
-   },
-   "picks": [
-    {
-     "mk": "1X2",
-     "key": "2",
-     "pick": "Away win (2)",
-     "p": 0.692,
-     "hit": 1
-    },
-    {
-     "mk": "OU",
-     "key": "O",
-     "pick": "Over 2.5",
-     "p": 0.5578,
-     "hit": 1
-    },
-    {
-     "mk": "HTFT",
-     "key": "2/2",
-     "pick": "HT Away win / FT Away win (2/2)",
-     "p": 0.4552,
-     "hit": 1
-    }
-   ],
-   "result": {
-    "ft": [
-     0,
-     3
-    ],
-    "ht": [
-     0,
-     2
-    ]
-   }
-  },
-  {
-   "id": 558537,
-   "comp": "Serie A",
-   "kickoff": "2026-11-06T19:45:00+00:00",
-   "home": "Venezia FC",
-   "away": "Udinese",
-   "p1x2": {
-    "1": 0.2608,
-    "X": 0.2421,
-    "2": 0.4971
-   },
-   "picks": [
-    {
-     "mk": "1X2",
-     "key": "2",
-     "pick": "Away win (2)",
-     "p": 0.4971,
-     "hit": 0
-    },
-    {
-     "mk": "OU",
-     "key": "O",
-     "pick": "Over 2.5",
-     "p": 0.5346,
-     "hit": 1
-    },
-    {
-     "mk": "HTFT",
-     "key": "2/2",
-     "pick": "HT Away win / FT Away win (2/2)",
-     "p": 0.3057,
-     "hit": 0
-    }
-   ],
-   "result": {
-    "ft": [
-     2,
-     1
-    ],
-    "ht": [
-     0,
      0
     ]
    }
@@ -582,141 +402,6 @@
     "ht": [
      1,
      0
-    ]
-   }
-  },
-  {
-   "id": 558535,
-   "comp": "Serie A",
-   "kickoff": "2026-11-07T17:00:00+00:00",
-   "home": "Parma",
-   "away": "Bologna",
-   "p1x2": {
-    "1": 0.1886,
-    "X": 0.2584,
-    "2": 0.553
-   },
-   "picks": [
-    {
-     "mk": "1X2",
-     "key": "2",
-     "pick": "Away win (2)",
-     "p": 0.553,
-     "hit": 1
-    },
-    {
-     "mk": "OU",
-     "key": "U",
-     "pick": "Under 2.5",
-     "p": 0.5965,
-     "hit": 0
-    },
-    {
-     "mk": "HTFT",
-     "key": "2/2",
-     "pick": "HT Away win / FT Away win (2/2)",
-     "p": 0.3385,
-     "hit": 0
-    }
-   ],
-   "result": {
-    "ft": [
-     1,
-     2
-    ],
-    "ht": [
-     0,
-     0
-    ]
-   }
-  },
-  {
-   "id": 558531,
-   "comp": "Serie A",
-   "kickoff": "2026-11-07T19:45:00+00:00",
-   "home": "Roma",
-   "away": "Sassuolo",
-   "p1x2": {
-    "1": 0.7745,
-    "X": 0.1303,
-    "2": 0.0952
-   },
-   "picks": [
-    {
-     "mk": "1X2",
-     "key": "1",
-     "pick": "Home win (1)",
-     "p": 0.7745,
-     "hit": 1
-    },
-    {
-     "mk": "OU",
-     "key": "O",
-     "pick": "Over 2.5",
-     "p": 0.7712,
-     "hit": 1
-    },
-    {
-     "mk": "HTFT",
-     "key": "1/1",
-     "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.5528,
-     "hit": 1
-    }
-   ],
-   "result": {
-    "ft": [
-     3,
-     0
-    ],
-    "ht": [
-     2,
-     0
-    ]
-   }
-  },
-  {
-   "id": 565852,
-   "comp": "Bundesliga",
-   "kickoff": "2026-11-06T19:30:00+00:00",
-   "home": "HSV",
-   "away": "M'gladbach",
-   "p1x2": {
-    "1": 0.5087,
-    "X": 0.219,
-    "2": 0.2723
-   },
-   "picks": [
-    {
-     "mk": "1X2",
-     "key": "1",
-     "pick": "Home win (1)",
-     "p": 0.5087,
-     "hit": 1
-    },
-    {
-     "mk": "OU",
-     "key": "O",
-     "pick": "Over 2.5",
-     "p": 0.6515,
-     "hit": 1
-    },
-    {
-     "mk": "HTFT",
-     "key": "1/1",
-     "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.2979,
-     "hit": 0
-    }
-   ],
-   "result": {
-    "ft": [
-     3,
-     1
-    ],
-    "ht": [
-     1,
-     1
     ]
    }
   },
@@ -901,91 +586,136 @@
    }
   },
   {
-   "id": 565849,
-   "comp": "Bundesliga",
-   "kickoff": "2026-11-07T17:30:00+00:00",
-   "home": "Stuttgart",
-   "away": "Bremen",
+   "id": 560640,
+   "comp": "Premier League",
+   "kickoff": "2026-11-07T15:00:00+00:00",
+   "home": "Arsenal",
+   "away": "Hull City",
    "p1x2": {
-    "1": 0.4278,
-    "X": 0.2081,
-    "2": 0.3641
+    "1": 0.6271,
+    "X": 0.2264,
+    "2": 0.1465
    },
    "picks": [
     {
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.4278,
+     "p": 0.6271,
      "hit": 1
+    },
+    {
+     "mk": "OU",
+     "key": "U",
+     "pick": "Under 2.5",
+     "p": 0.5444,
+     "hit": 1
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.38,
+     "hit": 0
+    }
+   ],
+   "result": {
+    "ft": [
+     1,
+     0
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": 560633,
+   "comp": "Premier League",
+   "kickoff": "2026-11-07T15:00:00+00:00",
+   "home": "Fulham",
+   "away": "Newcastle",
+   "p1x2": {
+    "1": 0.4211,
+    "X": 0.2293,
+    "2": 0.3496
+   },
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.4211,
+     "hit": 0
     },
     {
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.7531,
+     "p": 0.641,
      "hit": 0
     },
     {
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.2491,
-     "hit": 1
+     "p": 0.2461,
+     "hit": 0
     }
    ],
    "result": {
     "ft": [
      1,
-     0
+     1
     ],
     "ht": [
-     1,
+     0,
      0
     ]
    }
   },
   {
-   "id": 559638,
-   "comp": "Ligue 1",
-   "kickoff": "2026-11-06T19:45:00+00:00",
-   "home": "Toulouse",
-   "away": "Strasbourg",
+   "id": 564745,
+   "comp": "La Liga",
+   "kickoff": "2026-11-07T15:15:00+00:00",
+   "home": "Espanyol",
+   "away": "Deportivo",
    "p1x2": {
-    "1": 0.4447,
-    "X": 0.2465,
-    "2": 0.3088
+    "1": 0.3543,
+    "X": 0.2602,
+    "2": 0.3856
    },
    "picks": [
     {
      "mk": "1X2",
-     "key": "1",
-     "pick": "Home win (1)",
-     "p": 0.4447,
-     "hit": 1
+     "key": "2",
+     "pick": "Away win (2)",
+     "p": 0.3856,
+     "hit": 0
     },
     {
      "mk": "OU",
-     "key": "O",
-     "pick": "Over 2.5",
-     "p": 0.545,
+     "key": "U",
+     "pick": "Under 2.5",
+     "p": 0.5031,
      "hit": 1
     },
     {
      "mk": "HTFT",
-     "key": "1/1",
-     "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.2552,
-     "hit": 1
+     "key": "2/2",
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.2244,
+     "hit": 0
     }
    ],
    "result": {
     "ft": [
-     3,
-     1
+     0,
+     0
     ],
     "ht": [
-     1,
+     0,
      0
     ]
    }
@@ -1036,6 +766,231 @@
    }
   },
   {
+   "id": 558535,
+   "comp": "Serie A",
+   "kickoff": "2026-11-07T17:00:00+00:00",
+   "home": "Parma",
+   "away": "Bologna",
+   "p1x2": {
+    "1": 0.1886,
+    "X": 0.2584,
+    "2": 0.553
+   },
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "2",
+     "pick": "Away win (2)",
+     "p": 0.553,
+     "hit": 1
+    },
+    {
+     "mk": "OU",
+     "key": "U",
+     "pick": "Under 2.5",
+     "p": 0.5965,
+     "hit": 0
+    },
+    {
+     "mk": "HTFT",
+     "key": "2/2",
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.3385,
+     "hit": 0
+    }
+   ],
+   "result": {
+    "ft": [
+     1,
+     2
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": 560641,
+   "comp": "Premier League",
+   "kickoff": "2026-11-07T17:30:00+00:00",
+   "home": "Nottingham",
+   "away": "Man City",
+   "p1x2": {
+    "1": 0.1396,
+    "X": 0.2729,
+    "2": 0.5875
+   },
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "2",
+     "pick": "Away win (2)",
+     "p": 0.5875,
+     "hit": 0
+    },
+    {
+     "mk": "OU",
+     "key": "U",
+     "pick": "Under 2.5",
+     "p": 0.6922,
+     "hit": 0
+    },
+    {
+     "mk": "HTFT",
+     "key": "2/2",
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.3383,
+     "hit": 0
+    }
+   ],
+   "result": {
+    "ft": [
+     3,
+     1
+    ],
+    "ht": [
+     2,
+     0
+    ]
+   }
+  },
+  {
+   "id": 564739,
+   "comp": "La Liga",
+   "kickoff": "2026-11-07T17:30:00+00:00",
+   "home": "Osasuna",
+   "away": "Athletic",
+   "p1x2": {
+    "1": 0.4347,
+    "X": 0.3253,
+    "2": 0.24
+   },
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.4347,
+     "hit": 0
+    },
+    {
+     "mk": "OU",
+     "key": "U",
+     "pick": "Under 2.5",
+     "p": 0.7406,
+     "hit": 1
+    },
+    {
+     "mk": "HTFT",
+     "key": "X/X",
+     "pick": "HT Draw / FT Draw (X/X)",
+     "p": 0.2461,
+     "hit": 1
+    }
+   ],
+   "result": {
+    "ft": [
+     1,
+     1
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": 565849,
+   "comp": "Bundesliga",
+   "kickoff": "2026-11-07T17:30:00+00:00",
+   "home": "Stuttgart",
+   "away": "Bremen",
+   "p1x2": {
+    "1": 0.4278,
+    "X": 0.2081,
+    "2": 0.3641
+   },
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.4278,
+     "hit": 1
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.7531,
+     "hit": 0
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.2491,
+     "hit": 1
+    }
+   ],
+   "result": {
+    "ft": [
+     1,
+     0
+    ],
+    "ht": [
+     1,
+     0
+    ]
+   }
+  },
+  {
+   "id": 558531,
+   "comp": "Serie A",
+   "kickoff": "2026-11-07T19:45:00+00:00",
+   "home": "Roma",
+   "away": "Sassuolo",
+   "p1x2": {
+    "1": 0.7745,
+    "X": 0.1303,
+    "2": 0.0952
+   },
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.7745,
+     "hit": 1
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.7712,
+     "hit": 1
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.5528,
+     "hit": 1
+    }
+   ],
+   "result": {
+    "ft": [
+     3,
+     0
+    ],
+    "ht": [
+     2,
+     0
+    ]
+   }
+  },
+  {
    "id": 559635,
    "comp": "Ligue 1",
    "kickoff": "2026-11-07T19:45:00+00:00",
@@ -1081,47 +1036,47 @@
    }
   },
   {
-   "id": 564738,
+   "id": 564741,
    "comp": "La Liga",
-   "kickoff": "2026-11-08T13:00:00+00:00",
-   "home": "Elche",
-   "away": "Real Betis",
+   "kickoff": "2026-11-07T20:00:00+00:00",
+   "home": "Valencia",
+   "away": "Real Madrid",
    "p1x2": {
-    "1": 0.2266,
-    "X": 0.2435,
-    "2": 0.5299
+    "1": 0.1205,
+    "X": 0.1876,
+    "2": 0.692
    },
    "picks": [
     {
      "mk": "1X2",
      "key": "2",
      "pick": "Away win (2)",
-     "p": 0.5299,
+     "p": 0.692,
      "hit": 1
     },
     {
      "mk": "OU",
-     "key": "U",
-     "pick": "Under 2.5",
-     "p": 0.5019,
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.5578,
      "hit": 1
     },
     {
      "mk": "HTFT",
      "key": "2/2",
      "pick": "HT Away win / FT Away win (2/2)",
-     "p": 0.3243,
-     "hit": 0
+     "p": 0.4552,
+     "hit": 1
     }
    ],
    "result": {
     "ft": [
      0,
-     2
+     3
     ],
     "ht": [
      0,
-     0
+     2
     ]
    }
   },
@@ -1167,6 +1122,51 @@
     "ht": [
      0,
      1
+    ]
+   }
+  },
+  {
+   "id": 564738,
+   "comp": "La Liga",
+   "kickoff": "2026-11-08T13:00:00+00:00",
+   "home": "Elche",
+   "away": "Real Betis",
+   "p1x2": {
+    "1": 0.2266,
+    "X": 0.2435,
+    "2": 0.5299
+   },
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "2",
+     "pick": "Away win (2)",
+     "p": 0.5299,
+     "hit": 1
+    },
+    {
+     "mk": "OU",
+     "key": "U",
+     "pick": "Under 2.5",
+     "p": 0.5019,
+     "hit": 1
+    },
+    {
+     "mk": "HTFT",
+     "key": "2/2",
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.3243,
+     "hit": 0
+    }
+   ],
+   "result": {
+    "ft": [
+     0,
+     2
+    ],
+    "ht": [
+     0,
+     0
     ]
    }
   },
@@ -1351,207 +1351,6 @@
    }
   },
   {
-   "id": 560639,
-   "comp": "Premier League",
-   "kickoff": "2026-11-08T16:30:00+00:00",
-   "home": "Man United",
-   "away": "Aston Villa",
-   "p1x2": {
-    "1": 0.3349,
-    "X": 0.2541,
-    "2": 0.411
-   },
-   "picks": [
-    {
-     "mk": "1X2",
-     "key": "2",
-     "pick": "Away win (2)",
-     "p": 0.411,
-     "hit": 0
-    },
-    {
-     "mk": "OU",
-     "key": "O",
-     "pick": "Over 2.5",
-     "p": 0.5199,
-     "hit": 1
-    },
-    {
-     "mk": "HTFT",
-     "key": "2/2",
-     "pick": "HT Away win / FT Away win (2/2)",
-     "p": 0.2335,
-     "hit": 0
-    }
-   ],
-   "result": {
-    "ft": [
-     4,
-     4
-    ],
-    "ht": [
-     2,
-     2
-    ]
-   }
-  },
-  {
-   "id": 564743,
-   "comp": "La Liga",
-   "kickoff": "2026-11-08T15:15:00+00:00",
-   "home": "Real Sociedad",
-   "away": "Rayo Vallecano",
-   "p1x2": {
-    "1": 0.5483,
-    "X": 0.212,
-    "2": 0.2396
-   },
-   "picks": [
-    {
-     "mk": "1X2",
-     "key": "1",
-     "pick": "Home win (1)",
-     "p": 0.5483,
-     "hit": 1
-    },
-    {
-     "mk": "OU",
-     "key": "O",
-     "pick": "Over 2.5",
-     "p": 0.6537,
-     "hit": 0
-    },
-    {
-     "mk": "HTFT",
-     "key": "1/1",
-     "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.3471,
-     "hit": 0
-    }
-   ],
-   "result": {
-    "ft": [
-     1,
-     0
-    ],
-    "ht": [
-     0,
-     0
-    ]
-   }
-  },
-  {
-   "id": 564742,
-   "comp": "La Liga",
-   "kickoff": "2026-11-08T17:30:00+00:00",
-   "home": "Celta",
-   "away": "Levante",
-   "p1x2": {
-    "1": 0.5612,
-    "X": 0.2643,
-    "2": 0.1745
-   },
-   "picks": [
-    {
-     "mk": "1X2",
-     "key": "1",
-     "pick": "Home win (1)",
-     "p": 0.5612
-    },
-    {
-     "mk": "OU",
-     "key": "U",
-     "pick": "Under 2.5",
-     "p": 0.6305
-    },
-    {
-     "mk": "HTFT",
-     "key": "1/1",
-     "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.3384
-    }
-   ],
-   "result": null
-  },
-  {
-   "id": 564747,
-   "comp": "La Liga",
-   "kickoff": "2026-11-08T17:30:00+00:00",
-   "home": "Villarreal",
-   "away": "Getafe",
-   "p1x2": {
-    "1": 0.6494,
-    "X": 0.2307,
-    "2": 0.1199
-   },
-   "picks": [
-    {
-     "mk": "1X2",
-     "key": "1",
-     "pick": "Home win (1)",
-     "p": 0.6494,
-     "hit": 1
-    },
-    {
-     "mk": "OU",
-     "key": "U",
-     "pick": "Under 2.5",
-     "p": 0.605,
-     "hit": 1
-    },
-    {
-     "mk": "HTFT",
-     "key": "1/1",
-     "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.4068,
-     "hit": 0
-    }
-   ],
-   "result": {
-    "ft": [
-     2,
-     0
-    ],
-    "ht": [
-     0,
-     0
-    ]
-   }
-  },
-  {
-   "id": 564746,
-   "comp": "La Liga",
-   "kickoff": "2026-11-08T20:00:00+00:00",
-   "home": "Atleti",
-   "away": "Bar\u00e7a",
-   "p1x2": {
-    "1": 0.3004,
-    "X": 0.208,
-    "2": 0.4915
-   },
-   "picks": [
-    {
-     "mk": "1X2",
-     "key": "2",
-     "pick": "Away win (2)",
-     "p": 0.4915
-    },
-    {
-     "mk": "OU",
-     "key": "O",
-     "pick": "Over 2.5",
-     "p": 0.7271
-    },
-    {
-     "mk": "HTFT",
-     "key": "2/2",
-     "pick": "HT Away win / FT Away win (2/2)",
-     "p": 0.3088
-    }
-   ],
-   "result": null
-  },
-  {
    "id": 558536,
    "comp": "Serie A",
    "kickoff": "2026-11-08T14:00:00+00:00",
@@ -1642,82 +1441,49 @@
    }
   },
   {
-   "id": 558530,
-   "comp": "Serie A",
-   "kickoff": "2026-11-08T17:00:00+00:00",
-   "home": "Inter",
-   "away": "Como 1907",
+   "id": 559636,
+   "comp": "Ligue 1",
+   "kickoff": "2026-11-08T14:00:00+00:00",
+   "home": "Stade Rennais",
+   "away": "Lille",
    "p1x2": {
-    "1": 0.4591,
-    "X": 0.2026,
-    "2": 0.3384
+    "1": 0.5114,
+    "X": 0.2458,
+    "2": 0.2427
    },
    "picks": [
     {
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.4591,
-     "hit": 1
+     "p": 0.5114,
+     "hit": 0
     },
     {
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.7737,
-     "hit": 0
+     "p": 0.5038,
+     "hit": 1
     },
     {
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.2899,
-     "hit": 1
+     "p": 0.2979,
+     "hit": 0
     }
    ],
    "result": {
     "ft": [
-     2,
-     0
+     1,
+     2
     ],
     "ht": [
-     2,
-     0
+     1,
+     1
     ]
    }
-  },
-  {
-   "id": 558529,
-   "comp": "Serie A",
-   "kickoff": "2026-11-08T19:45:00+00:00",
-   "home": "Fiorentina",
-   "away": "Juventus",
-   "p1x2": {
-    "1": 0.2509,
-    "X": 0.2457,
-    "2": 0.5034
-   },
-   "picks": [
-    {
-     "mk": "1X2",
-     "key": "2",
-     "pick": "Away win (2)",
-     "p": 0.5034
-    },
-    {
-     "mk": "OU",
-     "key": "O",
-     "pick": "Over 2.5",
-     "p": 0.5112
-    },
-    {
-     "mk": "HTFT",
-     "key": "2/2",
-     "pick": "HT Away win / FT Away win (2/2)",
-     "p": 0.309
-    }
-   ],
-   "result": null
   },
   {
    "id": 565855,
@@ -1765,125 +1531,47 @@
    }
   },
   {
-   "id": 565854,
-   "comp": "Bundesliga",
-   "kickoff": "2026-11-08T16:30:00+00:00",
-   "home": "Freiburg",
-   "away": "Union Berlin",
+   "id": 564743,
+   "comp": "La Liga",
+   "kickoff": "2026-11-08T15:15:00+00:00",
+   "home": "Real Sociedad",
+   "away": "Rayo Vallecano",
    "p1x2": {
-    "1": 0.8273,
-    "X": 0.1059,
-    "2": 0.0669
+    "1": 0.5483,
+    "X": 0.212,
+    "2": 0.2396
    },
    "picks": [
     {
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.8273,
+     "p": 0.5483,
      "hit": 1
     },
     {
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.7955,
+     "p": 0.6537,
      "hit": 0
     },
     {
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.5753,
+     "p": 0.3471,
      "hit": 0
     }
    ],
    "result": {
     "ft": [
-     2,
+     1,
      0
     ],
     "ht": [
      0,
      0
-    ]
-   }
-  },
-  {
-   "id": 565856,
-   "comp": "Bundesliga",
-   "kickoff": "2026-11-08T18:30:00+00:00",
-   "home": "Hoffenheim",
-   "away": "Schalke",
-   "p1x2": {
-    "1": 0.5074,
-    "X": 0.2314,
-    "2": 0.2612
-   },
-   "picks": [
-    {
-     "mk": "1X2",
-     "key": "1",
-     "pick": "Home win (1)",
-     "p": 0.5074
-    },
-    {
-     "mk": "OU",
-     "key": "O",
-     "pick": "Over 2.5",
-     "p": 0.5828
-    },
-    {
-     "mk": "HTFT",
-     "key": "1/1",
-     "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.2926
-    }
-   ],
-   "result": null
-  },
-  {
-   "id": 559636,
-   "comp": "Ligue 1",
-   "kickoff": "2026-11-08T14:00:00+00:00",
-   "home": "Stade Rennais",
-   "away": "Lille",
-   "p1x2": {
-    "1": 0.5114,
-    "X": 0.2458,
-    "2": 0.2427
-   },
-   "picks": [
-    {
-     "mk": "1X2",
-     "key": "1",
-     "pick": "Home win (1)",
-     "p": 0.5114,
-     "hit": 0
-    },
-    {
-     "mk": "OU",
-     "key": "O",
-     "pick": "Over 2.5",
-     "p": 0.5038,
-     "hit": 1
-    },
-    {
-     "mk": "HTFT",
-     "key": "1/1",
-     "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.2979,
-     "hit": 0
-    }
-   ],
-   "result": {
-    "ft": [
-     1,
-     2
-    ],
-    "ht": [
-     1,
-     1
     ]
    }
   },
@@ -2068,6 +1756,321 @@
    }
   },
   {
+   "id": 560639,
+   "comp": "Premier League",
+   "kickoff": "2026-11-08T16:30:00+00:00",
+   "home": "Man United",
+   "away": "Aston Villa",
+   "p1x2": {
+    "1": 0.3349,
+    "X": 0.2541,
+    "2": 0.411
+   },
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "2",
+     "pick": "Away win (2)",
+     "p": 0.411,
+     "hit": 0
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.5199,
+     "hit": 1
+    },
+    {
+     "mk": "HTFT",
+     "key": "2/2",
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.2335,
+     "hit": 0
+    }
+   ],
+   "result": {
+    "ft": [
+     4,
+     4
+    ],
+    "ht": [
+     2,
+     2
+    ]
+   }
+  },
+  {
+   "id": 565854,
+   "comp": "Bundesliga",
+   "kickoff": "2026-11-08T16:30:00+00:00",
+   "home": "Freiburg",
+   "away": "Union Berlin",
+   "p1x2": {
+    "1": 0.8273,
+    "X": 0.1059,
+    "2": 0.0669
+   },
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.8273,
+     "hit": 1
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.7955,
+     "hit": 0
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.5753,
+     "hit": 0
+    }
+   ],
+   "result": {
+    "ft": [
+     2,
+     0
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": 558530,
+   "comp": "Serie A",
+   "kickoff": "2026-11-08T17:00:00+00:00",
+   "home": "Inter",
+   "away": "Como 1907",
+   "p1x2": {
+    "1": 0.4591,
+    "X": 0.2026,
+    "2": 0.3384
+   },
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.4591,
+     "hit": 1
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.7737,
+     "hit": 0
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.2899,
+     "hit": 1
+    }
+   ],
+   "result": {
+    "ft": [
+     2,
+     0
+    ],
+    "ht": [
+     2,
+     0
+    ]
+   }
+  },
+  {
+   "id": 564742,
+   "comp": "La Liga",
+   "kickoff": "2026-11-08T17:30:00+00:00",
+   "home": "Celta",
+   "away": "Levante",
+   "p1x2": {
+    "1": 0.5612,
+    "X": 0.2643,
+    "2": 0.1745
+   },
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.5612,
+     "hit": 0
+    },
+    {
+     "mk": "OU",
+     "key": "U",
+     "pick": "Under 2.5",
+     "p": 0.6305,
+     "hit": 1
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.3384,
+     "hit": 0
+    }
+   ],
+   "result": {
+    "ft": [
+     0,
+     0
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": 564747,
+   "comp": "La Liga",
+   "kickoff": "2026-11-08T17:30:00+00:00",
+   "home": "Villarreal",
+   "away": "Getafe",
+   "p1x2": {
+    "1": 0.6494,
+    "X": 0.2307,
+    "2": 0.1199
+   },
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.6494,
+     "hit": 1
+    },
+    {
+     "mk": "OU",
+     "key": "U",
+     "pick": "Under 2.5",
+     "p": 0.605,
+     "hit": 1
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.4068,
+     "hit": 0
+    }
+   ],
+   "result": {
+    "ft": [
+     2,
+     0
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": 565856,
+   "comp": "Bundesliga",
+   "kickoff": "2026-11-08T18:30:00+00:00",
+   "home": "Hoffenheim",
+   "away": "Schalke",
+   "p1x2": {
+    "1": 0.5074,
+    "X": 0.2314,
+    "2": 0.2612
+   },
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.5074,
+     "hit": 1
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.5828,
+     "hit": 1
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.2926,
+     "hit": 1
+    }
+   ],
+   "result": {
+    "ft": [
+     2,
+     1
+    ],
+    "ht": [
+     2,
+     0
+    ]
+   }
+  },
+  {
+   "id": 558529,
+   "comp": "Serie A",
+   "kickoff": "2026-11-08T19:45:00+00:00",
+   "home": "Fiorentina",
+   "away": "Juventus",
+   "p1x2": {
+    "1": 0.2509,
+    "X": 0.2457,
+    "2": 0.5034
+   },
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "2",
+     "pick": "Away win (2)",
+     "p": 0.5034,
+     "hit": 0
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.5112,
+     "hit": 1
+    },
+    {
+     "mk": "HTFT",
+     "key": "2/2",
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.309,
+     "hit": 0
+    }
+   ],
+   "result": {
+    "ft": [
+     2,
+     2
+    ],
+    "ht": [
+     1,
+     1
+    ]
+   }
+  },
+  {
    "id": 559630,
    "comp": "Ligue 1",
    "kickoff": "2026-11-08T19:45:00+00:00",
@@ -2083,50 +2086,107 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.3944
+     "p": 0.3944,
+     "hit": 0
     },
     {
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.6442
+     "p": 0.6442,
+     "hit": 1
     },
     {
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.227
+     "p": 0.227,
+     "hit": 0
     }
    ],
-   "result": null
+   "result": {
+    "ft": [
+     1,
+     2
+    ],
+    "ht": [
+     1,
+     1
+    ]
+   }
+  },
+  {
+   "id": 564746,
+   "comp": "La Liga",
+   "kickoff": "2026-11-08T20:00:00+00:00",
+   "home": "Atleti",
+   "away": "Bar\u00e7a",
+   "p1x2": {
+    "1": 0.3004,
+    "X": 0.208,
+    "2": 0.4915
+   },
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "2",
+     "pick": "Away win (2)",
+     "p": 0.4915,
+     "hit": 1
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.7271,
+     "hit": 1
+    },
+    {
+     "mk": "HTFT",
+     "key": "2/2",
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.3088,
+     "hit": 0
+    }
+   ],
+   "result": {
+    "ft": [
+     1,
+     2
+    ],
+    "ht": [
+     1,
+     1
+    ]
+   }
   }
  ],
  "summary": {
   "markets": [
    {
     "market": "1X2",
-    "n": 43,
-    "hit_rate": 0.5581395348837209,
-    "avg_prob": 0.536013953488372
+    "n": 48,
+    "hit_rate": 0.5416666666666666,
+    "avg_prob": 0.5313854166666666
    },
    {
     "market": "OU",
-    "n": 43,
-    "hit_rate": 0.627906976744186,
-    "avg_prob": 0.6226813953488374
+    "n": 48,
+    "hit_rate": 0.6666666666666666,
+    "avg_prob": 0.6223145833333333
    },
    {
     "market": "HTFT",
-    "n": 43,
-    "hit_rate": 0.3488372093023256,
-    "avg_prob": 0.32879767441860475
+    "n": 48,
+    "hit_rate": 0.3333333333333333,
+    "avg_prob": 0.32529375
    }
   ],
   "stats": [],
-  "matches": 43,
-  "brier": 0.544940053255814
+  "matches": 48,
+  "brier": 0.5532995566666667
  },
- "updated": "2026-11-08T19:30:56.096445+00:00",
+ "updated": "2026-11-12T20:58:18.533366+00:00",
  "daily_slips": [
   {
    "date": "2026-11-08",
@@ -2142,7 +2202,7 @@
      "id": 564746,
      "comp": "La Liga",
      "kickoff": "2026-11-08T20:00:00+00:00",
-     "hit": null
+     "hit": 1
     },
     {
      "match": "RC Lens vs Marseille",
@@ -2154,7 +2214,7 @@
      "id": 559630,
      "comp": "Ligue 1",
      "kickoff": "2026-11-08T19:45:00+00:00",
-     "hit": null
+     "hit": 1
     },
     {
      "match": "Fiorentina vs Juventus",
@@ -2166,13 +2226,13 @@
      "id": 558529,
      "comp": "Serie A",
      "kickoff": "2026-11-08T19:45:00+00:00",
-     "hit": null
+     "hit": 1
     }
    ],
    "prob": 0.24090720952553465,
    "odds": 4.15,
    "note": "Each leg is a model estimate. Combined probability assumes separate match outcomes and is approximate.",
-   "hit": null
+   "hit": 1
   }
  ]
 }
