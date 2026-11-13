@@ -2186,7 +2186,7 @@
   "matches": 48,
   "brier": 0.5532995566666667
  },
- "updated": "2026-11-13T13:51:14.946032+00:00",
+ "updated": "2026-11-13T21:18:48.296065+00:00",
  "daily_slips": [
   {
    "date": "2026-11-08",
@@ -2233,6 +2233,52 @@
    "odds": 4.15,
    "note": "Each leg is a model estimate. Combined probability assumes separate match outcomes and is approximate.",
    "hit": 1
+  },
+  {
+   "date": "2026-11-20",
+   "updated": "2026-11-13T21:18:48.296065+00:00",
+   "legs": [
+    {
+     "match": "Bayern vs 1. FC K\u00f6ln",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.9375004811675053,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 84%, draw 10%, away 6%; Home or draw has the highest combined probability at 94%.",
+     "id": 565859,
+     "comp": "Bundesliga",
+     "kickoff": "2026-11-20T19:30:00+00:00",
+     "hit": null
+    },
+    {
+     "match": "Athletic vs Espanyol",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.7741598761421435,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 51%, draw 26%, away 23%; Home or draw has the highest combined probability at 77%.",
+     "id": 564748,
+     "comp": "La Liga",
+     "kickoff": "2026-11-20T20:00:00+00:00",
+     "hit": null
+    },
+    {
+     "match": "Troyes vs Le Havre",
+     "mk": "DC",
+     "key": "12",
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.7737343031295432,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 33%, draw 23%, away 44%; Home or away has the highest combined probability at 77%.",
+     "id": 559622,
+     "comp": "Ligue 1",
+     "kickoff": "2026-11-20T19:45:00+00:00",
+     "hit": null
+    }
+   ],
+   "prob": 0.5615572122268128,
+   "odds": 1.78,
+   "note": "Each leg is a model estimate. Combined probability assumes separate match outcomes and is approximate.",
+   "hit": null
   }
  ],
  "journey_slips": []
