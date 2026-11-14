@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T12:54:08.175100+00:00",
+ "updated": "2026-11-14T19:49:30.379727+00:00",
  "demo": false,
  "minimum_prior_matches": 20,
  "method": "Rolling-date backtest on active-season results. Each forecast uses only finished matches from earlier calendar days in the same competition; same-day results are excluded. Baseline is the competition's smoothed prior outcome rate, without team information.",
