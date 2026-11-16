@@ -33,6 +33,19 @@ footer{margin:30px 0 10px;font-size:12px;color:var(--mu)}
  <div class="journey-stat"><span class="journey-label">Target</span><strong>100,000 DH*</strong></div>
 </div>
 <p class="mu">*Paper simulation only: the bot virtually stakes 1% of its simulated balance on each qualifying Journey slip (up to 3% across three slips in a day). Results use model fair odds, not bookmaker prices, so real market margins and prices are excluded. The 100,000 DH goal is not guaranteed; reaching 1,000× in 30 days would require about 25.9% compounded growth every day. The virtual balance is a public model record, not your money.</p>
+<section class="journey-private-sim">
+ <h3>Your private what-if simulation</h3>
+ <p class="mu">Enter the balance for your private virtual run. The bot’s paper strategy allocates 1% of the simulated balance to each qualifying Journey slip, up to 3 slips per day. Use “Update simulated balance” when the amount changes; future virtual allocations use the new amount while already logged stakes stay fixed. “Start over · Day 1” starts a fresh private 30-day run using the number in the field. This balance stays in this browser and is not sent to the site or used by the public paper ledger. This is simulation only, not a real-money betting recommendation.</p>
+ <form id="personal-sim-form" class="journey-checkin personal-sim-form">
+  <label for="personal-sim-input">Your simulated balance (DH)<input id="personal-sim-input" type="number" min="0" step="0.01" value="100" required></label>
+  <button class="copy-button" type="submit">Update simulated balance</button>
+  <button class="copy-button" id="personal-sim-reset" type="button">Start over · Day 1</button>
+ </form>
+ <p id="personal-sim-status" class="mu" aria-live="polite">Loading private simulation…</p>
+ <div id="personal-sim-summary" class="journey-paper-result"></div>
+ <div id="personal-sim-advice" class="mu"></div>
+ <details><summary>Your private simulation log</summary><div id="personal-sim-log" class="journey-future-days"><p class="mu">No private entries yet.</p></div></details>
+</section>
 <div class="journey-guide">
  <p id="journey-status" class="mu" aria-live="polite">Loading the daily slate…</p>
  <button id="journey-start" class="copy-button" type="button" hidden>Start paper Journey</button>
@@ -78,6 +91,8 @@ function dateFromKey(key){const [y,m,d]=key.split("-").map(Number);return new Da
 
 const JOURNEY_STORE_KEY="football-analyst-top-five-journey-state-v2";
 const JOURNEY_OLD_START_KEY="football-analyst-top-five-journey-start-v1";
+const PERSONAL_SIM_KEY="football-analyst-top-five-private-sim-v1";
+let personalSimRun=null;
 let journeyPrediction=null,journeyHistory=null;
 function journeyReadState(){
  try{
@@ -117,7 +132,7 @@ function journeySlipCard(s){
  return "<div class='journey-slip-card'><div class='journey-day-head'><b>Slip "+esc(s.number)+" · "+state+"</b></div>"+
  "<div class='journey-slip-prob'>"+pc(Number(s.prob)||0)+" combined model probability</div>"+
  "<div class='mu'>"+(s.legs||[]).length+" match(es) · about "+Number(s.odds||0).toFixed(2)+"× model fair odds; approximate</div>"+
- "<ol class='slip-legs'>"+legs+"</ol><p class='mu'>"+esc(s.note||"")+"</p>"+journeyPaperHTML(s)+"</div>"
+ "<ol class='slip-legs'>"+legs+"</ol><p class='mu'>"+esc(s.note||"")+"</p>"+journeyPaperHTML(s)+personalSimSlipHTML(s)+"</div>"
 }
 function journeyDayCard(date,number,kind,records,session){
  const rows=records.filter(s=>s.date===date),hasMatches=(journeyPrediction&&journeyPrediction.matches||[]).some(m=>dateKey(m.kickoff)===date);
@@ -132,11 +147,65 @@ function journeyArchiveHTML(records,today){
  const done=records.filter(s=>s.date>=since&&s.date<today&&(s.hit===0||s.hit===1)).sort((a,b)=>(b.date||"").localeCompare(a.date||"")||(Number(b.number)||0)-(Number(a.number)||0));
  return done.length?"<details class='journey-archive'><summary>Completed Journey slips · last 30 days ("+done.length+")</summary><div class='journey-archive-list'>"+done.map(s=>journeySlipCard(s,null,false)).join("")+"</div></details>":"";
 }
+function personalSimRead(){
+ try{const parsed=JSON.parse(localStorage.getItem(PERSONAL_SIM_KEY)||"null");if(parsed&&Array.isArray(parsed.runs)){if(!Number.isInteger(parsed.active))parsed.active=parsed.runs.length-1;return parsed}}catch{}
+ return {runs:[],active:-1}
+}
+function personalSimActive(state){return state.active>=0&&state.active<state.runs.length?state.runs[state.active]:null}
+function personalSimSave(state){try{localStorage.setItem(PERSONAL_SIM_KEY,JSON.stringify(state));return true}catch{return false}}
+function personalRound(value){return Math.round((Number(value)+Number.EPSILON)*100)/100}
+function personalSimNewRun(balance,start){
+ const state=personalSimRead(),run={id:String(Date.now()),start:start||dateKey(new Date()),startedAt:new Date().toISOString(),startingBalance:personalRound(balance),balance:personalRound(balance),entries:{},adjustments:[]};
+ state.runs.push(run);state.active=state.runs.length-1;if(!personalSimSave(state))return null;return run
+}
+function personalSimRender(records,today){
+ let state=personalSimRead(),run=personalSimActive(state);
+ if(!run){run=personalSimNewRun(100,today);state=personalSimRead();run=personalSimActive(state)}
+ if(!run)return;
+ run.entries=run.entries||{};run.adjustments=Array.isArray(run.adjustments)?run.adjustments:[];
+ const endDate=dateFromKey(run.start);endDate.setDate(endDate.getDate()+30);const end=dateKey(endDate),startedAt=Date.parse(run.startedAt||run.start+"T00:00:00");
+ const eligible=records.filter(s=>s.locked&&s.date>=run.start&&s.date<end).sort((a,b)=>(a.date||"").localeCompare(b.date||"")||(Number(a.number)||0)-(Number(b.number)||0));
+ for(const slip of eligible){
+  const id=journeySlipId(slip);let entry=run.entries[id];
+  if(!entry){
+   const lockTime=Date.parse(slip.locked_at||""),futureKick=(slip.legs||[]).some(l=>Date.parse(l.kickoff||"")>startedAt);
+   if(!Number.isFinite(lockTime)||lockTime<startedAt){
+    if(slip.hit===0||slip.hit===1||!futureKick)continue;
+   }
+   entry={date:slip.date,number:slip.number,stake:personalRound(Math.max(0,Number(run.balance)||0)*.01),status:"PENDING",placedAt:slip.locked_at||new Date().toISOString()};
+   run.entries[id]=entry;
+  }
+  if(entry.status==="PENDING"&&(slip.hit===0||slip.hit===1)){
+   const odds=Number(slip.odds)||1/Math.max(Number(slip.prob)||.0001,.0001),profit=slip.hit===1?personalRound(entry.stake*(odds-1)):-entry.stake;
+   run.balance=personalRound(Number(run.balance)+profit);entry.status=slip.hit===1?"HIT":"MISS";entry.profit=profit;entry.balanceAfter=run.balance;entry.settledAt=new Date().toISOString();
+  }
+ }
+ personalSimSave(state);personalSimRun=run;
+ const elapsed=Math.max(0,journeyDayDelta(today,run.start)),day=Math.min(30,elapsed+1),balance=Number(run.balance)||0;
+ document.getElementById("personal-sim-input").value=balance.toFixed(2);
+ document.getElementById("personal-sim-summary").textContent="Day "+day+" of 30 · virtual balance "+balance.toFixed(2)+" DH · simulation only.";
+ const todays=eligible.filter(s=>s.date===today),allocated=todays.reduce((sum,s)=>sum+(Number(run.entries[journeySlipId(s)]?.stake)||0),0);
+ document.getElementById("personal-sim-advice").textContent=todays.length?"What the bot would virtually allocate today: "+allocated.toFixed(2)+" DH across "+todays.length+" qualifying slip(s) · 1% per slip. The estimated P/L uses model fair odds and can be positive or negative.":"No qualifying Journey slip is locked for today, so the simulated bot would skip today.";
+ const rows=Object.entries(run.entries).map(([id,e])=>({id,...e})).sort((a,b)=>(b.date||"").localeCompare(a.date||"")||(Number(b.number)||0)-(Number(a.number)||0));
+ const adjustments=(run.adjustments||[]).map(a=>({date:a.at?.slice(0,10)||run.start,number:"",status:"BALANCE UPDATED",stake:0,profit:null,balanceAfter:a.balance}));
+ const log=rows.map(e=>"<div class='journey-future-item'><b>Day "+Math.max(1,journeyDayDelta(e.date,run.start)+1)+" · "+esc(e.date)+" · Slip "+esc(e.number)+" · "+e.status+"</b><div>Virtual stake "+Number(e.stake||0).toFixed(2)+" DH · "+(e.profit==null?"result pending":"paper P/L "+(Number(e.profit)>0?"+":"")+Number(e.profit).toFixed(2)+" DH · virtual balance "+Number(e.balanceAfter||0).toFixed(2)+" DH")+"</div></div>").join("");
+ const adj=adjustments.map(a=>"<div class='journey-future-item'><b>"+esc(a.date)+" · balance update</b><div>Set private simulated balance to "+Number(a.balanceAfter||0).toFixed(2)+" DH</div></div>").join("");
+ document.getElementById("personal-sim-log").innerHTML=log+adj||"<p class='mu'>No private entries yet.</p>";
+}
+function personalSimSlipHTML(s){
+ const run=personalSimRun;if(!run)return "";
+ const id=journeySlipId(s),entry=run.entries&&run.entries[id],stake=entry?Number(entry.stake):personalRound(Math.max(0,Number(run.balance)||0)*.01);
+ if(!entry&&(s.hit===0||s.hit===1))return "<p class='mu'>Outside this private simulation window.</p>";
+ const label=entry?(entry.status==="PENDING"?"planned virtual allocation":"recorded virtual allocation"):(s.locked?"estimated virtual allocation if this slip were active":"preview allocation if it locks");
+ const profit=stake*((Number(s.odds)||1/Math.max(Number(s.prob)||.0001,.0001))-1);
+ return "<p class='journey-paper-result'><b>Your simulation:</b> "+label+" "+stake.toFixed(2)+" DH (1% of simulated balance) · if HIT, estimated P/L +"+personalRound(profit).toFixed(2)+" DH; if MISS, -"+stake.toFixed(2)+" DH.</p>";
+}
 function journeyPaperBalance(){return Number(journeyPrediction&&journeyPrediction.journey&&journeyPrediction.journey.paper&&journeyPrediction.journey.paper.balance!=null?journeyPrediction.journey.paper.balance:100)}
 function journeyRender(){
  if(!journeyPrediction||!journeyHistory)return;
  const today=dateKey(new Date()),tomorrowDate=dateFromKey(today);tomorrowDate.setDate(tomorrowDate.getDate()+1);const tomorrow=dateKey(tomorrowDate);
  const records=journeyAllRecords(),state=journeyReadState();let session=journeyActive(state);
+ personalSimRender(records,today);
  if(!session){
   const start=(journeyPrediction.journey&&journeyPrediction.journey.start_date)||today;
   state.sessions.push({id:"paper-"+start,start,startingBalance:100,triggerHitId:null,logs:{}});state.active=state.sessions.length-1;journeySaveState(state);session=journeyActive(state);
@@ -166,6 +235,21 @@ function journeyStartNew(triggerHitId){
 }
 document.getElementById("journey-start").addEventListener("click",()=>journeyStartNew(null));
 document.getElementById("journey-new").addEventListener("click",event=>journeyStartNew(event.currentTarget.dataset.hitId||null));
+document.getElementById("personal-sim-form").addEventListener("submit",event=>{
+ event.preventDefault();const state=personalSimRead(),run=personalSimActive(state),input=document.getElementById("personal-sim-input"),value=Number(input.value),status=document.getElementById("personal-sim-status");
+ if(!run){status.textContent="Start the simulation first.";return}
+ if(!Number.isFinite(value)||value<0){status.textContent="Enter a valid virtual balance of 0 DH or more.";return}
+ run.balance=personalRound(value);run.adjustments=Array.isArray(run.adjustments)?run.adjustments:[];run.adjustments.push({at:new Date().toISOString(),balance:run.balance});
+ if(!personalSimSave(state)){status.textContent="This browser could not save the virtual balance.";return}
+ status.textContent="Updated the private simulation balance. Future virtual stakes use this amount.";journeyRender()
+});
+document.getElementById("personal-sim-reset").addEventListener("click",()=>{
+ const state=personalSimRead(),input=document.getElementById("personal-sim-input"),value=Number(input.value),status=document.getElementById("personal-sim-status");
+ if(!Number.isFinite(value)||value<0){status.textContent="Enter a valid starting balance of 0 DH or more.";return}
+ const run=personalSimNewRun(value,dateKey(new Date()));
+ if(!run){status.textContent="This browser could not save a new simulation.";return}
+ status.textContent="New private simulation started at Day 1.";journeyRender()
+});
 function renderJourney(){journeyRender()}
 function dayLabel(key){return key==="unknown"?"Date unavailable":dateFromKey(key).toLocaleDateString(undefined,{weekday:"long",month:"long",day:"numeric",year:"numeric"})}
 function dateOptionLabel(key,n){const today=dateKey(new Date()),tomorrow=new Date();tomorrow.setDate(tomorrow.getDate()+1);const prefix=key==="unknown"?"Date unavailable":key===today?"Today":key===dateKey(tomorrow)?"Tomorrow":dateFromKey(key).toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"});return `${prefix} · ${n} ${n===1?"match":"matches"}`}
