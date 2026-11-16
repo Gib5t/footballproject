@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T23:36:27.017327+00:00",
+ "updated": "2026-11-16T23:41:27.808372+00:00",
  "notes": [],
  "matches": [
   {
@@ -48202,320 +48202,6 @@
    "extra": null
   },
   {
-   "id": 564769,
-   "comp": "La Liga",
-   "status": "SCHEDULED",
-   "kickoff": "2026-12-06T00:00:00+00:00",
-   "home": "Sevilla FC",
-   "away": "M\u00e1laga",
-   "xg": [
-    1.37,
-    0.72
-   ],
-   "p1x2": {
-    "1": 0.5231,
-    "X": 0.2794,
-    "2": 0.1975
-   },
-   "over25": 0.3482,
-   "score": "1-0",
-   "recent": [
-    [
-     {
-      "date": "2026-11-06",
-      "opponent": "Alav\u00e9s",
-      "score": "0-0",
-      "result": "D"
-     },
-     {
-      "date": "2026-11-01",
-      "opponent": "Getafe",
-      "score": "1-3",
-      "result": "L"
-     },
-     {
-      "date": "2026-10-26",
-      "opponent": "Osasuna",
-      "score": "2-0",
-      "result": "W"
-     },
-     {
-      "date": "2026-10-18",
-      "opponent": "Real Madrid",
-      "score": "1-4",
-      "result": "L"
-     },
-     {
-      "date": "2026-10-12",
-      "opponent": "Levante",
-      "score": "3-3",
-      "result": "D"
-     }
-    ],
-    [
-     {
-      "date": "2026-11-07",
-      "opponent": "Santander",
-      "score": "1-2",
-      "result": "L"
-     },
-     {
-      "date": "2026-10-31",
-      "opponent": "Real Betis",
-      "score": "1-2",
-      "result": "L"
-     },
-     {
-      "date": "2026-10-23",
-      "opponent": "Alav\u00e9s",
-      "score": "1-1",
-      "result": "D"
-     },
-     {
-      "date": "2026-10-18",
-      "opponent": "Real Sociedad",
-      "score": "2-5",
-      "result": "L"
-     },
-     {
-      "date": "2026-10-09",
-      "opponent": "Espanyol",
-      "score": "1-1",
-      "result": "D"
-     }
-    ]
-   ],
-   "htft": [
-    [
-     "1/1",
-     0.3071
-    ],
-    [
-     "X/X",
-     0.1981
-    ],
-    [
-     "X/1",
-     0.1968
-    ]
-   ],
-   "picks": [
-    {
-     "match": "Sevilla FC vs M\u00e1laga",
-     "mk": "1X2",
-     "key": "1",
-     "pick": "Home win (1)",
-     "p": 0.5230720749787602,
-     "why": "Expected goals: Sevilla FC 1.37, M\u00e1laga 0.72. Venue-adjusted attack/defence (home 1.31 scored/1.13 conceded; away 0.85 scored/1.70 conceded) plus recent form (1.0 vs 0.4 pts/game last 5). Simulated chances: 52% / 28% / 20%.",
-     "id": 564769,
-     "comp": "La Liga",
-     "kickoff": "2026-12-06T00:00:00+00:00"
-    },
-    {
-     "match": "Sevilla FC vs M\u00e1laga",
-     "mk": "DC",
-     "key": "1X",
-     "pick": "Double chance: Home or draw (1X)",
-     "p": 0.8024604194551952,
-     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 52%, draw 28%, away 20%; Home or draw has the highest combined probability at 80%.",
-     "id": 564769,
-     "comp": "La Liga",
-     "kickoff": "2026-12-06T00:00:00+00:00"
-    },
-    {
-     "match": "Sevilla FC vs M\u00e1laga",
-     "mk": "OU",
-     "key": "U",
-     "pick": "Under 2.5",
-     "p": 0.6517728474945885,
-     "why": "Combined expected goals 2.09. Probability of 3+ goals is 35%, so Under 2.5 is the likelier side.",
-     "id": 564769,
-     "comp": "La Liga",
-     "kickoff": "2026-12-06T00:00:00+00:00"
-    },
-    {
-     "match": "Sevilla FC vs M\u00e1laga",
-     "mk": "BTTS",
-     "key": "N",
-     "pick": "Both teams to score: No",
-     "p": 0.6161927258213123,
-     "why": "Estimated goal means are Sevilla FC 1.37 and M\u00e1laga 0.72. Under independent Poisson scoring, both teams scoring has probability 38%; the selected side is No.",
-     "id": 564769,
-     "comp": "La Liga",
-     "kickoff": "2026-12-06T00:00:00+00:00"
-    },
-    {
-     "match": "Sevilla FC vs M\u00e1laga",
-     "mk": "HTFT",
-     "key": "1/1",
-     "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.30705600570388103,
-     "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
-     "id": 564769,
-     "comp": "La Liga",
-     "kickoff": "2026-12-06T00:00:00+00:00"
-    }
-   ],
-   "extra": null
-  },
-  {
-   "id": 564771,
-   "comp": "La Liga",
-   "status": "SCHEDULED",
-   "kickoff": "2026-12-06T00:00:00+00:00",
-   "home": "Atleti",
-   "away": "Real Betis",
-   "xg": [
-    1.44,
-    1.07
-   ],
-   "p1x2": {
-    "1": 0.4556,
-    "X": 0.2639,
-    "2": 0.2805
-   },
-   "over25": 0.4586,
-   "score": "1-1",
-   "recent": [
-    [
-     {
-      "date": "2026-11-08",
-      "opponent": "Bar\u00e7a",
-      "score": "1-2",
-      "result": "L"
-     },
-     {
-      "date": "2026-10-31",
-      "opponent": "Levante",
-      "score": "2-0",
-      "result": "W"
-     },
-     {
-      "date": "2026-10-24",
-      "opponent": "Deportivo",
-      "score": "1-0",
-      "result": "W"
-     },
-     {
-      "date": "2026-10-17",
-      "opponent": "Espanyol",
-      "score": "1-0",
-      "result": "W"
-     },
-     {
-      "date": "2026-10-10",
-      "opponent": "Alav\u00e9s",
-      "score": "2-1",
-      "result": "W"
-     }
-    ],
-    [
-     {
-      "date": "2026-11-08",
-      "opponent": "Elche",
-      "score": "2-0",
-      "result": "W"
-     },
-     {
-      "date": "2026-10-31",
-      "opponent": "M\u00e1laga",
-      "score": "2-1",
-      "result": "W"
-     },
-     {
-      "date": "2026-10-25",
-      "opponent": "Celta",
-      "score": "0-0",
-      "result": "D"
-     },
-     {
-      "date": "2026-10-17",
-      "opponent": "Bar\u00e7a",
-      "score": "2-5",
-      "result": "L"
-     },
-     {
-      "date": "2026-10-11",
-      "opponent": "Osasuna",
-      "score": "5-2",
-      "result": "W"
-     }
-    ]
-   ],
-   "htft": [
-    [
-     "1/1",
-     0.2674
-    ],
-    [
-     "X/X",
-     0.1661
-    ],
-    [
-     "X/1",
-     0.1645
-    ]
-   ],
-   "picks": [
-    {
-     "match": "Atleti vs Real Betis",
-     "mk": "1X2",
-     "key": "1",
-     "pick": "Home win (1)",
-     "p": 0.4556286062157271,
-     "why": "Expected goals: Atleti 1.44, Real Betis 1.07. Venue-adjusted attack/defence (home 1.77 scored/1.03 conceded; away 1.29 scored/1.24 conceded) plus recent form (2.4 vs 2.0 pts/game last 5). Simulated chances: 46% / 26% / 28%.",
-     "id": 564771,
-     "comp": "La Liga",
-     "kickoff": "2026-12-06T00:00:00+00:00"
-    },
-    {
-     "match": "Atleti vs Real Betis",
-     "mk": "DC",
-     "key": "12",
-     "pick": "Double chance: Home or away (12)",
-     "p": 0.7361366445610436,
-     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 46%, draw 26%, away 28%; Home or away has the highest combined probability at 74%.",
-     "id": 564771,
-     "comp": "La Liga",
-     "kickoff": "2026-12-06T00:00:00+00:00"
-    },
-    {
-     "match": "Atleti vs Real Betis",
-     "mk": "OU",
-     "key": "U",
-     "pick": "Under 2.5",
-     "p": 0.5414401524252619,
-     "why": "Combined expected goals 2.51. Probability of 3+ goals is 46%, so Under 2.5 is the likelier side.",
-     "id": 564771,
-     "comp": "La Liga",
-     "kickoff": "2026-12-06T00:00:00+00:00"
-    },
-    {
-     "match": "Atleti vs Real Betis",
-     "mk": "BTTS",
-     "key": "Y",
-     "pick": "Both teams to score: Yes",
-     "p": 0.5011679009472977,
-     "why": "Estimated goal means are Atleti 1.44 and Real Betis 1.07. Under independent Poisson scoring, both teams scoring has probability 50%; the selected side is Yes.",
-     "id": 564771,
-     "comp": "La Liga",
-     "kickoff": "2026-12-06T00:00:00+00:00"
-    },
-    {
-     "match": "Atleti vs Real Betis",
-     "mk": "HTFT",
-     "key": "1/1",
-     "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.26741908503521794,
-     "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
-     "id": 564771,
-     "comp": "La Liga",
-     "kickoff": "2026-12-06T00:00:00+00:00"
-    }
-   ],
-   "extra": null
-  },
-  {
    "id": 564768,
    "comp": "La Liga",
    "status": "TIMED",
@@ -48982,6 +48668,320 @@
      "id": 564774,
      "comp": "La Liga",
      "kickoff": "2026-12-06T17:30:00+00:00"
+    }
+   ],
+   "extra": null
+  },
+  {
+   "id": 564771,
+   "comp": "La Liga",
+   "status": "TIMED",
+   "kickoff": "2026-12-06T20:00:00+00:00",
+   "home": "Atleti",
+   "away": "Real Betis",
+   "xg": [
+    1.44,
+    1.07
+   ],
+   "p1x2": {
+    "1": 0.4556,
+    "X": 0.2639,
+    "2": 0.2805
+   },
+   "over25": 0.4586,
+   "score": "1-1",
+   "recent": [
+    [
+     {
+      "date": "2026-11-08",
+      "opponent": "Bar\u00e7a",
+      "score": "1-2",
+      "result": "L"
+     },
+     {
+      "date": "2026-10-31",
+      "opponent": "Levante",
+      "score": "2-0",
+      "result": "W"
+     },
+     {
+      "date": "2026-10-24",
+      "opponent": "Deportivo",
+      "score": "1-0",
+      "result": "W"
+     },
+     {
+      "date": "2026-10-17",
+      "opponent": "Espanyol",
+      "score": "1-0",
+      "result": "W"
+     },
+     {
+      "date": "2026-10-10",
+      "opponent": "Alav\u00e9s",
+      "score": "2-1",
+      "result": "W"
+     }
+    ],
+    [
+     {
+      "date": "2026-11-08",
+      "opponent": "Elche",
+      "score": "2-0",
+      "result": "W"
+     },
+     {
+      "date": "2026-10-31",
+      "opponent": "M\u00e1laga",
+      "score": "2-1",
+      "result": "W"
+     },
+     {
+      "date": "2026-10-25",
+      "opponent": "Celta",
+      "score": "0-0",
+      "result": "D"
+     },
+     {
+      "date": "2026-10-17",
+      "opponent": "Bar\u00e7a",
+      "score": "2-5",
+      "result": "L"
+     },
+     {
+      "date": "2026-10-11",
+      "opponent": "Osasuna",
+      "score": "5-2",
+      "result": "W"
+     }
+    ]
+   ],
+   "htft": [
+    [
+     "1/1",
+     0.2674
+    ],
+    [
+     "X/X",
+     0.1661
+    ],
+    [
+     "X/1",
+     0.1645
+    ]
+   ],
+   "picks": [
+    {
+     "match": "Atleti vs Real Betis",
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.4556286062157271,
+     "why": "Expected goals: Atleti 1.44, Real Betis 1.07. Venue-adjusted attack/defence (home 1.77 scored/1.03 conceded; away 1.29 scored/1.24 conceded) plus recent form (2.4 vs 2.0 pts/game last 5). Simulated chances: 46% / 26% / 28%.",
+     "id": 564771,
+     "comp": "La Liga",
+     "kickoff": "2026-12-06T20:00:00+00:00"
+    },
+    {
+     "match": "Atleti vs Real Betis",
+     "mk": "DC",
+     "key": "12",
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.7361366445610436,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 46%, draw 26%, away 28%; Home or away has the highest combined probability at 74%.",
+     "id": 564771,
+     "comp": "La Liga",
+     "kickoff": "2026-12-06T20:00:00+00:00"
+    },
+    {
+     "match": "Atleti vs Real Betis",
+     "mk": "OU",
+     "key": "U",
+     "pick": "Under 2.5",
+     "p": 0.5414401524252619,
+     "why": "Combined expected goals 2.51. Probability of 3+ goals is 46%, so Under 2.5 is the likelier side.",
+     "id": 564771,
+     "comp": "La Liga",
+     "kickoff": "2026-12-06T20:00:00+00:00"
+    },
+    {
+     "match": "Atleti vs Real Betis",
+     "mk": "BTTS",
+     "key": "Y",
+     "pick": "Both teams to score: Yes",
+     "p": 0.5011679009472977,
+     "why": "Estimated goal means are Atleti 1.44 and Real Betis 1.07. Under independent Poisson scoring, both teams scoring has probability 50%; the selected side is Yes.",
+     "id": 564771,
+     "comp": "La Liga",
+     "kickoff": "2026-12-06T20:00:00+00:00"
+    },
+    {
+     "match": "Atleti vs Real Betis",
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.26741908503521794,
+     "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
+     "id": 564771,
+     "comp": "La Liga",
+     "kickoff": "2026-12-06T20:00:00+00:00"
+    }
+   ],
+   "extra": null
+  },
+  {
+   "id": 564769,
+   "comp": "La Liga",
+   "status": "TIMED",
+   "kickoff": "2026-12-07T20:00:00+00:00",
+   "home": "Sevilla FC",
+   "away": "M\u00e1laga",
+   "xg": [
+    1.37,
+    0.72
+   ],
+   "p1x2": {
+    "1": 0.5231,
+    "X": 0.2794,
+    "2": 0.1975
+   },
+   "over25": 0.3482,
+   "score": "1-0",
+   "recent": [
+    [
+     {
+      "date": "2026-11-06",
+      "opponent": "Alav\u00e9s",
+      "score": "0-0",
+      "result": "D"
+     },
+     {
+      "date": "2026-11-01",
+      "opponent": "Getafe",
+      "score": "1-3",
+      "result": "L"
+     },
+     {
+      "date": "2026-10-26",
+      "opponent": "Osasuna",
+      "score": "2-0",
+      "result": "W"
+     },
+     {
+      "date": "2026-10-18",
+      "opponent": "Real Madrid",
+      "score": "1-4",
+      "result": "L"
+     },
+     {
+      "date": "2026-10-12",
+      "opponent": "Levante",
+      "score": "3-3",
+      "result": "D"
+     }
+    ],
+    [
+     {
+      "date": "2026-11-07",
+      "opponent": "Santander",
+      "score": "1-2",
+      "result": "L"
+     },
+     {
+      "date": "2026-10-31",
+      "opponent": "Real Betis",
+      "score": "1-2",
+      "result": "L"
+     },
+     {
+      "date": "2026-10-23",
+      "opponent": "Alav\u00e9s",
+      "score": "1-1",
+      "result": "D"
+     },
+     {
+      "date": "2026-10-18",
+      "opponent": "Real Sociedad",
+      "score": "2-5",
+      "result": "L"
+     },
+     {
+      "date": "2026-10-09",
+      "opponent": "Espanyol",
+      "score": "1-1",
+      "result": "D"
+     }
+    ]
+   ],
+   "htft": [
+    [
+     "1/1",
+     0.3071
+    ],
+    [
+     "X/X",
+     0.1981
+    ],
+    [
+     "X/1",
+     0.1968
+    ]
+   ],
+   "picks": [
+    {
+     "match": "Sevilla FC vs M\u00e1laga",
+     "mk": "1X2",
+     "key": "1",
+     "pick": "Home win (1)",
+     "p": 0.5230720749787602,
+     "why": "Expected goals: Sevilla FC 1.37, M\u00e1laga 0.72. Venue-adjusted attack/defence (home 1.31 scored/1.13 conceded; away 0.85 scored/1.70 conceded) plus recent form (1.0 vs 0.4 pts/game last 5). Simulated chances: 52% / 28% / 20%.",
+     "id": 564769,
+     "comp": "La Liga",
+     "kickoff": "2026-12-07T20:00:00+00:00"
+    },
+    {
+     "match": "Sevilla FC vs M\u00e1laga",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.8024604194551952,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 52%, draw 28%, away 20%; Home or draw has the highest combined probability at 80%.",
+     "id": 564769,
+     "comp": "La Liga",
+     "kickoff": "2026-12-07T20:00:00+00:00"
+    },
+    {
+     "match": "Sevilla FC vs M\u00e1laga",
+     "mk": "OU",
+     "key": "U",
+     "pick": "Under 2.5",
+     "p": 0.6517728474945885,
+     "why": "Combined expected goals 2.09. Probability of 3+ goals is 35%, so Under 2.5 is the likelier side.",
+     "id": 564769,
+     "comp": "La Liga",
+     "kickoff": "2026-12-07T20:00:00+00:00"
+    },
+    {
+     "match": "Sevilla FC vs M\u00e1laga",
+     "mk": "BTTS",
+     "key": "N",
+     "pick": "Both teams to score: No",
+     "p": 0.6161927258213123,
+     "why": "Estimated goal means are Sevilla FC 1.37 and M\u00e1laga 0.72. Under independent Poisson scoring, both teams scoring has probability 38%; the selected side is No.",
+     "id": 564769,
+     "comp": "La Liga",
+     "kickoff": "2026-12-07T20:00:00+00:00"
+    },
+    {
+     "match": "Sevilla FC vs M\u00e1laga",
+     "mk": "HTFT",
+     "key": "1/1",
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.30705600570388103,
+     "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
+     "id": 564769,
+     "comp": "La Liga",
+     "kickoff": "2026-12-07T20:00:00+00:00"
     }
    ],
    "extra": null
