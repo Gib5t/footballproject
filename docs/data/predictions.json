@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T23:19:08.593948+00:00",
+ "updated": "2026-11-16T23:36:27.017327+00:00",
  "notes": [],
  "matches": [
   {
@@ -318569,7 +318569,7 @@
    "p1x2": {
     "1": 0.3104,
     "X": 0.2425,
-    "2": 0.447
+    "2": 0.4471
    },
    "over25": 0.5638,
    "score": "1-1",
@@ -318642,7 +318642,7 @@
    "htft": [
     [
      "2/2",
-     0.2726
+     0.2727
     ],
     [
      "1/1",
@@ -318659,7 +318659,7 @@
      "mk": "1X2",
      "key": "2",
      "pick": "Away win (2)",
-     "p": 0.44704432994879495,
+     "p": 0.4471130472747661,
      "why": "Expected goals: Coritiba 1.32, Santos 1.63. Venue-adjusted attack/defence (home 1.41 scored/1.24 conceded; away 1.52 scored/1.48 conceded) plus recent form (0.8 vs 1.0 pts/game last 5). Simulated chances: 31% / 24% / 45%.",
      "id": 555081,
      "comp": "Brazil Serie A",
@@ -318670,7 +318670,7 @@
      "mk": "DC",
      "key": "12",
      "pick": "Double chance: Home or away (12)",
-     "p": 0.7574914562845103,
+     "p": 0.7575022810160579,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 31%, draw 24%, away 45%; Home or away has the highest combined probability at 76%.",
      "id": 555081,
      "comp": "Brazil Serie A",
@@ -318681,7 +318681,7 @@
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.5637798317970448,
+     "p": 0.5638033551507238,
      "why": "Combined expected goals 2.94. Probability of 3+ goals is 56%, so Over 2.5 is the likelier side.",
      "id": 555081,
      "comp": "Brazil Serie A",
@@ -318692,7 +318692,7 @@
      "mk": "BTTS",
      "key": "Y",
      "pick": "Both teams to score: Yes",
-     "p": 0.5879459537744774,
+     "p": 0.5879540060446338,
      "why": "Estimated goal means are Coritiba 1.32 and Santos 1.63. Under independent Poisson scoring, both teams scoring has probability 59%; the selected side is Yes.",
      "id": 555081,
      "comp": "Brazil Serie A",
@@ -318703,7 +318703,7 @@
      "mk": "HTFT",
      "key": "2/2",
      "pick": "HT Away win / FT Away win (2/2)",
-     "p": 0.27264247140069486,
+     "p": 0.27269183841953204,
      "why": "Each half is simulated separately using the league's real first-half goal share. 2/2 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555081,
      "comp": "Brazil Serie A",
@@ -318816,7 +318816,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.5636001559174786,
+     "p": 0.5635812977108663,
      "why": "Expected goals: Clube do Remo 1.63, Chapecoense 0.83. Venue-adjusted attack/defence (home 1.36 scored/1.26 conceded; away 0.78 scored/1.88 conceded) plus recent form (1.0 vs 0.6 pts/game last 5). Simulated chances: 56% / 25% / 19%.",
      "id": 555086,
      "comp": "Brazil Serie A",
@@ -318827,7 +318827,7 @@
      "mk": "DC",
      "key": "1X",
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.8105014556728009,
+     "p": 0.8104844703664756,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 56%, draw 25%, away 19%; Home or draw has the highest combined probability at 81%.",
      "id": 555086,
      "comp": "Brazil Serie A",
@@ -318838,7 +318838,7 @@
      "mk": "OU",
      "key": "U",
      "pick": "Under 2.5",
-     "p": 0.5561794644441698,
+     "p": 0.5561657197489405,
      "why": "Combined expected goals 2.45. Probability of 3+ goals is 44%, so Under 2.5 is the likelier side.",
      "id": 555086,
      "comp": "Brazil Serie A",
@@ -318849,7 +318849,7 @@
      "mk": "BTTS",
      "key": "N",
      "pick": "Both teams to score: No",
-     "p": 0.5484480797521107,
+     "p": 0.5484269277405056,
      "why": "Estimated goal means are Clube do Remo 1.63 and Chapecoense 0.83. Under independent Poisson scoring, both teams scoring has probability 45%; the selected side is No.",
      "id": 555086,
      "comp": "Brazil Serie A",
@@ -318860,7 +318860,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.3504312255480371,
+     "p": 0.35041805514471985,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555086,
      "comp": "Brazil Serie A",
@@ -318960,7 +318960,7 @@
     ],
     [
      "X/X",
-     0.1893
+     0.1894
     ],
     [
      "1/1",
@@ -318973,7 +318973,7 @@
      "mk": "1X2",
      "key": "2",
      "pick": "Away win (2)",
-     "p": 0.40742460095664507,
+     "p": 0.4074143774237753,
      "why": "Expected goals: Cruzeiro 1.03, Palmeiras 1.23. Venue-adjusted attack/defence (home 1.79 scored/1.02 conceded; away 1.32 scored/0.85 conceded) plus recent form (2.4 vs 2.6 pts/game last 5). Simulated chances: 31% / 29% / 41%.",
      "id": 555082,
      "comp": "Brazil Serie A",
@@ -318984,7 +318984,7 @@
      "mk": "DC",
      "key": "12",
      "pick": "Double chance: Home or away (12)",
-     "p": 0.7148249408905722,
+     "p": 0.7148123210989783,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 31%, draw 29%, away 41%; Home or away has the highest combined probability at 71%.",
      "id": 555082,
      "comp": "Brazil Serie A",
@@ -318995,7 +318995,7 @@
      "mk": "OU",
      "key": "U",
      "pick": "Under 2.5",
-     "p": 0.6080535879505689,
+     "p": 0.608097024499727,
      "why": "Combined expected goals 2.25. Probability of 3+ goals is 39%, so Under 2.5 is the likelier side.",
      "id": 555082,
      "comp": "Brazil Serie A",
@@ -319006,7 +319006,7 @@
      "mk": "BTTS",
      "key": "N",
      "pick": "Both teams to score: No",
-     "p": 0.5461278528927676,
+     "p": 0.5461630751879993,
      "why": "Estimated goal means are Cruzeiro 1.03 and Palmeiras 1.23. Under independent Poisson scoring, both teams scoring has probability 45%; the selected side is No.",
      "id": 555082,
      "comp": "Brazil Serie A",
@@ -319017,7 +319017,7 @@
      "mk": "HTFT",
      "key": "2/2",
      "pick": "HT Away win / FT Away win (2/2)",
-     "p": 0.23769293828074115,
+     "p": 0.23768413353541146,
      "why": "Each half is simulated separately using the league's real first-half goal share. 2/2 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555082,
      "comp": "Brazil Serie A",
@@ -319040,9 +319040,9 @@
    "p1x2": {
     "1": 0.6036,
     "X": 0.2076,
-    "2": 0.1888
+    "2": 0.1889
    },
-   "over25": 0.606,
+   "over25": 0.6061,
    "score": "2-1",
    "recent": [
     [
@@ -319113,7 +319113,7 @@
    "htft": [
     [
      "1/1",
-     0.3917
+     0.3916
     ],
     [
      "X/1",
@@ -319130,7 +319130,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.6035900684769168,
+     "p": 0.6035558687267635,
      "why": "Expected goals: Flamengo 2.07, Paranaense 1.07. Venue-adjusted attack/defence (home 1.97 scored/0.88 conceded; away 1.43 scored/1.52 conceded) plus recent form (3.0 vs 0.8 pts/game last 5). Simulated chances: 60% / 21% / 19%.",
      "id": 555083,
      "comp": "Brazil Serie A",
@@ -319141,7 +319141,7 @@
      "mk": "DC",
      "key": "1X",
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.8111609925555443,
+     "p": 0.8111271020682728,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 60%, draw 21%, away 19%; Home or draw has the highest combined probability at 81%.",
      "id": 555083,
      "comp": "Brazil Serie A",
@@ -319152,7 +319152,7 @@
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.6060423142154654,
+     "p": 0.6060954354736604,
      "why": "Combined expected goals 3.13. Probability of 3+ goals is 61%, so Over 2.5 is the likelier side.",
      "id": 555083,
      "comp": "Brazil Serie A",
@@ -319163,7 +319163,7 @@
      "mk": "BTTS",
      "key": "Y",
      "pick": "Both teams to score: Yes",
-     "p": 0.5730273595726537,
+     "p": 0.5730902486086253,
      "why": "Estimated goal means are Flamengo 2.07 and Paranaense 1.07. Under independent Poisson scoring, both teams scoring has probability 57%; the selected side is Yes.",
      "id": 555083,
      "comp": "Brazil Serie A",
@@ -319174,7 +319174,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.39165085946869554,
+     "p": 0.3916270667176777,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555083,
      "comp": "Brazil Serie A",
@@ -319287,7 +319287,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.48323587627780784,
+     "p": 0.4832324069386795,
      "why": "Expected goals: Corinthians 1.36, Botafogo 0.86. Venue-adjusted attack/defence (home 1.23 scored/1.07 conceded; away 0.92 scored/1.73 conceded) plus recent form (1.0 vs 1.4 pts/game last 5). Simulated chances: 48% / 28% / 24%.",
      "id": 555080,
      "comp": "Brazil Serie A",
@@ -319298,7 +319298,7 @@
      "mk": "DC",
      "key": "1X",
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.7616259783471341,
+     "p": 0.7616220742924524,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 48%, draw 28%, away 24%; Home or draw has the highest combined probability at 76%.",
      "id": 555080,
      "comp": "Brazil Serie A",
@@ -319309,7 +319309,7 @@
      "mk": "OU",
      "key": "U",
      "pick": "Under 2.5",
-     "p": 0.61780063481612,
+     "p": 0.6177966618235367,
      "why": "Combined expected goals 2.22. Probability of 3+ goals is 38%, so Under 2.5 is the likelier side.",
      "id": 555080,
      "comp": "Brazil Serie A",
@@ -319320,7 +319320,7 @@
      "mk": "BTTS",
      "key": "N",
      "pick": "Both teams to score: No",
-     "p": 0.5710740553006918,
+     "p": 0.5710694893348338,
      "why": "Estimated goal means are Corinthians 1.36 and Botafogo 0.86. Under independent Poisson scoring, both teams scoring has probability 43%; the selected side is No.",
      "id": 555080,
      "comp": "Brazil Serie A",
@@ -319331,7 +319331,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.28874851069606533,
+     "p": 0.2887463239163183,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555080,
      "comp": "Brazil Serie A",
@@ -319356,7 +319356,7 @@
     "X": 0.242,
     "2": 0.3592
    },
-   "over25": 0.5803,
+   "over25": 0.5804,
    "score": "1-1",
    "recent": [
     [
@@ -319444,7 +319444,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.3988021031259234,
+     "p": 0.3987991936357764,
      "why": "Expected goals: Gr\u00eamio 1.55, Bahia 1.46. Venue-adjusted attack/defence (home 1.52 scored/1.24 conceded; away 1.35 scored/1.58 conceded) plus recent form (1.4 vs 1.4 pts/game last 5). Simulated chances: 40% / 24% / 36%.",
      "id": 555084,
      "comp": "Brazil Serie A",
@@ -319455,7 +319455,7 @@
      "mk": "DC",
      "key": "12",
      "pick": "Double chance: Home or away (12)",
-     "p": 0.7579885650361466,
+     "p": 0.7580064333093062,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 40%, draw 24%, away 36%; Home or away has the highest combined probability at 76%.",
      "id": 555084,
      "comp": "Brazil Serie A",
@@ -319466,7 +319466,7 @@
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.5803326771765658,
+     "p": 0.5804213365103703,
      "why": "Combined expected goals 3.02. Probability of 3+ goals is 58%, so Over 2.5 is the likelier side.",
      "id": 555084,
      "comp": "Brazil Serie A",
@@ -319477,7 +319477,7 @@
      "mk": "BTTS",
      "key": "Y",
      "pick": "Both teams to score: Yes",
-     "p": 0.6058032067613297,
+     "p": 0.6058723582461827,
      "why": "Estimated goal means are Gr\u00eamio 1.55 and Bahia 1.46. Under independent Poisson scoring, both teams scoring has probability 61%; the selected side is Yes.",
      "id": 555084,
      "comp": "Brazil Serie A",
@@ -319488,7 +319488,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.2399239404266067,
+     "p": 0.23992551739222504,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555084,
      "comp": "Brazil Serie A",
@@ -319509,9 +319509,9 @@
     1.18
    ],
    "p1x2": {
-    "1": 0.4779,
+    "1": 0.4775,
     "X": 0.2457,
-    "2": 0.2765
+    "2": 0.2768
    },
    "over25": 0.5307,
    "score": "1-1",
@@ -319584,11 +319584,11 @@
    "htft": [
     [
      "1/1",
-     0.2929
+     0.2926
     ],
     [
      "2/2",
-     0.158
+     0.1581
     ],
     [
      "X/1",
@@ -319601,7 +319601,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.47786377558515286,
+     "p": 0.4775387363557324,
      "why": "Expected goals: Vasco da Gama 1.62, Internacional 1.18. Venue-adjusted attack/defence (home 1.60 scored/1.42 conceded; away 0.95 scored/1.54 conceded) plus recent form (1.8 vs 1.4 pts/game last 5). Simulated chances: 48% / 25% / 28%.",
      "id": 555088,
      "comp": "Brazil Serie A",
@@ -319612,7 +319612,7 @@
      "mk": "DC",
      "key": "12",
      "pick": "Double chance: Home or away (12)",
-     "p": 0.7543484766000277,
+     "p": 0.754291786555422,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 48%, draw 25%, away 28%; Home or away has the highest combined probability at 75%.",
      "id": 555088,
      "comp": "Brazil Serie A",
@@ -319623,7 +319623,7 @@
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.530740083669974,
+     "p": 0.5306721200903317,
      "why": "Combined expected goals 2.80. Probability of 3+ goals is 53%, so Over 2.5 is the likelier side.",
      "id": 555088,
      "comp": "Brazil Serie A",
@@ -319634,7 +319634,7 @@
      "mk": "BTTS",
      "key": "Y",
      "pick": "Both teams to score: Yes",
-     "p": 0.5553660983072936,
+     "p": 0.5553869842486838,
      "why": "Estimated goal means are Vasco da Gama 1.62 and Internacional 1.18. Under independent Poisson scoring, both teams scoring has probability 56%; the selected side is Yes.",
      "id": 555088,
      "comp": "Brazil Serie A",
@@ -319645,7 +319645,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.2928824967843342,
+     "p": 0.29264725815423714,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555088,
      "comp": "Brazil Serie A",
@@ -319666,11 +319666,11 @@
     0.97
    ],
    "p1x2": {
-    "1": 0.3915,
+    "1": 0.3917,
     "X": 0.299,
-    "2": 0.3095
+    "2": 0.3093
    },
-   "over25": 0.3482,
+   "over25": 0.3481,
    "score": "1-0",
    "recent": [
     [
@@ -319741,7 +319741,7 @@
    "htft": [
     [
      "1/1",
-     0.2252
+     0.2253
     ],
     [
      "X/X",
@@ -319749,7 +319749,7 @@
     ],
     [
      "2/2",
-     0.173
+     0.1729
     ]
    ],
    "picks": [
@@ -319758,7 +319758,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.3915131825937184,
+     "p": 0.39170831346518425,
      "why": "Expected goals: Vit\u00f3ria 1.13, Bragantino 0.97. Venue-adjusted attack/defence (home 1.32 scored/1.18 conceded; away 0.91 scored/1.37 conceded) plus recent form (0.4 vs 2.0 pts/game last 5). Simulated chances: 39% / 30% / 31%.",
      "id": 555089,
      "comp": "Brazil Serie A",
@@ -319769,7 +319769,7 @@
      "mk": "DC",
      "key": "12",
      "pick": "Double chance: Home or away (12)",
-     "p": 0.7010385271664386,
+     "p": 0.7010381853272267,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 39%, draw 30%, away 31%; Home or away has the highest combined probability at 70%.",
      "id": 555089,
      "comp": "Brazil Serie A",
@@ -319780,7 +319780,7 @@
      "mk": "OU",
      "key": "U",
      "pick": "Under 2.5",
-     "p": 0.6518261716530442,
+     "p": 0.651866240511507,
      "why": "Combined expected goals 2.09. Probability of 3+ goals is 35%, so Under 2.5 is the likelier side.",
      "id": 555089,
      "comp": "Brazil Serie A",
@@ -319791,7 +319791,7 @@
      "mk": "BTTS",
      "key": "N",
      "pick": "Both teams to score: No",
-     "p": 0.5815097113070402,
+     "p": 0.5815650157605724,
      "why": "Estimated goal means are Vit\u00f3ria 1.13 and Bragantino 0.97. Under independent Poisson scoring, both teams scoring has probability 42%; the selected side is No.",
      "id": 555089,
      "comp": "Brazil Serie A",
@@ -319802,7 +319802,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.22519289130266565,
+     "p": 0.22531836864226096,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555089,
      "comp": "Brazil Serie A",
@@ -319915,7 +319915,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.43112835049418247,
+     "p": 0.43113223351445973,
      "why": "Expected goals: S\u00e3o Paulo 1.31, Fluminense 1.02. Venue-adjusted attack/defence (home 1.37 scored/0.84 conceded; away 1.41 scored/1.47 conceded) plus recent form (1.6 vs 1.2 pts/game last 5). Simulated chances: 43% / 28% / 29%.",
      "id": 555087,
      "comp": "Brazil Serie A",
@@ -319926,7 +319926,7 @@
      "mk": "DC",
      "key": "12",
      "pick": "Double chance: Home or away (12)",
-     "p": 0.7224040637957063,
+     "p": 0.7224189830318036,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 43%, draw 28%, away 29%; Home or away has the highest combined probability at 72%.",
      "id": 555087,
      "comp": "Brazil Serie A",
@@ -319937,7 +319937,7 @@
      "mk": "OU",
      "key": "U",
      "pick": "Under 2.5",
-     "p": 0.5871287190586387,
+     "p": 0.5870718483759396,
      "why": "Combined expected goals 2.33. Probability of 3+ goals is 41%, so Under 2.5 is the likelier side.",
      "id": 555087,
      "comp": "Brazil Serie A",
@@ -319948,7 +319948,7 @@
      "mk": "BTTS",
      "key": "N",
      "pick": "Both teams to score: No",
-     "p": 0.5321340490879176,
+     "p": 0.5320870155176952,
      "why": "Estimated goal means are S\u00e3o Paulo 1.31 and Fluminense 1.02. Under independent Poisson scoring, both teams scoring has probability 47%; the selected side is No.",
      "id": 555087,
      "comp": "Brazil Serie A",
@@ -319959,7 +319959,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.25459072183809495,
+     "p": 0.254596109054865,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555087,
      "comp": "Brazil Serie A",
@@ -320072,7 +320072,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.41920839251434233,
+     "p": 0.4191981797327615,
      "why": "Expected goals: Palmeiras 1.59, Flamengo 1.40. Venue-adjusted attack/defence (home 2.16 scored/0.74 conceded; away 2.02 scored/1.08 conceded) plus recent form (2.6 vs 3.0 pts/game last 5). Simulated chances: 42% / 24% / 34%.",
      "id": 555098,
      "comp": "Brazil Serie A",
@@ -320083,7 +320083,7 @@
      "mk": "DC",
      "key": "12",
      "pick": "Double chance: Home or away (12)",
-     "p": 0.7575712474255587,
+     "p": 0.7575715705302541,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 42%, draw 24%, away 34%; Home or away has the highest combined probability at 76%.",
      "id": 555098,
      "comp": "Brazil Serie A",
@@ -320094,7 +320094,7 @@
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.5742014739300897,
+     "p": 0.5742058134876981,
      "why": "Combined expected goals 2.99. Probability of 3+ goals is 57%, so Over 2.5 is the likelier side.",
      "id": 555098,
      "comp": "Brazil Serie A",
@@ -320105,7 +320105,7 @@
      "mk": "BTTS",
      "key": "Y",
      "pick": "Both teams to score: Yes",
-     "p": 0.5996156146411334,
+     "p": 0.5996199565331369,
      "why": "Estimated goal means are Palmeiras 1.59 and Flamengo 1.40. Under independent Poisson scoring, both teams scoring has probability 60%; the selected side is Yes.",
      "id": 555098,
      "comp": "Brazil Serie A",
@@ -320116,7 +320116,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.2536979767986961,
+     "p": 0.2536910991138198,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555098,
      "comp": "Brazil Serie A",
@@ -320137,11 +320137,11 @@
     0.9
    ],
    "p1x2": {
-    "1": 0.5886,
-    "X": 0.2277,
-    "2": 0.1837
+    "1": 0.5882,
+    "X": 0.2279,
+    "2": 0.184
    },
-   "over25": 0.5097,
+   "over25": 0.5095,
    "score": "1-0",
    "recent": [
     [
@@ -320212,15 +320212,15 @@
    "htft": [
     [
      "1/1",
-     0.3737
+     0.3734
     ],
     [
      "X/1",
-     0.1872
+     0.1871
     ],
     [
      "X/X",
-     0.1405
+     0.1406
     ]
    ],
    "picks": [
@@ -320229,7 +320229,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.5885624207666542,
+     "p": 0.5881691558328374,
      "why": "Expected goals: Bahia 1.81, Coritiba 0.90. Venue-adjusted attack/defence (home 1.54 scored/1.20 conceded; away 0.88 scored/1.82 conceded) plus recent form (1.4 vs 0.8 pts/game last 5). Simulated chances: 59% / 23% / 18%.",
      "id": 555092,
      "comp": "Brazil Serie A",
@@ -320240,7 +320240,7 @@
      "mk": "DC",
      "key": "1X",
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.8162671401764974,
+     "p": 0.8160192375548031,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 59%, draw 23%, away 18%; Home or draw has the highest combined probability at 82%.",
      "id": 555092,
      "comp": "Brazil Serie A",
@@ -320251,7 +320251,7 @@
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.5097429699596348,
+     "p": 0.5095096386218847,
      "why": "Combined expected goals 2.71. Probability of 3+ goals is 51%, so Over 2.5 is the likelier side.",
      "id": 555092,
      "comp": "Brazil Serie A",
@@ -320262,7 +320262,7 @@
      "mk": "BTTS",
      "key": "N",
      "pick": "Both teams to score: No",
-     "p": 0.5029841755397972,
+     "p": 0.5029876346322578,
      "why": "Estimated goal means are Bahia 1.81 and Coritiba 0.90. Under independent Poisson scoring, both teams scoring has probability 50%; the selected side is No.",
      "id": 555092,
      "comp": "Brazil Serie A",
@@ -320273,7 +320273,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.3736871561462247,
+     "p": 0.3733687093134796,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555092,
      "comp": "Brazil Serie A",
@@ -320294,11 +320294,11 @@
     2.75
    ],
    "p1x2": {
-    "1": 0.1561,
+    "1": 0.1562,
     "X": 0.1629,
-    "2": 0.6811
+    "2": 0.6809
    },
-   "over25": 0.7669,
+   "over25": 0.767,
    "score": "1-2",
    "recent": [
     [
@@ -320369,7 +320369,7 @@
    "htft": [
     [
      "2/2",
-     0.467
+     0.4669
     ],
     [
      "X/2",
@@ -320386,7 +320386,7 @@
      "mk": "1X2",
      "key": "2",
      "pick": "Away win (2)",
-     "p": 0.681059618970229,
+     "p": 0.680924906829483,
      "why": "Expected goals: Chapecoense 1.29, Cruzeiro 2.75. Venue-adjusted attack/defence (home 1.26 scored/1.93 conceded; away 1.57 scored/1.63 conceded) plus recent form (0.6 vs 2.4 pts/game last 5). Simulated chances: 16% / 16% / 68%.",
      "id": 555095,
      "comp": "Brazil Serie A",
@@ -320397,7 +320397,7 @@
      "mk": "DC",
      "key": "X2",
      "pick": "Double chance: Draw or away (X2)",
-     "p": 0.843926455213097,
+     "p": 0.8438190940765197,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 16%, draw 16%, away 68%; Draw or away has the highest combined probability at 84%.",
      "id": 555095,
      "comp": "Brazil Serie A",
@@ -320408,7 +320408,7 @@
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.766867156301915,
+     "p": 0.7669581093090325,
      "why": "Combined expected goals 4.04. Probability of 3+ goals is 77%, so Over 2.5 is the likelier side.",
      "id": 555095,
      "comp": "Brazil Serie A",
@@ -320419,7 +320419,7 @@
      "mk": "BTTS",
      "key": "Y",
      "pick": "Both teams to score: Yes",
-     "p": 0.6774560232103234,
+     "p": 0.6776229328292417,
      "why": "Estimated goal means are Chapecoense 1.29 and Cruzeiro 2.75. Under independent Poisson scoring, both teams scoring has probability 68%; the selected side is Yes.",
      "id": 555095,
      "comp": "Brazil Serie A",
@@ -320430,7 +320430,7 @@
      "mk": "HTFT",
      "key": "2/2",
      "pick": "HT Away win / FT Away win (2/2)",
-     "p": 0.46698679415121963,
+     "p": 0.46687484196055057,
      "why": "Each half is simulated separately using the league's real first-half goal share. 2/2 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555095,
      "comp": "Brazil Serie A",
@@ -320455,7 +320455,7 @@
     "X": 0.2183,
     "2": 0.1925
    },
-   "over25": 0.5628,
+   "over25": 0.563,
    "score": "1-1",
    "recent": [
     [
@@ -320534,7 +320534,7 @@
     ],
     [
      "X/X",
-     0.1278
+     0.1277
     ]
    ],
    "picks": [
@@ -320543,7 +320543,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.5891713300143018,
+     "p": 0.5892132781342916,
      "why": "Expected goals: Paranaense 1.93, Clube do Remo 1.01. Venue-adjusted attack/defence (home 1.54 scored/1.33 conceded; away 0.88 scored/1.98 conceded) plus recent form (0.8 vs 1.0 pts/game last 5). Simulated chances: 59% / 22% / 19%.",
      "id": 555090,
      "comp": "Brazil Serie A",
@@ -320554,7 +320554,7 @@
      "mk": "DC",
      "key": "1X",
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.8074730775153807,
+     "p": 0.8074704960610021,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 59%, draw 22%, away 19%; Home or draw has the highest combined probability at 81%.",
      "id": 555090,
      "comp": "Brazil Serie A",
@@ -320565,7 +320565,7 @@
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.5627531830940261,
+     "p": 0.5629547490603355,
      "why": "Combined expected goals 2.94. Probability of 3+ goals is 56%, so Over 2.5 is the likelier side.",
      "id": 555090,
      "comp": "Brazil Serie A",
@@ -320576,7 +320576,7 @@
      "mk": "BTTS",
      "key": "Y",
      "pick": "Both teams to score: Yes",
-     "p": 0.5426521178446246,
+     "p": 0.5428056629527279,
      "why": "Estimated goal means are Paranaense 1.93 and Clube do Remo 1.01. Under independent Poisson scoring, both teams scoring has probability 54%; the selected side is Yes.",
      "id": 555090,
      "comp": "Brazil Serie A",
@@ -320587,7 +320587,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.37756875909217574,
+     "p": 0.3776141678480761,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555090,
      "comp": "Brazil Serie A",
@@ -320700,7 +320700,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.5749000092663521,
+     "p": 0.5749152933192839,
      "why": "Expected goals: Fluminense 1.69, Mirassol 0.84. Venue-adjusted attack/defence (home 1.77 scored/1.02 conceded; away 0.93 scored/1.49 conceded) plus recent form (1.2 vs 1.6 pts/game last 5). Simulated chances: 57% / 24% / 19%.",
      "id": 555096,
      "comp": "Brazil Serie A",
@@ -320711,7 +320711,7 @@
      "mk": "DC",
      "key": "1X",
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.8146117919217093,
+     "p": 0.8146205028299798,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 57%, draw 24%, away 19%; Home or draw has the highest combined probability at 81%.",
      "id": 555096,
      "comp": "Brazil Serie A",
@@ -320722,7 +320722,7 @@
      "mk": "OU",
      "key": "U",
      "pick": "Under 2.5",
-     "p": 0.5349678132539093,
+     "p": 0.5349545637399853,
      "why": "Combined expected goals 2.53. Probability of 3+ goals is 47%, so Under 2.5 is the likelier side.",
      "id": 555096,
      "comp": "Brazil Serie A",
@@ -320733,7 +320733,7 @@
      "mk": "BTTS",
      "key": "N",
      "pick": "Both teams to score: No",
-     "p": 0.5352624417731303,
+     "p": 0.5352583777917429,
      "why": "Estimated goal means are Fluminense 1.69 and Mirassol 0.84. Under independent Poisson scoring, both teams scoring has probability 46%; the selected side is No.",
      "id": 555096,
      "comp": "Brazil Serie A",
@@ -320744,7 +320744,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.36031498905939935,
+     "p": 0.3603274191494607,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555096,
      "comp": "Brazil Serie A",
@@ -320765,11 +320765,11 @@
     1.2
    ],
    "p1x2": {
-    "1": 0.4606,
-    "X": 0.249,
-    "2": 0.2904
+    "1": 0.461,
+    "X": 0.2489,
+    "2": 0.29
    },
-   "over25": 0.5248,
+   "over25": 0.5247,
    "score": "1-1",
    "recent": [
     [
@@ -320840,15 +320840,15 @@
    "htft": [
     [
      "1/1",
-     0.2803
+     0.2806
     ],
     [
      "2/2",
-     0.1666
+     0.1663
     ],
     [
      "X/1",
-     0.1539
+     0.154
     ]
    ],
    "picks": [
@@ -320857,7 +320857,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.4605971452227421,
+     "p": 0.46102546626417046,
      "why": "Expected goals: Bragantino 1.58, Vasco da Gama 1.20. Venue-adjusted attack/defence (home 1.76 scored/1.10 conceded; away 1.23 scored/1.35 conceded) plus recent form (2.0 vs 1.8 pts/game last 5). Simulated chances: 46% / 25% / 29%.",
      "id": 555094,
      "comp": "Brazil Serie A",
@@ -320868,7 +320868,7 @@
      "mk": "DC",
      "key": "12",
      "pick": "Double chance: Home or away (12)",
-     "p": 0.7510125561999771,
+     "p": 0.7510543821498141,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 46%, draw 25%, away 29%; Home or away has the highest combined probability at 75%.",
      "id": 555094,
      "comp": "Brazil Serie A",
@@ -320879,7 +320879,7 @@
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.5247616611795328,
+     "p": 0.5247283397817041,
      "why": "Combined expected goals 2.78. Probability of 3+ goals is 52%, so Over 2.5 is the likelier side.",
      "id": 555094,
      "comp": "Brazil Serie A",
@@ -320890,7 +320890,7 @@
      "mk": "BTTS",
      "key": "Y",
      "pick": "Both teams to score: Yes",
-     "p": 0.5542611608471146,
+     "p": 0.554148774592499,
      "why": "Estimated goal means are Bragantino 1.58 and Vasco da Gama 1.20. Under independent Poisson scoring, both teams scoring has probability 55%; the selected side is Yes.",
      "id": 555094,
      "comp": "Brazil Serie A",
@@ -320901,7 +320901,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.28034868455129364,
+     "p": 0.28064886612290224,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555094,
      "comp": "Brazil Serie A",
@@ -320926,7 +320926,7 @@
     "X": 0.233,
     "2": 0.1429
    },
-   "over25": 0.4265,
+   "over25": 0.4266,
    "score": "1-0",
    "recent": [
     [
@@ -321005,7 +321005,7 @@
     ],
     [
      "X/X",
-     0.1586
+     0.1585
     ]
    ],
    "picks": [
@@ -321014,7 +321014,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.6240597094648839,
+     "p": 0.62407990259499,
      "why": "Expected goals: Internacional 1.71, Vit\u00f3ria 0.67. Venue-adjusted attack/defence (home 1.47 scored/0.97 conceded; away 0.83 scored/1.79 conceded) plus recent form (1.4 vs 0.4 pts/game last 5). Simulated chances: 62% / 23% / 14%.",
      "id": 555097,
      "comp": "Brazil Serie A",
@@ -321025,7 +321025,7 @@
      "mk": "DC",
      "key": "1X",
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.8571002461099053,
+     "p": 0.857097495941948,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 62%, draw 23%, away 14%; Home or draw has the highest combined probability at 86%.",
      "id": 555097,
      "comp": "Brazil Serie A",
@@ -321036,7 +321036,7 @@
      "mk": "OU",
      "key": "U",
      "pick": "Under 2.5",
-     "p": 0.5735201966282555,
+     "p": 0.5734378203756937,
      "why": "Combined expected goals 2.39. Probability of 3+ goals is 43%, so Under 2.5 is the likelier side.",
      "id": 555097,
      "comp": "Brazil Serie A",
@@ -321047,7 +321047,7 @@
      "mk": "BTTS",
      "key": "N",
      "pick": "Both teams to score: No",
-     "p": 0.5982783392598878,
+     "p": 0.598215577030035,
      "why": "Estimated goal means are Internacional 1.71 and Vit\u00f3ria 0.67. Under independent Poisson scoring, both teams scoring has probability 40%; the selected side is No.",
      "id": 555097,
      "comp": "Brazil Serie A",
@@ -321058,7 +321058,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.3953265809497286,
+     "p": 0.3953486758008619,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555097,
      "comp": "Brazil Serie A",
@@ -321079,9 +321079,9 @@
     0.9
    ],
    "p1x2": {
-    "1": 0.5168,
-    "X": 0.2594,
-    "2": 0.2239
+    "1": 0.517,
+    "X": 0.2593,
+    "2": 0.2237
    },
    "over25": 0.4351,
    "score": "1-0",
@@ -321154,11 +321154,11 @@
    "htft": [
     [
      "1/1",
-     0.3156
+     0.3158
     ],
     [
      "X/1",
-     0.1781
+     0.1782
     ],
     [
      "X/X",
@@ -321171,7 +321171,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.5167789720039498,
+     "p": 0.5170477581740955,
      "why": "Expected goals: Botafogo 1.52, S\u00e3o Paulo 0.90. Venue-adjusted attack/defence (home 1.43 scored/1.14 conceded; away 0.90 scored/1.64 conceded) plus recent form (1.4 vs 1.6 pts/game last 5). Simulated chances: 52% / 26% / 22%.",
      "id": 555093,
      "comp": "Brazil Serie A",
@@ -321182,7 +321182,7 @@
      "mk": "DC",
      "key": "1X",
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.7761442180006786,
+     "p": 0.776340860290773,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 52%, draw 26%, away 22%; Home or draw has the highest combined probability at 78%.",
      "id": 555093,
      "comp": "Brazil Serie A",
@@ -321193,7 +321193,7 @@
      "mk": "OU",
      "key": "U",
      "pick": "Under 2.5",
-     "p": 0.56493629267376,
+     "p": 0.5648541535022811,
      "why": "Combined expected goals 2.42. Probability of 3+ goals is 44%, so Under 2.5 is the likelier side.",
      "id": 555093,
      "comp": "Brazil Serie A",
@@ -321204,7 +321204,7 @@
      "mk": "BTTS",
      "key": "N",
      "pick": "Both teams to score: No",
-     "p": 0.5363728314482958,
+     "p": 0.5364002471056561,
      "why": "Estimated goal means are Botafogo 1.52 and S\u00e3o Paulo 0.90. Under independent Poisson scoring, both teams scoring has probability 46%; the selected side is No.",
      "id": 555093,
      "comp": "Brazil Serie A",
@@ -321215,7 +321215,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.3155738672925682,
+     "p": 0.31577225127801917,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555093,
      "comp": "Brazil Serie A",
@@ -321237,10 +321237,10 @@
    ],
    "p1x2": {
     "1": 0.4766,
-    "X": 0.2801,
-    "2": 0.2433
+    "X": 0.28,
+    "2": 0.2434
    },
-   "over25": 0.38,
+   "over25": 0.3802,
    "score": "1-0",
    "recent": [
     [
@@ -321328,7 +321328,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.47657004370007816,
+     "p": 0.47655868650608824,
      "why": "Expected goals: Santos 1.34, Gr\u00eamio 0.87. Venue-adjusted attack/defence (home 1.34 scored/1.19 conceded; away 0.84 scored/1.57 conceded) plus recent form (1.0 vs 1.4 pts/game last 5). Simulated chances: 48% / 28% / 24%.",
      "id": 555099,
      "comp": "Brazil Serie A",
@@ -321339,7 +321339,7 @@
      "mk": "DC",
      "key": "1X",
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.7566536036251116,
+     "p": 0.7565910419708195,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 48%, draw 28%, away 24%; Home or draw has the highest combined probability at 76%.",
      "id": 555099,
      "comp": "Brazil Serie A",
@@ -321350,7 +321350,7 @@
      "mk": "OU",
      "key": "U",
      "pick": "Under 2.5",
-     "p": 0.6199565613605229,
+     "p": 0.6197551983377247,
      "why": "Combined expected goals 2.21. Probability of 3+ goals is 38%, so Under 2.5 is the likelier side.",
      "id": 555099,
      "comp": "Brazil Serie A",
@@ -321361,7 +321361,7 @@
      "mk": "BTTS",
      "key": "N",
      "pick": "Both teams to score: No",
-     "p": 0.570949888007074,
+     "p": 0.570769953416098,
      "why": "Estimated goal means are Santos 1.34 and Gr\u00eamio 0.87. Under independent Poisson scoring, both teams scoring has probability 43%; the selected side is No.",
      "id": 555099,
      "comp": "Brazil Serie A",
@@ -321372,7 +321372,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.28399712413428885,
+     "p": 0.2840006421369387,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555099,
      "comp": "Brazil Serie A",
@@ -321395,7 +321395,7 @@
    "p1x2": {
     "1": 0.0899,
     "X": 0.1641,
-    "2": 0.746
+    "2": 0.7459
    },
    "over25": 0.5755,
    "score": "0-2",
@@ -321485,7 +321485,7 @@
      "mk": "1X2",
      "key": "2",
      "pick": "Away win (2)",
-     "p": 0.7460334189908513,
+     "p": 0.7459491455417246,
      "why": "Expected goals: Chapecoense 0.67, Palmeiras 2.33. Venue-adjusted attack/defence (home 1.26 scored/1.93 conceded; away 1.32 scored/0.85 conceded) plus recent form (0.6 vs 2.6 pts/game last 5). Simulated chances: 9% / 16% / 75%.",
      "id": 555102,
      "comp": "Brazil Serie A",
@@ -321496,7 +321496,7 @@
      "mk": "DC",
      "key": "X2",
      "pick": "Double chance: Draw or away (X2)",
-     "p": 0.910130227450973,
+     "p": 0.9100719054417282,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 9%, draw 16%, away 75%; Draw or away has the highest combined probability at 91%.",
      "id": 555102,
      "comp": "Brazil Serie A",
@@ -321507,7 +321507,7 @@
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.57545836805054,
+     "p": 0.5755326753537261,
      "why": "Combined expected goals 2.99. Probability of 3+ goals is 58%, so Over 2.5 is the likelier side.",
      "id": 555102,
      "comp": "Brazil Serie A",
@@ -321518,7 +321518,7 @@
      "mk": "BTTS",
      "key": "N",
      "pick": "Both teams to score: No",
-     "p": 0.5598235090110286,
+     "p": 0.5596634361346414,
      "why": "Estimated goal means are Chapecoense 0.67 and Palmeiras 2.33. Under independent Poisson scoring, both teams scoring has probability 44%; the selected side is No.",
      "id": 555102,
      "comp": "Brazil Serie A",
@@ -321529,7 +321529,7 @@
      "mk": "HTFT",
      "key": "2/2",
      "pick": "HT Away win / FT Away win (2/2)",
-     "p": 0.510445973137847,
+     "p": 0.5103751863593529,
      "why": "Each half is simulated separately using the league's real first-half goal share. 2/2 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555102,
      "comp": "Brazil Serie A",
@@ -321550,11 +321550,11 @@
     0.88
    ],
    "p1x2": {
-    "1": 0.5344,
-    "X": 0.254,
-    "2": 0.2116
+    "1": 0.5345,
+    "X": 0.2539,
+    "2": 0.2115
    },
-   "over25": 0.4429,
+   "over25": 0.4428,
    "score": "1-0",
    "recent": [
     [
@@ -321625,7 +321625,7 @@
    "htft": [
     [
      "1/1",
-     0.3288
+     0.3289
     ],
     [
      "X/1",
@@ -321642,7 +321642,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.5343957213865786,
+     "p": 0.5345399195801261,
      "why": "Expected goals: Mineiro 1.57, Corinthians 0.88. Venue-adjusted attack/defence (home 1.51 scored/0.93 conceded; away 1.10 scored/1.64 conceded) plus recent form (0.8 vs 1.0 pts/game last 5). Simulated chances: 53% / 25% / 21%.",
      "id": 555091,
      "comp": "Brazil Serie A",
@@ -321653,7 +321653,7 @@
      "mk": "DC",
      "key": "1X",
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.7883507577642945,
+     "p": 0.788479776040278,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 53%, draw 25%, away 21%; Home or draw has the highest combined probability at 79%.",
      "id": 555091,
      "comp": "Brazil Serie A",
@@ -321664,7 +321664,7 @@
      "mk": "OU",
      "key": "U",
      "pick": "Under 2.5",
-     "p": 0.5570947606955893,
+     "p": 0.557170098594813,
      "why": "Combined expected goals 2.45. Probability of 3+ goals is 44%, so Under 2.5 is the likelier side.",
      "id": 555091,
      "comp": "Brazil Serie A",
@@ -321675,7 +321675,7 @@
      "mk": "BTTS",
      "key": "N",
      "pick": "Both teams to score: No",
-     "p": 0.5363649353012038,
+     "p": 0.5364888350245295,
      "why": "Estimated goal means are Mineiro 1.57 and Corinthians 0.88. Under independent Poisson scoring, both teams scoring has probability 46%; the selected side is No.",
      "id": 555091,
      "comp": "Brazil Serie A",
@@ -321686,7 +321686,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.3288180820501662,
+     "p": 0.3289187488700172,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555091,
      "comp": "Brazil Serie A",
@@ -321707,11 +321707,11 @@
     0.64
    ],
    "p1x2": {
-    "1": 0.6462,
+    "1": 0.6463,
     "X": 0.2249,
     "2": 0.1289
    },
-   "over25": 0.4301,
+   "over25": 0.4302,
    "score": "1-0",
    "recent": [
     [
@@ -321790,7 +321790,7 @@
     ],
     [
      "X/X",
-     0.1542
+     0.1541
     ]
    ],
    "picks": [
@@ -321799,7 +321799,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.646247190076057,
+     "p": 0.6462669833176173,
      "why": "Expected goals: S\u00e3o Paulo 1.76, Clube do Remo 0.64. Venue-adjusted attack/defence (home 1.37 scored/0.84 conceded; away 0.88 scored/1.98 conceded) plus recent form (1.6 vs 1.0 pts/game last 5). Simulated chances: 65% / 22% / 13%.",
      "id": 555108,
      "comp": "Brazil Serie A",
@@ -321810,7 +321810,7 @@
      "mk": "DC",
      "key": "1X",
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.8711225720652738,
+     "p": 0.8711205401689119,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 65%, draw 22%, away 13%; Home or draw has the highest combined probability at 87%.",
      "id": 555108,
      "comp": "Brazil Serie A",
@@ -321821,7 +321821,7 @@
      "mk": "OU",
      "key": "U",
      "pick": "Under 2.5",
-     "p": 0.5698857425513031,
+     "p": 0.569807590583854,
      "why": "Combined expected goals 2.40. Probability of 3+ goals is 43%, so Under 2.5 is the likelier side.",
      "id": 555108,
      "comp": "Brazil Serie A",
@@ -321832,7 +321832,7 @@
      "mk": "BTTS",
      "key": "N",
      "pick": "Both teams to score: No",
-     "p": 0.6102454421010002,
+     "p": 0.6101868479459132,
      "why": "Estimated goal means are S\u00e3o Paulo 1.76 and Clube do Remo 0.64. Under independent Poisson scoring, both teams scoring has probability 39%; the selected side is No.",
      "id": 555108,
      "comp": "Brazil Serie A",
@@ -321843,7 +321843,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.4131104996067714,
+     "p": 0.4131325665711534,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555108,
      "comp": "Brazil Serie A",
@@ -321864,9 +321864,9 @@
     1.46
    ],
    "p1x2": {
-    "1": 0.4703,
+    "1": 0.4702,
     "X": 0.2251,
-    "2": 0.3046
+    "2": 0.3047
    },
    "over25": 0.644,
    "score": "1-1",
@@ -321956,7 +321956,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.4702663088166931,
+     "p": 0.4702397591776376,
      "why": "Expected goals: Fluminense 1.86, Cruzeiro 1.46. Venue-adjusted attack/defence (home 1.77 scored/1.02 conceded; away 1.57 scored/1.63 conceded) plus recent form (1.2 vs 2.4 pts/game last 5). Simulated chances: 47% / 23% / 30%.",
      "id": 555105,
      "comp": "Brazil Serie A",
@@ -321967,7 +321967,7 @@
      "mk": "DC",
      "key": "12",
      "pick": "Double chance: Home or away (12)",
-     "p": 0.7748975840234242,
+     "p": 0.7748920525242109,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 47%, draw 23%, away 30%; Home or away has the highest combined probability at 77%.",
      "id": 555105,
      "comp": "Brazil Serie A",
@@ -321978,7 +321978,7 @@
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.6439868884944089,
+     "p": 0.6439715244326403,
      "why": "Combined expected goals 3.32. Probability of 3+ goals is 64%, so Over 2.5 is the likelier side.",
      "id": 555105,
      "comp": "Brazil Serie A",
@@ -321989,7 +321989,7 @@
      "mk": "BTTS",
      "key": "Y",
      "pick": "Both teams to score: Yes",
-     "p": 0.6479262342656147,
+     "p": 0.6479186013388284,
      "why": "Estimated goal means are Fluminense 1.86 and Cruzeiro 1.46. Under independent Poisson scoring, both teams scoring has probability 65%; the selected side is Yes.",
      "id": 555105,
      "comp": "Brazil Serie A",
@@ -322000,7 +322000,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.2929022706790605,
+     "p": 0.292882369706951,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555105,
      "comp": "Brazil Serie A",
@@ -322021,9 +322021,9 @@
     1.34
    ],
    "p1x2": {
-    "1": 0.4009,
+    "1": 0.4012,
     "X": 0.2521,
-    "2": 0.347
+    "2": 0.3467
    },
    "over25": 0.5314,
    "score": "1-1",
@@ -322096,15 +322096,15 @@
    "htft": [
     [
      "1/1",
-     0.2394
+     0.2395
     ],
     [
      "2/2",
-     0.2033
+     0.2032
     ],
     [
      "X/X",
-     0.147
+     0.1471
     ]
    ],
    "picks": [
@@ -322113,7 +322113,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.4009109049791773,
+     "p": 0.40115431703465765,
      "why": "Expected goals: Botafogo 1.46, Bahia 1.34. Venue-adjusted attack/defence (home 1.43 scored/1.14 conceded; away 1.35 scored/1.58 conceded) plus recent form (1.4 vs 1.4 pts/game last 5). Simulated chances: 40% / 25% / 35%.",
      "id": 555101,
      "comp": "Brazil Serie A",
@@ -322124,7 +322124,7 @@
      "mk": "DC",
      "key": "12",
      "pick": "Double chance: Home or away (12)",
-     "p": 0.7478872382980635,
+     "p": 0.7478891090620623,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 40%, draw 25%, away 35%; Home or away has the highest combined probability at 75%.",
      "id": 555101,
      "comp": "Brazil Serie A",
@@ -322135,7 +322135,7 @@
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.5314009636540653,
+     "p": 0.5313675021439731,
      "why": "Combined expected goals 2.80. Probability of 3+ goals is 53%, so Over 2.5 is the likelier side.",
      "id": 555101,
      "comp": "Brazil Serie A",
@@ -322146,7 +322146,7 @@
      "mk": "BTTS",
      "key": "Y",
      "pick": "Both teams to score: Yes",
-     "p": 0.5674113865877833,
+     "p": 0.5673695050595118,
      "why": "Estimated goal means are Botafogo 1.46 and Bahia 1.34. Under independent Poisson scoring, both teams scoring has probability 57%; the selected side is Yes.",
      "id": 555101,
      "comp": "Brazil Serie A",
@@ -322157,7 +322157,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.23937027938125227,
+     "p": 0.2395341888903283,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555101,
      "comp": "Brazil Serie A",
@@ -322180,9 +322180,9 @@
    "p1x2": {
     "1": 0.1396,
     "X": 0.1803,
-    "2": 0.68
+    "2": 0.6801
    },
-   "over25": 0.6393,
+   "over25": 0.6394,
    "score": "0-2",
    "recent": [
     [
@@ -322253,7 +322253,7 @@
    "htft": [
     [
      "2/2",
-     0.457
+     0.4571
     ],
     [
      "X/2",
@@ -322270,7 +322270,7 @@
      "mk": "1X2",
      "key": "2",
      "pick": "Away win (2)",
-     "p": 0.6800288577173337,
+     "p": 0.6800968816380474,
      "why": "Expected goals: Coritiba 0.96, Flamengo 2.33. Venue-adjusted attack/defence (home 1.41 scored/1.24 conceded; away 2.02 scored/1.08 conceded) plus recent form (0.8 vs 3.0 pts/game last 5). Simulated chances: 14% / 18% / 68%.",
      "id": 555104,
      "comp": "Brazil Serie A",
@@ -322281,7 +322281,7 @@
      "mk": "DC",
      "key": "X2",
      "pick": "Double chance: Draw or away (X2)",
-     "p": 0.8603700231232471,
+     "p": 0.8604082236597492,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 14%, draw 18%, away 68%; Draw or away has the highest combined probability at 86%.",
      "id": 555104,
      "comp": "Brazil Serie A",
@@ -322292,7 +322292,7 @@
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.6393261849079949,
+     "p": 0.6393812195630023,
      "why": "Combined expected goals 3.29. Probability of 3+ goals is 64%, so Over 2.5 is the likelier side.",
      "id": 555104,
      "comp": "Brazil Serie A",
@@ -322303,7 +322303,7 @@
      "mk": "BTTS",
      "key": "Y",
      "pick": "Both teams to score: Yes",
-     "p": 0.5575892325006236,
+     "p": 0.5575925083290281,
      "why": "Estimated goal means are Coritiba 0.96 and Flamengo 2.33. Under independent Poisson scoring, both teams scoring has probability 56%; the selected side is Yes.",
      "id": 555104,
      "comp": "Brazil Serie A",
@@ -322314,7 +322314,7 @@
      "mk": "HTFT",
      "key": "2/2",
      "pick": "HT Away win / FT Away win (2/2)",
-     "p": 0.45700728524324197,
+     "p": 0.4570697704255056,
      "why": "Each half is simulated separately using the league's real first-half goal share. 2/2 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555104,
      "comp": "Brazil Serie A",
@@ -322427,7 +322427,7 @@
      "mk": "1X2",
      "key": "2",
      "pick": "Away win (2)",
-     "p": 0.45156997930628595,
+     "p": 0.45158155304574826,
      "why": "Expected goals: Vit\u00f3ria 1.21, Santos 1.55. Venue-adjusted attack/defence (home 1.32 scored/1.18 conceded; away 1.52 scored/1.48 conceded) plus recent form (0.4 vs 1.0 pts/game last 5). Simulated chances: 30% / 25% / 45%.",
      "id": 555109,
      "comp": "Brazil Serie A",
@@ -322438,7 +322438,7 @@
      "mk": "DC",
      "key": "12",
      "pick": "Double chance: Home or away (12)",
-     "p": 0.7495644913072035,
+     "p": 0.7495650455224914,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 30%, draw 25%, away 45%; Home or away has the highest combined probability at 75%.",
      "id": 555109,
      "comp": "Brazil Serie A",
@@ -322449,7 +322449,7 @@
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.5224700899348449,
+     "p": 0.5224670241351997,
      "why": "Combined expected goals 2.77. Probability of 3+ goals is 52%, so Over 2.5 is the likelier side.",
      "id": 555109,
      "comp": "Brazil Serie A",
@@ -322460,7 +322460,7 @@
      "mk": "BTTS",
      "key": "Y",
      "pick": "Both teams to score: Yes",
-     "p": 0.5541215962506654,
+     "p": 0.5541170434722186,
      "why": "Estimated goal means are Vit\u00f3ria 1.21 and Santos 1.55. Under independent Poisson scoring, both teams scoring has probability 55%; the selected side is Yes.",
      "id": 555109,
      "comp": "Brazil Serie A",
@@ -322471,7 +322471,7 @@
      "mk": "HTFT",
      "key": "2/2",
      "pick": "HT Away win / FT Away win (2/2)",
-     "p": 0.27389987692365836,
+     "p": 0.27390783476803715,
      "why": "Each half is simulated separately using the league's real first-half goal share. 2/2 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555109,
      "comp": "Brazil Serie A",
@@ -322489,14 +322489,14 @@
    "away": "Gr\u00eamio",
    "xg": [
     1.23,
-    0.78
+    0.79
    ],
    "p1x2": {
     "1": 0.4664,
-    "X": 0.2969,
-    "2": 0.2367
+    "X": 0.2968,
+    "2": 0.2368
    },
-   "over25": 0.3269,
+   "over25": 0.3271,
    "score": "1-0",
    "recent": [
     [
@@ -322571,7 +322571,7 @@
     ],
     [
      "X/X",
-     0.2113
+     0.2112
     ],
     [
      "X/1",
@@ -322584,8 +322584,8 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.4664043455267594,
-     "why": "Expected goals: Corinthians 1.23, Gr\u00eamio 0.78. Venue-adjusted attack/defence (home 1.23 scored/1.07 conceded; away 0.84 scored/1.57 conceded) plus recent form (1.0 vs 1.4 pts/game last 5). Simulated chances: 47% / 30% / 24%.",
+     "p": 0.466406534739653,
+     "why": "Expected goals: Corinthians 1.23, Gr\u00eamio 0.79. Venue-adjusted attack/defence (home 1.23 scored/1.07 conceded; away 0.84 scored/1.57 conceded) plus recent form (1.0 vs 1.4 pts/game last 5). Simulated chances: 47% / 30% / 24%.",
      "id": 555103,
      "comp": "Brazil Serie A",
      "kickoff": "2026-11-29T21:30:00+00:00"
@@ -322595,7 +322595,7 @@
      "mk": "DC",
      "key": "1X",
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.7632624365128178,
+     "p": 0.7632043483841738,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 47%, draw 30%, away 24%; Home or draw has the highest combined probability at 76%.",
      "id": 555103,
      "comp": "Brazil Serie A",
@@ -322606,7 +322606,7 @@
      "mk": "OU",
      "key": "U",
      "pick": "Under 2.5",
-     "p": 0.6730705913075701,
+     "p": 0.6728751337658946,
      "why": "Combined expected goals 2.01. Probability of 3+ goals is 33%, so Under 2.5 is the likelier side.",
      "id": 555103,
      "comp": "Brazil Serie A",
@@ -322617,8 +322617,8 @@
      "mk": "BTTS",
      "key": "N",
      "pick": "Both teams to score: No",
-     "p": 0.6154086945703747,
-     "why": "Estimated goal means are Corinthians 1.23 and Gr\u00eamio 0.78. Under independent Poisson scoring, both teams scoring has probability 38%; the selected side is No.",
+     "p": 0.6152311102041861,
+     "why": "Estimated goal means are Corinthians 1.23 and Gr\u00eamio 0.79. Under independent Poisson scoring, both teams scoring has probability 38%; the selected side is No.",
      "id": 555103,
      "comp": "Brazil Serie A",
      "kickoff": "2026-11-29T21:30:00+00:00"
@@ -322628,7 +322628,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.2739638739646981,
+     "p": 0.2739768184877865,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555103,
      "comp": "Brazil Serie A",
@@ -322649,11 +322649,11 @@
     0.79
    ],
    "p1x2": {
-    "1": 0.4883,
+    "1": 0.4885,
     "X": 0.2859,
-    "2": 0.2258
+    "2": 0.2256
    },
-   "over25": 0.3509,
+   "over25": 0.351,
    "score": "1-0",
    "recent": [
     [
@@ -322724,15 +322724,15 @@
    "htft": [
     [
      "1/1",
-     0.2904
+     0.2906
     ],
     [
      "X/X",
-     0.1999
+     0.1998
     ],
     [
      "X/1",
-     0.1794
+     0.1795
     ]
    ],
    "picks": [
@@ -322741,7 +322741,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.48830720034718056,
+     "p": 0.4885301970969523,
      "why": "Expected goals: Internacional 1.31, Bragantino 0.79. Venue-adjusted attack/defence (home 1.47 scored/0.97 conceded; away 0.91 scored/1.37 conceded) plus recent form (1.4 vs 2.0 pts/game last 5). Simulated chances: 49% / 29% / 23%.",
      "id": 555106,
      "comp": "Brazil Serie A",
@@ -322752,7 +322752,7 @@
      "mk": "DC",
      "key": "1X",
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.7742381041534561,
+     "p": 0.7743965983955401,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 49%, draw 29%, away 23%; Home or draw has the highest combined probability at 77%.",
      "id": 555106,
      "comp": "Brazil Serie A",
@@ -322763,7 +322763,7 @@
      "mk": "OU",
      "key": "U",
      "pick": "Under 2.5",
-     "p": 0.6490926072597757,
+     "p": 0.6490121750802688,
      "why": "Combined expected goals 2.10. Probability of 3+ goals is 35%, so Under 2.5 is the likelier side.",
      "id": 555106,
      "comp": "Brazil Serie A",
@@ -322774,7 +322774,7 @@
      "mk": "BTTS",
      "key": "N",
      "pick": "Both teams to score: No",
-     "p": 0.6005733498248667,
+     "p": 0.6005757914108251,
      "why": "Estimated goal means are Internacional 1.31 and Bragantino 0.79. Under independent Poisson scoring, both teams scoring has probability 40%; the selected side is No.",
      "id": 555106,
      "comp": "Brazil Serie A",
@@ -322785,7 +322785,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.2904317959190659,
+     "p": 0.29059132659460807,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555106,
      "comp": "Brazil Serie A",
@@ -322806,9 +322806,9 @@
     1.35
    ],
    "p1x2": {
-    "1": 0.3727,
+    "1": 0.3726,
     "X": 0.2583,
-    "2": 0.369
+    "2": 0.3691
    },
    "over25": 0.5059,
    "score": "1-1",
@@ -322881,7 +322881,7 @@
    "htft": [
     [
      "1/1",
-     0.2194
+     0.2193
     ],
     [
      "2/2",
@@ -322898,7 +322898,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.3726631533550796,
+     "p": 0.37259395705681964,
      "why": "Expected goals: Mirassol 1.35, Paranaense 1.35. Venue-adjusted attack/defence (home 1.37 scored/1.10 conceded; away 1.43 scored/1.52 conceded) plus recent form (1.6 vs 0.8 pts/game last 5). Simulated chances: 37% / 26% / 37%.",
      "id": 555107,
      "comp": "Brazil Serie A",
@@ -322909,7 +322909,7 @@
      "mk": "DC",
      "key": "12",
      "pick": "Double chance: Home or away (12)",
-     "p": 0.7417086681497975,
+     "p": 0.741720143669282,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 37%, draw 26%, away 37%; Home or away has the highest combined probability at 74%.",
      "id": 555107,
      "comp": "Brazil Serie A",
@@ -322920,7 +322920,7 @@
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.5058765750100228,
+     "p": 0.5059280346083034,
      "why": "Combined expected goals 2.70. Probability of 3+ goals is 51%, so Over 2.5 is the likelier side.",
      "id": 555107,
      "comp": "Brazil Serie A",
@@ -322931,7 +322931,7 @@
      "mk": "BTTS",
      "key": "Y",
      "pick": "Both teams to score: Yes",
-     "p": 0.5483310997781641,
+     "p": 0.5483717705925167,
      "why": "Estimated goal means are Mirassol 1.35 and Paranaense 1.35. Under independent Poisson scoring, both teams scoring has probability 55%; the selected side is Yes.",
      "id": 555107,
      "comp": "Brazil Serie A",
@@ -322942,7 +322942,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.21937694486280557,
+     "p": 0.21933294202731565,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555107,
      "comp": "Brazil Serie A",
@@ -322963,11 +322963,11 @@
     1.02
    ],
    "p1x2": {
-    "1": 0.4255,
-    "X": 0.28,
-    "2": 0.2945
+    "1": 0.426,
+    "X": 0.2799,
+    "2": 0.294
    },
-   "over25": 0.4058,
+   "over25": 0.4057,
    "score": "1-1",
    "recent": [
     [
@@ -323038,7 +323038,7 @@
    "htft": [
     [
      "1/1",
-     0.2505
+     0.2508
     ],
     [
      "X/X",
@@ -323046,7 +323046,7 @@
     ],
     [
      "2/2",
-     0.1656
+     0.1652
     ]
    ],
    "picks": [
@@ -323055,7 +323055,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.42550707975390933,
+     "p": 0.4260262332739682,
      "why": "Expected goals: Mineiro 1.29, Vasco da Gama 1.02. Venue-adjusted attack/defence (home 1.51 scored/0.93 conceded; away 1.23 scored/1.35 conceded) plus recent form (0.8 vs 1.8 pts/game last 5). Simulated chances: 43% / 28% / 29%.",
      "id": 555100,
      "comp": "Brazil Serie A",
@@ -323066,7 +323066,7 @@
      "mk": "DC",
      "key": "12",
      "pick": "Double chance: Home or away (12)",
-     "p": 0.7200426427667227,
+     "p": 0.7200618323530774,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 43%, draw 28%, away 29%; Home or away has the highest combined probability at 72%.",
      "id": 555100,
      "comp": "Brazil Serie A",
@@ -323077,7 +323077,7 @@
      "mk": "OU",
      "key": "U",
      "pick": "Under 2.5",
-     "p": 0.5941676374846563,
+     "p": 0.5942818198690054,
      "why": "Combined expected goals 2.31. Probability of 3+ goals is 41%, so Under 2.5 is the likelier side.",
      "id": 555100,
      "comp": "Brazil Serie A",
@@ -323088,7 +323088,7 @@
      "mk": "BTTS",
      "key": "N",
      "pick": "Both teams to score: No",
-     "p": 0.53709112359756,
+     "p": 0.5372727648677644,
      "why": "Estimated goal means are Mineiro 1.29 and Vasco da Gama 1.02. Under independent Poisson scoring, both teams scoring has probability 46%; the selected side is No.",
      "id": 555100,
      "comp": "Brazil Serie A",
@@ -323099,7 +323099,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.2504524505839441,
+     "p": 0.2507969775883784,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555100,
      "comp": "Brazil Serie A",
@@ -323120,11 +323120,11 @@
     1.05
    ],
    "p1x2": {
-    "1": 0.5013,
-    "X": 0.2495,
+    "1": 0.5014,
+    "X": 0.2494,
     "2": 0.2492
    },
-   "over25": 0.4946,
+   "over25": 0.4947,
    "score": "1-1",
    "recent": [
     [
@@ -323195,7 +323195,7 @@
    "htft": [
     [
      "1/1",
-     0.3078
+     0.3079
     ],
     [
      "X/1",
@@ -323203,7 +323203,7 @@
     ],
     [
      "X/X",
-     0.1525
+     0.1524
     ]
    ],
    "picks": [
@@ -323212,7 +323212,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.5013181654943408,
+     "p": 0.5013709828730244,
      "why": "Expected goals: Paranaense 1.60, S\u00e3o Paulo 1.05. Venue-adjusted attack/defence (home 1.54 scored/1.33 conceded; away 0.90 scored/1.64 conceded) plus recent form (0.8 vs 1.6 pts/game last 5). Simulated chances: 50% / 25% / 25%.",
      "id": 555110,
      "comp": "Brazil Serie A",
@@ -323223,7 +323223,7 @@
      "mk": "DC",
      "key": "1X",
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.7507738233200407,
+     "p": 0.7507831015047874,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 50%, draw 25%, away 25%; Home or draw has the highest combined probability at 75%.",
      "id": 555110,
      "comp": "Brazil Serie A",
@@ -323234,7 +323234,7 @@
      "mk": "OU",
      "key": "U",
      "pick": "Under 2.5",
-     "p": 0.5054324165849544,
+     "p": 0.5052636324214206,
      "why": "Combined expected goals 2.65. Probability of 3+ goals is 49%, so Under 2.5 is the likelier side.",
      "id": 555110,
      "comp": "Brazil Serie A",
@@ -323245,7 +323245,7 @@
      "mk": "BTTS",
      "key": "Y",
      "pick": "Both teams to score: Yes",
-     "p": 0.519275825621169,
+     "p": 0.5194005801535414,
      "why": "Estimated goal means are Paranaense 1.60 and S\u00e3o Paulo 1.05. Under independent Poisson scoring, both teams scoring has probability 52%; the selected side is Yes.",
      "id": 555110,
      "comp": "Brazil Serie A",
@@ -323256,7 +323256,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.3078094786085088,
+     "p": 0.30785668202036376,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555110,
      "comp": "Brazil Serie A",
@@ -323369,7 +323369,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.4406011621586134,
+     "p": 0.4405891982522437,
      "why": "Expected goals: Bahia 1.33, Mineiro 1.01. Venue-adjusted attack/defence (home 1.54 scored/1.20 conceded; away 0.98 scored/1.33 conceded) plus recent form (1.4 vs 0.8 pts/game last 5). Simulated chances: 44% / 28% / 28%.",
      "id": 555111,
      "comp": "Brazil Serie A",
@@ -323380,7 +323380,7 @@
      "mk": "DC",
      "key": "12",
      "pick": "Double chance: Home or away (12)",
-     "p": 0.723666933390619,
+     "p": 0.7236638962550708,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 44%, draw 28%, away 28%; Home or away has the highest combined probability at 72%.",
      "id": 555111,
      "comp": "Brazil Serie A",
@@ -323391,7 +323391,7 @@
      "mk": "OU",
      "key": "U",
      "pick": "Under 2.5",
-     "p": 0.5861007478227414,
+     "p": 0.5861074743266479,
      "why": "Combined expected goals 2.34. Probability of 3+ goals is 41%, so Under 2.5 is the likelier side.",
      "id": 555111,
      "comp": "Brazil Serie A",
@@ -323402,7 +323402,7 @@
      "mk": "BTTS",
      "key": "N",
      "pick": "Both teams to score: No",
-     "p": 0.5330286710100638,
+     "p": 0.5330319853705958,
      "why": "Estimated goal means are Bahia 1.33 and Mineiro 1.01. Under independent Poisson scoring, both teams scoring has probability 47%; the selected side is No.",
      "id": 555111,
      "comp": "Brazil Serie A",
@@ -323413,7 +323413,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.26107790114673524,
+     "p": 0.26106941242943427,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555111,
      "comp": "Brazil Serie A",
@@ -323434,11 +323434,11 @@
     1.34
    ],
    "p1x2": {
-    "1": 0.4641,
+    "1": 0.4642,
     "X": 0.2358,
     "2": 0.3
    },
-   "over25": 0.5895,
+   "over25": 0.5896,
    "score": "1-1",
    "recent": [
     [
@@ -323509,7 +323509,7 @@
    "htft": [
     [
      "1/1",
-     0.2859
+     0.286
     ],
     [
      "2/2",
@@ -323526,7 +323526,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.46411522970536173,
+     "p": 0.4641664271828807,
      "why": "Expected goals: Bragantino 1.72, Fluminense 1.34. Venue-adjusted attack/defence (home 1.76 scored/1.10 conceded; away 1.41 scored/1.47 conceded) plus recent form (2.0 vs 1.2 pts/game last 5). Simulated chances: 46% / 24% / 30%.",
      "id": 555112,
      "comp": "Brazil Serie A",
@@ -323537,7 +323537,7 @@
      "mk": "DC",
      "key": "12",
      "pick": "Double chance: Home or away (12)",
-     "p": 0.764154748494453,
+     "p": 0.7641698795794039,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 46%, draw 24%, away 30%; Home or away has the highest combined probability at 76%.",
      "id": 555112,
      "comp": "Brazil Serie A",
@@ -323548,7 +323548,7 @@
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.5895450955206191,
+     "p": 0.5895962939748246,
      "why": "Combined expected goals 3.06. Probability of 3+ goals is 59%, so Over 2.5 is the likelier side.",
      "id": 555112,
      "comp": "Brazil Serie A",
@@ -323559,7 +323559,7 @@
      "mk": "BTTS",
      "key": "Y",
      "pick": "Both teams to score: Yes",
-     "p": 0.6055974478382504,
+     "p": 0.6056289948835455,
      "why": "Estimated goal means are Bragantino 1.72 and Fluminense 1.34. Under independent Poisson scoring, both teams scoring has probability 61%; the selected side is Yes.",
      "id": 555112,
      "comp": "Brazil Serie A",
@@ -323570,7 +323570,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.2859260651124752,
+     "p": 0.2859650094706815,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555112,
      "comp": "Brazil Serie A",
@@ -323587,11 +323587,11 @@
    "home": "Cruzeiro",
    "away": "Internacional",
    "xg": [
-    1.87,
+    1.86,
     0.84
    ],
    "p1x2": {
-    "1": 0.6154,
+    "1": 0.6153,
     "X": 0.2206,
     "2": 0.164
    },
@@ -323666,7 +323666,7 @@
    "htft": [
     [
      "1/1",
-     0.3945
+     0.3944
     ],
     [
      "X/1",
@@ -323683,8 +323683,8 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.6153660132424414,
-     "why": "Expected goals: Cruzeiro 1.87, Internacional 0.84. Venue-adjusted attack/defence (home 1.79 scored/1.02 conceded; away 0.95 scored/1.54 conceded) plus recent form (2.4 vs 1.4 pts/game last 5). Simulated chances: 62% / 22% / 16%.",
+     "p": 0.6153479782479461,
+     "why": "Expected goals: Cruzeiro 1.86, Internacional 0.84. Venue-adjusted attack/defence (home 1.79 scored/1.02 conceded; away 0.95 scored/1.54 conceded) plus recent form (2.4 vs 1.4 pts/game last 5). Simulated chances: 62% / 22% / 16%.",
      "id": 555113,
      "comp": "Brazil Serie A",
      "kickoff": "2026-12-03T00:30:00+00:00"
@@ -323694,7 +323694,7 @@
      "mk": "DC",
      "key": "1X",
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.8359547444309605,
+     "p": 0.8359513924482793,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 62%, draw 22%, away 16%; Home or draw has the highest combined probability at 84%.",
      "id": 555113,
      "comp": "Brazil Serie A",
@@ -323705,7 +323705,7 @@
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.5079371270255365,
+     "p": 0.5078831887408866,
      "why": "Combined expected goals 2.71. Probability of 3+ goals is 51%, so Over 2.5 is the likelier side.",
      "id": 555113,
      "comp": "Brazil Serie A",
@@ -323716,8 +323716,8 @@
      "mk": "BTTS",
      "key": "N",
      "pick": "Both teams to score: No",
-     "p": 0.519226828641969,
-     "why": "Estimated goal means are Cruzeiro 1.87 and Internacional 0.84. Under independent Poisson scoring, both teams scoring has probability 48%; the selected side is No.",
+     "p": 0.5192641829437903,
+     "why": "Estimated goal means are Cruzeiro 1.86 and Internacional 0.84. Under independent Poisson scoring, both teams scoring has probability 48%; the selected side is No.",
      "id": 555113,
      "comp": "Brazil Serie A",
      "kickoff": "2026-12-03T00:30:00+00:00"
@@ -323727,7 +323727,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.3944587683657944,
+     "p": 0.3944407929270687,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555113,
      "comp": "Brazil Serie A",
@@ -323752,7 +323752,7 @@
     "X": 0.1353,
     "2": 0.0623
    },
-   "over25": 0.6071,
+   "over25": 0.607,
    "score": "2-0",
    "recent": [
     [
@@ -323827,11 +323827,11 @@
     ],
     [
      "X/1",
-     0.2082
+     0.2083
     ],
     [
      "X/X",
-     0.0862
+     0.0863
     ]
    ],
    "picks": [
@@ -323840,7 +323840,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.8023656369089973,
+     "p": 0.802358552143717,
      "why": "Expected goals: Flamengo 2.56, Chapecoense 0.58. Venue-adjusted attack/defence (home 1.97 scored/0.88 conceded; away 0.78 scored/1.88 conceded) plus recent form (3.0 vs 0.6 pts/game last 5). Simulated chances: 80% / 14% / 6%.",
      "id": 555114,
      "comp": "Brazil Serie A",
@@ -323851,7 +323851,7 @@
      "mk": "DC",
      "key": "1X",
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.9376505454597104,
+     "p": 0.9376521085238965,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 80%, draw 14%, away 6%; Home or draw has the highest combined probability at 94%.",
      "id": 555114,
      "comp": "Brazil Serie A",
@@ -323862,7 +323862,7 @@
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.6070988997973539,
+     "p": 0.6070482501252908,
      "why": "Combined expected goals 3.14. Probability of 3+ goals is 61%, so Over 2.5 is the likelier side.",
      "id": 555114,
      "comp": "Brazil Serie A",
@@ -323873,7 +323873,7 @@
      "mk": "BTTS",
      "key": "N",
      "pick": "Both teams to score: No",
-     "p": 0.5956042792191438,
+     "p": 0.5956468225271432,
      "why": "Estimated goal means are Flamengo 2.56 and Chapecoense 0.58. Under independent Poisson scoring, both teams scoring has probability 40%; the selected side is No.",
      "id": 555114,
      "comp": "Brazil Serie A",
@@ -323884,7 +323884,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.5674328998118974,
+     "p": 0.5674207960841512,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555114,
      "comp": "Brazil Serie A",
@@ -323906,10 +323906,10 @@
    ],
    "p1x2": {
     "1": 0.4731,
-    "X": 0.2631,
+    "X": 0.263,
     "2": 0.2639
    },
-   "over25": 0.452,
+   "over25": 0.4521,
    "score": "1-1",
    "recent": [
     [
@@ -323997,7 +323997,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.47306276151309545,
+     "p": 0.47310705714742207,
      "why": "Expected goals: Gr\u00eamio 1.46, Mirassol 1.02. Venue-adjusted attack/defence (home 1.52 scored/1.24 conceded; away 0.93 scored/1.49 conceded) plus recent form (1.4 vs 1.6 pts/game last 5). Simulated chances: 47% / 26% / 26%.",
      "id": 555115,
      "comp": "Brazil Serie A",
@@ -324008,7 +324008,7 @@
      "mk": "DC",
      "key": "12",
      "pick": "Double chance: Home or away (12)",
-     "p": 0.7369455045489668,
+     "p": 0.7369767673718444,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 47%, draw 26%, away 26%; Home or away has the highest combined probability at 74%.",
      "id": 555115,
      "comp": "Brazil Serie A",
@@ -324019,7 +324019,7 @@
      "mk": "OU",
      "key": "U",
      "pick": "Under 2.5",
-     "p": 0.5480066091465521,
+     "p": 0.5478970351733636,
      "why": "Combined expected goals 2.48. Probability of 3+ goals is 45%, so Under 2.5 is the likelier side.",
      "id": 555115,
      "comp": "Brazil Serie A",
@@ -324030,7 +324030,7 @@
      "mk": "BTTS",
      "key": "N",
      "pick": "Both teams to score: No",
-     "p": 0.5083926357006578,
+     "p": 0.5083121901309481,
      "why": "Estimated goal means are Gr\u00eamio 1.46 and Mirassol 1.02. Under independent Poisson scoring, both teams scoring has probability 49%; the selected side is No.",
      "id": 555115,
      "comp": "Brazil Serie A",
@@ -324041,7 +324041,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.28546132268028707,
+     "p": 0.2854981150295256,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555115,
      "comp": "Brazil Serie A",
@@ -324062,11 +324062,11 @@
     0.56
    ],
    "p1x2": {
-    "1": 0.8202,
-    "X": 0.1247,
-    "2": 0.0551
+    "1": 0.82,
+    "X": 0.1249,
+    "2": 0.0552
    },
-   "over25": 0.6264,
+   "over25": 0.6261,
    "score": "2-0",
    "recent": [
     [
@@ -324137,7 +324137,7 @@
    "htft": [
     [
      "1/1",
-     0.5877
+     0.5873
     ],
     [
      "X/1",
@@ -324145,7 +324145,7 @@
     ],
     [
      "X/X",
-     0.0793
+     0.0794
     ]
    ],
    "picks": [
@@ -324154,7 +324154,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.8202496445570577,
+     "p": 0.8199578722669265,
      "why": "Expected goals: Palmeiras 2.67, Coritiba 0.56. Venue-adjusted attack/defence (home 2.16 scored/0.74 conceded; away 0.88 scored/1.82 conceded) plus recent form (2.6 vs 0.8 pts/game last 5). Simulated chances: 82% / 12% / 6%.",
      "id": 555116,
      "comp": "Brazil Serie A",
@@ -324165,7 +324165,7 @@
      "mk": "DC",
      "key": "1X",
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.9449273382261996,
+     "p": 0.9448140053207648,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 82%, draw 12%, away 6%; Home or draw has the highest combined probability at 94%.",
      "id": 555116,
      "comp": "Brazil Serie A",
@@ -324176,7 +324176,7 @@
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.6264182387299176,
+     "p": 0.6260600938484635,
      "why": "Combined expected goals 3.23. Probability of 3+ goals is 63%, so Over 2.5 is the likelier side.",
      "id": 555116,
      "comp": "Brazil Serie A",
@@ -324187,7 +324187,7 @@
      "mk": "BTTS",
      "key": "N",
      "pick": "Both teams to score: No",
-     "p": 0.6012469449976277,
+     "p": 0.6011846418146157,
      "why": "Estimated goal means are Palmeiras 2.67 and Coritiba 0.56. Under independent Poisson scoring, both teams scoring has probability 40%; the selected side is No.",
      "id": 555116,
      "comp": "Brazil Serie A",
@@ -324198,7 +324198,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.5876869313791103,
+     "p": 0.5873460762431961,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555116,
      "comp": "Brazil Serie A",
@@ -324219,11 +324219,11 @@
     1.19
    ],
    "p1x2": {
-    "1": 0.4229,
+    "1": 0.4228,
     "X": 0.2615,
-    "2": 0.3156
+    "2": 0.3157
    },
-   "over25": 0.4831,
+   "over25": 0.4832,
    "score": "1-1",
    "recent": [
     [
@@ -324294,7 +324294,7 @@
    "htft": [
     [
      "1/1",
-     0.2523
+     0.2522
     ],
     [
      "2/2",
@@ -324302,7 +324302,7 @@
     ],
     [
      "X/X",
-     0.1598
+     0.1597
     ]
    ],
    "picks": [
@@ -324311,7 +324311,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.4228905125540211,
+     "p": 0.42282733994929395,
      "why": "Expected goals: Clube do Remo 1.42, Corinthians 1.19. Venue-adjusted attack/defence (home 1.36 scored/1.26 conceded; away 1.10 scored/1.64 conceded) plus recent form (1.0 vs 1.0 pts/game last 5). Simulated chances: 42% / 26% / 32%.",
      "id": 555117,
      "comp": "Brazil Serie A",
@@ -324322,7 +324322,7 @@
      "mk": "DC",
      "key": "12",
      "pick": "Double chance: Home or away (12)",
-     "p": 0.7385112084955512,
+     "p": 0.7385205938240658,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 42%, draw 26%, away 32%; Home or away has the highest combined probability at 74%.",
      "id": 555117,
      "comp": "Brazil Serie A",
@@ -324333,7 +324333,7 @@
      "mk": "OU",
      "key": "U",
      "pick": "Under 2.5",
-     "p": 0.5168986241067792,
+     "p": 0.5168362219149794,
      "why": "Combined expected goals 2.61. Probability of 3+ goals is 48%, so Under 2.5 is the likelier side.",
      "id": 555117,
      "comp": "Brazil Serie A",
@@ -324344,7 +324344,7 @@
      "mk": "BTTS",
      "key": "Y",
      "pick": "Both teams to score: Yes",
-     "p": 0.5268326382475567,
+     "p": 0.526891163561424,
      "why": "Estimated goal means are Clube do Remo 1.42 and Corinthians 1.19. Under independent Poisson scoring, both teams scoring has probability 53%; the selected side is Yes.",
      "id": 555117,
      "comp": "Brazil Serie A",
@@ -324355,7 +324355,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.2522599066380162,
+     "p": 0.2522195772130474,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555117,
      "comp": "Brazil Serie A",
@@ -324376,7 +324376,7 @@
     0.96
    ],
    "p1x2": {
-    "1": 0.4929,
+    "1": 0.4928,
     "X": 0.2628,
     "2": 0.2444
    },
@@ -324468,7 +324468,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.49285412797224193,
+     "p": 0.4928419595691147,
      "why": "Expected goals: Santos 1.48, Botafogo 0.96. Venue-adjusted attack/defence (home 1.34 scored/1.19 conceded; away 0.92 scored/1.73 conceded) plus recent form (1.0 vs 1.4 pts/game last 5). Simulated chances: 49% / 26% / 24%.",
      "id": 555118,
      "comp": "Brazil Serie A",
@@ -324479,7 +324479,7 @@
      "mk": "DC",
      "key": "1X",
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.7556473250580527,
+     "p": 0.7556390666109751,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 49%, draw 26%, away 24%; Home or draw has the highest combined probability at 76%.",
      "id": 555118,
      "comp": "Brazil Serie A",
@@ -324490,7 +324490,7 @@
      "mk": "OU",
      "key": "U",
      "pick": "Under 2.5",
-     "p": 0.5605097278854068,
+     "p": 0.560517781245024,
      "why": "Combined expected goals 2.44. Probability of 3+ goals is 44%, so Under 2.5 is the likelier side.",
      "id": 555118,
      "comp": "Brazil Serie A",
@@ -324501,7 +324501,7 @@
      "mk": "BTTS",
      "key": "N",
      "pick": "Both teams to score: No",
-     "p": 0.5245254969194248,
+     "p": 0.5245286168476755,
      "why": "Estimated goal means are Santos 1.48 and Botafogo 0.96. Under independent Poisson scoring, both teams scoring has probability 48%; the selected side is No.",
      "id": 555118,
      "comp": "Brazil Serie A",
@@ -324512,7 +324512,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.29873854253779847,
+     "p": 0.2987294702858015,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555118,
      "comp": "Brazil Serie A",
@@ -324533,11 +324533,11 @@
     0.99
    ],
    "p1x2": {
-    "1": 0.5843,
-    "X": 0.2219,
-    "2": 0.1938
+    "1": 0.584,
+    "X": 0.222,
+    "2": 0.194
    },
-   "over25": 0.549,
+   "over25": 0.5489,
    "score": "1-0",
    "recent": [
     [
@@ -324608,7 +324608,7 @@
    "htft": [
     [
      "1/1",
-     0.3729
+     0.3727
     ],
     [
      "X/1",
@@ -324616,7 +324616,7 @@
     ],
     [
      "X/X",
-     0.1314
+     0.1315
     ]
    ],
    "picks": [
@@ -324625,7 +324625,7 @@
      "mk": "1X2",
      "key": "1",
      "pick": "Home win (1)",
-     "p": 0.584338766924604,
+     "p": 0.5840163890818695,
      "why": "Expected goals: Vasco da Gama 1.89, Vit\u00f3ria 0.99. Venue-adjusted attack/defence (home 1.60 scored/1.42 conceded; away 0.83 scored/1.79 conceded) plus recent form (1.8 vs 0.4 pts/game last 5). Simulated chances: 58% / 22% / 19%.",
      "id": 555119,
      "comp": "Brazil Serie A",
@@ -324636,7 +324636,7 @@
      "mk": "DC",
      "key": "1X",
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.8061975216728354,
+     "p": 0.8059757139735617,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 58%, draw 22%, away 19%; Home or draw has the highest combined probability at 81%.",
      "id": 555119,
      "comp": "Brazil Serie A",
@@ -324647,7 +324647,7 @@
      "mk": "OU",
      "key": "O",
      "pick": "Over 2.5",
-     "p": 0.5489775791134719,
+     "p": 0.5488587078715144,
      "why": "Combined expected goals 2.88. Probability of 3+ goals is 55%, so Over 2.5 is the likelier side.",
      "id": 555119,
      "comp": "Brazil Serie A",
@@ -324658,7 +324658,7 @@
      "mk": "BTTS",
      "key": "Y",
      "pick": "Both teams to score: Yes",
-     "p": 0.5330968164721017,
+     "p": 0.5331478387436115,
      "why": "Estimated goal means are Vasco da Gama 1.89 and Vit\u00f3ria 0.99. Under independent Poisson scoring, both teams scoring has probability 53%; the selected side is Yes.",
      "id": 555119,
      "comp": "Brazil Serie A",
@@ -324669,7 +324669,7 @@
      "mk": "HTFT",
      "key": "1/1",
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.3729469983567689,
+     "p": 0.3726900378916281,
      "why": "Each half is simulated separately using the league's real first-half goal share. 1/1 is the most likely half-time/full-time pair; combos need two things to land, so they are riskier.",
      "id": 555119,
      "comp": "Brazil Serie A",
@@ -335153,7 +335153,7 @@
      "mk": "DC",
      "key": "1X",
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.8111609925555443,
+     "p": 0.8111271020682728,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 60%, draw 21%, away 19%; Home or draw has the highest combined probability at 81%.",
      "id": 555083,
      "comp": "Brazil Serie A",
@@ -335161,7 +335161,7 @@
      "odds": 1.23
     }
    ],
-   "prob": 0.8111609925555443,
+   "prob": 0.8111271020682728,
    "odds": 1.23,
    "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns."
   },
@@ -335172,7 +335172,7 @@
      "mk": "DC",
      "key": "1X",
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.8111609925555443,
+     "p": 0.8111271020682728,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 60%, draw 21%, away 19%; Home or draw has the highest combined probability at 81%.",
      "id": 555083,
      "comp": "Brazil Serie A",
@@ -335180,7 +335180,7 @@
      "odds": 1.23
     }
    ],
-   "prob": 0.8111609925555443,
+   "prob": 0.8111271020682728,
    "odds": 1.23,
    "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns."
   },
@@ -335191,7 +335191,7 @@
      "mk": "DC",
      "key": "1X",
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.8111609925555443,
+     "p": 0.8111271020682728,
      "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 60%, draw 21%, away 19%; Home or draw has the highest combined probability at 81%.",
      "id": 555083,
      "comp": "Brazil Serie A",
@@ -335199,7 +335199,7 @@
      "odds": 1.23
     }
    ],
-   "prob": 0.8111609925555443,
+   "prob": 0.8111271020682728,
    "odds": 1.23,
    "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns."
   }
