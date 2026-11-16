@@ -2603,6 +2603,162 @@
     }
    ],
    "result": null
+  },
+  {
+   "id": 555088,
+   "comp": "Brazil Serie A",
+   "kickoff": "2026-11-19T22:30:00+00:00",
+   "home": "Vasco da Gama",
+   "away": "Internacional",
+   "p1x2": {
+    "1": 0.4774,
+    "X": 0.2457,
+    "2": 0.2769
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.4774
+    },
+    {
+     "mk": "DC",
+     "key": "12",
+     "player_id": null,
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.7543
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.5307
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.5554
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.2925
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 555089,
+   "comp": "Brazil Serie A",
+   "kickoff": "2026-11-19T22:30:00+00:00",
+   "home": "Vit\u00f3ria",
+   "away": "Bragantino",
+   "p1x2": {
+    "1": 0.3919,
+    "X": 0.299,
+    "2": 0.309
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.3919
+    },
+    {
+     "mk": "DC",
+     "key": "12",
+     "player_id": null,
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.701
+    },
+    {
+     "mk": "OU",
+     "key": "U",
+     "player_id": null,
+     "pick": "Under 2.5",
+     "p": 0.6522
+    },
+    {
+     "mk": "BTTS",
+     "key": "N",
+     "player_id": null,
+     "pick": "Both teams to score: No",
+     "p": 0.5819
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.2254
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 555087,
+   "comp": "Brazil Serie A",
+   "kickoff": "2026-11-20T00:30:00+00:00",
+   "home": "S\u00e3o Paulo",
+   "away": "Fluminense",
+   "p1x2": {
+    "1": 0.431,
+    "X": 0.2776,
+    "2": 0.2914
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.431
+    },
+    {
+     "mk": "DC",
+     "key": "12",
+     "player_id": null,
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.7224
+    },
+    {
+     "mk": "OU",
+     "key": "U",
+     "player_id": null,
+     "pick": "Under 2.5",
+     "p": 0.5869
+    },
+    {
+     "mk": "BTTS",
+     "key": "N",
+     "player_id": null,
+     "pick": "Both teams to score: No",
+     "p": 0.532
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.2545
+    }
+   ],
+   "result": null
   }
  ],
  "summary": {
@@ -2642,7 +2798,7 @@
   "matches": 50,
   "brier": 0.5540632556
  },
- "updated": "2026-11-15T20:14:09.451869+00:00",
+ "updated": "2026-11-16T14:37:42.394068+00:00",
  "daily_slips": [
   {
    "date": "2026-11-08",
