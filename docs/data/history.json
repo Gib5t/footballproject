@@ -2759,6 +2759,162 @@
     }
    ],
    "result": null
+  },
+  {
+   "id": 564748,
+   "comp": "La Liga",
+   "kickoff": "2026-11-20T20:00:00+00:00",
+   "home": "Athletic",
+   "away": "Espanyol",
+   "p1x2": {
+    "1": 0.5113,
+    "X": 0.2624,
+    "2": 0.2263
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.5113
+    },
+    {
+     "mk": "DC",
+     "key": "1X",
+     "player_id": null,
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.7737
+    },
+    {
+     "mk": "OU",
+     "key": "U",
+     "player_id": null,
+     "pick": "Under 2.5",
+     "p": 0.5735
+    },
+    {
+     "mk": "BTTS",
+     "key": "N",
+     "player_id": null,
+     "pick": "Both teams to score: No",
+     "p": 0.5418
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.304
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 565859,
+   "comp": "Bundesliga",
+   "kickoff": "2026-11-20T19:30:00+00:00",
+   "home": "Bayern",
+   "away": "1. FC K\u00f6ln",
+   "p1x2": {
+    "1": 0.8344,
+    "X": 0.1023,
+    "2": 0.0633
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.8344
+    },
+    {
+     "mk": "DC",
+     "key": "1X",
+     "player_id": null,
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.9367
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.7997
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.5761
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.5862
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 559622,
+   "comp": "Ligue 1",
+   "kickoff": "2026-11-20T19:45:00+00:00",
+   "home": "Troyes",
+   "away": "Le Havre",
+   "p1x2": {
+    "1": 0.332,
+    "X": 0.2265,
+    "2": 0.4415
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "2",
+     "player_id": null,
+     "pick": "Away win (2)",
+     "p": 0.4415
+    },
+    {
+     "mk": "DC",
+     "key": "12",
+     "player_id": null,
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.7735
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.6498
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.6567
+    },
+    {
+     "mk": "HTFT",
+     "key": "2/2",
+     "player_id": null,
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.2609
+    }
+   ],
+   "result": null
   }
  ],
  "summary": {
@@ -2798,7 +2954,7 @@
   "matches": 50,
   "brier": 0.5540632556
  },
- "updated": "2026-11-16T14:37:42.394068+00:00",
+ "updated": "2026-11-16T23:19:08.593948+00:00",
  "daily_slips": [
   {
    "date": "2026-11-08",
@@ -2924,7 +3080,49 @@
    "prob": 0.49829632407290053,
    "odds": 2.01,
    "note": "Each leg is a model estimate. Combined probability assumes separate match outcomes and is approximate.",
+   "hit": null,
+   "legacy": true
+  },
+  {
+   "id": "2026-11-18-1",
+   "date": "2026-11-18",
+   "number": 1,
+   "legs": [
+    {
+     "match": "Flamengo vs Paranaense",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.8111609925555443,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 60%, draw 21%, away 19%; Home or draw has the highest combined probability at 81%.",
+     "id": 555083,
+     "comp": "Brazil Serie A",
+     "kickoff": "2026-11-18T23:30:00+00:00",
+     "odds": 1.23,
+     "hit": null
+    }
+   ],
+   "prob": 0.8111609925555443,
+   "odds": 1.23,
+   "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns. Saved before kickoff; may update until locked.",
+   "updated": "2026-11-16T23:19:08.593948+00:00",
    "hit": null
   }
- ]
+ ],
+ "journey_slips": [],
+ "journey_start_date": "2026-11-16",
+ "paper_started_at": "2026-11-16T23:19:08.593948+00:00",
+ "paper_simulation": {
+  "started_at": "2026-11-16T23:19:08.593948+00:00",
+  "starting_balance": 100.0,
+  "balance": 100.0,
+  "target": 100000.0,
+  "stake_fraction": 0.01,
+  "total_staked": 0.0,
+  "settled": 0,
+  "wins": 0,
+  "losses": 0,
+  "profit": 0.0,
+  "note": "Paper only. Stake is 1% of the simulated balance per qualifying Journey slip; paper returns use model fair odds, not bookmaker odds."
+ }
 }
