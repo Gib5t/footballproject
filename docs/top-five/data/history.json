@@ -4526,7 +4526,7 @@
   "matches": 48,
   "brier": 0.5532995566666667
  },
- "updated": "2026-11-18T22:30:35.379990+00:00",
+ "updated": "2026-11-19T15:10:03.449324+00:00",
  "daily_slips": [
   {
    "date": "2026-11-08",
@@ -4660,7 +4660,79 @@
    "hit": null
   }
  ],
- "journey_slips": [],
+ "journey_slips": [
+  {
+   "id": "2026-11-20-1",
+   "date": "2026-11-20",
+   "number": 1,
+   "legs": [
+    {
+     "match": "Bayern vs 1. FC K\u00f6ln",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.9362333509315359,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 83%, draw 10%, away 6%; Home or draw has the highest combined probability at 94%.",
+     "id": 565859,
+     "comp": "Bundesliga",
+     "kickoff": "2026-11-20T19:30:00+00:00",
+     "odds": 1.07,
+     "hit": null
+    },
+    {
+     "match": "Troyes vs Le Havre",
+     "mk": "DC",
+     "key": "12",
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.7731958840678423,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 33%, draw 23%, away 44%; Home or away has the highest combined probability at 77%.",
+     "id": 559622,
+     "comp": "Ligue 1",
+     "kickoff": "2026-11-20T19:45:00+00:00",
+     "odds": 1.29,
+     "hit": null
+    }
+   ],
+   "prob": 0.7238917734673074,
+   "odds": 1.38,
+   "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns.",
+   "locked": true,
+   "locked_at": "2026-11-19T15:10:03.449324+00:00",
+   "hit": null,
+   "paper_stake": 1.0,
+   "paper_profit": null,
+   "paper_balance_after": null
+  },
+  {
+   "id": "2026-11-20-2",
+   "date": "2026-11-20",
+   "number": 2,
+   "legs": [
+    {
+     "match": "Athletic vs Espanyol",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.7731617654163948,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 51%, draw 26%, away 23%; Home or draw has the highest combined probability at 77%.",
+     "id": 564748,
+     "comp": "La Liga",
+     "kickoff": "2026-11-20T20:00:00+00:00",
+     "odds": 1.29,
+     "hit": null
+    }
+   ],
+   "prob": 0.7731617654163948,
+   "odds": 1.29,
+   "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns.",
+   "locked": true,
+   "locked_at": "2026-11-19T15:10:03.449324+00:00",
+   "hit": null,
+   "paper_stake": 1.0,
+   "paper_profit": null,
+   "paper_balance_after": null
+  }
+ ],
  "journey_start_date": "2026-11-16",
  "paper_started_at": "2026-11-16T23:19:08.593948+00:00",
  "paper_simulation": {
@@ -4669,7 +4741,7 @@
   "balance": 100.0,
   "target": 100000.0,
   "stake_fraction": 0.01,
-  "total_staked": 0.0,
+  "total_staked": 2.0,
   "settled": 0,
   "wins": 0,
   "losses": 0,
