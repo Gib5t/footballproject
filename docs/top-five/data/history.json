@@ -4682,7 +4682,7 @@
   "matches": 48,
   "brier": 0.5532995566666667
  },
- "updated": "2026-11-19T22:37:03.041049+00:00",
+ "updated": "2026-11-20T14:49:26.426834+00:00",
  "daily_slips": [
   {
    "date": "2026-11-08",
@@ -4887,6 +4887,119 @@
    "paper_stake": 1.0,
    "paper_profit": null,
    "paper_balance_after": null
+  },
+  {
+   "id": "2026-11-21-1",
+   "date": "2026-11-21",
+   "number": 1,
+   "legs": [
+    {
+     "match": "Real Madrid vs Celta",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.9265443353319576,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 75%, draw 18%, away 7%; Home or draw has the highest combined probability at 93%.",
+     "id": 564754,
+     "comp": "La Liga",
+     "kickoff": "2026-11-21T20:00:00+00:00",
+     "odds": 1.08,
+     "hit": null
+    },
+    {
+     "match": "Parma vs Roma",
+     "mk": "DC",
+     "key": "X2",
+     "pick": "Double chance: Draw or away (X2)",
+     "p": 0.872695375270905,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 13%, draw 18%, away 69%; Draw or away has the highest combined probability at 87%.",
+     "id": 558526,
+     "comp": "Serie A",
+     "kickoff": "2026-11-21T17:00:00+00:00",
+     "odds": 1.15,
+     "hit": null
+    }
+   ],
+   "prob": 0.808590956427654,
+   "odds": 1.24,
+   "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns.",
+   "locked": true,
+   "locked_at": "2026-11-20T14:49:26.426834+00:00",
+   "hit": null,
+   "paper_stake": 1.0,
+   "paper_profit": null,
+   "paper_balance_after": null
+  },
+  {
+   "id": "2026-11-21-2",
+   "date": "2026-11-21",
+   "number": 2,
+   "legs": [
+    {
+     "match": "Como 1907 vs Cagliari",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.8505614457159256,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 62%, draw 24%, away 15%; Home or draw has the highest combined probability at 85%.",
+     "id": 558525,
+     "comp": "Serie A",
+     "kickoff": "2026-11-21T14:00:00+00:00",
+     "odds": 1.18,
+     "hit": null
+    },
+    {
+     "match": "Lille vs Olympique Lyon",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.843398291906866,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 56%, draw 28%, away 16%; Home or draw has the highest combined probability at 84%.",
+     "id": 559624,
+     "comp": "Ligue 1",
+     "kickoff": "2026-11-21T19:45:00+00:00",
+     "odds": 1.19,
+     "hit": null
+    }
+   ],
+   "prob": 0.7173620704786462,
+   "odds": 1.39,
+   "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns.",
+   "locked": true,
+   "locked_at": "2026-11-20T14:49:26.426834+00:00",
+   "hit": null,
+   "paper_stake": 1.0,
+   "paper_profit": null,
+   "paper_balance_after": null
+  },
+  {
+   "id": "2026-11-21-3",
+   "date": "2026-11-21",
+   "number": 3,
+   "legs": [
+    {
+     "match": "Monaco vs Auxerre",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.8345598714990399,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 67%, draw 17%, away 17%; Home or draw has the highest combined probability at 83%.",
+     "id": 559621,
+     "comp": "Ligue 1",
+     "kickoff": "2026-11-21T19:45:00+00:00",
+     "odds": 1.2,
+     "hit": null
+    }
+   ],
+   "prob": 0.8345598714990399,
+   "odds": 1.2,
+   "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns.",
+   "locked": true,
+   "locked_at": "2026-11-20T14:49:26.426834+00:00",
+   "hit": null,
+   "paper_stake": 1.0,
+   "paper_profit": null,
+   "paper_balance_after": null
   }
  ],
  "journey_start_date": "2026-11-16",
@@ -4897,7 +5010,7 @@
   "balance": 100.0,
   "target": 100000.0,
   "stake_fraction": 0.01,
-  "total_staked": 2.0,
+  "total_staked": 5.0,
   "settled": 0,
   "wins": 0,
   "losses": 0,
