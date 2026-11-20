@@ -2231,38 +2231,52 @@
      "key": "2",
      "player_id": null,
      "pick": "Away win (2)",
-     "p": 0.4415
+     "p": 0.4415,
+     "hit": 0
     },
     {
      "mk": "DC",
      "key": "12",
      "player_id": null,
      "pick": "Double chance: Home or away (12)",
-     "p": 0.7735
+     "p": 0.7735,
+     "hit": 1
     },
     {
      "mk": "OU",
      "key": "O",
      "player_id": null,
      "pick": "Over 2.5",
-     "p": 0.6498
+     "p": 0.6498,
+     "hit": 1
     },
     {
      "mk": "BTTS",
      "key": "Y",
      "player_id": null,
      "pick": "Both teams to score: Yes",
-     "p": 0.6567
+     "p": 0.6567,
+     "hit": 1
     },
     {
      "mk": "HTFT",
      "key": "2/2",
      "player_id": null,
      "pick": "HT Away win / FT Away win (2/2)",
-     "p": 0.2609
+     "p": 0.2609,
+     "hit": 0
     }
    ],
-   "result": null
+   "result": {
+    "ft": [
+     3,
+     1
+    ],
+    "ht": [
+     1,
+     1
+    ]
+   }
   },
   {
    "id": 564748,
@@ -2283,38 +2297,52 @@
      "key": "1",
      "player_id": null,
      "pick": "Home win (1)",
-     "p": 0.5113
+     "p": 0.5113,
+     "hit": 0
     },
     {
      "mk": "DC",
      "key": "1X",
      "player_id": null,
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.7737
+     "p": 0.7737,
+     "hit": 0
     },
     {
      "mk": "OU",
      "key": "U",
      "player_id": null,
      "pick": "Under 2.5",
-     "p": 0.5735
+     "p": 0.5735,
+     "hit": 1
     },
     {
      "mk": "BTTS",
      "key": "N",
      "player_id": null,
      "pick": "Both teams to score: No",
-     "p": 0.5418
+     "p": 0.5418,
+     "hit": 1
     },
     {
      "mk": "HTFT",
      "key": "1/1",
      "player_id": null,
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.304
+     "p": 0.304,
+     "hit": 0
     }
    ],
-   "result": null
+   "result": {
+    "ft": [
+     0,
+     1
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   }
   },
   {
    "id": 560643,
@@ -4661,28 +4689,40 @@
   "markets": [
    {
     "market": "1X2",
-    "n": 48,
-    "hit_rate": 0.5416666666666666,
-    "avg_prob": 0.5313854166666666
+    "n": 50,
+    "hit_rate": 0.52,
+    "avg_prob": 0.5291859999999999
    },
    {
     "market": "OU",
-    "n": 48,
-    "hit_rate": 0.6666666666666666,
-    "avg_prob": 0.6223145833333333
+    "n": 50,
+    "hit_rate": 0.68,
+    "avg_prob": 0.621888
    },
    {
     "market": "HTFT",
-    "n": 48,
-    "hit_rate": 0.3333333333333333,
-    "avg_prob": 0.32529375
+    "n": 50,
+    "hit_rate": 0.32,
+    "avg_prob": 0.32358
+   },
+   {
+    "market": "DC",
+    "n": 2,
+    "hit_rate": 0.5,
+    "avg_prob": 0.7736000000000001
+   },
+   {
+    "market": "BTTS",
+    "n": 2,
+    "hit_rate": 1.0,
+    "avg_prob": 0.59925
    }
   ],
   "stats": [],
-  "matches": 48,
-  "brier": 0.5532995566666667
+  "matches": 50,
+  "brier": 0.5635944072000001
  },
- "updated": "2026-11-20T14:49:26.426834+00:00",
+ "updated": "2026-11-20T22:10:42.990413+00:00",
  "daily_slips": [
   {
    "date": "2026-11-08",
@@ -4756,7 +4796,7 @@
      "id": 564748,
      "comp": "La Liga",
      "kickoff": "2026-11-20T20:00:00+00:00",
-     "hit": null
+     "hit": 0
     },
     {
      "match": "Troyes vs Le Havre",
@@ -4768,7 +4808,7 @@
      "id": 559622,
      "comp": "Ligue 1",
      "kickoff": "2026-11-20T19:45:00+00:00",
-     "hit": null
+     "hit": 1
     }
    ],
    "prob": 0.5615572122268128,
@@ -4806,13 +4846,51 @@
      "comp": "La Liga",
      "kickoff": "2026-11-20T20:00:00+00:00",
      "odds": 1.29,
-     "hit": null
+     "hit": 0
     }
    ],
    "prob": 0.7247087804747728,
    "odds": 1.38,
    "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns. Saved before kickoff; may update until locked.",
    "updated": "2026-11-16T23:19:08.593948+00:00",
+   "hit": null
+  },
+  {
+   "id": "2026-11-21-1",
+   "date": "2026-11-21",
+   "number": 1,
+   "legs": [
+    {
+     "match": "Real Madrid vs Celta",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.9264666468836672,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 75%, draw 18%, away 7%; Home or draw has the highest combined probability at 93%.",
+     "id": 564754,
+     "comp": "La Liga",
+     "kickoff": "2026-11-21T20:00:00+00:00",
+     "odds": 1.08,
+     "hit": null
+    },
+    {
+     "match": "Parma vs Roma",
+     "mk": "DC",
+     "key": "X2",
+     "pick": "Double chance: Draw or away (X2)",
+     "p": 0.8721248186645741,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 13%, draw 18%, away 69%; Draw or away has the highest combined probability at 87%.",
+     "id": 558526,
+     "comp": "Serie A",
+     "kickoff": "2026-11-21T17:00:00+00:00",
+     "odds": 1.15,
+     "hit": null
+    }
+   ],
+   "prob": 0.8079945564121943,
+   "odds": 1.24,
+   "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns. Saved before kickoff; may update until locked.",
+   "updated": "2026-11-20T22:10:42.990413+00:00",
    "hit": null
   }
  ],
@@ -4846,7 +4924,7 @@
      "comp": "Ligue 1",
      "kickoff": "2026-11-20T19:45:00+00:00",
      "odds": 1.29,
-     "hit": null
+     "hit": 1
     }
    ],
    "prob": 0.7238917734673074,
@@ -4875,7 +4953,7 @@
      "comp": "La Liga",
      "kickoff": "2026-11-20T20:00:00+00:00",
      "odds": 1.29,
-     "hit": null
+     "hit": 0
     }
    ],
    "prob": 0.7731617654163948,
@@ -4883,10 +4961,10 @@
    "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns.",
    "locked": true,
    "locked_at": "2026-11-19T15:10:03.449324+00:00",
-   "hit": null,
+   "hit": 0,
    "paper_stake": 1.0,
-   "paper_profit": null,
-   "paper_balance_after": null
+   "paper_profit": -1.0,
+   "paper_balance_after": 99.0
   },
   {
    "id": "2026-11-21-1",
@@ -5007,14 +5085,14 @@
  "paper_simulation": {
   "started_at": "2026-11-16T23:19:08.593948+00:00",
   "starting_balance": 100.0,
-  "balance": 100.0,
+  "balance": 99.0,
   "target": 100000.0,
   "stake_fraction": 0.01,
   "total_staked": 5.0,
-  "settled": 0,
+  "settled": 1,
   "wins": 0,
-  "losses": 0,
-  "profit": 0.0,
+  "losses": 1,
+  "profit": -1.0,
   "note": "Paper only. Stake is 1% of the simulated balance per qualifying Journey slip; paper returns use model fair odds, not bookmaker odds."
  }
 }
