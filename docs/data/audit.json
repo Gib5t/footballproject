@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T22:10:42.990413+00:00",
+ "updated": "2026-11-21T14:06:57.441236+00:00",
  "demo": false,
  "minimum_prior_matches": 20,
  "method": "Rolling-date backtest on active-season results. Each forecast uses only finished matches from earlier calendar days in the same competition; same-day results are excluded. Baseline is the competition's smoothed prior outcome rate, without team information.",
@@ -7,55 +7,55 @@
   "from_date": "2024-06-22",
   "to_date": "2026-11-20"
  },
- "test_matches": 1200,
+ "test_matches": 1201,
  "overall": {
   "markets": {
    "1X2": {
-    "n": 1200,
-    "top_pick_hit_rate": 0.4817,
-    "avg_top_pick_probability": 0.5186,
-    "brier": 0.6151,
-    "log_loss": 1.0249,
-    "baseline_brier": 0.6485,
-    "baseline_log_loss": 1.0727,
-    "brier_skill": 0.0515
+    "n": 1201,
+    "top_pick_hit_rate": 0.4813,
+    "avg_top_pick_probability": 0.5188,
+    "brier": 0.6158,
+    "log_loss": 1.0259,
+    "baseline_brier": 0.6488,
+    "baseline_log_loss": 1.0731,
+    "brier_skill": 0.0508
    },
    "OU": {
-    "n": 1200,
-    "top_pick_hit_rate": 0.5608,
-    "avg_top_pick_probability": 0.621,
-    "brier": 0.5028,
-    "log_loss": 0.6977,
-    "baseline_brier": 0.4866,
-    "baseline_log_loss": 0.6799,
-    "brier_skill": -0.0332
+    "n": 1201,
+    "top_pick_hit_rate": 0.5604,
+    "avg_top_pick_probability": 0.6212,
+    "brier": 0.5034,
+    "log_loss": 0.6985,
+    "baseline_brier": 0.487,
+    "baseline_log_loss": 0.6803,
+    "brier_skill": -0.0337
    },
    "BTTS": {
-    "n": 1200,
-    "top_pick_hit_rate": 0.5292,
+    "n": 1201,
+    "top_pick_hit_rate": 0.5296,
     "avg_top_pick_probability": 0.5951,
-    "brier": 0.5046,
-    "log_loss": 0.6992,
-    "baseline_brier": 0.4953,
-    "baseline_log_loss": 0.6892,
-    "brier_skill": -0.0187
+    "brier": 0.5044,
+    "log_loss": 0.699,
+    "baseline_brier": 0.4951,
+    "baseline_log_loss": 0.689,
+    "brier_skill": -0.0188
    },
    "HTFT": {
-    "n": 1200,
-    "top_pick_hit_rate": 0.2883,
-    "avg_top_pick_probability": 0.3249,
-    "brier": 0.8205,
-    "log_loss": 1.9204,
-    "baseline_brier": 0.8463,
-    "baseline_log_loss": 2.0091,
-    "brier_skill": 0.0305
+    "n": 1201,
+    "top_pick_hit_rate": 0.2881,
+    "avg_top_pick_probability": 0.3251,
+    "brier": 0.8209,
+    "log_loss": 1.9212,
+    "baseline_brier": 0.8464,
+    "baseline_log_loss": 2.0092,
+    "brier_skill": 0.0301
    }
   },
   "scoreline": {
-   "n": 1200,
-   "top_score_hit_rate": 0.1117,
+   "n": 1201,
+   "top_score_hit_rate": 0.1116,
    "avg_modal_score_probability": 0.1161,
-   "exact_score_log_loss": 3.1131,
+   "exact_score_log_loss": 3.1132,
    "most_common_predicted_score": "1-1",
    "most_common_predicted_score_count": 519
   }
@@ -121,58 +121,58 @@
   },
   {
    "competition": "Bundesliga",
-   "test_matches": 56,
+   "test_matches": 57,
    "period": {
     "from_date": "2026-09-13",
-    "to_date": "2026-11-08"
+    "to_date": "2026-11-20"
    },
    "markets": {
     "1X2": {
-     "n": 56,
-     "top_pick_hit_rate": 0.4464,
-     "avg_top_pick_probability": 0.5906,
-     "brier": 0.6283,
-     "log_loss": 1.0413,
-     "baseline_brier": 0.6295,
-     "baseline_log_loss": 1.0457,
-     "brier_skill": 0.0018
+     "n": 57,
+     "top_pick_hit_rate": 0.4386,
+     "avg_top_pick_probability": 0.5948,
+     "brier": 0.6436,
+     "log_loss": 1.0628,
+     "baseline_brier": 0.6351,
+     "baseline_log_loss": 1.0543,
+     "brier_skill": -0.0135
     },
     "OU": {
-     "n": 56,
-     "top_pick_hit_rate": 0.6964,
-     "avg_top_pick_probability": 0.7026,
-     "brier": 0.4668,
-     "log_loss": 0.6622,
-     "baseline_brier": 0.4667,
-     "baseline_log_loss": 0.664,
-     "brier_skill": -0.0001
+     "n": 57,
+     "top_pick_hit_rate": 0.6842,
+     "avg_top_pick_probability": 0.7043,
+     "brier": 0.481,
+     "log_loss": 0.6787,
+     "baseline_brier": 0.4757,
+     "baseline_log_loss": 0.6734,
+     "brier_skill": -0.0111
     },
     "BTTS": {
-     "n": 56,
-     "top_pick_hit_rate": 0.6071,
-     "avg_top_pick_probability": 0.6439,
-     "brier": 0.5234,
-     "log_loss": 0.7229,
-     "baseline_brier": 0.4841,
-     "baseline_log_loss": 0.6773,
-     "brier_skill": -0.0811
+     "n": 57,
+     "top_pick_hit_rate": 0.614,
+     "avg_top_pick_probability": 0.6427,
+     "brier": 0.5205,
+     "log_loss": 0.7199,
+     "baseline_brier": 0.4812,
+     "baseline_log_loss": 0.6743,
+     "brier_skill": -0.0817
     },
     "HTFT": {
-     "n": 56,
-     "top_pick_hit_rate": 0.2143,
-     "avg_top_pick_probability": 0.3663,
-     "brier": 0.843,
-     "log_loss": 1.9445,
-     "baseline_brier": 0.872,
-     "baseline_log_loss": 2.1059,
-     "brier_skill": 0.0333
+     "n": 57,
+     "top_pick_hit_rate": 0.2105,
+     "avg_top_pick_probability": 0.3702,
+     "brier": 0.8507,
+     "log_loss": 1.9615,
+     "baseline_brier": 0.8733,
+     "baseline_log_loss": 2.1076,
+     "brier_skill": 0.0259
     }
    },
    "scoreline": {
-    "n": 56,
-    "top_score_hit_rate": 0.0357,
-    "avg_modal_score_probability": 0.0934,
-    "exact_score_log_loss": 3.2564,
+    "n": 57,
+    "top_score_hit_rate": 0.0351,
+    "avg_modal_score_probability": 0.0933,
+    "exact_score_log_loss": 3.2546,
     "most_common_predicted_score": "1-1",
     "most_common_predicted_score_count": 19
    }

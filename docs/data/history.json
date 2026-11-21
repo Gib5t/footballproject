@@ -2971,38 +2971,52 @@
      "key": "1",
      "player_id": null,
      "pick": "Home win (1)",
-     "p": 0.8344
+     "p": 0.8344,
+     "hit": 0
     },
     {
      "mk": "DC",
      "key": "1X",
      "player_id": null,
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.9367
+     "p": 0.9367,
+     "hit": 1
     },
     {
      "mk": "OU",
      "key": "O",
      "player_id": null,
      "pick": "Over 2.5",
-     "p": 0.7997
+     "p": 0.7997,
+     "hit": 0
     },
     {
      "mk": "BTTS",
      "key": "Y",
      "player_id": null,
      "pick": "Both teams to score: Yes",
-     "p": 0.5761
+     "p": 0.5761,
+     "hit": 1
     },
     {
      "mk": "HTFT",
      "key": "1/1",
      "player_id": null,
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.5862
+     "p": 0.5862,
+     "hit": 0
     }
    ],
-   "result": null
+   "result": {
+    "ft": [
+     1,
+     1
+    ],
+    "ht": [
+     1,
+     1
+    ]
+   }
   },
   {
    "id": 559622,
@@ -7911,40 +7925,40 @@
   "markets": [
    {
     "market": "1X2",
-    "n": 61,
-    "hit_rate": 0.5409836065573771,
-    "avg_prob": 0.5185459016393441
+    "n": 62,
+    "hit_rate": 0.532258064516129,
+    "avg_prob": 0.523640322580645
    },
    {
     "market": "OU",
-    "n": 61,
-    "hit_rate": 0.639344262295082,
-    "avg_prob": 0.6157327868852461
+    "n": 62,
+    "hit_rate": 0.6290322580645161,
+    "avg_prob": 0.6187000000000002
    },
    {
     "market": "HTFT",
-    "n": 61,
-    "hit_rate": 0.36065573770491804,
-    "avg_prob": 0.31689016393442626
+    "n": 62,
+    "hit_rate": 0.3548387096774194,
+    "avg_prob": 0.321233870967742
    },
    {
     "market": "DC",
-    "n": 13,
-    "hit_rate": 0.7692307692307693,
-    "avg_prob": 0.7580384615384614
+    "n": 14,
+    "hit_rate": 0.7857142857142857,
+    "avg_prob": 0.7707999999999998
    },
    {
     "market": "BTTS",
-    "n": 13,
-    "hit_rate": 0.5384615384615384,
-    "avg_prob": 0.5714461538461538
+    "n": 14,
+    "hit_rate": 0.5714285714285714,
+    "avg_prob": 0.5717785714285715
    }
   ],
   "stats": [],
-  "matches": 61,
-  "brier": 0.5578438178688524
+  "matches": 62,
+  "brier": 0.5731382004838709
  },
- "updated": "2026-11-20T22:10:42.990413+00:00",
+ "updated": "2026-11-21T14:06:57.441236+00:00",
  "daily_slips": [
   {
    "date": "2026-11-08",
@@ -8139,7 +8153,7 @@
      "comp": "Bundesliga",
      "kickoff": "2026-11-20T19:30:00+00:00",
      "odds": 1.07,
-     "hit": null
+     "hit": 1
     },
     {
      "match": "Troyes vs Le Havre",
@@ -8159,7 +8173,7 @@
    "odds": 1.38,
    "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns. Saved before kickoff; may update until locked.",
    "updated": "2026-11-19T22:37:03.041049+00:00",
-   "hit": null
+   "hit": 1
   },
   {
    "id": "2026-11-21-1",
@@ -8404,7 +8418,7 @@
      "comp": "Bundesliga",
      "kickoff": "2026-11-20T19:30:00+00:00",
      "odds": 1.07,
-     "hit": null
+     "hit": 1
     },
     {
      "match": "Troyes vs Le Havre",
@@ -8425,10 +8439,10 @@
    "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns.",
    "locked": true,
    "locked_at": "2026-11-19T15:10:03.449324+00:00",
-   "hit": null,
+   "hit": 1,
    "paper_stake": 1.0,
-   "paper_profit": null,
-   "paper_balance_after": null
+   "paper_profit": 0.38,
+   "paper_balance_after": 100.8
   },
   {
    "id": "2026-11-20-2",
@@ -8457,7 +8471,7 @@
    "hit": 0,
    "paper_stake": 1.0,
    "paper_profit": -1.0,
-   "paper_balance_after": 99.42
+   "paper_balance_after": 99.8
   },
   {
    "id": "2026-11-20-3",
@@ -8486,7 +8500,7 @@
    "hit": 1,
    "paper_stake": 1.0,
    "paper_profit": 0.38,
-   "paper_balance_after": 99.8
+   "paper_balance_after": 100.18
   },
   {
    "id": "2026-11-21-1",
@@ -8626,6 +8640,132 @@
    "paper_stake": 1.01,
    "paper_profit": null,
    "paper_balance_after": null
+  },
+  {
+   "id": "2026-11-22-1",
+   "date": "2026-11-22",
+   "number": 1,
+   "legs": [
+    {
+     "match": "Twente vs Willem II",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.9120115643777617,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 79%, draw 12%, away 9%; Home or draw has the highest combined probability at 91%.",
+     "id": 558828,
+     "comp": "Eredivisie",
+     "kickoff": "2026-11-22T11:15:00+00:00",
+     "odds": 1.1,
+     "hit": null
+    },
+    {
+     "match": "Paris FC vs Angers SCO",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.8728491294712901,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 70%, draw 17%, away 13%; Home or draw has the highest combined probability at 87%.",
+     "id": 559625,
+     "comp": "Ligue 1",
+     "kickoff": "2026-11-22T14:00:00+00:00",
+     "odds": 1.15,
+     "hit": null
+    }
+   ],
+   "prob": 0.7960485000348787,
+   "odds": 1.26,
+   "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns.",
+   "locked": true,
+   "locked_at": "2026-11-21T14:06:57.441236+00:00",
+   "hit": null,
+   "paper_stake": 1.0,
+   "paper_profit": null,
+   "paper_balance_after": null
+  },
+  {
+   "id": "2026-11-22-2",
+   "date": "2026-11-22",
+   "number": 2,
+   "legs": [
+    {
+     "match": "Bremen vs HSV",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.8685747906567237,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 70%, draw 17%, away 13%; Home or draw has the highest combined probability at 87%.",
+     "id": 565863,
+     "comp": "Bundesliga",
+     "kickoff": "2026-11-22T16:30:00+00:00",
+     "odds": 1.15,
+     "hit": null
+    },
+    {
+     "match": "Chapecoense vs Cruzeiro",
+     "mk": "DC",
+     "key": "X2",
+     "pick": "Double chance: Draw or away (X2)",
+     "p": 0.8523289136302882,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 15%, draw 16%, away 70%; Draw or away has the highest combined probability at 85%.",
+     "id": 555095,
+     "comp": "Brazil Serie A",
+     "kickoff": "2026-11-22T00:00:00+00:00",
+     "odds": 1.17,
+     "hit": null
+    }
+   ],
+   "prob": 0.7403114077271004,
+   "odds": 1.35,
+   "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns.",
+   "locked": true,
+   "locked_at": "2026-11-21T14:06:57.441236+00:00",
+   "hit": null,
+   "paper_stake": 1.0,
+   "paper_profit": null,
+   "paper_balance_after": null
+  },
+  {
+   "id": "2026-11-22-3",
+   "date": "2026-11-22",
+   "number": 3,
+   "legs": [
+    {
+     "match": "Marseille vs Le Mans",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.842819323148072,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 67%, draw 17%, away 16%; Home or draw has the highest combined probability at 84%.",
+     "id": 559629,
+     "comp": "Ligue 1",
+     "kickoff": "2026-11-22T19:45:00+00:00",
+     "odds": 1.19,
+     "hit": null
+    },
+    {
+     "match": "Bar\u00e7a vs Villarreal",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.8404845417344811,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 68%, draw 16%, away 16%; Home or draw has the highest combined probability at 84%.",
+     "id": 564749,
+     "comp": "La Liga",
+     "kickoff": "2026-11-22T13:00:00+00:00",
+     "odds": 1.19,
+     "hit": null
+    }
+   ],
+   "prob": 0.7083766125810728,
+   "odds": 1.41,
+   "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns.",
+   "locked": true,
+   "locked_at": "2026-11-21T14:06:57.441236+00:00",
+   "hit": null,
+   "paper_stake": 1.0,
+   "paper_profit": null,
+   "paper_balance_after": null
   }
  ],
  "journey_start_date": "2026-11-16",
@@ -8633,14 +8773,14 @@
  "paper_simulation": {
   "started_at": "2026-11-16T23:19:08.593948+00:00",
   "starting_balance": 100.0,
-  "balance": 99.8,
+  "balance": 100.18,
   "target": 100000.0,
   "stake_fraction": 0.01,
-  "total_staked": 12.03,
-  "settled": 8,
-  "wins": 6,
+  "total_staked": 15.03,
+  "settled": 9,
+  "wins": 7,
   "losses": 2,
-  "profit": -0.2,
+  "profit": 0.18,
   "note": "Paper only. Stake is 1% of the simulated balance per qualifying Journey slip; paper returns use model fair odds, not bookmaker odds."
  }
 }
