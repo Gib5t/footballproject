@@ -11,7 +11,7 @@ from urllib.request import Request, urlopen
 from urllib.parse import quote
 
 COMPS = {"PL": "Premier League", "PD": "La Liga", "SA": "Serie A", "BL1": "Bundesliga", "FL1": "Ligue 1", "ELC": "Championship", "DED": "Eredivisie", "PPL": "Primeira Liga", "BSA": "Brazil Serie A", "CL": "Champions League", "EC": "European Championship", "WC": "World Cup"}
-TOP5_NAMES = {"Premier League", "La Liga", "Serie A", "Bundesliga", "Ligue 1"}
+TOP5_NAMES = {"Premier League", "La Liga", "Serie A", "Bundesliga", "Ligue 1", "Champions League"}
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "docs", "data")
 XI = 0.006          # time decay per day: recent games count more
 K = 3.0             # shrinkage: pulls small samples toward league average
@@ -705,7 +705,7 @@ def update_journey(matches, history, finished, now):
     by_id.update({row.get("id") or f"{row.get('date')}-{row.get('number')}": row for row in previews})
     return sorted(by_id.values(), key=lambda row: (row.get("date", ""), int(row.get("number", 0) or 0)))
 def write_top5_site(matches, all_c, hist, finished, notes, now, demo=False):
-    # Keep the five-league site independent while reusing the same fetched data.
+    # Keep the Top 5 + Champions League site independent while reusing the same fetched data.
     if demo: return
     names = TOP5_NAMES
     top_matches = [m for m in matches if m.get("comp") in names]
