@@ -7987,38 +7987,52 @@
      "key": "1",
      "player_id": null,
      "pick": "Home win (1)",
-     "p": 0.4838
+     "p": 0.4838,
+     "hit": 0
     },
     {
      "mk": "DC",
      "key": "1X",
      "player_id": null,
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.7598
+     "p": 0.7598,
+     "hit": 0
     },
     {
      "mk": "OU",
      "key": "U",
      "player_id": null,
      "pick": "Under 2.5",
-     "p": 0.6086
+     "p": 0.6086,
+     "hit": 1
     },
     {
      "mk": "BTTS",
      "key": "N",
      "player_id": null,
      "pick": "Both teams to score: No",
-     "p": 0.5632
+     "p": 0.5632,
+     "hit": 1
     },
     {
      "mk": "HTFT",
      "key": "1/1",
      "player_id": null,
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.2905
+     "p": 0.2905,
+     "hit": 0
     }
    ],
-   "result": null
+   "result": {
+    "ft": [
+     0,
+     2
+    ],
+    "ht": [
+     0,
+     1
+    ]
+   }
   },
   {
    "id": 561953,
@@ -10203,46 +10217,202 @@
     }
    ],
    "result": null
+  },
+  {
+   "id": 561969,
+   "comp": "Championship",
+   "kickoff": "2026-11-28T12:30:00+00:00",
+   "home": "Blackburn",
+   "away": "Charlton",
+   "p1x2": {
+    "1": 0.6496,
+    "X": 0.1972,
+    "2": 0.1532
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.6496
+    },
+    {
+     "mk": "DC",
+     "key": "1X",
+     "player_id": null,
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.8468
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.5892
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.5323
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.4419
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 561972,
+   "comp": "Championship",
+   "kickoff": "2026-11-28T12:30:00+00:00",
+   "home": "Lincoln City",
+   "away": "Wolverhampton",
+   "p1x2": {
+    "1": 0.1602,
+    "X": 0.1907,
+    "2": 0.6491
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "2",
+     "player_id": null,
+     "pick": "Away win (2)",
+     "p": 0.6491
+    },
+    {
+     "mk": "DC",
+     "key": "X2",
+     "player_id": null,
+     "pick": "Double chance: Draw or away (X2)",
+     "p": 0.8398
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.6344
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.5732
+    },
+    {
+     "mk": "HTFT",
+     "key": "2/2",
+     "player_id": null,
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.4442
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 561973,
+   "comp": "Championship",
+   "kickoff": "2026-11-28T12:30:00+00:00",
+   "home": "Preston NE",
+   "away": "Norwich",
+   "p1x2": {
+    "1": 0.1317,
+    "X": 0.1625,
+    "2": 0.7058
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "2",
+     "player_id": null,
+     "pick": "Away win (2)",
+     "p": 0.7058
+    },
+    {
+     "mk": "DC",
+     "key": "X2",
+     "player_id": null,
+     "pick": "Double chance: Draw or away (X2)",
+     "p": 0.8683
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.7102
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.6061
+    },
+    {
+     "mk": "HTFT",
+     "key": "2/2",
+     "player_id": null,
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.499
+    }
+   ],
+   "result": null
   }
  ],
  "summary": {
   "markets": [
    {
     "market": "1X2",
-    "n": 136,
-    "hit_rate": 0.5514705882352942,
-    "avg_prob": 0.5310867647058823
+    "n": 137,
+    "hit_rate": 0.5474452554744526,
+    "avg_prob": 0.5307416058394161
    },
    {
     "market": "OU",
-    "n": 136,
-    "hit_rate": 0.5808823529411765,
-    "avg_prob": 0.6304933823529414
+    "n": 137,
+    "hit_rate": 0.583941605839416,
+    "avg_prob": 0.6303335766423359
    },
    {
     "market": "HTFT",
-    "n": 136,
-    "hit_rate": 0.33088235294117646,
-    "avg_prob": 0.3296389705882355
+    "n": 137,
+    "hit_rate": 0.3284671532846715,
+    "avg_prob": 0.3293532846715331
    },
    {
     "market": "DC",
-    "n": 88,
-    "hit_rate": 0.7840909090909091,
-    "avg_prob": 0.7937761363636366
+    "n": 89,
+    "hit_rate": 0.7752808988764045,
+    "avg_prob": 0.7933943820224723
    },
    {
     "market": "BTTS",
-    "n": 88,
-    "hit_rate": 0.5681818181818182,
-    "avg_prob": 0.6063829545454544
+    "n": 89,
+    "hit_rate": 0.5730337078651685,
+    "avg_prob": 0.6058977528089887
    }
   ],
   "stats": [],
-  "matches": 136,
-  "brier": 0.5669961152205882
+  "matches": 137,
+  "brier": 0.5693354084671532
  },
- "updated": "2026-11-24T02:03:54.485397+00:00",
+ "updated": "2026-11-24T12:44:06.569101+00:00",
  "daily_slips": [
   {
    "date": "2026-11-08",

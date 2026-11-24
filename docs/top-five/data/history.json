@@ -5329,6 +5329,942 @@
    }
   },
   {
+   "id": 575395,
+   "comp": "Champions League",
+   "kickoff": "2026-11-24T17:45:00+00:00",
+   "home": "Galatasaray",
+   "away": "Aston Villa",
+   "p1x2": {
+    "1": 0.4809,
+    "X": 0.2091,
+    "2": 0.3099
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.4809
+    },
+    {
+     "mk": "DC",
+     "key": "12",
+     "player_id": null,
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.7909
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.7271
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.7129
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.287
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 575396,
+   "comp": "Champions League",
+   "kickoff": "2026-11-24T17:45:00+00:00",
+   "home": "Bod\u00f8/Glimt",
+   "away": "LASK",
+   "p1x2": {
+    "1": 0.4453,
+    "X": 0.2634,
+    "2": 0.2913
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.4453
+    },
+    {
+     "mk": "DC",
+     "key": "12",
+     "player_id": null,
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.7366
+    },
+    {
+     "mk": "OU",
+     "key": "U",
+     "player_id": null,
+     "pick": "Under 2.5",
+     "p": 0.5341
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.5093
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.248
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 575397,
+   "comp": "Champions League",
+   "kickoff": "2026-11-24T20:00:00+00:00",
+   "home": "Real Madrid",
+   "away": "PSV",
+   "p1x2": {
+    "1": 0.5741,
+    "X": 0.2166,
+    "2": 0.2092
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.5741
+    },
+    {
+     "mk": "DC",
+     "key": "1X",
+     "player_id": null,
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.7908
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.594
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.5762
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.3446
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 575398,
+   "comp": "Champions League",
+   "kickoff": "2026-11-24T20:00:00+00:00",
+   "home": "Man City",
+   "away": "Napoli",
+   "p1x2": {
+    "1": 0.705,
+    "X": 0.1404,
+    "2": 0.1546
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.705
+    },
+    {
+     "mk": "DC",
+     "key": "12",
+     "player_id": null,
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.8596
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.8754
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.7787
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.4728
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 575399,
+   "comp": "Champions League",
+   "kickoff": "2026-11-24T20:00:00+00:00",
+   "home": "Arsenal",
+   "away": "Dortmund",
+   "p1x2": {
+    "1": 0.5628,
+    "X": 0.213,
+    "2": 0.2242
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.5628
+    },
+    {
+     "mk": "DC",
+     "key": "12",
+     "player_id": null,
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.787
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.6308
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.6119
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.339
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 575400,
+   "comp": "Champions League",
+   "kickoff": "2026-11-24T20:00:00+00:00",
+   "home": "Feyenoord",
+   "away": "Porto",
+   "p1x2": {
+    "1": 0.3987,
+    "X": 0.205,
+    "2": 0.3962
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.3987
+    },
+    {
+     "mk": "DC",
+     "key": "12",
+     "player_id": null,
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.795
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.7721
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.7559
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.2336
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 575401,
+   "comp": "Champions League",
+   "kickoff": "2026-11-24T20:00:00+00:00",
+   "home": "Sl. Bratislava",
+   "away": "Real Betis",
+   "p1x2": {
+    "1": 0.3005,
+    "X": 0.2093,
+    "2": 0.4902
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "2",
+     "player_id": null,
+     "pick": "Away win (2)",
+     "p": 0.4902
+    },
+    {
+     "mk": "DC",
+     "key": "12",
+     "player_id": null,
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.7907
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.7205
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.706
+    },
+    {
+     "mk": "HTFT",
+     "key": "2/2",
+     "player_id": null,
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.293
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 575402,
+   "comp": "Champions League",
+   "kickoff": "2026-11-24T20:00:00+00:00",
+   "home": "RB Leipzig",
+   "away": "RC Lens",
+   "p1x2": {
+    "1": 0.4985,
+    "X": 0.2142,
+    "2": 0.2873
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.4985
+    },
+    {
+     "mk": "DC",
+     "key": "12",
+     "player_id": null,
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.7858
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.6872
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.6772
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.2968
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 575403,
+   "comp": "Champions League",
+   "kickoff": "2026-11-24T20:00:00+00:00",
+   "home": "Como 1907",
+   "away": "PAE AEK",
+   "p1x2": {
+    "1": 0.8171,
+    "X": 0.1026,
+    "2": 0.0803
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.8171
+    },
+    {
+     "mk": "DC",
+     "key": "1X",
+     "player_id": null,
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.9197
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.8716
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.6929
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.5799
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 575404,
+   "comp": "Champions League",
+   "kickoff": "2026-11-25T17:45:00+00:00",
+   "home": "Sabah FK",
+   "away": "Bar\u00e7a",
+   "p1x2": {
+    "1": 0.4158,
+    "X": 0.2084,
+    "2": 0.3757
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.4158
+    },
+    {
+     "mk": "DC",
+     "key": "12",
+     "player_id": null,
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.7916
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.7533
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.7404
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.244
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 575405,
+   "comp": "Champions League",
+   "kickoff": "2026-11-25T17:45:00+00:00",
+   "home": "Slavia Praha",
+   "away": "Villarreal",
+   "p1x2": {
+    "1": 0.4075,
+    "X": 0.1954,
+    "2": 0.3972
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.4075
+    },
+    {
+     "mk": "DC",
+     "key": "12",
+     "player_id": null,
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.8046
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.8209
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.7957
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.2421
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 575406,
+   "comp": "Champions League",
+   "kickoff": "2026-11-25T20:00:00+00:00",
+   "home": "Inter",
+   "away": "Stuttgart",
+   "p1x2": {
+    "1": 0.3979,
+    "X": 0.2238,
+    "2": 0.3783
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.3979
+    },
+    {
+     "mk": "DC",
+     "key": "12",
+     "player_id": null,
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.7762
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.6736
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.6783
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.228
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 575407,
+   "comp": "Champions League",
+   "kickoff": "2026-11-25T20:00:00+00:00",
+   "home": "Atleti",
+   "away": "Viking",
+   "p1x2": {
+    "1": 0.533,
+    "X": 0.22,
+    "2": 0.247
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.533
+    },
+    {
+     "mk": "DC",
+     "key": "12",
+     "player_id": null,
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.78
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.6231
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.6157
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.3171
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 575408,
+   "comp": "Champions League",
+   "kickoff": "2026-11-25T20:00:00+00:00",
+   "home": "PSG",
+   "away": "Roma",
+   "p1x2": {
+    "1": 0.6995,
+    "X": 0.1438,
+    "2": 0.1567
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.6995
+    },
+    {
+     "mk": "DC",
+     "key": "12",
+     "player_id": null,
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.8562
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.8635
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.7679
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.4668
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 575409,
+   "comp": "Champions League",
+   "kickoff": "2026-11-25T20:00:00+00:00",
+   "home": "Club Brugge",
+   "away": "Liverpool",
+   "p1x2": {
+    "1": 0.4698,
+    "X": 0.1797,
+    "2": 0.3505
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.4698
+    },
+    {
+     "mk": "DC",
+     "key": "12",
+     "player_id": null,
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.8203
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.8839
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.848
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.2894
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 575410,
+   "comp": "Champions League",
+   "kickoff": "2026-11-25T20:00:00+00:00",
+   "home": "Lille",
+   "away": "Bayern",
+   "p1x2": {
+    "1": 0.2432,
+    "X": 0.1769,
+    "2": 0.58
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "2",
+     "player_id": null,
+     "pick": "Away win (2)",
+     "p": 0.58
+    },
+    {
+     "mk": "DC",
+     "key": "12",
+     "player_id": null,
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.8231
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.8313
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.7807
+    },
+    {
+     "mk": "HTFT",
+     "key": "2/2",
+     "player_id": null,
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.3664
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 575411,
+   "comp": "Champions League",
+   "kickoff": "2026-11-25T20:00:00+00:00",
+   "home": "Sporting CP",
+   "away": "Man United",
+   "p1x2": {
+    "1": 0.6446,
+    "X": 0.1718,
+    "2": 0.1836
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.6446
+    },
+    {
+     "mk": "DC",
+     "key": "12",
+     "player_id": null,
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.8282
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.7748
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.7041
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.4126
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 575412,
+   "comp": "Champions League",
+   "kickoff": "2026-11-25T20:00:00+00:00",
+   "home": "Shaktar",
+   "away": "Fenerbah\u00e7e",
+   "p1x2": {
+    "1": 0.6815,
+    "X": 0.1687,
+    "2": 0.1499
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.6815
+    },
+    {
+     "mk": "DC",
+     "key": "1X",
+     "player_id": null,
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.8501
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.723
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.6349
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.4383
+    }
+   ],
+   "result": null
+  },
+  {
    "id": 565869,
    "comp": "Bundesliga",
    "kickoff": "2026-11-27T19:30:00+00:00",
@@ -5626,7 +6562,7 @@
   "matches": 96,
   "brier": 0.5794367504166669
  },
- "updated": "2026-11-24T02:03:54.485397+00:00",
+ "updated": "2026-11-24T12:44:06.569101+00:00",
  "daily_slips": [
   {
    "date": "2026-11-08",
@@ -5896,6 +6832,44 @@
    "odds": 1.3,
    "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns. Saved before kickoff; may update until locked.",
    "updated": "2026-11-24T02:03:54.485397+00:00",
+   "hit": null
+  },
+  {
+   "id": "2026-11-24-1",
+   "date": "2026-11-24",
+   "number": 1,
+   "legs": [
+    {
+     "match": "Como 1907 vs PAE AEK",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.9182561780858053,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 81%, draw 10%, away 8%; Home or draw has the highest combined probability at 92%.",
+     "id": 575403,
+     "comp": "Champions League",
+     "kickoff": "2026-11-24T20:00:00+00:00",
+     "odds": 1.09,
+     "hit": null
+    },
+    {
+     "match": "Man City vs Napoli",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.8744016767934063,
+     "why": "Combined expected goals 4.99. Probability of 3+ goals is 87%, so Over 2.5 is the likelier side.",
+     "id": 575398,
+     "comp": "Champions League",
+     "kickoff": "2026-11-24T20:00:00+00:00",
+     "odds": 1.14,
+     "hit": null
+    }
+   ],
+   "prob": 0.8029247418441329,
+   "odds": 1.25,
+   "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns. Saved before kickoff; may update until locked.",
+   "updated": "2026-11-24T12:44:06.569101+00:00",
    "hit": null
   }
  ],
@@ -6283,6 +7257,219 @@
    "paper_stake": 0.99,
    "paper_profit": 0.26,
    "paper_balance_after": 97.86
+  },
+  {
+   "id": "2026-11-24-1",
+   "date": "2026-11-24",
+   "number": 1,
+   "legs": [
+    {
+     "match": "Como 1907 vs PAE AEK",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.9182561780858053,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 81%, draw 10%, away 8%; Home or draw has the highest combined probability at 92%.",
+     "id": 575403,
+     "comp": "Champions League",
+     "kickoff": "2026-11-24T20:00:00+00:00",
+     "odds": 1.09,
+     "hit": null
+    },
+    {
+     "match": "Man City vs Napoli",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.8744016767934063,
+     "why": "Combined expected goals 4.99. Probability of 3+ goals is 87%, so Over 2.5 is the likelier side.",
+     "id": 575398,
+     "comp": "Champions League",
+     "kickoff": "2026-11-24T20:00:00+00:00",
+     "odds": 1.14,
+     "hit": null
+    }
+   ],
+   "prob": 0.8029247418441329,
+   "odds": 1.25,
+   "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns.",
+   "locked": true,
+   "locked_at": "2026-11-24T12:44:06.569101+00:00",
+   "hit": null,
+   "paper_stake": 0.98,
+   "paper_profit": null,
+   "paper_balance_after": null
+  },
+  {
+   "id": "2026-11-24-2",
+   "date": "2026-11-24",
+   "number": 2,
+   "legs": [
+    {
+     "match": "Feyenoord vs Porto",
+     "mk": "DC",
+     "key": "12",
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.794908753140924,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 40%, draw 21%, away 40%; Home or away has the highest combined probability at 79%.",
+     "id": 575400,
+     "comp": "Champions League",
+     "kickoff": "2026-11-24T20:00:00+00:00",
+     "odds": 1.26,
+     "hit": null
+    }
+   ],
+   "prob": 0.794908753140924,
+   "odds": 1.26,
+   "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns.",
+   "locked": true,
+   "locked_at": "2026-11-24T12:44:06.569101+00:00",
+   "hit": null,
+   "paper_stake": 0.98,
+   "paper_profit": null,
+   "paper_balance_after": null
+  },
+  {
+   "id": "2026-11-24-3",
+   "date": "2026-11-24",
+   "number": 3,
+   "legs": [
+    {
+     "match": "Galatasaray vs Aston Villa",
+     "mk": "DC",
+     "key": "12",
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.7909786419651506,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 48%, draw 21%, away 31%; Home or away has the highest combined probability at 79%.",
+     "id": 575395,
+     "comp": "Champions League",
+     "kickoff": "2026-11-24T17:45:00+00:00",
+     "odds": 1.26,
+     "hit": null
+    }
+   ],
+   "prob": 0.7909786419651506,
+   "odds": 1.26,
+   "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns.",
+   "locked": true,
+   "locked_at": "2026-11-24T12:44:06.569101+00:00",
+   "hit": null,
+   "paper_stake": 0.98,
+   "paper_profit": null,
+   "paper_balance_after": null
+  },
+  {
+   "id": "2026-11-25-1",
+   "date": "2026-11-25",
+   "number": 1,
+   "legs": [
+    {
+     "match": "Club Brugge vs Liverpool",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.883412166057081,
+     "why": "Combined expected goals 5.10. Probability of 3+ goals is 88%, so Over 2.5 is the likelier side.",
+     "id": 575409,
+     "comp": "Champions League",
+     "kickoff": "2026-11-25T20:00:00+00:00",
+     "odds": 1.13,
+     "hit": null
+    },
+    {
+     "match": "PSG vs Roma",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.8629549052708485,
+     "why": "Combined expected goals 4.86. Probability of 3+ goals is 86%, so Over 2.5 is the likelier side.",
+     "id": 575408,
+     "comp": "Champions League",
+     "kickoff": "2026-11-25T20:00:00+00:00",
+     "odds": 1.16,
+     "hit": null
+    }
+   ],
+   "prob": 0.7623448620749034,
+   "odds": 1.31,
+   "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns.",
+   "locked": true,
+   "locked_at": "2026-11-24T12:44:06.569101+00:00",
+   "hit": null,
+   "paper_stake": 0.98,
+   "paper_profit": null,
+   "paper_balance_after": null
+  },
+  {
+   "id": "2026-11-25-2",
+   "date": "2026-11-25",
+   "number": 2,
+   "legs": [
+    {
+     "match": "Shaktar vs Fenerbah\u00e7e",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.8490591620964918,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 68%, draw 17%, away 15%; Home or draw has the highest combined probability at 85%.",
+     "id": 575412,
+     "comp": "Champions League",
+     "kickoff": "2026-11-25T20:00:00+00:00",
+     "odds": 1.18,
+     "hit": null
+    },
+    {
+     "match": "Lille vs Bayern",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.8306994199429033,
+     "why": "Combined expected goals 4.54. Probability of 3+ goals is 83%, so Over 2.5 is the likelier side.",
+     "id": 575410,
+     "comp": "Champions League",
+     "kickoff": "2026-11-25T20:00:00+00:00",
+     "odds": 1.2,
+     "hit": null
+    }
+   ],
+   "prob": 0.7053129534507633,
+   "odds": 1.42,
+   "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns.",
+   "locked": true,
+   "locked_at": "2026-11-24T12:44:06.569101+00:00",
+   "hit": null,
+   "paper_stake": 0.98,
+   "paper_profit": null,
+   "paper_balance_after": null
+  },
+  {
+   "id": "2026-11-25-3",
+   "date": "2026-11-25",
+   "number": 3,
+   "legs": [
+    {
+     "match": "Sporting CP vs Man United",
+     "mk": "DC",
+     "key": "12",
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.8279472475953276,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 64%, draw 17%, away 18%; Home or away has the highest combined probability at 83%.",
+     "id": 575411,
+     "comp": "Champions League",
+     "kickoff": "2026-11-25T20:00:00+00:00",
+     "odds": 1.21,
+     "hit": null
+    }
+   ],
+   "prob": 0.8279472475953276,
+   "odds": 1.21,
+   "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns.",
+   "locked": true,
+   "locked_at": "2026-11-24T12:44:06.569101+00:00",
+   "hit": null,
+   "paper_stake": 0.98,
+   "paper_profit": null,
+   "paper_balance_after": null
   }
  ],
  "journey_start_date": "2026-11-16",
@@ -6293,7 +7480,7 @@
   "balance": 97.86,
   "target": 100000.0,
   "stake_fraction": 0.01,
-  "total_staked": 10.94,
+  "total_staked": 16.82,
   "settled": 11,
   "wins": 7,
   "losses": 4,
