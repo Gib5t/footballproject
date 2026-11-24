@@ -17,8 +17,8 @@ XI = 0.006          # time decay per day: recent games count more
 K = 3.0             # shrinkage: pulls small samples toward league average
 TRACK_DAYS = 4      # lock track-record picks only this close to kickoff
 JOURNEY_DAYS = 30
-JOURNEY_MIN_SLIP_PROB = 0.70
-JOURNEY_MAX_SLIPS_PER_DAY = 3
+JOURNEY_TARGET_MIN_ODDS = 2.0
+JOURNEY_MAX_SLIPS_PER_DAY = 1
 JOURNEY_MAX_LEGS = 5
 JOURNEY_TZ = ZoneInfo("Africa/Casablanca")
 BETSLIP_DAYS = 7    # keep betslips focused on the next week
@@ -489,6 +489,17 @@ def candidates(m, r):
         f"combos need two things to land, so they are riskier.")))
     return c
 
+def preferred_pick(picks):
+    """One direct, evidence-backed market for every fixture.
+
+    Do not manufacture a pick from optional statistics: the core feed supports
+    only match-result and goal markets, so those are the only markets eligible.
+    """
+    supported = [p for p in picks if p.get("mk") in ("1X2", "DC", "OU", "BTTS")]
+    if not supported:
+        return None
+    return max(supported, key=lambda p: (float(p.get("p", 0)), p.get("mk") == "DC"))
+
 def player_candidates(m, features):
     out = []
     for market, field, label in (("SCORER", "scorers", "to score"), ("ASSIST", "assists", "to assist")):
@@ -502,14 +513,14 @@ def player_candidates(m, features):
                             why=f"Recent {p['basis']}; projected around {p['minutes']} minutes per appearance across {p['appearances']} recent appearances. Lineups and availability may change."))
     return out
 
-def pack_high_confidence_slips(candidates, day, max_slips=1, start_number=1):
-    """Build slips whose joint model probability stays at or above 70%."""
+def pack_journey_slips(candidates, day, max_slips=1, start_number=1):
+    """Build one conservative 2.0+ fair-odds combination from separate matches."""
     per_match = {}
     for source in candidates:
         if source.get("mk") not in ("1X2", "DC", "OU", "BTTS"): continue
         try: probability = float(source.get("p"))
         except (TypeError, ValueError): continue
-        if not JOURNEY_MIN_SLIP_PROB <= probability <= 1: continue
+        if not 0 < probability <= 1: continue
         match_id = source.get("id")
         if match_id is None: continue
         old = per_match.get(match_id)
@@ -518,25 +529,22 @@ def pack_high_confidence_slips(candidates, day, max_slips=1, start_number=1):
     output = []
     number = start_number
     while pool and len(output) < max_slips:
-        legs = [pool.pop(0)]
-        probability = float(legs[0]["p"])
-        while pool and len(legs) < JOURNEY_MAX_LEGS:
-            next_leg = pool[0]
-            next_probability = probability * float(next_leg["p"])
-            if next_probability < JOURNEY_MIN_SLIP_PROB: break
-            legs.append(pool.pop(0)); probability = next_probability
-        if probability < JOURNEY_MIN_SLIP_PROB: continue
+        legs, probability = [], 1.0
+        while pool and len(legs) < JOURNEY_MAX_LEGS and probability > 1 / JOURNEY_TARGET_MIN_ODDS:
+            leg = pool.pop(0)
+            legs.append(leg)
+            probability *= float(leg["p"])
+        if not legs or probability > 1 / JOURNEY_TARGET_MIN_ODDS: continue
         output.append(dict(
             id=f"{day}-{number}", date=day, number=number,
             legs=[dict(leg, odds=round(1 / float(leg["p"]), 2)) for leg in legs],
             prob=probability, odds=round(1 / probability, 2),
-            note="The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns."))
+            note="This is the highest-probability available combination that reaches at least 2.0 model fair odds. Multi-match probabilities multiply leg estimates and assume independent outcomes, so the combined estimate is approximate—not bookmaker odds or a forecast of returns."))
         number += 1
     return output
 
 def slip(all_c, lo, hi, n, mid):
-    # Compatibility output for the old small/medium/big data fields. Keep them
-    # scoped to one fixture date and suppress any combination below the joint 70% rule.
+    # Compatibility output for the old small/medium/big data fields.
     if not all_c: return dict(legs=[], prob=0, odds=None)
     dated = {}
     for candidate in all_c:
@@ -546,7 +554,7 @@ def slip(all_c, lo, hi, n, mid):
         dated.setdefault(day, []).append(candidate)
     if not dated: return dict(legs=[], prob=0, odds=None)
     day = min(dated)
-    rows = pack_high_confidence_slips(dated[day], day, 1, 1)
+    rows = pack_journey_slips(dated[day], day, 1, 1)
     if not rows: return dict(legs=[], prob=0, odds=None)
     row = rows[0]
     return dict(legs=row["legs"], prob=row["prob"], odds=row["odds"], note=row["note"])
@@ -568,7 +576,7 @@ def daily_slip(all_c, matches, now):
     chosen = by_day[target_day]
     ids = {m["id"] for m in chosen}
     candidates = [c for c in all_c if c.get("id") in ids]
-    rows = pack_high_confidence_slips(candidates, target_day, 1, 1)
+    rows = pack_journey_slips(candidates, target_day, 1, 1)
     if not rows: return None
     return {**rows[0], "updated": now.isoformat(),
             "note": rows[0]["note"] + " Saved before kickoff; may update until locked."}
@@ -612,7 +620,7 @@ def journey_candidates(matches, now, existing=None):
     """Build current-day and next-day slips; never preselect the whole 30-day window."""
     today = now.astimezone(JOURNEY_TZ).date()
     allowed_days = {today.isoformat(), (today + timedelta(days=1)).isoformat()}
-    existing = [row for row in (existing or []) if float(row.get("prob", 0) or 0) >= JOURNEY_MIN_SLIP_PROB]
+    existing = [row for row in (existing or []) if float(row.get("odds", 0) or 0) >= JOURNEY_TARGET_MIN_ODDS]
     used_by_day, counts_by_day, max_num_by_day = {}, {}, {}
     for row in existing:
         day = row.get("date")
@@ -639,7 +647,7 @@ def journey_candidates(matches, now, existing=None):
         already = counts_by_day.get(day, 0)
         available = max(0, JOURNEY_MAX_SLIPS_PER_DAY - already)
         if not available: continue
-        output.extend(pack_high_confidence_slips(picks, day, available, max_num_by_day.get(day, 0) + 1))
+        output.extend(pack_journey_slips(picks, day, available, max_num_by_day.get(day, 0) + 1))
     return output
 
 def update_journey(matches, history, finished, now):
@@ -670,7 +678,7 @@ def update_journey(matches, history, finished, now):
     qualifying = sorted(
         (row for row in records if not row.get("legacy")
          and row.get("locked_at", "") >= paper_started_at
-         and float(row.get("prob", 0) or 0) >= JOURNEY_MIN_SLIP_PROB),
+         and float(row.get("odds", 0) or 0) >= JOURNEY_TARGET_MIN_ODDS),
         key=lambda row: (row.get("date", ""), int(row.get("number", 0) or 0)))
     for row in qualifying:
         try:
@@ -699,7 +707,7 @@ def update_journey(matches, history, finished, now):
         note="Paper only. Stake is 1% of the simulated balance per qualifying Journey slip; paper returns use model fair odds, not bookmaker odds.")
     tomorrow = (now.astimezone(JOURNEY_TZ).date() + timedelta(days=1)).isoformat()
     visible = [row for row in records if row.get("date") in (today, tomorrow)
-               and float(row.get("prob", 0) or 0) >= JOURNEY_MIN_SLIP_PROB]
+               and float(row.get("odds", 0) or 0) >= JOURNEY_TARGET_MIN_ODDS]
     previews = journey_candidates(matches, now, records)
     by_id = {row.get("id") or f"{row.get('date')}-{row.get('number')}": row for row in visible}
     by_id.update({row.get("id") or f"{row.get('date')}-{row.get('number')}": row for row in previews})
@@ -728,10 +736,10 @@ def write_top5_site(matches, all_c, hist, finished, notes, now, demo=False):
     items_by_id.update({it["id"]: it for it in hist.get("items", []) if it.get("comp") in names})
     if top_slip:
         for old in saved["daily_slips"]:
-            if old.get("date") == top_slip["date"] and float(old.get("prob", 0) or 0) < JOURNEY_MIN_SLIP_PROB:
+            if old.get("date") == top_slip["date"] and float(old.get("odds", 0) or 0) < JOURNEY_TARGET_MIN_ODDS:
                 old["legacy"] = True
         existing = next((x for x in saved["daily_slips"] if x.get("date") == top_slip["date"]
-                         and not x.get("legacy") and float(x.get("prob", 0) or 0) >= JOURNEY_MIN_SLIP_PROB), None)
+                         and not x.get("legacy") and float(x.get("odds", 0) or 0) >= JOURNEY_TARGET_MIN_ODDS), None)
         if existing is None:
             existing = {**top_slip, "legs": [dict(c, hit=None) for c in top_slip["legs"]], "hit": None}
             saved["daily_slips"].append(existing)
@@ -766,7 +774,7 @@ def write_top5_site(matches, all_c, hist, finished, notes, now, demo=False):
                    medium=slip(top_candidates, .48, .62, 4, .55),
                    big=slip(top_candidates, .2, .48, 5, .38)),
         journey=dict(starting_dh=100, target_dh=100000, days=JOURNEY_DAYS,
-                     min_slip_probability=JOURNEY_MIN_SLIP_PROB, max_slips_per_day=JOURNEY_MAX_SLIPS_PER_DAY,
+                     target_min_odds=JOURNEY_TARGET_MIN_ODDS, max_slips_per_day=JOURNEY_MAX_SLIPS_PER_DAY,
                      timezone="Africa/Casablanca", previews=journey_display, start_date=saved.get("journey_start_date"), paper=saved.get("paper_simulation"),
                      note="Only today and tomorrow are shown; each date is recomputed from the latest model update."))
     json.dump(top_pred, open(os.path.join(out_dir, "predictions.json"), "w"), indent=1, default=str)
@@ -811,6 +819,8 @@ def main():
                        xg=[round(r["lh"], 2), round(r["la"], 2)], p1x2={k: round(v, 4) for k, v in r["P"].items()},
                        over25=round(r["ov"], 4), score=r["score"], recent=r["recent"],
                        htft=sorted(([k, round(v, 4)] for k, v in r["H"].items()), key=lambda z: -z[1])[:3], picks=cs, extra=extra)
+            preferred = preferred_pick(cs)
+            ent["preferred_pick"] = preferred
             matches.append(ent)
             if m["date"] <= now + timedelta(days=TRACK_DAYS) and m["id"] not in known:  # lock close to kickoff
                 hist["items"].append(dict(id=m["id"], comp=name, kickoff=ent["kickoff"], home=m["home"], away=m["away"], p1x2=ent["p1x2"],
@@ -836,7 +846,7 @@ def main():
     slip_now = None if dm else daily_slip(all_c, matches, now)
     if slip_now:
         old = next((x for x in hist["daily_slips"] if x.get("date") == slip_now["date"] and not x.get("legacy")), None)
-        if old and float(old.get("prob", 0) or 0) < JOURNEY_MIN_SLIP_PROB:
+        if old and float(old.get("odds", 0) or 0) < JOURNEY_TARGET_MIN_ODDS:
             old["legacy"] = True
             old = None
         if old is None:
@@ -861,7 +871,7 @@ def main():
     pred = dict(updated=now.isoformat(), notes=notes, matches=matches, demo=dm, slip_of_day=slip_now,
                 slips=dict(small=slip(all_c, .62, 1.01, 3, .7), medium=slip(all_c, .48, .62, 4, .55), big=slip(all_c, .2, .48, 5, .38)),
                 journey=dict(starting_dh=100, target_dh=100000, days=JOURNEY_DAYS,
-                             min_slip_probability=JOURNEY_MIN_SLIP_PROB, max_slips_per_day=JOURNEY_MAX_SLIPS_PER_DAY,
+                             target_min_odds=JOURNEY_TARGET_MIN_ODDS, max_slips_per_day=JOURNEY_MAX_SLIPS_PER_DAY,
                              timezone="Africa/Casablanca", previews=journey_display, start_date=hist.get("journey_start_date"), paper=hist.get("paper_simulation"),
                              note="Only today and tomorrow are shown; each date is recomputed from the latest model update."))
     json.dump(pred, open(os.path.join(OUT, "predictions.json"), "w"), indent=1, default=str)
