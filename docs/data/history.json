@@ -10373,6 +10373,58 @@
     }
    ],
    "result": null
+  },
+  {
+   "id": 564760,
+   "comp": "La Liga",
+   "kickoff": "2026-11-28T13:00:00+00:00",
+   "home": "Real Betis",
+   "away": "Rayo Vallecano",
+   "p1x2": {
+    "1": 0.6353,
+    "X": 0.1891,
+    "2": 0.1756
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.6353
+    },
+    {
+     "mk": "DC",
+     "key": "1X",
+     "player_id": null,
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.8244
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.6724
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.6151
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.414
+    }
+   ],
+   "result": null
   }
  ],
  "summary": {
@@ -10412,7 +10464,7 @@
   "matches": 137,
   "brier": 0.5693354084671532
  },
- "updated": "2026-11-24T12:49:48.349380+00:00",
+ "updated": "2026-11-24T13:07:58.921198+00:00",
  "daily_slips": [
   {
    "date": "2026-11-08",
@@ -10792,6 +10844,71 @@
    "odds": 1.37,
    "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns. Saved before kickoff; may update until locked.",
    "updated": "2026-11-24T02:03:54.485397+00:00",
+   "hit": null,
+   "legacy": true
+  },
+  {
+   "id": "2026-11-24-1",
+   "date": "2026-11-24",
+   "number": 1,
+   "legs": [
+    {
+     "match": "Middlesbrough vs Swansea",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.8511495882493059,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 68%, draw 18%, away 15%; Home or draw has the highest combined probability at 85%.",
+     "id": 561954,
+     "comp": "Championship",
+     "kickoff": "2026-11-24T19:45:00+00:00",
+     "odds": 1.17,
+     "hit": null
+    },
+    {
+     "match": "Portsmouth vs West Ham",
+     "mk": "DC",
+     "key": "12",
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.798656731200958,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 29%, draw 20%, away 51%; Home or away has the highest combined probability at 80%.",
+     "id": 561955,
+     "comp": "Championship",
+     "kickoff": "2026-11-24T19:45:00+00:00",
+     "odds": 1.25,
+     "hit": null
+    },
+    {
+     "match": "Feyenoord vs Porto",
+     "mk": "DC",
+     "key": "12",
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.794908753140924,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 40%, draw 21%, away 40%; Home or away has the highest combined probability at 79%.",
+     "id": 575400,
+     "comp": "Champions League",
+     "kickoff": "2026-11-24T20:00:00+00:00",
+     "odds": 1.26,
+     "hit": null
+    },
+    {
+     "match": "Galatasaray vs Aston Villa",
+     "mk": "DC",
+     "key": "12",
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.7909786419651506,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 48%, draw 21%, away 31%; Home or away has the highest combined probability at 79%.",
+     "id": 575395,
+     "comp": "Champions League",
+     "kickoff": "2026-11-24T17:45:00+00:00",
+     "odds": 1.26,
+     "hit": null
+    }
+   ],
+   "prob": 0.4274133527546141,
+   "odds": 2.34,
+   "note": "This is the highest-probability available combination that reaches at least 2.0 model fair odds. Multi-match probabilities multiply leg estimates and assume independent outcomes, so the combined estimate is approximate\u2014not bookmaker odds or a forecast of returns. Saved before kickoff; may update until locked.",
+   "updated": "2026-11-24T13:07:58.921198+00:00",
    "hit": null
   }
  ],
@@ -11660,6 +11777,155 @@
    "paper_stake": 0.99,
    "paper_profit": null,
    "paper_balance_after": null
+  },
+  {
+   "id": "2026-11-24-1",
+   "date": "2026-11-24",
+   "number": 1,
+   "legs": [
+    {
+     "match": "Middlesbrough vs Swansea",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.8511495882493059,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 68%, draw 18%, away 15%; Home or draw has the highest combined probability at 85%.",
+     "id": 561954,
+     "comp": "Championship",
+     "kickoff": "2026-11-24T19:45:00+00:00",
+     "odds": 1.17,
+     "hit": null
+    },
+    {
+     "match": "Portsmouth vs West Ham",
+     "mk": "DC",
+     "key": "12",
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.798656731200958,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 29%, draw 20%, away 51%; Home or away has the highest combined probability at 80%.",
+     "id": 561955,
+     "comp": "Championship",
+     "kickoff": "2026-11-24T19:45:00+00:00",
+     "odds": 1.25,
+     "hit": null
+    },
+    {
+     "match": "Feyenoord vs Porto",
+     "mk": "DC",
+     "key": "12",
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.794908753140924,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 40%, draw 21%, away 40%; Home or away has the highest combined probability at 79%.",
+     "id": 575400,
+     "comp": "Champions League",
+     "kickoff": "2026-11-24T20:00:00+00:00",
+     "odds": 1.26,
+     "hit": null
+    },
+    {
+     "match": "Galatasaray vs Aston Villa",
+     "mk": "DC",
+     "key": "12",
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.7909786419651506,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 48%, draw 21%, away 31%; Home or away has the highest combined probability at 79%.",
+     "id": 575395,
+     "comp": "Champions League",
+     "kickoff": "2026-11-24T17:45:00+00:00",
+     "odds": 1.26,
+     "hit": null
+    }
+   ],
+   "prob": 0.4274133527546141,
+   "odds": 2.34,
+   "note": "This is the highest-probability available combination that reaches at least 2.0 model fair odds. Multi-match probabilities multiply leg estimates and assume independent outcomes, so the combined estimate is approximate\u2014not bookmaker odds or a forecast of returns.",
+   "locked": true,
+   "locked_at": "2026-11-24T13:07:58.921198+00:00",
+   "hit": null,
+   "paper_stake": 1.0,
+   "paper_profit": null,
+   "paper_balance_after": null
+  },
+  {
+   "id": "2026-11-25-1",
+   "date": "2026-11-25",
+   "number": 1,
+   "legs": [
+    {
+     "match": "Stoke vs Millwall",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.8872852801756318,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 70%, draw 19%, away 11%; Home or draw has the highest combined probability at 89%.",
+     "id": 561962,
+     "comp": "Championship",
+     "kickoff": "2026-11-25T20:00:00+00:00",
+     "odds": 1.13,
+     "hit": null
+    },
+    {
+     "match": "Club Brugge vs Liverpool",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.883412166057081,
+     "why": "Combined expected goals 5.10. Probability of 3+ goals is 88%, so Over 2.5 is the likelier side.",
+     "id": 575409,
+     "comp": "Champions League",
+     "kickoff": "2026-11-25T20:00:00+00:00",
+     "odds": 1.13,
+     "hit": null
+    },
+    {
+     "match": "PSG vs Roma",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.8629549052708485,
+     "why": "Combined expected goals 4.86. Probability of 3+ goals is 86%, so Over 2.5 is the likelier side.",
+     "id": 575408,
+     "comp": "Champions League",
+     "kickoff": "2026-11-25T20:00:00+00:00",
+     "odds": 1.16,
+     "hit": null
+    },
+    {
+     "match": "Shaktar vs Fenerbah\u00e7e",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.8490591620964918,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 68%, draw 17%, away 15%; Home or draw has the highest combined probability at 85%.",
+     "id": 575412,
+     "comp": "Champions League",
+     "kickoff": "2026-11-25T20:00:00+00:00",
+     "odds": 1.18,
+     "hit": null
+    },
+    {
+     "match": "Lille vs Bayern",
+     "mk": "OU",
+     "key": "O",
+     "pick": "Over 2.5",
+     "p": 0.8306994199429033,
+     "why": "Combined expected goals 4.54. Probability of 3+ goals is 83%, so Over 2.5 is the likelier side.",
+     "id": 575410,
+     "comp": "Champions League",
+     "kickoff": "2026-11-25T20:00:00+00:00",
+     "odds": 1.2,
+     "hit": null
+    }
+   ],
+   "prob": 0.47708593619980916,
+   "odds": 2.1,
+   "note": "This is the highest-probability available combination that reaches at least 2.0 model fair odds. Multi-match probabilities multiply leg estimates and assume independent outcomes, so the combined estimate is approximate\u2014not bookmaker odds or a forecast of returns.",
+   "locked": true,
+   "locked_at": "2026-11-24T13:07:58.921198+00:00",
+   "hit": null,
+   "paper_stake": 1.0,
+   "paper_profit": null,
+   "paper_balance_after": null
   }
  ],
  "journey_start_date": "2026-11-16",
@@ -11667,14 +11933,14 @@
  "paper_simulation": {
   "started_at": "2026-11-16T23:19:08.593948+00:00",
   "starting_balance": 100.0,
-  "balance": 99.01,
+  "balance": 100.0,
   "target": 100000.0,
   "stake_fraction": 0.01,
-  "total_staked": 24.06,
-  "settled": 18,
-  "wins": 13,
-  "losses": 5,
-  "profit": -0.99,
+  "total_staked": 2.0,
+  "settled": 0,
+  "wins": 0,
+  "losses": 0,
+  "profit": 0.0,
   "note": "Paper only. Stake is 1% of the simulated balance per qualifying Journey slip; paper returns use model fair odds, not bookmaker odds."
  }
 }
