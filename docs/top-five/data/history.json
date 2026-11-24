@@ -5149,38 +5149,52 @@
      "key": "1",
      "player_id": null,
      "pick": "Home win (1)",
-     "p": 0.4051
+     "p": 0.4051,
+     "hit": 1
     },
     {
      "mk": "DC",
      "key": "12",
      "player_id": null,
      "pick": "Double chance: Home or away (12)",
-     "p": 0.7921
+     "p": 0.7921,
+     "hit": 1
     },
     {
      "mk": "OU",
      "key": "O",
      "player_id": null,
      "pick": "Over 2.5",
-     "p": 0.7568
+     "p": 0.7568,
+     "hit": 1
     },
     {
      "mk": "BTTS",
      "key": "Y",
      "player_id": null,
      "pick": "Both teams to score: Yes",
-     "p": 0.7435
+     "p": 0.7435,
+     "hit": 0
     },
     {
      "mk": "HTFT",
      "key": "1/1",
      "player_id": null,
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.2499
+     "p": 0.2499,
+     "hit": 1
     }
    ],
-   "result": null
+   "result": {
+    "ft": [
+     3,
+     0
+    ],
+    "ht": [
+     1,
+     0
+    ]
+   }
   },
   {
    "id": 560649,
@@ -5201,38 +5215,52 @@
      "key": "1",
      "player_id": null,
      "pick": "Home win (1)",
-     "p": 0.5331
+     "p": 0.5331,
+     "hit": 1
     },
     {
      "mk": "DC",
      "key": "1X",
      "player_id": null,
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.8078
+     "p": 0.8078,
+     "hit": 1
     },
     {
      "mk": "OU",
      "key": "U",
      "player_id": null,
      "pick": "Under 2.5",
-     "p": 0.6432
+     "p": 0.6432,
+     "hit": 0
     },
     {
      "mk": "BTTS",
      "key": "N",
      "player_id": null,
      "pick": "Both teams to score: No",
-     "p": 0.6126
+     "p": 0.6126,
+     "hit": 1
     },
     {
      "mk": "HTFT",
      "key": "1/1",
      "player_id": null,
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.3023
+     "p": 0.3023,
+     "hit": 1
     }
    ],
-   "result": null
+   "result": {
+    "ft": [
+     4,
+     0
+    ],
+    "ht": [
+     2,
+     0
+    ]
+   }
   },
   {
    "id": 564757,
@@ -5253,35 +5281,309 @@
      "key": "2",
      "player_id": null,
      "pick": "Away win (2)",
-     "p": 0.5303
+     "p": 0.5303,
+     "hit": 0
     },
     {
      "mk": "DC",
      "key": "12",
      "player_id": null,
      "pick": "Double chance: Home or away (12)",
-     "p": 0.7946
+     "p": 0.7946,
+     "hit": 0
     },
     {
      "mk": "OU",
      "key": "O",
      "player_id": null,
      "pick": "Over 2.5",
-     "p": 0.7122
+     "p": 0.7122,
+     "hit": 0
     },
     {
      "mk": "BTTS",
      "key": "Y",
      "player_id": null,
      "pick": "Both teams to score: Yes",
-     "p": 0.6902
+     "p": 0.6902,
+     "hit": 1
     },
     {
      "mk": "HTFT",
      "key": "2/2",
      "player_id": null,
      "pick": "HT Away win / FT Away win (2/2)",
-     "p": 0.3345
+     "p": 0.3345,
+     "hit": 0
+    }
+   ],
+   "result": {
+    "ft": [
+     1,
+     1
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": 565869,
+   "comp": "Bundesliga",
+   "kickoff": "2026-11-27T19:30:00+00:00",
+   "home": "Bremen",
+   "away": "M'gladbach",
+   "p1x2": {
+    "1": 0.8018,
+    "X": 0.1186,
+    "2": 0.0797
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.8018
+    },
+    {
+     "mk": "DC",
+     "key": "1X",
+     "player_id": null,
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.9203
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.7779
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.5905
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.5474
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 558515,
+   "comp": "Serie A",
+   "kickoff": "2026-11-27T19:45:00+00:00",
+   "home": "Venezia FC",
+   "away": "Bologna",
+   "p1x2": {
+    "1": 0.1634,
+    "X": 0.2144,
+    "2": 0.6222
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "2",
+     "player_id": null,
+     "pick": "Away win (2)",
+     "p": 0.6222
+    },
+    {
+     "mk": "DC",
+     "key": "X2",
+     "player_id": null,
+     "pick": "Double chance: Draw or away (X2)",
+     "p": 0.8366
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.5326
+    },
+    {
+     "mk": "BTTS",
+     "key": "N",
+     "player_id": null,
+     "pick": "Both teams to score: No",
+     "p": 0.5014
+    },
+    {
+     "mk": "HTFT",
+     "key": "2/2",
+     "player_id": null,
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.3942
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 559616,
+   "comp": "Ligue 1",
+   "kickoff": "2026-11-27T19:45:00+00:00",
+   "home": "Brest",
+   "away": "Paris FC",
+   "p1x2": {
+    "1": 0.466,
+    "X": 0.2592,
+    "2": 0.2748
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.466
+    },
+    {
+     "mk": "DC",
+     "key": "12",
+     "player_id": null,
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.7408
+    },
+    {
+     "mk": "OU",
+     "key": "U",
+     "player_id": null,
+     "pick": "Under 2.5",
+     "p": 0.5262
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.5114
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.2709
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 560658,
+   "comp": "Premier League",
+   "kickoff": "2026-11-27T20:00:00+00:00",
+   "home": "Nottingham",
+   "away": "Chelsea",
+   "p1x2": {
+    "1": 0.3796,
+    "X": 0.3069,
+    "2": 0.3135
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.3796
+    },
+    {
+     "mk": "DC",
+     "key": "12",
+     "player_id": null,
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.6931
+    },
+    {
+     "mk": "OU",
+     "key": "U",
+     "player_id": null,
+     "pick": "Under 2.5",
+     "p": 0.6744
+    },
+    {
+     "mk": "BTTS",
+     "key": "N",
+     "player_id": null,
+     "pick": "Both teams to score: No",
+     "p": 0.5999
+    },
+    {
+     "mk": "HTFT",
+     "key": "X/X",
+     "player_id": null,
+     "pick": "HT Draw / FT Draw (X/X)",
+     "p": 0.2176
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 564765,
+   "comp": "La Liga",
+   "kickoff": "2026-11-27T20:00:00+00:00",
+   "home": "Levante",
+   "away": "Santander",
+   "p1x2": {
+    "1": 0.6519,
+    "X": 0.1622,
+    "2": 0.1859
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.6519
+    },
+    {
+     "mk": "DC",
+     "key": "12",
+     "player_id": null,
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.8378
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.8262
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.7506
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.4388
     }
    ],
    "result": null
@@ -5291,40 +5593,40 @@
   "markets": [
    {
     "market": "1X2",
-    "n": 93,
-    "hit_rate": 0.5268817204301075,
-    "avg_prob": 0.531537634408602
+    "n": 96,
+    "hit_rate": 0.53125,
+    "avg_prob": 0.5302239583333331
    },
    {
     "market": "OU",
-    "n": 93,
-    "hit_rate": 0.6021505376344086,
-    "avg_prob": 0.6311333333333334
+    "n": 96,
+    "hit_rate": 0.59375,
+    "avg_prob": 0.6334125
    },
    {
     "market": "HTFT",
-    "n": 93,
-    "hit_rate": 0.3225806451612903,
-    "avg_prob": 0.32509677419354827
+    "n": 96,
+    "hit_rate": 0.3333333333333333,
+    "avg_prob": 0.32417395833333323
    },
    {
     "market": "DC",
-    "n": 45,
-    "hit_rate": 0.7555555555555555,
-    "avg_prob": 0.7954488888888891
+    "n": 48,
+    "hit_rate": 0.75,
+    "avg_prob": 0.7956187500000002
    },
    {
     "market": "BTTS",
-    "n": 45,
-    "hit_rate": 0.5555555555555556,
-    "avg_prob": 0.6135644444444445
+    "n": 48,
+    "hit_rate": 0.5625,
+    "avg_prob": 0.6178479166666667
    }
   ],
   "stats": [],
-  "matches": 93,
-  "brier": 0.5781308853763443
+  "matches": 96,
+  "brier": 0.5794367504166669
  },
- "updated": "2026-11-23T17:15:15.674039+00:00",
+ "updated": "2026-11-24T02:03:54.485397+00:00",
  "daily_slips": [
   {
    "date": "2026-11-08",
@@ -5549,13 +5851,51 @@
      "comp": "Premier League",
      "kickoff": "2026-11-23T20:00:00+00:00",
      "odds": 1.24,
-     "hit": null
+     "hit": 1
     }
    ],
    "prob": 0.8067777826791545,
    "odds": 1.24,
    "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns. Saved before kickoff; may update until locked.",
    "updated": "2026-11-22T20:58:01.940876+00:00",
+   "hit": 1
+  },
+  {
+   "id": "2026-11-27-1",
+   "date": "2026-11-27",
+   "number": 1,
+   "legs": [
+    {
+     "match": "Bremen vs M'gladbach",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.920344704941267,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 80%, draw 12%, away 8%; Home or draw has the highest combined probability at 92%.",
+     "id": 565869,
+     "comp": "Bundesliga",
+     "kickoff": "2026-11-27T19:30:00+00:00",
+     "odds": 1.09,
+     "hit": null
+    },
+    {
+     "match": "Levante vs Santander",
+     "mk": "DC",
+     "key": "12",
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.8377658082079411,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 65%, draw 16%, away 19%; Home or away has the highest combined probability at 84%.",
+     "id": 564765,
+     "comp": "La Liga",
+     "kickoff": "2026-11-27T20:00:00+00:00",
+     "odds": 1.19,
+     "hit": null
+    }
+   ],
+   "prob": 0.7710333255650196,
+   "odds": 1.3,
+   "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns. Saved before kickoff; may update until locked.",
+   "updated": "2026-11-24T02:03:54.485397+00:00",
    "hit": null
   }
  ],
@@ -5873,7 +6213,7 @@
      "comp": "Premier League",
      "kickoff": "2026-11-23T20:00:00+00:00",
      "odds": 1.24,
-     "hit": null
+     "hit": 1
     }
    ],
    "prob": 0.8071009824484274,
@@ -5881,10 +6221,10 @@
    "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns.",
    "locked": true,
    "locked_at": "2026-11-22T13:58:02.572761+00:00",
-   "hit": null,
+   "hit": 1,
    "paper_stake": 0.99,
-   "paper_profit": null,
-   "paper_balance_after": null
+   "paper_profit": 0.24,
+   "paper_balance_after": 98.59
   },
   {
    "id": "2026-11-23-2",
@@ -5902,7 +6242,7 @@
      "comp": "La Liga",
      "kickoff": "2026-11-23T20:00:00+00:00",
      "odds": 1.26,
-     "hit": null
+     "hit": 0
     }
    ],
    "prob": 0.7947044825091452,
@@ -5910,10 +6250,10 @@
    "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns.",
    "locked": true,
    "locked_at": "2026-11-22T13:58:02.572761+00:00",
-   "hit": null,
+   "hit": 0,
    "paper_stake": 0.99,
-   "paper_profit": null,
-   "paper_balance_after": null
+   "paper_profit": -0.99,
+   "paper_balance_after": 97.6
   },
   {
    "id": "2026-11-23-3",
@@ -5931,7 +6271,7 @@
      "comp": "Serie A",
      "kickoff": "2026-11-23T19:45:00+00:00",
      "odds": 1.26,
-     "hit": null
+     "hit": 1
     }
    ],
    "prob": 0.7919143129912333,
@@ -5939,10 +6279,10 @@
    "note": "The combined model probability is at least 70%. Multi-match probabilities multiply the leg estimates and assume independent outcomes; this is approximate, not bookmaker odds or a forecast of returns.",
    "locked": true,
    "locked_at": "2026-11-22T13:58:02.572761+00:00",
-   "hit": null,
+   "hit": 1,
    "paper_stake": 0.99,
-   "paper_profit": null,
-   "paper_balance_after": null
+   "paper_profit": 0.26,
+   "paper_balance_after": 97.86
   }
  ],
  "journey_start_date": "2026-11-16",
@@ -5950,14 +6290,14 @@
  "paper_simulation": {
   "started_at": "2026-11-16T23:19:08.593948+00:00",
   "starting_balance": 100.0,
-  "balance": 98.35,
+  "balance": 97.86,
   "target": 100000.0,
   "stake_fraction": 0.01,
   "total_staked": 10.94,
-  "settled": 8,
-  "wins": 5,
-  "losses": 3,
-  "profit": -1.65,
+  "settled": 11,
+  "wins": 7,
+  "losses": 4,
+  "profit": -2.14,
   "note": "Paper only. Stake is 1% of the simulated balance per qualifying Journey slip; paper returns use model fair odds, not bookmaker odds."
  }
 }
