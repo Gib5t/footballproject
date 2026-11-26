@@ -8855,6 +8855,162 @@
     }
    ],
    "result": null
+  },
+  {
+   "id": 558516,
+   "comp": "Serie A",
+   "kickoff": "2026-11-30T17:30:00+00:00",
+   "home": "Lecce",
+   "away": "Atalanta",
+   "p1x2": {
+    "1": 0.2713,
+    "X": 0.2348,
+    "2": 0.4939
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "2",
+     "player_id": null,
+     "pick": "Away win (2)",
+     "p": 0.4939
+    },
+    {
+     "mk": "DC",
+     "key": "12",
+     "player_id": null,
+     "pick": "Double chance: Home or away (12)",
+     "p": 0.7652
+    },
+    {
+     "mk": "OU",
+     "key": "O",
+     "player_id": null,
+     "pick": "Over 2.5",
+     "p": 0.5755
+    },
+    {
+     "mk": "BTTS",
+     "key": "Y",
+     "player_id": null,
+     "pick": "Both teams to score: Yes",
+     "p": 0.5879
+    },
+    {
+     "mk": "HTFT",
+     "key": "2/2",
+     "player_id": null,
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.3011
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 558510,
+   "comp": "Serie A",
+   "kickoff": "2026-11-30T19:45:00+00:00",
+   "home": "Cagliari",
+   "away": "Milan",
+   "p1x2": {
+    "1": 0.2357,
+    "X": 0.2947,
+    "2": 0.4696
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "2",
+     "player_id": null,
+     "pick": "Away win (2)",
+     "p": 0.4696
+    },
+    {
+     "mk": "DC",
+     "key": "X2",
+     "player_id": null,
+     "pick": "Double chance: Draw or away (X2)",
+     "p": 0.7643
+    },
+    {
+     "mk": "OU",
+     "key": "U",
+     "player_id": null,
+     "pick": "Under 2.5",
+     "p": 0.6676
+    },
+    {
+     "mk": "BTTS",
+     "key": "N",
+     "player_id": null,
+     "pick": "Both teams to score: No",
+     "p": 0.6114
+    },
+    {
+     "mk": "HTFT",
+     "key": "2/2",
+     "player_id": null,
+     "pick": "HT Away win / FT Away win (2/2)",
+     "p": 0.2705
+    }
+   ],
+   "result": null
+  },
+  {
+   "id": 564763,
+   "comp": "La Liga",
+   "kickoff": "2026-11-30T20:00:00+00:00",
+   "home": "Espanyol",
+   "away": "Getafe",
+   "p1x2": {
+    "1": 0.6311,
+    "X": 0.2549,
+    "2": 0.114
+   },
+   "stats_id": null,
+   "stats_prediction": {},
+   "picks": [
+    {
+     "mk": "1X2",
+     "key": "1",
+     "player_id": null,
+     "pick": "Home win (1)",
+     "p": 0.6311
+    },
+    {
+     "mk": "DC",
+     "key": "1X",
+     "player_id": null,
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.886
+    },
+    {
+     "mk": "OU",
+     "key": "U",
+     "player_id": null,
+     "pick": "Under 2.5",
+     "p": 0.6811
+    },
+    {
+     "mk": "BTTS",
+     "key": "N",
+     "player_id": null,
+     "pick": "Both teams to score: No",
+     "p": 0.7063
+    },
+    {
+     "mk": "HTFT",
+     "key": "1/1",
+     "player_id": null,
+     "pick": "HT Home win / FT Home win (1/1)",
+     "p": 0.3827
+    }
+   ],
+   "result": null
   }
  ],
  "summary": {
@@ -8894,7 +9050,7 @@
   "matches": 114,
   "brier": 0.5936413506140353
  },
- "updated": "2026-11-26T16:18:11.986259+00:00",
+ "updated": "2026-11-26T23:35:57.485258+00:00",
  "daily_slips": [
   {
    "date": "2026-11-08",
