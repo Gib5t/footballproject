@@ -10165,38 +10165,52 @@
      "key": "1",
      "player_id": null,
      "pick": "Home win (1)",
-     "p": 0.6114
+     "p": 0.6114,
+     "hit": 1
     },
     {
      "mk": "DC",
      "key": "1X",
      "player_id": null,
      "pick": "Double chance: Home or draw (1X)",
-     "p": 0.8445
+     "p": 0.8445,
+     "hit": 1
     },
     {
      "mk": "OU",
      "key": "U",
      "player_id": null,
      "pick": "Under 2.5",
-     "p": 0.5537
+     "p": 0.5537,
+     "hit": 0
     },
     {
      "mk": "BTTS",
      "key": "N",
      "player_id": null,
      "pick": "Both teams to score: No",
-     "p": 0.5722
+     "p": 0.5722,
+     "hit": 0
     },
     {
      "mk": "HTFT",
      "key": "1/1",
      "player_id": null,
      "pick": "HT Home win / FT Home win (1/1)",
-     "p": 0.3862
+     "p": 0.3862,
+     "hit": 1
     }
    ],
-   "result": null
+   "result": {
+    "ft": [
+     3,
+     1
+    ],
+    "ht": [
+     1,
+     0
+    ]
+   }
   },
   {
    "id": 560658,
@@ -14675,40 +14689,40 @@
   "markets": [
    {
     "market": "1X2",
-    "n": 169,
-    "hit_rate": 0.5266272189349113,
-    "avg_prob": 0.5340721893491125
+    "n": 170,
+    "hit_rate": 0.5294117647058824,
+    "avg_prob": 0.5345270588235296
    },
    {
     "market": "OU",
-    "n": 169,
-    "hit_rate": 0.591715976331361,
-    "avg_prob": 0.6435319526627218
+    "n": 170,
+    "hit_rate": 0.5882352941176471,
+    "avg_prob": 0.6430035294117646
    },
    {
     "market": "HTFT",
-    "n": 169,
-    "hit_rate": 0.3076923076923077,
-    "avg_prob": 0.3334976331360948
+    "n": 170,
+    "hit_rate": 0.31176470588235294,
+    "avg_prob": 0.33380764705882365
    },
    {
     "market": "DC",
-    "n": 121,
-    "hit_rate": 0.7603305785123967,
-    "avg_prob": 0.7962793388429753
+    "n": 122,
+    "hit_rate": 0.7622950819672131,
+    "avg_prob": 0.7966745901639345
    },
    {
     "market": "BTTS",
-    "n": 121,
-    "hit_rate": 0.5454545454545454,
-    "avg_prob": 0.6184727272727272
+    "n": 122,
+    "hit_rate": 0.5409836065573771,
+    "avg_prob": 0.6180934426229506
    }
   ],
   "stats": [],
-  "matches": 169,
-  "brier": 0.5887223762721896
+  "matches": 170,
+  "brier": 0.5866094553529414
  },
- "updated": "2026-11-26T23:35:57.485258+00:00",
+ "updated": "2026-11-27T16:02:23.028493+00:00",
  "daily_slips": [
   {
    "date": "2026-11-08",
@@ -16405,6 +16419,87 @@
    "paper_stake": 1.0,
    "paper_profit": null,
    "paper_balance_after": null
+  },
+  {
+   "id": "2026-11-28-1",
+   "date": "2026-11-28",
+   "number": 1,
+   "legs": [
+    {
+     "match": "Arouca vs Rio Ave",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.8680117784276637,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 64%, draw 23%, away 13%; Home or draw has the highest combined probability at 87%.",
+     "id": 567362,
+     "comp": "Primeira Liga",
+     "kickoff": "2026-11-28T15:30:00+00:00",
+     "odds": 1.15,
+     "hit": null
+    },
+    {
+     "match": "Leeds United vs Coventry City",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.8662389848887093,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 64%, draw 23%, away 13%; Home or draw has the highest combined probability at 87%.",
+     "id": 560652,
+     "comp": "Premier League",
+     "kickoff": "2026-11-28T15:00:00+00:00",
+     "odds": 1.15,
+     "hit": null
+    },
+    {
+     "match": "Preston NE vs Norwich",
+     "mk": "DC",
+     "key": "X2",
+     "pick": "Double chance: Draw or away (X2)",
+     "p": 0.8602736403298359,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 14%, draw 17%, away 69%; Draw or away has the highest combined probability at 86%.",
+     "id": 561973,
+     "comp": "Championship",
+     "kickoff": "2026-11-28T12:30:00+00:00",
+     "odds": 1.16,
+     "hit": null
+    },
+    {
+     "match": "Frosinone vs Parma",
+     "mk": "DC",
+     "key": "1X",
+     "pick": "Double chance: Home or draw (1X)",
+     "p": 0.8599179298160587,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 68%, draw 18%, away 14%; Home or draw has the highest combined probability at 86%.",
+     "id": 558513,
+     "comp": "Serie A",
+     "kickoff": "2026-11-28T14:00:00+00:00",
+     "odds": 1.16,
+     "hit": null
+    },
+    {
+     "match": "Lincoln City vs Wolverhampton",
+     "mk": "DC",
+     "key": "X2",
+     "pick": "Double chance: Draw or away (X2)",
+     "p": 0.8432374637584854,
+     "why": "Double chance covers two 1X2 outcomes. Model probabilities are home 16%, draw 19%, away 65%; Draw or away has the highest combined probability at 84%.",
+     "id": 561972,
+     "comp": "Championship",
+     "kickoff": "2026-11-28T12:30:00+00:00",
+     "odds": 1.19,
+     "hit": null
+    }
+   ],
+   "prob": 0.46903673396157713,
+   "odds": 2.13,
+   "note": "This is the highest-probability available combination that reaches at least 2.0 model fair odds. Multi-match probabilities multiply leg estimates and assume independent outcomes, so the combined estimate is approximate\u2014not bookmaker odds or a forecast of returns.",
+   "locked": true,
+   "locked_at": "2026-11-27T16:02:23.028493+00:00",
+   "hit": null,
+   "paper_stake": 1.0,
+   "paper_profit": null,
+   "paper_balance_after": null
   }
  ],
  "journey_start_date": "2026-11-16",
@@ -16415,7 +16510,7 @@
   "balance": 100.34,
   "target": 100000.0,
   "stake_fraction": 0.01,
-  "total_staked": 3.0,
+  "total_staked": 4.0,
   "settled": 2,
   "wins": 1,
   "losses": 1,
